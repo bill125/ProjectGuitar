@@ -28,6 +28,7 @@ End entity NoteGen;
 
 entity Velocity is
 	port (
+	clk_in : std_logic;
 	seg0, seg1 : in std_logic_vector(6 downto 0);
 	vel : array (0 to 5) of integer
 	);
