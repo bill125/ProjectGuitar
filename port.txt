@@ -23,7 +23,7 @@ End entity NoteGen;
 entity Programme is
   port (
 	key_in : in std_logic_vector(6 downto 0);
-    prog : out integer range from 0 to 88;
+    prog : out integer range from 0 to 127;
     )
 end entity Programme;
 

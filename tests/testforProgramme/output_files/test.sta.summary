@@ -1,0 +1,17 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'impulse_in'
+Slack : -14.200
+TNS   : -173.700
+
+Type  : Hold 'impulse_in'
+Slack : 2.600
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'impulse_in'
+Slack : -1.500
+TNS   : -69.000
+
+------------------------------------------------------------
