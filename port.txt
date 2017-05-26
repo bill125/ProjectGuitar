@@ -8,6 +8,21 @@ UART_OUT:
 		click : std_logic 
 	out: note, clk_out
 	
-音源：
+音源:
 	in: keyboard_in : 2 * 
+	out: prog : integer
+
+音量:
+	in: keyboard_in :
+	out: vel : vector of integer
+	
+Keyboard:
+	in:  clk, fclk, ...
+	out: 2 * 16进制,
+		 PushString : integer range from 0 to 5
+	
+UART_IN:
+	in: i_RX_SERIAL
+	out: strings : GuitarStatus
+	
 	
