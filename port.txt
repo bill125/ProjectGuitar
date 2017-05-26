@@ -1,25 +1,42 @@
+entity ImpulseGen is
+	 generic 
+	 ( 
+	 pausePeriod: integer := 10
+	 );
+	port (
+		hclk : in std_logic;
+		clk : out std_logic
+	);
+end entity ImpulseGen;
+
 UART_OUT:
 	in: isOn, note, vel, prog, clk
 	out: o_TX_SERIAL
 	
-弹奏:
-	in: PushString : integer range from 0 to 5, 
-	    strings : GuitarStatus, 
-		click : std_logic 
-	out: note, clk_out
-	
-音源:
+entity NoteGen is
+	port (
+	pressedString : in integer range from 0 to 5;
+	strings : in GuitarStatus;
+	impulse, hclk : in std_logic;
+	note : out integer range from 0 to 88;
+	clk_out : out std_logic
+	);
+End entity NoteGen;
+音源(Programme):
 	in: keyboard_in : 2 * 
 	out: prog : integer
 
-音量:
-	in: keyboard_in :
-	out: vel : vector of integer
-	
+entity Velocity is
+	port (
+	seg0, seg1 : in std_logic_vector(6 downto 0);
+	vel : array (0 to 5) of integer
+	);
+End entity Velocity;
+
 Keyboard:
 	in:  clk, fclk, ...
 	out: 2 * 16进制,
-		 PushString : integer range from 0 to 5
+		 pressedString : integer range from 0 to 5
 	
 UART_IN:
 	in: i_RX_SERIAL
