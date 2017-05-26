@@ -1,28 +1,55 @@
-UART_OUT:
-	in: isOn, note, vel, prog, clk
-	out: o_TX_SERIAL
-	
-弹奏:
-	in: PushString : integer range from 0 to 5, 
+note_gen:
+	in: 
+		PushString : integer range from 0 to 5, 
 	    strings : GuitarStatus, 
 		click : std_logic 
 	out: note, clk_out
+
+pulse_gen
 	
 音源:
-	in: keyboard_in : 2 * 
-	out: prog : integer
+	in: 
+		seg0, seg1 : std_logic_vector(6 downto 0)
+	out: 
+		prog : integer range from 0 to 127
 
 音量:
-	in: keyboard_in :
+	in: 
+		seg0 :
 	out: vel : vector of integer
 	
-Keyboard:
-	in:  clk, fclk, ...
-	out: 2 * 16进制,
-		 PushString : integer range from 0 to 5
+input_keyboard:
+	in:  
+		clk, fclk, ...
+	out: 
+		seg0, seg1 : std_logic_vector(6 downto 0),
+		PushString : integer range from 0 to 5
+
+keyboard_adapter:
+	in:
+		seg0, seg1 : std_logic_vector(6 downto 0),
+		clk_in : std_logic;
+	out:
+		seg0, seg1 : std_logic_vector(6 downto 0),
+		clk_out : std_logic;
+
+playing_mod:
+	in:
+	
 	
 UART_IN:
-	in: i_RX_SERIAL
-	out: strings : GuitarStatus
+	in: 
+		i_RX_SERIAL : std_logic
+	out: 
+		strings : GuitarStatus
 	
-	
+
+UART_OUT:
+	in: 
+		isOn : std_logic, 
+		note : integer range from 0 to 5, 
+		vel  : integer range from 0 to 127, 
+		prog : integer range from 0 to 127, 
+		clk  : std_logic
+	out: 
+		o_TX_SERIAL : std_logic
