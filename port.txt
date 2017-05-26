@@ -1,0 +1,13 @@
+UART_OUT:
+	in: isOn, note, vel, prog, clk
+	out: o_TX_SERIAL
+	
+弹奏:
+	in: PushString : integer range from 0 to 5, 
+	    strings : GuitarStatus, 
+		click : std_logic 
+	out: note, clk_out
+	
+音源：
+	in: keyboard_in : 2 * 
+	
