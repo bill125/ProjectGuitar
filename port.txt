@@ -1,50 +1,61 @@
-note_gen:
-	in: 
-		PushString : integer range from 0 to 5, 
-	    strings : GuitarStatus, 
-		click : std_logic 
-	out: note, clk_out
-
-pulse_gen
+entity ImpulseGen is
+	 generic 
+	 ( 
+	 pausePeriod: integer := 10
+	 );
+	port (
+		hclk : in std_logic;
+		clk : out std_logic
+	);
+end entity ImpulseGen;
 	
-音源:
+entity NoteGen is
+	port (
+	triggeredString : in integer range from 0 to 5;
+	strings : in GuitarStatus;
+	impulse, hclk : in std_logic;
+	note : out integer range from 0 to 88;
+	clk_out : out std_logic
+	);
+End entity NoteGen;
+
+音源(Programme):
 	in: 
-		seg0, seg1 : std_logic_vector(6 downto 0)
+		seg0, seg1 : in std_logic_vector(6 downto 0);
 	out: 
-		prog : integer range from 0 to 127
+		prog : integer range from 0 to 88;
 
-音量:
-	in: 
-		seg0 :
-	out: vel : vector of integer
-	
-input_keyboard:
+entity Velocity is
+	port (
+	seg0, seg1 : in std_logic_vector(6 downto 0);
+	vel : array (0 to 5) of integer
+	);
+End entity Velocity;
+
+KeyboardInput:
 	in:  
 		clk, fclk, ...
 	out: 
 		seg0, seg1 : std_logic_vector(6 downto 0),
-		PushString : integer range from 0 to 5
-
-keyboard_adapter:
+		triggeredString : integer range from 0 to 5
+		
+KeyboardAdapter:
 	in:
 		seg0, seg1 : std_logic_vector(6 downto 0),
 		clk_in : std_logic;
 	out:
 		seg0, seg1 : std_logic_vector(6 downto 0),
 		clk_out : std_logic;
-
-playing_mod:
-	in:
 	
 	
-UART_IN:
+UARTIn:
 	in: 
 		i_RX_SERIAL : std_logic
 	out: 
 		strings : GuitarStatus
 	
 
-UART_OUT:
+UARTOut:
 	in: 
 		isOn : std_logic, 
 		note : integer range from 0 to 5, 
