@@ -4,6 +4,7 @@ entity ImpulseGen is
 	 pausePeriod: integer := 10
 	 );
 	port (
+		start : in std_logic;
 		hclk : in std_logic;
 		clk : out std_logic
 	);
@@ -13,21 +14,23 @@ entity NoteGen is
 	port (
 	triggeredString : in integer range from 0 to 5;
 	strings : in GuitarStatus;
-	impulse, hclk : in std_logic;
+	impulse_in, hclk : in std_logic;
 	note : out integer range from 0 to 88;
-	clk_out : out std_logic
+	impulse_out : out std_logic
 	);
 End entity NoteGen;
 
-音源(Programme):
-	in: 
-		key_in : in std_logic_vector(7 downto 0);
-	out: 
-		prog : integer range from 0 to 88;
+entity Programme is
+  port (
+	key_in : in std_logic_vector(6 downto 0);
+    prog : out integer range from 0 to 88;
+    )
+end entity Programme;
 
 entity Velocity is
 	port (
-	seg0, seg1 : in std_logic_vector(6 downto 0);
+	impulse_in : std_logic;
+	key_in : in std_logic_vector(7 downto 0);
 	vel : array (0 to 5) of integer
 	);
 End entity Velocity;
