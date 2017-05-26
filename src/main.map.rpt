@@ -1,5 +1,5 @@
 Analysis & Synthesis report for main
-Fri May 26 22:27:39 2017
+Fri May 26 22:33:30 2017
 Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
 
 
@@ -9,7 +9,13 @@ Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
   1. Legal Notice
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
-  4. Analysis & Synthesis Messages
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. State Machine - |main|input_keyboard:keyboard_test|Keyboard:u0|state
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Analysis & Synthesis Messages
 
 
 
@@ -35,20 +41,20 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Fri May 26 22:27:39 2017        ;
+; Analysis & Synthesis Status        ; Successful - Fri May 26 22:33:30 2017    ;
 ; Quartus II Version                 ; 9.0 Build 132 02/25/2009 SJ Full Version ;
 ; Revision Name                      ; main                                     ;
 ; Top-level Entity Name              ; main                                     ;
 ; Family                             ; Cyclone II                               ;
-; Total logic elements               ; N/A until Partition Merge                ;
-;     Total combinational functions  ; N/A until Partition Merge                ;
-;     Dedicated logic registers      ; N/A until Partition Merge                ;
-; Total registers                    ; N/A until Partition Merge                ;
-; Total pins                         ; N/A until Partition Merge                ;
-; Total virtual pins                 ; N/A until Partition Merge                ;
-; Total memory bits                  ; N/A until Partition Merge                ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                ;
-; Total PLLs                         ; N/A until Partition Merge                ;
+; Total logic elements               ; 53                                       ;
+;     Total combinational functions  ; 41                                       ;
+;     Dedicated logic registers      ; 25                                       ;
+; Total registers                    ; 25                                       ;
+; Total pins                         ; 18                                       ;
+; Total virtual pins                 ; 0                                        ;
+; Total memory bits                  ; 0                                        ;
+; Embedded Multiplier 9-bit elements ; 0                                        ;
+; Total PLLs                         ; 0                                        ;
 +------------------------------------+------------------------------------------+
 
 
@@ -127,26 +133,165 @@ applicable agreement for further details.
 +----------------------------------------------------------------+--------------------+--------------------+
 
 
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                            ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                               ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+
+; input_keyboard.vhd               ; yes             ; User VHDL File  ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/input_keyboard.vhd   ;
+; Keyboard.vhd                     ; yes             ; User VHDL File  ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/Keyboard.vhd         ;
+; seg7.vhd                         ; yes             ; User VHDL File  ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/seg7.vhd             ;
+; main.vhd                         ; yes             ; User VHDL File  ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/main.vhd             ;
+; constant_package.vhd             ; yes             ; User VHDL File  ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/constant_package.vhd ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 53    ;
+;                                             ;       ;
+; Total combinational functions               ; 41    ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 31    ;
+;     -- 3 input functions                    ; 9     ;
+;     -- <=2 input functions                  ; 1     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 41    ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 25    ;
+;     -- Dedicated logic registers            ; 25    ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 18    ;
+; Maximum fan-out node                        ; fclk  ;
+; Maximum fan-out                             ; 25    ;
+; Total fan-out                               ; 247   ;
+; Average fan-out                             ; 2.94  ;
++---------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                           ;
++-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------+--------------+
+; Compilation Hierarchy Node        ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                            ; Library Name ;
++-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------+--------------+
+; |main                             ; 41 (0)            ; 25 (0)       ; 0           ; 0            ; 0       ; 0         ; 18   ; 0            ; |main                                          ; work         ;
+;    |input_keyboard:keyboard_test| ; 41 (0)            ; 25 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|input_keyboard:keyboard_test             ; work         ;
+;       |Keyboard:u0|               ; 27 (27)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|input_keyboard:keyboard_test|Keyboard:u0 ; work         ;
+;       |seg7:u1|                   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|input_keyboard:keyboard_test|seg7:u1     ; work         ;
+;       |seg7:u2|                   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|input_keyboard:keyboard_test|seg7:u2     ; work         ;
++-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |main|input_keyboard:keyboard_test|Keyboard:u0|state                                                                                                        ;
++--------------+--------------+------------+--------------+----------+----------+----------+----------+----------+----------+----------+----------+-------------+-------------+
+; Name         ; state.finish ; state.stop ; state.parity ; state.d7 ; state.d6 ; state.d5 ; state.d4 ; state.d3 ; state.d2 ; state.d1 ; state.d0 ; state.start ; state.delay ;
++--------------+--------------+------------+--------------+----------+----------+----------+----------+----------+----------+----------+----------+-------------+-------------+
+; state.delay  ; 0            ; 0          ; 0            ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0           ; 0           ;
+; state.start  ; 0            ; 0          ; 0            ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1           ; 1           ;
+; state.d0     ; 0            ; 0          ; 0            ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0           ; 1           ;
+; state.d1     ; 0            ; 0          ; 0            ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0           ; 1           ;
+; state.d2     ; 0            ; 0          ; 0            ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0           ; 1           ;
+; state.d3     ; 0            ; 0          ; 0            ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0           ; 1           ;
+; state.d4     ; 0            ; 0          ; 0            ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0           ; 1           ;
+; state.d5     ; 0            ; 0          ; 0            ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0           ; 1           ;
+; state.d6     ; 0            ; 0          ; 0            ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0           ; 1           ;
+; state.d7     ; 0            ; 0          ; 0            ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0           ; 1           ;
+; state.parity ; 0            ; 0          ; 1            ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0           ; 1           ;
+; state.stop   ; 0            ; 1          ; 0            ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0           ; 1           ;
+; state.finish ; 1            ; 0          ; 0            ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0           ; 1           ;
++--------------+--------------+------------+--------------+----------+----------+----------+----------+----------+----------+----------+----------+-------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                          ;
++------------------------------------------------------+----------------------------------------------+------------------------+
+; Latch Name                                           ; Latch Enable Signal                          ; Free of Timing Hazards ;
++------------------------------------------------------+----------------------------------------------+------------------------+
+; input_keyboard:keyboard_test|Keyboard:u0|scancode[0] ; input_keyboard:keyboard_test|Keyboard:u0|fok ; yes                    ;
+; input_keyboard:keyboard_test|Keyboard:u0|scancode[1] ; input_keyboard:keyboard_test|Keyboard:u0|fok ; yes                    ;
+; input_keyboard:keyboard_test|Keyboard:u0|scancode[2] ; input_keyboard:keyboard_test|Keyboard:u0|fok ; yes                    ;
+; input_keyboard:keyboard_test|Keyboard:u0|scancode[3] ; input_keyboard:keyboard_test|Keyboard:u0|fok ; yes                    ;
+; input_keyboard:keyboard_test|Keyboard:u0|scancode[4] ; input_keyboard:keyboard_test|Keyboard:u0|fok ; yes                    ;
+; input_keyboard:keyboard_test|Keyboard:u0|scancode[5] ; input_keyboard:keyboard_test|Keyboard:u0|fok ; yes                    ;
+; input_keyboard:keyboard_test|Keyboard:u0|scancode[6] ; input_keyboard:keyboard_test|Keyboard:u0|fok ; yes                    ;
+; input_keyboard:keyboard_test|Keyboard:u0|scancode[7] ; input_keyboard:keyboard_test|Keyboard:u0|fok ; yes                    ;
+; Number of user-specified and inferred latches = 8    ;                                              ;                        ;
++------------------------------------------------------+----------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 25    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 22    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 8     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
-    Info: Processing started: Fri May 26 22:27:39 2017
+    Info: Processing started: Fri May 26 22:33:29 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ProjectGuitar -c main
+Info: Found 2 design units, including 1 entities, in source file divEven.vhd
+    Info: Found design unit 1: divEven-behav
+    Info: Found entity 1: divEven
+Info: Found 2 design units, including 1 entities, in source file input_keyboard.vhd
+    Info: Found design unit 1: input_keyboard-behave
+    Info: Found entity 1: input_keyboard
+Info: Found 2 design units, including 1 entities, in source file Keyboard.vhd
+    Info: Found design unit 1: Keyboard-rtl
+    Info: Found entity 1: Keyboard
+Info: Found 2 design units, including 1 entities, in source file seg7.vhd
+    Info: Found design unit 1: seg7-behave
+    Info: Found entity 1: seg7
 Info: Found 2 design units, including 1 entities, in source file main.vhd
     Info: Found design unit 1: main-main_bhv
     Info: Found entity 1: main
-Error (10396): VHDL syntax error at uart.vhd(28): name used in construct must match previously specified name "uart" File: C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/uart.vhd Line: 28
-Error (10523): Ignored construct uart at uart.vhd(18) due to previous errors File: C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/uart.vhd Line: 18
-Info: Found 0 design units, including 0 entities, in source file uart.vhd
+Info: Found 2 design units, including 1 entities, in source file uart.vhd
+    Info: Found design unit 1: uart-uart_bhv
+    Info: Found entity 1: uart
 Info: Found 1 design units, including 0 entities, in source file constant_package.vhd
     Info: Found design unit 1: definitions
-Error: Quartus II Analysis & Synthesis was unsuccessful. 2 errors, 0 warnings
-    Error: Peak virtual memory: 280 megabytes
-    Error: Processing ended: Fri May 26 22:27:39 2017
-    Error: Elapsed time: 00:00:00
-    Error: Total CPU time (on all processors): 00:00:01
+Info: Elaborating entity "main" for the top level hierarchy
+Info: Elaborating entity "input_keyboard" for hierarchy "input_keyboard:keyboard_test"
+Info: Elaborating entity "Keyboard" for hierarchy "input_keyboard:keyboard_test|Keyboard:u0"
+Info (10041): Inferred latch for "scancode[0]" at Keyboard.vhd(30)
+Info (10041): Inferred latch for "scancode[1]" at Keyboard.vhd(30)
+Info (10041): Inferred latch for "scancode[2]" at Keyboard.vhd(30)
+Info (10041): Inferred latch for "scancode[3]" at Keyboard.vhd(30)
+Info (10041): Inferred latch for "scancode[4]" at Keyboard.vhd(30)
+Info (10041): Inferred latch for "scancode[5]" at Keyboard.vhd(30)
+Info (10041): Inferred latch for "scancode[6]" at Keyboard.vhd(30)
+Info (10041): Inferred latch for "scancode[7]" at Keyboard.vhd(30)
+Info: Elaborating entity "seg7" for hierarchy "input_keyboard:keyboard_test|seg7:u1"
+Info: Implemented 71 device resources after synthesis - the final resource count might be different
+    Info: Implemented 4 input pins
+    Info: Implemented 14 output pins
+    Info: Implemented 53 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 289 megabytes
+    Info: Processing ended: Fri May 26 22:33:30 2017
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
 
 

@@ -1,0 +1,152 @@
+|main
+i_KB_Data => input_keyboard:keyboard_test.datain
+clkin => input_keyboard:keyboard_test.clkin
+fclk => input_keyboard:keyboard_test.fclk
+rst_in => input_keyboard:keyboard_test.rst_in
+seg0[0] <= input_keyboard:keyboard_test.seg0[0]
+seg0[1] <= input_keyboard:keyboard_test.seg0[1]
+seg0[2] <= input_keyboard:keyboard_test.seg0[2]
+seg0[3] <= input_keyboard:keyboard_test.seg0[3]
+seg0[4] <= input_keyboard:keyboard_test.seg0[4]
+seg0[5] <= input_keyboard:keyboard_test.seg0[5]
+seg0[6] <= input_keyboard:keyboard_test.seg0[6]
+seg1[0] <= input_keyboard:keyboard_test.seg1[0]
+seg1[1] <= input_keyboard:keyboard_test.seg1[1]
+seg1[2] <= input_keyboard:keyboard_test.seg1[2]
+seg1[3] <= input_keyboard:keyboard_test.seg1[3]
+seg1[4] <= input_keyboard:keyboard_test.seg1[4]
+seg1[5] <= input_keyboard:keyboard_test.seg1[5]
+seg1[6] <= input_keyboard:keyboard_test.seg1[6]
+
+
+|main|input_keyboard:keyboard_test
+datain => Keyboard:u0.datain
+clkin => Keyboard:u0.clkin
+fclk => Keyboard:u0.fclk
+rst_in => Keyboard:u0.rst
+seg0[0] <= seg7:u1.seg_out[0]
+seg0[1] <= seg7:u1.seg_out[1]
+seg0[2] <= seg7:u1.seg_out[2]
+seg0[3] <= seg7:u1.seg_out[3]
+seg0[4] <= seg7:u1.seg_out[4]
+seg0[5] <= seg7:u1.seg_out[5]
+seg0[6] <= seg7:u1.seg_out[6]
+seg1[0] <= seg7:u2.seg_out[0]
+seg1[1] <= seg7:u2.seg_out[1]
+seg1[2] <= seg7:u2.seg_out[2]
+seg1[3] <= seg7:u2.seg_out[3]
+seg1[4] <= seg7:u2.seg_out[4]
+seg1[5] <= seg7:u2.seg_out[5]
+seg1[6] <= seg7:u2.seg_out[6]
+
+
+|main|input_keyboard:keyboard_test|Keyboard:u0
+datain => data.DATAIN
+clkin => clk1.DATAIN
+fclk => clk1.CLK
+fclk => clk2.CLK
+fclk => data.CLK
+fclk => code[7].CLK
+fclk => code[6].CLK
+fclk => code[5].CLK
+fclk => code[4].CLK
+fclk => code[3].CLK
+fclk => code[2].CLK
+fclk => code[1].CLK
+fclk => code[0].CLK
+fclk => fok.CLK
+rst => code[7].ACLR
+rst => code[6].ACLR
+rst => code[5].ACLR
+rst => code[4].ACLR
+rst => code[3].ACLR
+rst => code[2].ACLR
+rst => code[1].ACLR
+rst => code[0].ACLR
+rst => fok.ACLR
+scancode[0] <= scancode[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+scancode[1] <= scancode[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+scancode[2] <= scancode[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+scancode[3] <= scancode[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+scancode[4] <= scancode[4]$latch.DB_MAX_OUTPUT_PORT_TYPE
+scancode[5] <= scancode[5]$latch.DB_MAX_OUTPUT_PORT_TYPE
+scancode[6] <= scancode[6]$latch.DB_MAX_OUTPUT_PORT_TYPE
+scancode[7] <= scancode[7]$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|input_keyboard:keyboard_test|seg7:u1
+code[0] => Mux6.IN19
+code[0] => Mux5.IN19
+code[0] => Mux4.IN19
+code[0] => Mux3.IN19
+code[0] => Mux2.IN19
+code[0] => Mux1.IN19
+code[0] => Mux0.IN19
+code[1] => Mux6.IN18
+code[1] => Mux5.IN18
+code[1] => Mux4.IN18
+code[1] => Mux3.IN18
+code[1] => Mux2.IN18
+code[1] => Mux1.IN18
+code[1] => Mux0.IN18
+code[2] => Mux6.IN17
+code[2] => Mux5.IN17
+code[2] => Mux4.IN17
+code[2] => Mux3.IN17
+code[2] => Mux2.IN17
+code[2] => Mux1.IN17
+code[2] => Mux0.IN17
+code[3] => Mux6.IN16
+code[3] => Mux5.IN16
+code[3] => Mux4.IN16
+code[3] => Mux3.IN16
+code[3] => Mux2.IN16
+code[3] => Mux1.IN16
+code[3] => Mux0.IN16
+seg_out[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+seg_out[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+seg_out[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+seg_out[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+seg_out[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+seg_out[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+seg_out[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|input_keyboard:keyboard_test|seg7:u2
+code[0] => Mux6.IN19
+code[0] => Mux5.IN19
+code[0] => Mux4.IN19
+code[0] => Mux3.IN19
+code[0] => Mux2.IN19
+code[0] => Mux1.IN19
+code[0] => Mux0.IN19
+code[1] => Mux6.IN18
+code[1] => Mux5.IN18
+code[1] => Mux4.IN18
+code[1] => Mux3.IN18
+code[1] => Mux2.IN18
+code[1] => Mux1.IN18
+code[1] => Mux0.IN18
+code[2] => Mux6.IN17
+code[2] => Mux5.IN17
+code[2] => Mux4.IN17
+code[2] => Mux3.IN17
+code[2] => Mux2.IN17
+code[2] => Mux1.IN17
+code[2] => Mux0.IN17
+code[3] => Mux6.IN16
+code[3] => Mux5.IN16
+code[3] => Mux4.IN16
+code[3] => Mux3.IN16
+code[3] => Mux2.IN16
+code[3] => Mux1.IN16
+code[3] => Mux0.IN16
+seg_out[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+seg_out[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+seg_out[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+seg_out[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+seg_out[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+seg_out[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+seg_out[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+

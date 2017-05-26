@@ -40,7 +40,6 @@ KeyboardInput:
 		clk, fclk, ...
 	out: 
 		seg0, seg1 : std_logic_vector(6 downto 0),
-		triggeredString : integer range from 0 to 5
 		
 KeyboardAdapter:
 	in:
@@ -48,6 +47,7 @@ KeyboardAdapter:
 		clk_in : std_logic;
 	out:
 		seg0, seg1 : std_logic_vector(6 downto 0),
+		triggeredString : integer range from 0 to 5,
 		clk_out : std_logic;
 	
 	
