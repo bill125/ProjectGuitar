@@ -22,7 +22,7 @@ end entity NoteGen;
 
 entity Programme is
   port (
-    i_RX_DV : in std_logic;
+    i_TX_DV : in std_logic;
     i_key : in std_logic_vector(7 downto 0);
     o_prog : out integer range 0 to 127
     );
@@ -30,7 +30,7 @@ end entity Programme;
 
 entity Velocity is
   port (
-    i_RX_DV : in std_logic;
+    i_TX_DV : in std_logic;
     i_key : in std_logic_vector(7 downto 0);
     o_vel : out integer range 0 to 127
     );
@@ -39,8 +39,9 @@ end entity Velocity;
 entity KeyboardInput
   port (
     datain, clkin, fclk, rst_in : in std_logic;
-    key_out : out std_logic_vector(6 downto 0);
-    seg0, seg1 : out std_logic_vector(6 downto 0)
+    key_out : out std_logic_vector(7 downto 0);
+    seg0, seg1 : out std_logic_vector(6 downto 0);
+    o_TX_DV : out std_logic
     );
 end entity KeyboardInput;
 

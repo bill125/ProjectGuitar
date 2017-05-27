@@ -1,6 +1,8 @@
 library IEEE;
 use work.definitions.all;
-use IEEE.std_logic_1164.all;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity NoteGen is
 	port (
 	i_triggeredString : in integer range 0 to 5;
@@ -22,7 +24,7 @@ begin
     delay_clk2 <= delay_clk1;
     o_TX_DV <= delay_clk2;
   end process;
-  i_noteLevel <= i_strings(i_triggeredString);
+  i_noteLevel <= to_integer(unsigned(i_strings(i_triggeredString)));
   -- process (i_RX_DV) is
   -- begin
   --   if rising_edge(i_RX_DV) then

@@ -7,8 +7,8 @@ entity KeyboardInput is
 port(
 	datain,clkin,fclk,rst_in: in std_logic;
 	key_out: out std_logic_vector(7 downto 0);
-	seg0, seg1:out std_logic_vector(6 downto 0)
-	clk_out: out std_logic;
+	seg0, seg1:out std_logic_vector(6 downto 0);
+	i_TX_DV: out std_logic
 );
 end KeyboardInput;
 
