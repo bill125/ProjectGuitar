@@ -68,6 +68,7 @@ end entity UARTIn;
 
 entity UARTInAdapter is
   port (
+    i_RX_DV : in std_logic;
     Byte : in std_logic_vector(7 downto 0);
     strings : out GuitarStatus
     );
