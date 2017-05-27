@@ -12,10 +12,10 @@ end entity ImpulseGen;
 	
 entity NoteGen is
 	port (
-	triggeredString : in integer range from 0 to 5;
+	triggeredString : in integer range 0 to 5;
 	strings : in GuitarStatus;
 	impulse_in, hclk : in std_logic;
-	noteLevel : out integer range from 0 to 88;
+	noteLevel : out integer range 0 to 88;
 	impulse_out : out std_logic
 	);
 End entity NoteGen;
@@ -68,7 +68,7 @@ UARTInAdapter:
 UARTOut:
 	in: 
 		isOn : std_logic, 
-		note : integer range from 0 to 5, 
+		noteLevel : integer range from 0 to 5, 
 		vel  : integer range from 0 to 127, 
 		prog : integer range from 0 to 127, 
 		clk  : std_logic

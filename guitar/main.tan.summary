@@ -1,0 +1,56 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 7.105 ns
+From           : RXD
+To             : UARTIn:u2|r_RX_Data_R
+From Clock     : --
+To Clock       : clk_100m
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 10.309 ns
+From           : UARTInAdapter:u3|t_Guitar[0][2]
+To             : seg0[3]
+From Clock     : clk_100m
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -6.839 ns
+From           : RXD
+To             : UARTIn:u2|r_RX_Data_R
+From Clock     : --
+To Clock       : clk_100m
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clk_100m'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 184.26 MHz ( period = 5.427 ns )
+From           : UARTIn:u2|r_RX_Byte[1]
+To             : UARTInAdapter:u3|t_Guitar[0][7]
+From Clock     : clk_100m
+To Clock       : clk_100m
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+
