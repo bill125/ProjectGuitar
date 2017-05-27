@@ -1,0 +1,35 @@
+|test
+impulse_in => ImpulseGen:i1.hclk
+start => ImpulseGen:i1.start
+start => start_out.DATAIN
+start_out <= start.DB_MAX_OUTPUT_PORT_TYPE
+clk_in => ~NO_FANOUT~
+test[0] <= ImpulseGen:i1.test[0]
+test[1] <= ImpulseGen:i1.test[1]
+test[2] <= ImpulseGen:i1.test[2]
+test[3] <= ImpulseGen:i1.test[3]
+test[4] <= ImpulseGen:i1.test[4]
+test[5] <= ImpulseGen:i1.test[5]
+clk <= ImpulseGen:i1.clk_out
+
+
+|test|ImpulseGen:i1
+start => process_0.IN1
+start => pre_start.DATAIN
+hclk => clk_out~reg0.CLK
+hclk => cnt[0].CLK
+hclk => cnt[1].CLK
+hclk => cnt[2].CLK
+hclk => cnt[3].CLK
+hclk => cnt[4].CLK
+hclk => cnt[5].CLK
+hclk => pre_start.CLK
+test[0] <= cnt[0].DB_MAX_OUTPUT_PORT_TYPE
+test[1] <= cnt[1].DB_MAX_OUTPUT_PORT_TYPE
+test[2] <= cnt[2].DB_MAX_OUTPUT_PORT_TYPE
+test[3] <= cnt[3].DB_MAX_OUTPUT_PORT_TYPE
+test[4] <= cnt[4].DB_MAX_OUTPUT_PORT_TYPE
+test[5] <= cnt[5].DB_MAX_OUTPUT_PORT_TYPE
+clk_out <= clk_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
