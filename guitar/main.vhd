@@ -88,11 +88,11 @@ architecture main_bhv of main is
   component UARTOutAdapter is
     port (
 		isOn : in std_logic;
-		noteLevel : in integer range 0 to 5;
+		noteLevel : in integer range 0 to 88;
 		vel  : in integer range 0 to 127;
 		prog : in integer range 0 to 127;
-		clk  : in std_logic;
-		o_TX_SERIAL : out std_logic
+		i_TX_DV : in std_logic;
+		o_TX_Byte : out std_logic_vector(7 downto 0)
         );
   end component UARTOutAdapter;
 
@@ -109,7 +109,7 @@ architecture main_bhv of main is
       o_TX_Done   : out std_logic
       );
   end component UARTOut;
-
+    
   signal t_key : std_logic_vector(6 downto 0); 
   signal raw_kb_clk, a_kb_clk : std_logic;
   signal triggeredString : integer range 0 to 5;
