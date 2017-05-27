@@ -110,14 +110,24 @@ architecture main_bhv of main is
       );
   end component UARTOut;
     
-  signal t_key : std_logic_vector(6 downto 0); 
-  signal raw_kb_clk, a_kb_clk : std_logic;
+  signal t_key : std_logic_vector(6 downto 0);
+  -- data valid clocks
+  signal raw_kb_TX_DV, a_kb_TX_DV : std_logic; -- keyboard
+  signal uart_in_TX_DV : std_logic;
+  signal note_gen_TX_DV : std_logic;
+  signal uart_out_a_TX_DV : std_logic;
+  -- guitar properties
   signal triggeredString : integer range 0 to 5;
+  signal strings : GuitarStatus;
   signal w_prog : integer range 0 to 127;
   signal w_strings : GuitarStatus;
   signal w_vel : array (0 to 5) of integer;
-  signal w_noteLevel : out integer range 0 to 88;
-  signal c_notegen_out : std_logic;
+  signal w_noteLevel : integer range 0 to 88;
+  -- uart
+  signal w_uart_TX_Serial : std_logic;
+  signal r_uart_RX_Serial : std_logic;
+  signal uart_out_a_byte : std_logic_vector(7 downto 0);
+  signal uart_in_byte : std_logic_vector(7 downto 0);
 begin
 	u0 : KeyboardInput 
 	port map (
@@ -128,33 +138,80 @@ begin
 		key_out => t_key,
 		seg0 => seg0,
 		seg1 => seg1,
-		clk_out => raw_kb_clk
+		clk_out => raw_kb_TX_DV
 	);
 	
 	u1 : KeyboardAdapter
 	port map (
 		i_key => t_key,
-		i_clk => raw_kb_clk,
+		i_clk => raw_kb_TX_DV,
 		hclk => clk_100m,
 		o_triggeredString => triggeredString,
-		o_clk => a_kb_clk
+		o_clk => a_kb_TX_DV
         );
 
+    uart_in : UARTIn
+      generic (
+        g_CLKS_PER_BIT : 868 -- Needs to be set correctly
+        );
+      port map (
+        i_Clk => clk_100m, -- #TODO: reduce frequency maybe
+        i_RX_Serial => r_uart_RX_Serial,
+        o_RX_DV => uart_in_TX_DV,
+        o_RX_Byte => uart_in_byte
+        );
+    
+    uart_in_adapter : UARTInAdapter
+      port map (
+        );
+    
+
+    note_gen : NoteGen
+      port map (
+        i_triggeredString => triggeredString,
+        i_strings => strings,
+        i_RX_DV => uart_in_TX_DV,
+        i_clk => clk_100m, -- #TODO: reduce frequency
+        o_noteLevel => w_noteLevel,
+        o_TX_DV => note_gen_TX_DV
+        );
+    
     programme : Programme
       port map (
-        impulse_in => raw_kb_clk,
-        key_in => t_key,
-        prog => w_prog
+        i_TX_DV => raw_kb_TX_DV,
+        i_key => t_key,
+        o_prog => w_prog
         );
 
-    uartout : UARTOut
+    velocity : Velocity
+      port map (
+        i_RX_DV => raw_kb_TX_DV,
+        i_key => t_key,
+        o_vel => w_vel
+        );
+    
+    uart_out_adapter : UARTOutAdapter
       port map (
         isOn => '1',
         noteLevel => w_noteLevel,
         vel => w_vel,
         prog => w_prog,
-        clk => c_notegen_out
+        i_TX_DV => note_gen_TX_DV,
+        o_TX_Byte => uart_out_a_byte,
+        o_TX_DV => uart_out_a_TX_DV
+        );
+    
+    uart_out : UARTOut
+      generic map (
+        g_CLKS_PER_BIT => 868 -- #TODO: Need to be set correctly
+        )
+      port map (
+        i_Clk => clk_100m,
+        i_TX_DV => uart_out_a_TX_DV,
+        i_TX_Byte => uart_out_a_byte,
+        o_TX_Active => open,
+        o_TX_Serial => w_uart_TX_Serial
+        --o_TX_Done => #TODO: ???
         );
 
-    --notegen : NoteGen
 end architecture main_bhv;

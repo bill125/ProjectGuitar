@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 
 entity Velocity is
 	port (
-		i_TX_DV : in std_logic;
+		i_RX_DV : in std_logic;
 		i_key : in std_logic_vector(7 downto 0);
 		o_vel : out integer range 0 to 127
 	);
@@ -13,9 +13,9 @@ architecture Velocity_bhv of Velocity is
 signal vel : integer range 0 to 127 := 64;
 begin
 	o_vel <= vel;
-	monitor : process (i_TX_DV)
+	monitor : process (i_RX_DV)
 	begin
-		if (i_TX_DV'event and i_TX_DV = '1') then
+		if (i_RX_DV'event and i_RX_DV = '1') then
 			if i_key = "01110010" then -- '8 on pad' : 72
 				if vel <= 126 then
 					vel <= vel + 1;
