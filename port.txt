@@ -1,12 +1,12 @@
 entity ImpulseGen is
 	 generic 
 	 ( 
-	 pausePeriod: integer := 10
+	 pausePeriod: integer range 0 to 63 := 10
 	 );
 	port (
-		start : inout std_logic;
+		start : in std_logic;
 		hclk : in std_logic;
-		clk : out std_logic
+		clk_out : out std_logic := '0'
 	);
 end entity ImpulseGen;
 	
