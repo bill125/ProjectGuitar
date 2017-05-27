@@ -77,8 +77,8 @@ KeyboardAdapter:
 		noteLevel : in integer range 0 to 5;
 		vel  : in integer range 0 to 127;
 		prog : in integer range 0 to 127;
-		clk  : in std_logic;
-		o_TX_SERIAL : out std_logic
+		i_TX_DV : in std_logic;
+		o_TX_Byte : out std_logic_vector(7 downto 0)
         );
   end entity UARTOutAdapter;
 
