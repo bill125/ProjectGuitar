@@ -3,29 +3,29 @@ use work.definitions.all;
 use IEEE.std_logic_1164.all;
 entity NoteGen is
 	port (
-	triggeredString : in integer range 0 to 5;
-	strings : in GuitarStatus;
-	impulse_in, hclk : in std_logic;
-	noteLevel : out integer range 0 to 88;
-	impulse_out : out std_logic
+	i_triggeredString : in integer range 0 to 5;
+	i_strings : in GuitarStatus;
+	i_TX_DV, i_clk : in std_logic;
+	i_noteLevel : out integer range 0 to 88;
+	o_RX_DV : out std_logic
 	);
 End entity NoteGen;
 
 architecture beh of NoteGen is
-  signal delay_clk1 : std_logic := impulse_in;
-  signal delay_clk2 : std_logic := impulse_in;
+  signal delay_clk1 : std_logic := i_TX_DV;
+  signal delay_clk2 : std_logic := i_TX_DV;
   --signal delay_clk3 : std_logic = '0';
 begin
-  process (hclk) is
+  process (i_clk) is
   begin
-    delay_clk1 <= impulse_in;
+    delay_clk1 <= i_TX_DV;
     delay_clk2 <= delay_clk1;
-    impulse_out <= delay_clk2;
+    o_RX_DV <= delay_clk2;
   end process;
-  noteLevel <= strings(triggeredString);
-  -- process (impulse_in) is
+  i_noteLevel <= i_strings(i_triggeredString);
+  -- process (i_TX_DV) is
   -- begin
-  --   if rising_edge(impulse_in) then
+  --   if rising_edge(i_TX_DV) then
       
   --   end if;
     
