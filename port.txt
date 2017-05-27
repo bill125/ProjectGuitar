@@ -55,6 +55,12 @@ UARTIn:
 	in: 
 		i_RX_SERIAL : std_logic
 	out: 
+		Byte : std_logic_vector(7 downto 0)
+
+UARTInAdapter:
+	in:
+		Byte : std_logic_vector(7 downto 0)
+	out:
 		strings : GuitarStatus
 	
 

@@ -1,5 +1,5 @@
 Classic Timing Analyzer report for main
-Fri May 26 22:33:45 2017
+Sat May 27 12:03:24 2017
 Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
 
 
@@ -11,12 +11,11 @@ Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
   3. Timing Analyzer Settings
   4. Clock Settings Summary
   5. Parallel Compilation
-  6. Clock Setup: 'fclk'
-  7. Clock Hold: 'fclk'
-  8. tsu
-  9. tco
- 10. th
- 11. Timing Analyzer Messages
+  6. Clock Setup: 'clk_100m'
+  7. tsu
+  8. tco
+  9. th
+ 10. Timing Analyzer Messages
 
 
 
@@ -39,18 +38,17 @@ applicable agreement for further details.
 
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Timing Analyzer Summary                                                                                                                                                                                                                                                         ;
-+------------------------------+------------------------------------------+---------------+----------------------------------+------------------------------------------------------+------------------------------------------------------+------------+----------+--------------+
-; Type                         ; Slack                                    ; Required Time ; Actual Time                      ; From                                                 ; To                                                   ; From Clock ; To Clock ; Failed Paths ;
-+------------------------------+------------------------------------------+---------------+----------------------------------+------------------------------------------------------+------------------------------------------------------+------------+----------+--------------+
-; Worst-case tsu               ; N/A                                      ; None          ; 4.842 ns                         ; i_KB_Data                                            ; input_keyboard:keyboard_test|Keyboard:u0|data        ; --         ; fclk     ; 0            ;
-; Worst-case tco               ; N/A                                      ; None          ; 14.628 ns                        ; input_keyboard:keyboard_test|Keyboard:u0|scancode[6] ; seg1[6]                                              ; fclk       ; --       ; 0            ;
-; Worst-case th                ; N/A                                      ; None          ; -4.564 ns                        ; clkin                                                ; input_keyboard:keyboard_test|Keyboard:u0|clk1        ; --         ; fclk     ; 0            ;
-; Clock Setup: 'fclk'          ; N/A                                      ; None          ; 221.73 MHz ( period = 4.510 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|code[6]     ; input_keyboard:keyboard_test|Keyboard:u0|state.delay ; fclk       ; fclk     ; 0            ;
-; Clock Hold: 'fclk'           ; Not operational: Clock Skew > Data Delay ; None          ; N/A                              ; input_keyboard:keyboard_test|Keyboard:u0|code[2]     ; input_keyboard:keyboard_test|Keyboard:u0|scancode[2] ; fclk       ; fclk     ; 8            ;
-; Total number of failed paths ;                                          ;               ;                                  ;                                                      ;                                                      ;            ;          ; 8            ;
-+------------------------------+------------------------------------------+---------------+----------------------------------+------------------------------------------------------+------------------------------------------------------+------------+----------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                            ;
++------------------------------+-------+---------------+----------------------------------+---------------------------------+---------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                            ; To                              ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+---------------------------------+---------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 7.105 ns                         ; RXD                             ; UARTIn:u2|r_RX_Data_R           ; --         ; clk_100m ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 10.309 ns                        ; UARTInAdapter:u3|t_Guitar[0][2] ; seg0[3]                         ; clk_100m   ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -6.839 ns                        ; RXD                             ; UARTIn:u2|r_RX_Data_R           ; --         ; clk_100m ; 0            ;
+; Clock Setup: 'clk_100m'      ; N/A   ; None          ; 184.26 MHz ( period = 5.427 ns ) ; UARTIn:u2|r_RX_Byte[1]          ; UARTInAdapter:u3|t_Guitar[0][7] ; clk_100m   ; clk_100m ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                                 ;                                 ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+---------------------------------+---------------------------------+------------+----------+--------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------+
@@ -90,7 +88,7 @@ applicable agreement for further details.
 +-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
 ; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
 +-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
-; fclk            ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; clk_100m        ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
 +-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
 
 
@@ -111,224 +109,302 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Clock Setup: 'fclk'                                                                                                                                                                                                                                                                ;
-+-------+------------------------------------------------+-------------------------------------------------------+-------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
-; Slack ; Actual fmax (period)                           ; From                                                  ; To                                                    ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
-+-------+------------------------------------------------+-------------------------------------------------------+-------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
-; N/A   ; 221.73 MHz ( period = 4.510 ns )               ; input_keyboard:keyboard_test|Keyboard:u0|code[6]      ; input_keyboard:keyboard_test|Keyboard:u0|state.delay  ; fclk       ; fclk     ; None                        ; None                      ; 4.246 ns                ;
-; N/A   ; 244.14 MHz ( period = 4.096 ns )               ; input_keyboard:keyboard_test|Keyboard:u0|code[5]      ; input_keyboard:keyboard_test|Keyboard:u0|state.delay  ; fclk       ; fclk     ; None                        ; None                      ; 3.832 ns                ;
-; N/A   ; 256.94 MHz ( period = 3.892 ns )               ; input_keyboard:keyboard_test|Keyboard:u0|code[6]      ; input_keyboard:keyboard_test|Keyboard:u0|state.stop   ; fclk       ; fclk     ; None                        ; None                      ; 3.628 ns                ;
-; N/A   ; 259.20 MHz ( period = 3.858 ns )               ; input_keyboard:keyboard_test|Keyboard:u0|code[4]      ; input_keyboard:keyboard_test|Keyboard:u0|state.delay  ; fclk       ; fclk     ; None                        ; None                      ; 3.594 ns                ;
-; N/A   ; 271.22 MHz ( period = 3.687 ns )               ; input_keyboard:keyboard_test|Keyboard:u0|code[7]      ; input_keyboard:keyboard_test|Keyboard:u0|state.delay  ; fclk       ; fclk     ; None                        ; None                      ; 3.423 ns                ;
-; N/A   ; 271.89 MHz ( period = 3.678 ns )               ; input_keyboard:keyboard_test|Keyboard:u0|code[1]      ; input_keyboard:keyboard_test|Keyboard:u0|state.delay  ; fclk       ; fclk     ; None                        ; None                      ; 3.414 ns                ;
-; N/A   ; 276.09 MHz ( period = 3.622 ns )               ; input_keyboard:keyboard_test|Keyboard:u0|code[3]      ; input_keyboard:keyboard_test|Keyboard:u0|state.delay  ; fclk       ; fclk     ; None                        ; None                      ; 3.358 ns                ;
-; N/A   ; 287.52 MHz ( period = 3.478 ns )               ; input_keyboard:keyboard_test|Keyboard:u0|code[5]      ; input_keyboard:keyboard_test|Keyboard:u0|state.stop   ; fclk       ; fclk     ; None                        ; None                      ; 3.214 ns                ;
-; N/A   ; 295.86 MHz ( period = 3.380 ns )               ; input_keyboard:keyboard_test|Keyboard:u0|code[0]      ; input_keyboard:keyboard_test|Keyboard:u0|state.delay  ; fclk       ; fclk     ; None                        ; None                      ; 3.116 ns                ;
-; N/A   ; 308.64 MHz ( period = 3.240 ns )               ; input_keyboard:keyboard_test|Keyboard:u0|code[4]      ; input_keyboard:keyboard_test|Keyboard:u0|state.stop   ; fclk       ; fclk     ; None                        ; None                      ; 2.976 ns                ;
-; N/A   ; 312.21 MHz ( period = 3.203 ns )               ; input_keyboard:keyboard_test|Keyboard:u0|code[2]      ; input_keyboard:keyboard_test|Keyboard:u0|state.delay  ; fclk       ; fclk     ; None                        ; None                      ; 2.939 ns                ;
-; N/A   ; 325.84 MHz ( period = 3.069 ns )               ; input_keyboard:keyboard_test|Keyboard:u0|code[7]      ; input_keyboard:keyboard_test|Keyboard:u0|state.stop   ; fclk       ; fclk     ; None                        ; None                      ; 2.805 ns                ;
-; N/A   ; 326.80 MHz ( period = 3.060 ns )               ; input_keyboard:keyboard_test|Keyboard:u0|code[1]      ; input_keyboard:keyboard_test|Keyboard:u0|state.stop   ; fclk       ; fclk     ; None                        ; None                      ; 2.796 ns                ;
-; N/A   ; 332.56 MHz ( period = 3.007 ns )               ; input_keyboard:keyboard_test|Keyboard:u0|clk1         ; input_keyboard:keyboard_test|Keyboard:u0|state.d1     ; fclk       ; fclk     ; None                        ; None                      ; 2.748 ns                ;
-; N/A   ; 332.56 MHz ( period = 3.007 ns )               ; input_keyboard:keyboard_test|Keyboard:u0|clk1         ; input_keyboard:keyboard_test|Keyboard:u0|state.d2     ; fclk       ; fclk     ; None                        ; None                      ; 2.748 ns                ;
-; N/A   ; 332.56 MHz ( period = 3.007 ns )               ; input_keyboard:keyboard_test|Keyboard:u0|clk1         ; input_keyboard:keyboard_test|Keyboard:u0|state.d3     ; fclk       ; fclk     ; None                        ; None                      ; 2.748 ns                ;
-; N/A   ; 332.56 MHz ( period = 3.007 ns )               ; input_keyboard:keyboard_test|Keyboard:u0|clk1         ; input_keyboard:keyboard_test|Keyboard:u0|state.d7     ; fclk       ; fclk     ; None                        ; None                      ; 2.748 ns                ;
-; N/A   ; 332.56 MHz ( period = 3.007 ns )               ; input_keyboard:keyboard_test|Keyboard:u0|clk1         ; input_keyboard:keyboard_test|Keyboard:u0|state.d6     ; fclk       ; fclk     ; None                        ; None                      ; 2.748 ns                ;
-; N/A   ; 332.56 MHz ( period = 3.007 ns )               ; input_keyboard:keyboard_test|Keyboard:u0|clk1         ; input_keyboard:keyboard_test|Keyboard:u0|state.d5     ; fclk       ; fclk     ; None                        ; None                      ; 2.748 ns                ;
-; N/A   ; 332.56 MHz ( period = 3.007 ns )               ; input_keyboard:keyboard_test|Keyboard:u0|clk1         ; input_keyboard:keyboard_test|Keyboard:u0|state.d4     ; fclk       ; fclk     ; None                        ; None                      ; 2.748 ns                ;
-; N/A   ; 332.89 MHz ( period = 3.004 ns )               ; input_keyboard:keyboard_test|Keyboard:u0|code[3]      ; input_keyboard:keyboard_test|Keyboard:u0|state.stop   ; fclk       ; fclk     ; None                        ; None                      ; 2.740 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|clk1         ; input_keyboard:keyboard_test|Keyboard:u0|state.delay  ; fclk       ; fclk     ; None                        ; None                      ; 2.660 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|clk1         ; input_keyboard:keyboard_test|Keyboard:u0|state.d0     ; fclk       ; fclk     ; None                        ; None                      ; 2.602 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|clk1         ; input_keyboard:keyboard_test|Keyboard:u0|state.parity ; fclk       ; fclk     ; None                        ; None                      ; 2.539 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|code[0]      ; input_keyboard:keyboard_test|Keyboard:u0|state.stop   ; fclk       ; fclk     ; None                        ; None                      ; 2.498 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|data         ; input_keyboard:keyboard_test|Keyboard:u0|state.delay  ; fclk       ; fclk     ; None                        ; None                      ; 2.370 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|code[2]      ; input_keyboard:keyboard_test|Keyboard:u0|state.stop   ; fclk       ; fclk     ; None                        ; None                      ; 2.321 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|state.start  ; input_keyboard:keyboard_test|Keyboard:u0|state.delay  ; fclk       ; fclk     ; None                        ; None                      ; 2.224 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|state.parity ; input_keyboard:keyboard_test|Keyboard:u0|state.stop   ; fclk       ; fclk     ; None                        ; None                      ; 2.208 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|state.stop   ; input_keyboard:keyboard_test|Keyboard:u0|state.delay  ; fclk       ; fclk     ; None                        ; None                      ; 2.197 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|state.finish ; input_keyboard:keyboard_test|Keyboard:u0|state.delay  ; fclk       ; fclk     ; None                        ; None                      ; 2.085 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|clk1         ; input_keyboard:keyboard_test|Keyboard:u0|code[4]      ; fclk       ; fclk     ; None                        ; None                      ; 2.045 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|clk1         ; input_keyboard:keyboard_test|Keyboard:u0|code[0]      ; fclk       ; fclk     ; None                        ; None                      ; 2.044 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|clk1         ; input_keyboard:keyboard_test|Keyboard:u0|state.stop   ; fclk       ; fclk     ; None                        ; None                      ; 2.043 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|clk1         ; input_keyboard:keyboard_test|Keyboard:u0|code[5]      ; fclk       ; fclk     ; None                        ; None                      ; 2.043 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|clk1         ; input_keyboard:keyboard_test|Keyboard:u0|code[2]      ; fclk       ; fclk     ; None                        ; None                      ; 2.038 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|clk1         ; input_keyboard:keyboard_test|Keyboard:u0|code[3]      ; fclk       ; fclk     ; None                        ; None                      ; 2.038 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|clk1         ; input_keyboard:keyboard_test|Keyboard:u0|code[1]      ; fclk       ; fclk     ; None                        ; None                      ; 2.035 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|clk1         ; input_keyboard:keyboard_test|Keyboard:u0|code[6]      ; fclk       ; fclk     ; None                        ; None                      ; 2.030 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|clk1         ; input_keyboard:keyboard_test|Keyboard:u0|code[7]      ; fclk       ; fclk     ; None                        ; None                      ; 2.030 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|clk2         ; input_keyboard:keyboard_test|Keyboard:u0|state.d1     ; fclk       ; fclk     ; None                        ; None                      ; 1.878 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|clk2         ; input_keyboard:keyboard_test|Keyboard:u0|state.d2     ; fclk       ; fclk     ; None                        ; None                      ; 1.878 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|clk2         ; input_keyboard:keyboard_test|Keyboard:u0|state.d3     ; fclk       ; fclk     ; None                        ; None                      ; 1.878 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|clk2         ; input_keyboard:keyboard_test|Keyboard:u0|state.d7     ; fclk       ; fclk     ; None                        ; None                      ; 1.878 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|clk2         ; input_keyboard:keyboard_test|Keyboard:u0|state.d6     ; fclk       ; fclk     ; None                        ; None                      ; 1.878 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|clk2         ; input_keyboard:keyboard_test|Keyboard:u0|state.d5     ; fclk       ; fclk     ; None                        ; None                      ; 1.878 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|clk2         ; input_keyboard:keyboard_test|Keyboard:u0|state.d4     ; fclk       ; fclk     ; None                        ; None                      ; 1.878 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|state.d2     ; input_keyboard:keyboard_test|Keyboard:u0|code[2]      ; fclk       ; fclk     ; None                        ; None                      ; 1.871 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|data         ; input_keyboard:keyboard_test|Keyboard:u0|state.d0     ; fclk       ; fclk     ; None                        ; None                      ; 1.862 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|data         ; input_keyboard:keyboard_test|Keyboard:u0|code[2]      ; fclk       ; fclk     ; None                        ; None                      ; 1.853 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|data         ; input_keyboard:keyboard_test|Keyboard:u0|state.finish ; fclk       ; fclk     ; None                        ; None                      ; 1.815 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|clk2         ; input_keyboard:keyboard_test|Keyboard:u0|state.delay  ; fclk       ; fclk     ; None                        ; None                      ; 1.790 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|clk2         ; input_keyboard:keyboard_test|Keyboard:u0|state.d0     ; fclk       ; fclk     ; None                        ; None                      ; 1.732 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|clk2         ; input_keyboard:keyboard_test|Keyboard:u0|state.parity ; fclk       ; fclk     ; None                        ; None                      ; 1.669 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|data         ; input_keyboard:keyboard_test|Keyboard:u0|code[4]      ; fclk       ; fclk     ; None                        ; None                      ; 1.625 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|data         ; input_keyboard:keyboard_test|Keyboard:u0|code[0]      ; fclk       ; fclk     ; None                        ; None                      ; 1.622 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|data         ; input_keyboard:keyboard_test|Keyboard:u0|code[3]      ; fclk       ; fclk     ; None                        ; None                      ; 1.621 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|data         ; input_keyboard:keyboard_test|Keyboard:u0|code[5]      ; fclk       ; fclk     ; None                        ; None                      ; 1.621 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|data         ; input_keyboard:keyboard_test|Keyboard:u0|code[1]      ; fclk       ; fclk     ; None                        ; None                      ; 1.618 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|data         ; input_keyboard:keyboard_test|Keyboard:u0|code[7]      ; fclk       ; fclk     ; None                        ; None                      ; 1.614 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|data         ; input_keyboard:keyboard_test|Keyboard:u0|code[6]      ; fclk       ; fclk     ; None                        ; None                      ; 1.610 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|clk2         ; input_keyboard:keyboard_test|Keyboard:u0|state.start  ; fclk       ; fclk     ; None                        ; None                      ; 1.542 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|state.start  ; input_keyboard:keyboard_test|Keyboard:u0|state.d0     ; fclk       ; fclk     ; None                        ; None                      ; 1.526 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|data         ; input_keyboard:keyboard_test|Keyboard:u0|state.stop   ; fclk       ; fclk     ; None                        ; None                      ; 1.500 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|clk2         ; input_keyboard:keyboard_test|Keyboard:u0|state.finish ; fclk       ; fclk     ; None                        ; None                      ; 1.496 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|state.d3     ; input_keyboard:keyboard_test|Keyboard:u0|code[3]      ; fclk       ; fclk     ; None                        ; None                      ; 1.484 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|state.d6     ; input_keyboard:keyboard_test|Keyboard:u0|code[6]      ; fclk       ; fclk     ; None                        ; None                      ; 1.480 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|state.d1     ; input_keyboard:keyboard_test|Keyboard:u0|code[1]      ; fclk       ; fclk     ; None                        ; None                      ; 1.477 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|state.d0     ; input_keyboard:keyboard_test|Keyboard:u0|code[0]      ; fclk       ; fclk     ; None                        ; None                      ; 1.482 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|state.d5     ; input_keyboard:keyboard_test|Keyboard:u0|code[5]      ; fclk       ; fclk     ; None                        ; None                      ; 1.476 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|state.d7     ; input_keyboard:keyboard_test|Keyboard:u0|code[7]      ; fclk       ; fclk     ; None                        ; None                      ; 1.474 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|state.d4     ; input_keyboard:keyboard_test|Keyboard:u0|code[4]      ; fclk       ; fclk     ; None                        ; None                      ; 1.405 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|state.delay  ; input_keyboard:keyboard_test|Keyboard:u0|state.start  ; fclk       ; fclk     ; None                        ; None                      ; 1.381 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|state.d0     ; input_keyboard:keyboard_test|Keyboard:u0|state.d1     ; fclk       ; fclk     ; None                        ; None                      ; 1.386 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|state.parity ; input_keyboard:keyboard_test|Keyboard:u0|state.delay  ; fclk       ; fclk     ; None                        ; None                      ; 1.247 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|state.d7     ; input_keyboard:keyboard_test|Keyboard:u0|state.parity ; fclk       ; fclk     ; None                        ; None                      ; 1.206 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|clk2         ; input_keyboard:keyboard_test|Keyboard:u0|code[4]      ; fclk       ; fclk     ; None                        ; None                      ; 1.175 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|clk2         ; input_keyboard:keyboard_test|Keyboard:u0|code[0]      ; fclk       ; fclk     ; None                        ; None                      ; 1.174 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|clk2         ; input_keyboard:keyboard_test|Keyboard:u0|state.stop   ; fclk       ; fclk     ; None                        ; None                      ; 1.173 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|clk2         ; input_keyboard:keyboard_test|Keyboard:u0|code[5]      ; fclk       ; fclk     ; None                        ; None                      ; 1.173 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|clk2         ; input_keyboard:keyboard_test|Keyboard:u0|code[2]      ; fclk       ; fclk     ; None                        ; None                      ; 1.168 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|clk2         ; input_keyboard:keyboard_test|Keyboard:u0|code[3]      ; fclk       ; fclk     ; None                        ; None                      ; 1.168 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|clk2         ; input_keyboard:keyboard_test|Keyboard:u0|code[1]      ; fclk       ; fclk     ; None                        ; None                      ; 1.165 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|clk1         ; input_keyboard:keyboard_test|Keyboard:u0|clk2         ; fclk       ; fclk     ; None                        ; None                      ; 1.164 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|clk2         ; input_keyboard:keyboard_test|Keyboard:u0|code[6]      ; fclk       ; fclk     ; None                        ; None                      ; 1.160 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|clk2         ; input_keyboard:keyboard_test|Keyboard:u0|code[7]      ; fclk       ; fclk     ; None                        ; None                      ; 1.160 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|clk1         ; input_keyboard:keyboard_test|Keyboard:u0|state.finish ; fclk       ; fclk     ; None                        ; None                      ; 1.156 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|state.stop   ; input_keyboard:keyboard_test|Keyboard:u0|state.finish ; fclk       ; fclk     ; None                        ; None                      ; 1.051 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|state.d5     ; input_keyboard:keyboard_test|Keyboard:u0|state.d6     ; fclk       ; fclk     ; None                        ; None                      ; 0.900 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|state.d2     ; input_keyboard:keyboard_test|Keyboard:u0|state.d3     ; fclk       ; fclk     ; None                        ; None                      ; 0.754 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|clk1         ; input_keyboard:keyboard_test|Keyboard:u0|state.start  ; fclk       ; fclk     ; None                        ; None                      ; 0.754 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|state.d6     ; input_keyboard:keyboard_test|Keyboard:u0|state.d7     ; fclk       ; fclk     ; None                        ; None                      ; 0.753 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|state.d4     ; input_keyboard:keyboard_test|Keyboard:u0|state.d5     ; fclk       ; fclk     ; None                        ; None                      ; 0.752 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|state.d3     ; input_keyboard:keyboard_test|Keyboard:u0|state.d4     ; fclk       ; fclk     ; None                        ; None                      ; 0.751 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|state.d1     ; input_keyboard:keyboard_test|Keyboard:u0|state.d2     ; fclk       ; fclk     ; None                        ; None                      ; 0.742 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|state.finish ; input_keyboard:keyboard_test|Keyboard:u0|fok          ; fclk       ; fclk     ; None                        ; None                      ; 0.749 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|code[1]      ; input_keyboard:keyboard_test|Keyboard:u0|code[1]      ; fclk       ; fclk     ; None                        ; None                      ; 0.501 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|code[2]      ; input_keyboard:keyboard_test|Keyboard:u0|code[2]      ; fclk       ; fclk     ; None                        ; None                      ; 0.501 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|code[3]      ; input_keyboard:keyboard_test|Keyboard:u0|code[3]      ; fclk       ; fclk     ; None                        ; None                      ; 0.501 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|code[0]      ; input_keyboard:keyboard_test|Keyboard:u0|code[0]      ; fclk       ; fclk     ; None                        ; None                      ; 0.501 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|state.d0     ; input_keyboard:keyboard_test|Keyboard:u0|state.d0     ; fclk       ; fclk     ; None                        ; None                      ; 0.501 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|state.start  ; input_keyboard:keyboard_test|Keyboard:u0|state.start  ; fclk       ; fclk     ; None                        ; None                      ; 0.501 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|state.stop   ; input_keyboard:keyboard_test|Keyboard:u0|state.stop   ; fclk       ; fclk     ; None                        ; None                      ; 0.501 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|code[6]      ; input_keyboard:keyboard_test|Keyboard:u0|code[6]      ; fclk       ; fclk     ; None                        ; None                      ; 0.501 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|code[5]      ; input_keyboard:keyboard_test|Keyboard:u0|code[5]      ; fclk       ; fclk     ; None                        ; None                      ; 0.501 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|code[4]      ; input_keyboard:keyboard_test|Keyboard:u0|code[4]      ; fclk       ; fclk     ; None                        ; None                      ; 0.501 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|code[7]      ; input_keyboard:keyboard_test|Keyboard:u0|code[7]      ; fclk       ; fclk     ; None                        ; None                      ; 0.501 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|code[3]      ; input_keyboard:keyboard_test|Keyboard:u0|scancode[3]  ; fclk       ; fclk     ; None                        ; None                      ; 3.500 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|code[0]      ; input_keyboard:keyboard_test|Keyboard:u0|scancode[0]  ; fclk       ; fclk     ; None                        ; None                      ; 3.294 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|code[5]      ; input_keyboard:keyboard_test|Keyboard:u0|scancode[5]  ; fclk       ; fclk     ; None                        ; None                      ; 3.515 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|code[1]      ; input_keyboard:keyboard_test|Keyboard:u0|scancode[1]  ; fclk       ; fclk     ; None                        ; None                      ; 3.140 ns                ;
-; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; input_keyboard:keyboard_test|Keyboard:u0|code[7]      ; input_keyboard:keyboard_test|Keyboard:u0|scancode[7]  ; fclk       ; fclk     ; None                        ; None                      ; 3.137 ns                ;
-+-------+------------------------------------------------+-------------------------------------------------------+-------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk_100m'                                                                                                                                                                                                                                                          ;
++-----------------------------------------+-----------------------------------------------------+---------------------------------+------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                            ; To                                 ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+---------------------------------+------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 184.26 MHz ( period = 5.427 ns )                    ; UARTIn:u2|r_RX_Byte[1]          ; UARTInAdapter:u3|t_Guitar[0][0]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 5.157 ns                ;
+; N/A                                     ; 184.26 MHz ( period = 5.427 ns )                    ; UARTIn:u2|r_RX_Byte[1]          ; UARTInAdapter:u3|t_Guitar[0][1]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 5.157 ns                ;
+; N/A                                     ; 184.26 MHz ( period = 5.427 ns )                    ; UARTIn:u2|r_RX_Byte[1]          ; UARTInAdapter:u3|t_Guitar[0][2]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 5.157 ns                ;
+; N/A                                     ; 184.26 MHz ( period = 5.427 ns )                    ; UARTIn:u2|r_RX_Byte[1]          ; UARTInAdapter:u3|t_Guitar[0][3]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 5.157 ns                ;
+; N/A                                     ; 184.26 MHz ( period = 5.427 ns )                    ; UARTIn:u2|r_RX_Byte[1]          ; UARTInAdapter:u3|t_Guitar[0][4]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 5.157 ns                ;
+; N/A                                     ; 184.26 MHz ( period = 5.427 ns )                    ; UARTIn:u2|r_RX_Byte[1]          ; UARTInAdapter:u3|t_Guitar[0][5]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 5.157 ns                ;
+; N/A                                     ; 184.26 MHz ( period = 5.427 ns )                    ; UARTIn:u2|r_RX_Byte[1]          ; UARTInAdapter:u3|t_Guitar[0][6]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 5.157 ns                ;
+; N/A                                     ; 184.26 MHz ( period = 5.427 ns )                    ; UARTIn:u2|r_RX_Byte[1]          ; UARTInAdapter:u3|t_Guitar[0][7]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 5.157 ns                ;
+; N/A                                     ; 200.04 MHz ( period = 4.999 ns )                    ; UARTIn:u2|r_RX_Byte[3]          ; UARTInAdapter:u3|t_Guitar[0][0]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.729 ns                ;
+; N/A                                     ; 200.04 MHz ( period = 4.999 ns )                    ; UARTIn:u2|r_RX_Byte[3]          ; UARTInAdapter:u3|t_Guitar[0][1]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.729 ns                ;
+; N/A                                     ; 200.04 MHz ( period = 4.999 ns )                    ; UARTIn:u2|r_RX_Byte[3]          ; UARTInAdapter:u3|t_Guitar[0][2]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.729 ns                ;
+; N/A                                     ; 200.04 MHz ( period = 4.999 ns )                    ; UARTIn:u2|r_RX_Byte[3]          ; UARTInAdapter:u3|t_Guitar[0][3]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.729 ns                ;
+; N/A                                     ; 200.04 MHz ( period = 4.999 ns )                    ; UARTIn:u2|r_RX_Byte[3]          ; UARTInAdapter:u3|t_Guitar[0][4]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.729 ns                ;
+; N/A                                     ; 200.04 MHz ( period = 4.999 ns )                    ; UARTIn:u2|r_RX_Byte[3]          ; UARTInAdapter:u3|t_Guitar[0][5]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.729 ns                ;
+; N/A                                     ; 200.04 MHz ( period = 4.999 ns )                    ; UARTIn:u2|r_RX_Byte[3]          ; UARTInAdapter:u3|t_Guitar[0][6]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.729 ns                ;
+; N/A                                     ; 200.04 MHz ( period = 4.999 ns )                    ; UARTIn:u2|r_RX_Byte[3]          ; UARTInAdapter:u3|t_Guitar[0][7]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.729 ns                ;
+; N/A                                     ; 202.55 MHz ( period = 4.937 ns )                    ; UARTInAdapter:u3|\FSM:p_Byte[4] ; UARTInAdapter:u3|t_Guitar[0][0]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.665 ns                ;
+; N/A                                     ; 202.55 MHz ( period = 4.937 ns )                    ; UARTInAdapter:u3|\FSM:p_Byte[4] ; UARTInAdapter:u3|t_Guitar[0][1]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.665 ns                ;
+; N/A                                     ; 202.55 MHz ( period = 4.937 ns )                    ; UARTInAdapter:u3|\FSM:p_Byte[4] ; UARTInAdapter:u3|t_Guitar[0][2]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.665 ns                ;
+; N/A                                     ; 202.55 MHz ( period = 4.937 ns )                    ; UARTInAdapter:u3|\FSM:p_Byte[4] ; UARTInAdapter:u3|t_Guitar[0][3]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.665 ns                ;
+; N/A                                     ; 202.55 MHz ( period = 4.937 ns )                    ; UARTInAdapter:u3|\FSM:p_Byte[4] ; UARTInAdapter:u3|t_Guitar[0][4]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.665 ns                ;
+; N/A                                     ; 202.55 MHz ( period = 4.937 ns )                    ; UARTInAdapter:u3|\FSM:p_Byte[4] ; UARTInAdapter:u3|t_Guitar[0][5]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.665 ns                ;
+; N/A                                     ; 202.55 MHz ( period = 4.937 ns )                    ; UARTInAdapter:u3|\FSM:p_Byte[4] ; UARTInAdapter:u3|t_Guitar[0][6]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.665 ns                ;
+; N/A                                     ; 202.55 MHz ( period = 4.937 ns )                    ; UARTInAdapter:u3|\FSM:p_Byte[4] ; UARTInAdapter:u3|t_Guitar[0][7]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.665 ns                ;
+; N/A                                     ; 205.13 MHz ( period = 4.875 ns )                    ; UARTIn:u2|r_Clk_Count[0]        ; UARTIn:u2|r_Clk_Count[5]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.611 ns                ;
+; N/A                                     ; 205.13 MHz ( period = 4.875 ns )                    ; UARTIn:u2|r_Clk_Count[0]        ; UARTIn:u2|r_Clk_Count[4]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.611 ns                ;
+; N/A                                     ; 205.13 MHz ( period = 4.875 ns )                    ; UARTIn:u2|r_Clk_Count[0]        ; UARTIn:u2|r_Clk_Count[6]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.611 ns                ;
+; N/A                                     ; 205.13 MHz ( period = 4.875 ns )                    ; UARTIn:u2|r_Clk_Count[0]        ; UARTIn:u2|r_Clk_Count[9]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.611 ns                ;
+; N/A                                     ; 205.13 MHz ( period = 4.875 ns )                    ; UARTIn:u2|r_Clk_Count[0]        ; UARTIn:u2|r_Clk_Count[3]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.611 ns                ;
+; N/A                                     ; 205.13 MHz ( period = 4.875 ns )                    ; UARTIn:u2|r_Clk_Count[0]        ; UARTIn:u2|r_Clk_Count[0]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.611 ns                ;
+; N/A                                     ; 205.13 MHz ( period = 4.875 ns )                    ; UARTIn:u2|r_Clk_Count[0]        ; UARTIn:u2|r_Clk_Count[7]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.611 ns                ;
+; N/A                                     ; 205.13 MHz ( period = 4.875 ns )                    ; UARTIn:u2|r_Clk_Count[0]        ; UARTIn:u2|r_Clk_Count[1]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.611 ns                ;
+; N/A                                     ; 205.13 MHz ( period = 4.875 ns )                    ; UARTIn:u2|r_Clk_Count[0]        ; UARTIn:u2|r_Clk_Count[2]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.611 ns                ;
+; N/A                                     ; 205.13 MHz ( period = 4.875 ns )                    ; UARTIn:u2|r_Clk_Count[0]        ; UARTIn:u2|r_Clk_Count[8]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.611 ns                ;
+; N/A                                     ; 208.59 MHz ( period = 4.794 ns )                    ; UARTInAdapter:u3|\FSM:p_Byte[7] ; UARTInAdapter:u3|t_Guitar[0][0]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.522 ns                ;
+; N/A                                     ; 208.59 MHz ( period = 4.794 ns )                    ; UARTInAdapter:u3|\FSM:p_Byte[7] ; UARTInAdapter:u3|t_Guitar[0][1]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.522 ns                ;
+; N/A                                     ; 208.59 MHz ( period = 4.794 ns )                    ; UARTInAdapter:u3|\FSM:p_Byte[7] ; UARTInAdapter:u3|t_Guitar[0][2]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.522 ns                ;
+; N/A                                     ; 208.59 MHz ( period = 4.794 ns )                    ; UARTInAdapter:u3|\FSM:p_Byte[7] ; UARTInAdapter:u3|t_Guitar[0][3]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.522 ns                ;
+; N/A                                     ; 208.59 MHz ( period = 4.794 ns )                    ; UARTInAdapter:u3|\FSM:p_Byte[7] ; UARTInAdapter:u3|t_Guitar[0][4]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.522 ns                ;
+; N/A                                     ; 208.59 MHz ( period = 4.794 ns )                    ; UARTInAdapter:u3|\FSM:p_Byte[7] ; UARTInAdapter:u3|t_Guitar[0][5]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.522 ns                ;
+; N/A                                     ; 208.59 MHz ( period = 4.794 ns )                    ; UARTInAdapter:u3|\FSM:p_Byte[7] ; UARTInAdapter:u3|t_Guitar[0][6]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.522 ns                ;
+; N/A                                     ; 208.59 MHz ( period = 4.794 ns )                    ; UARTInAdapter:u3|\FSM:p_Byte[7] ; UARTInAdapter:u3|t_Guitar[0][7]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.522 ns                ;
+; N/A                                     ; 209.91 MHz ( period = 4.764 ns )                    ; UARTIn:u2|r_Clk_Count[7]        ; UARTIn:u2|r_Clk_Count[5]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.500 ns                ;
+; N/A                                     ; 209.91 MHz ( period = 4.764 ns )                    ; UARTIn:u2|r_Clk_Count[7]        ; UARTIn:u2|r_Clk_Count[4]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.500 ns                ;
+; N/A                                     ; 209.91 MHz ( period = 4.764 ns )                    ; UARTIn:u2|r_Clk_Count[7]        ; UARTIn:u2|r_Clk_Count[6]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.500 ns                ;
+; N/A                                     ; 209.91 MHz ( period = 4.764 ns )                    ; UARTIn:u2|r_Clk_Count[7]        ; UARTIn:u2|r_Clk_Count[9]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.500 ns                ;
+; N/A                                     ; 209.91 MHz ( period = 4.764 ns )                    ; UARTIn:u2|r_Clk_Count[7]        ; UARTIn:u2|r_Clk_Count[3]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.500 ns                ;
+; N/A                                     ; 209.91 MHz ( period = 4.764 ns )                    ; UARTIn:u2|r_Clk_Count[7]        ; UARTIn:u2|r_Clk_Count[0]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.500 ns                ;
+; N/A                                     ; 209.91 MHz ( period = 4.764 ns )                    ; UARTIn:u2|r_Clk_Count[7]        ; UARTIn:u2|r_Clk_Count[7]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.500 ns                ;
+; N/A                                     ; 209.91 MHz ( period = 4.764 ns )                    ; UARTIn:u2|r_Clk_Count[7]        ; UARTIn:u2|r_Clk_Count[1]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.500 ns                ;
+; N/A                                     ; 209.91 MHz ( period = 4.764 ns )                    ; UARTIn:u2|r_Clk_Count[7]        ; UARTIn:u2|r_Clk_Count[2]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.500 ns                ;
+; N/A                                     ; 209.91 MHz ( period = 4.764 ns )                    ; UARTIn:u2|r_Clk_Count[7]        ; UARTIn:u2|r_Clk_Count[8]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.500 ns                ;
+; N/A                                     ; 210.00 MHz ( period = 4.762 ns )                    ; UARTIn:u2|r_RX_Byte[2]          ; UARTInAdapter:u3|t_Guitar[0][0]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.492 ns                ;
+; N/A                                     ; 210.00 MHz ( period = 4.762 ns )                    ; UARTIn:u2|r_RX_Byte[2]          ; UARTInAdapter:u3|t_Guitar[0][1]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.492 ns                ;
+; N/A                                     ; 210.00 MHz ( period = 4.762 ns )                    ; UARTIn:u2|r_RX_Byte[2]          ; UARTInAdapter:u3|t_Guitar[0][2]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.492 ns                ;
+; N/A                                     ; 210.00 MHz ( period = 4.762 ns )                    ; UARTIn:u2|r_RX_Byte[2]          ; UARTInAdapter:u3|t_Guitar[0][3]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.492 ns                ;
+; N/A                                     ; 210.00 MHz ( period = 4.762 ns )                    ; UARTIn:u2|r_RX_Byte[2]          ; UARTInAdapter:u3|t_Guitar[0][4]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.492 ns                ;
+; N/A                                     ; 210.00 MHz ( period = 4.762 ns )                    ; UARTIn:u2|r_RX_Byte[2]          ; UARTInAdapter:u3|t_Guitar[0][5]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.492 ns                ;
+; N/A                                     ; 210.00 MHz ( period = 4.762 ns )                    ; UARTIn:u2|r_RX_Byte[2]          ; UARTInAdapter:u3|t_Guitar[0][6]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.492 ns                ;
+; N/A                                     ; 210.00 MHz ( period = 4.762 ns )                    ; UARTIn:u2|r_RX_Byte[2]          ; UARTInAdapter:u3|t_Guitar[0][7]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.492 ns                ;
+; N/A                                     ; 212.68 MHz ( period = 4.702 ns )                    ; UARTIn:u2|r_RX_Byte[4]          ; UARTInAdapter:u3|t_Guitar[0][0]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.430 ns                ;
+; N/A                                     ; 212.68 MHz ( period = 4.702 ns )                    ; UARTIn:u2|r_RX_Byte[4]          ; UARTInAdapter:u3|t_Guitar[0][1]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.430 ns                ;
+; N/A                                     ; 212.68 MHz ( period = 4.702 ns )                    ; UARTIn:u2|r_RX_Byte[4]          ; UARTInAdapter:u3|t_Guitar[0][2]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.430 ns                ;
+; N/A                                     ; 212.68 MHz ( period = 4.702 ns )                    ; UARTIn:u2|r_RX_Byte[4]          ; UARTInAdapter:u3|t_Guitar[0][3]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.430 ns                ;
+; N/A                                     ; 212.68 MHz ( period = 4.702 ns )                    ; UARTIn:u2|r_RX_Byte[4]          ; UARTInAdapter:u3|t_Guitar[0][4]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.430 ns                ;
+; N/A                                     ; 212.68 MHz ( period = 4.702 ns )                    ; UARTIn:u2|r_RX_Byte[4]          ; UARTInAdapter:u3|t_Guitar[0][5]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.430 ns                ;
+; N/A                                     ; 212.68 MHz ( period = 4.702 ns )                    ; UARTIn:u2|r_RX_Byte[4]          ; UARTInAdapter:u3|t_Guitar[0][6]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.430 ns                ;
+; N/A                                     ; 212.68 MHz ( period = 4.702 ns )                    ; UARTIn:u2|r_RX_Byte[4]          ; UARTInAdapter:u3|t_Guitar[0][7]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.430 ns                ;
+; N/A                                     ; 213.90 MHz ( period = 4.675 ns )                    ; UARTIn:u2|r_RX_Byte[7]          ; UARTInAdapter:u3|t_Guitar[0][0]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.405 ns                ;
+; N/A                                     ; 213.90 MHz ( period = 4.675 ns )                    ; UARTIn:u2|r_RX_Byte[7]          ; UARTInAdapter:u3|t_Guitar[0][1]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.405 ns                ;
+; N/A                                     ; 213.90 MHz ( period = 4.675 ns )                    ; UARTIn:u2|r_RX_Byte[7]          ; UARTInAdapter:u3|t_Guitar[0][2]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.405 ns                ;
+; N/A                                     ; 213.90 MHz ( period = 4.675 ns )                    ; UARTIn:u2|r_RX_Byte[7]          ; UARTInAdapter:u3|t_Guitar[0][3]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.405 ns                ;
+; N/A                                     ; 213.90 MHz ( period = 4.675 ns )                    ; UARTIn:u2|r_RX_Byte[7]          ; UARTInAdapter:u3|t_Guitar[0][4]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.405 ns                ;
+; N/A                                     ; 213.90 MHz ( period = 4.675 ns )                    ; UARTIn:u2|r_RX_Byte[7]          ; UARTInAdapter:u3|t_Guitar[0][5]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.405 ns                ;
+; N/A                                     ; 213.90 MHz ( period = 4.675 ns )                    ; UARTIn:u2|r_RX_Byte[7]          ; UARTInAdapter:u3|t_Guitar[0][6]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.405 ns                ;
+; N/A                                     ; 213.90 MHz ( period = 4.675 ns )                    ; UARTIn:u2|r_RX_Byte[7]          ; UARTInAdapter:u3|t_Guitar[0][7]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.405 ns                ;
+; N/A                                     ; 214.09 MHz ( period = 4.671 ns )                    ; UARTIn:u2|r_Clk_Count[3]        ; UARTIn:u2|r_Clk_Count[5]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.407 ns                ;
+; N/A                                     ; 214.09 MHz ( period = 4.671 ns )                    ; UARTIn:u2|r_Clk_Count[3]        ; UARTIn:u2|r_Clk_Count[4]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.407 ns                ;
+; N/A                                     ; 214.09 MHz ( period = 4.671 ns )                    ; UARTIn:u2|r_Clk_Count[3]        ; UARTIn:u2|r_Clk_Count[6]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.407 ns                ;
+; N/A                                     ; 214.09 MHz ( period = 4.671 ns )                    ; UARTIn:u2|r_Clk_Count[3]        ; UARTIn:u2|r_Clk_Count[9]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.407 ns                ;
+; N/A                                     ; 214.09 MHz ( period = 4.671 ns )                    ; UARTIn:u2|r_Clk_Count[3]        ; UARTIn:u2|r_Clk_Count[3]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.407 ns                ;
+; N/A                                     ; 214.09 MHz ( period = 4.671 ns )                    ; UARTIn:u2|r_Clk_Count[3]        ; UARTIn:u2|r_Clk_Count[0]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.407 ns                ;
+; N/A                                     ; 214.09 MHz ( period = 4.671 ns )                    ; UARTIn:u2|r_Clk_Count[3]        ; UARTIn:u2|r_Clk_Count[7]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.407 ns                ;
+; N/A                                     ; 214.09 MHz ( period = 4.671 ns )                    ; UARTIn:u2|r_Clk_Count[3]        ; UARTIn:u2|r_Clk_Count[1]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.407 ns                ;
+; N/A                                     ; 214.09 MHz ( period = 4.671 ns )                    ; UARTIn:u2|r_Clk_Count[3]        ; UARTIn:u2|r_Clk_Count[2]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.407 ns                ;
+; N/A                                     ; 214.09 MHz ( period = 4.671 ns )                    ; UARTIn:u2|r_Clk_Count[3]        ; UARTIn:u2|r_Clk_Count[8]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.407 ns                ;
+; N/A                                     ; 214.68 MHz ( period = 4.658 ns )                    ; UARTIn:u2|r_Clk_Count[5]        ; UARTIn:u2|r_Clk_Count[5]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.394 ns                ;
+; N/A                                     ; 214.68 MHz ( period = 4.658 ns )                    ; UARTIn:u2|r_Clk_Count[4]        ; UARTIn:u2|r_Clk_Count[5]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.394 ns                ;
+; N/A                                     ; 214.68 MHz ( period = 4.658 ns )                    ; UARTIn:u2|r_Clk_Count[5]        ; UARTIn:u2|r_Clk_Count[4]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.394 ns                ;
+; N/A                                     ; 214.68 MHz ( period = 4.658 ns )                    ; UARTIn:u2|r_Clk_Count[4]        ; UARTIn:u2|r_Clk_Count[4]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.394 ns                ;
+; N/A                                     ; 214.68 MHz ( period = 4.658 ns )                    ; UARTIn:u2|r_Clk_Count[5]        ; UARTIn:u2|r_Clk_Count[6]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.394 ns                ;
+; N/A                                     ; 214.68 MHz ( period = 4.658 ns )                    ; UARTIn:u2|r_Clk_Count[4]        ; UARTIn:u2|r_Clk_Count[6]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.394 ns                ;
+; N/A                                     ; 214.68 MHz ( period = 4.658 ns )                    ; UARTIn:u2|r_Clk_Count[5]        ; UARTIn:u2|r_Clk_Count[9]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.394 ns                ;
+; N/A                                     ; 214.68 MHz ( period = 4.658 ns )                    ; UARTIn:u2|r_Clk_Count[4]        ; UARTIn:u2|r_Clk_Count[9]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.394 ns                ;
+; N/A                                     ; 214.68 MHz ( period = 4.658 ns )                    ; UARTIn:u2|r_Clk_Count[5]        ; UARTIn:u2|r_Clk_Count[3]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.394 ns                ;
+; N/A                                     ; 214.68 MHz ( period = 4.658 ns )                    ; UARTIn:u2|r_Clk_Count[4]        ; UARTIn:u2|r_Clk_Count[3]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.394 ns                ;
+; N/A                                     ; 214.68 MHz ( period = 4.658 ns )                    ; UARTIn:u2|r_Clk_Count[5]        ; UARTIn:u2|r_Clk_Count[0]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.394 ns                ;
+; N/A                                     ; 214.68 MHz ( period = 4.658 ns )                    ; UARTIn:u2|r_Clk_Count[4]        ; UARTIn:u2|r_Clk_Count[0]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.394 ns                ;
+; N/A                                     ; 214.68 MHz ( period = 4.658 ns )                    ; UARTIn:u2|r_Clk_Count[5]        ; UARTIn:u2|r_Clk_Count[7]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.394 ns                ;
+; N/A                                     ; 214.68 MHz ( period = 4.658 ns )                    ; UARTIn:u2|r_Clk_Count[4]        ; UARTIn:u2|r_Clk_Count[7]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.394 ns                ;
+; N/A                                     ; 214.68 MHz ( period = 4.658 ns )                    ; UARTIn:u2|r_Clk_Count[5]        ; UARTIn:u2|r_Clk_Count[1]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.394 ns                ;
+; N/A                                     ; 214.68 MHz ( period = 4.658 ns )                    ; UARTIn:u2|r_Clk_Count[4]        ; UARTIn:u2|r_Clk_Count[1]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.394 ns                ;
+; N/A                                     ; 214.68 MHz ( period = 4.658 ns )                    ; UARTIn:u2|r_Clk_Count[5]        ; UARTIn:u2|r_Clk_Count[2]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.394 ns                ;
+; N/A                                     ; 214.68 MHz ( period = 4.658 ns )                    ; UARTIn:u2|r_Clk_Count[4]        ; UARTIn:u2|r_Clk_Count[2]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.394 ns                ;
+; N/A                                     ; 214.68 MHz ( period = 4.658 ns )                    ; UARTIn:u2|r_Clk_Count[5]        ; UARTIn:u2|r_Clk_Count[8]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.394 ns                ;
+; N/A                                     ; 214.68 MHz ( period = 4.658 ns )                    ; UARTIn:u2|r_Clk_Count[4]        ; UARTIn:u2|r_Clk_Count[8]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.394 ns                ;
+; N/A                                     ; 215.56 MHz ( period = 4.639 ns )                    ; UARTInAdapter:u3|\FSM:p_Byte[5] ; UARTInAdapter:u3|t_Guitar[0][0]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.367 ns                ;
+; N/A                                     ; 215.56 MHz ( period = 4.639 ns )                    ; UARTInAdapter:u3|\FSM:p_Byte[5] ; UARTInAdapter:u3|t_Guitar[0][1]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.367 ns                ;
+; N/A                                     ; 215.56 MHz ( period = 4.639 ns )                    ; UARTInAdapter:u3|\FSM:p_Byte[5] ; UARTInAdapter:u3|t_Guitar[0][2]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.367 ns                ;
+; N/A                                     ; 215.56 MHz ( period = 4.639 ns )                    ; UARTInAdapter:u3|\FSM:p_Byte[5] ; UARTInAdapter:u3|t_Guitar[0][3]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.367 ns                ;
+; N/A                                     ; 215.56 MHz ( period = 4.639 ns )                    ; UARTInAdapter:u3|\FSM:p_Byte[5] ; UARTInAdapter:u3|t_Guitar[0][4]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.367 ns                ;
+; N/A                                     ; 215.56 MHz ( period = 4.639 ns )                    ; UARTInAdapter:u3|\FSM:p_Byte[5] ; UARTInAdapter:u3|t_Guitar[0][5]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.367 ns                ;
+; N/A                                     ; 215.56 MHz ( period = 4.639 ns )                    ; UARTInAdapter:u3|\FSM:p_Byte[5] ; UARTInAdapter:u3|t_Guitar[0][6]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.367 ns                ;
+; N/A                                     ; 215.56 MHz ( period = 4.639 ns )                    ; UARTInAdapter:u3|\FSM:p_Byte[5] ; UARTInAdapter:u3|t_Guitar[0][7]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.367 ns                ;
+; N/A                                     ; 215.89 MHz ( period = 4.632 ns )                    ; UARTIn:u2|r_Clk_Count[9]        ; UARTIn:u2|r_Clk_Count[5]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.368 ns                ;
+; N/A                                     ; 215.89 MHz ( period = 4.632 ns )                    ; UARTIn:u2|r_Clk_Count[9]        ; UARTIn:u2|r_Clk_Count[4]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.368 ns                ;
+; N/A                                     ; 215.89 MHz ( period = 4.632 ns )                    ; UARTIn:u2|r_Clk_Count[9]        ; UARTIn:u2|r_Clk_Count[6]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.368 ns                ;
+; N/A                                     ; 215.89 MHz ( period = 4.632 ns )                    ; UARTIn:u2|r_Clk_Count[9]        ; UARTIn:u2|r_Clk_Count[9]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.368 ns                ;
+; N/A                                     ; 215.89 MHz ( period = 4.632 ns )                    ; UARTIn:u2|r_Clk_Count[9]        ; UARTIn:u2|r_Clk_Count[3]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.368 ns                ;
+; N/A                                     ; 215.89 MHz ( period = 4.632 ns )                    ; UARTIn:u2|r_Clk_Count[9]        ; UARTIn:u2|r_Clk_Count[0]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.368 ns                ;
+; N/A                                     ; 215.89 MHz ( period = 4.632 ns )                    ; UARTIn:u2|r_Clk_Count[9]        ; UARTIn:u2|r_Clk_Count[7]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.368 ns                ;
+; N/A                                     ; 215.89 MHz ( period = 4.632 ns )                    ; UARTIn:u2|r_Clk_Count[9]        ; UARTIn:u2|r_Clk_Count[1]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.368 ns                ;
+; N/A                                     ; 215.89 MHz ( period = 4.632 ns )                    ; UARTIn:u2|r_Clk_Count[9]        ; UARTIn:u2|r_Clk_Count[2]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.368 ns                ;
+; N/A                                     ; 215.89 MHz ( period = 4.632 ns )                    ; UARTIn:u2|r_Clk_Count[9]        ; UARTIn:u2|r_Clk_Count[8]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.368 ns                ;
+; N/A                                     ; 216.17 MHz ( period = 4.626 ns )                    ; UARTIn:u2|r_Clk_Count[0]        ; UARTIn:u2|r_RX_Byte[1]             ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.366 ns                ;
+; N/A                                     ; 216.22 MHz ( period = 4.625 ns )                    ; UARTIn:u2|r_Clk_Count[2]        ; UARTIn:u2|r_Clk_Count[5]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.361 ns                ;
+; N/A                                     ; 216.22 MHz ( period = 4.625 ns )                    ; UARTIn:u2|r_Clk_Count[2]        ; UARTIn:u2|r_Clk_Count[4]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.361 ns                ;
+; N/A                                     ; 216.22 MHz ( period = 4.625 ns )                    ; UARTIn:u2|r_Clk_Count[2]        ; UARTIn:u2|r_Clk_Count[6]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.361 ns                ;
+; N/A                                     ; 216.22 MHz ( period = 4.625 ns )                    ; UARTIn:u2|r_Clk_Count[2]        ; UARTIn:u2|r_Clk_Count[9]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.361 ns                ;
+; N/A                                     ; 216.22 MHz ( period = 4.625 ns )                    ; UARTIn:u2|r_Clk_Count[2]        ; UARTIn:u2|r_Clk_Count[3]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.361 ns                ;
+; N/A                                     ; 216.22 MHz ( period = 4.625 ns )                    ; UARTIn:u2|r_Clk_Count[2]        ; UARTIn:u2|r_Clk_Count[0]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.361 ns                ;
+; N/A                                     ; 216.22 MHz ( period = 4.625 ns )                    ; UARTIn:u2|r_Clk_Count[2]        ; UARTIn:u2|r_Clk_Count[7]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.361 ns                ;
+; N/A                                     ; 216.22 MHz ( period = 4.625 ns )                    ; UARTIn:u2|r_Clk_Count[2]        ; UARTIn:u2|r_Clk_Count[1]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.361 ns                ;
+; N/A                                     ; 216.22 MHz ( period = 4.625 ns )                    ; UARTIn:u2|r_Clk_Count[2]        ; UARTIn:u2|r_Clk_Count[2]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.361 ns                ;
+; N/A                                     ; 216.22 MHz ( period = 4.625 ns )                    ; UARTIn:u2|r_Clk_Count[2]        ; UARTIn:u2|r_Clk_Count[8]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.361 ns                ;
+; N/A                                     ; 216.73 MHz ( period = 4.614 ns )                    ; UARTIn:u2|r_Clk_Count[8]        ; UARTIn:u2|r_Clk_Count[5]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.350 ns                ;
+; N/A                                     ; 216.73 MHz ( period = 4.614 ns )                    ; UARTIn:u2|r_Clk_Count[8]        ; UARTIn:u2|r_Clk_Count[4]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.350 ns                ;
+; N/A                                     ; 216.73 MHz ( period = 4.614 ns )                    ; UARTIn:u2|r_Clk_Count[8]        ; UARTIn:u2|r_Clk_Count[6]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.350 ns                ;
+; N/A                                     ; 216.73 MHz ( period = 4.614 ns )                    ; UARTIn:u2|r_Clk_Count[8]        ; UARTIn:u2|r_Clk_Count[9]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.350 ns                ;
+; N/A                                     ; 216.73 MHz ( period = 4.614 ns )                    ; UARTIn:u2|r_Clk_Count[8]        ; UARTIn:u2|r_Clk_Count[3]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.350 ns                ;
+; N/A                                     ; 216.73 MHz ( period = 4.614 ns )                    ; UARTIn:u2|r_Clk_Count[8]        ; UARTIn:u2|r_Clk_Count[0]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.350 ns                ;
+; N/A                                     ; 216.73 MHz ( period = 4.614 ns )                    ; UARTIn:u2|r_Clk_Count[8]        ; UARTIn:u2|r_Clk_Count[7]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.350 ns                ;
+; N/A                                     ; 216.73 MHz ( period = 4.614 ns )                    ; UARTIn:u2|r_Clk_Count[8]        ; UARTIn:u2|r_Clk_Count[1]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.350 ns                ;
+; N/A                                     ; 216.73 MHz ( period = 4.614 ns )                    ; UARTIn:u2|r_Clk_Count[8]        ; UARTIn:u2|r_Clk_Count[2]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.350 ns                ;
+; N/A                                     ; 216.73 MHz ( period = 4.614 ns )                    ; UARTIn:u2|r_Clk_Count[8]        ; UARTIn:u2|r_Clk_Count[8]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.350 ns                ;
+; N/A                                     ; 220.17 MHz ( period = 4.542 ns )                    ; UARTIn:u2|r_Clk_Count[0]        ; UARTIn:u2|r_Bit_Index[2]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.280 ns                ;
+; N/A                                     ; 221.14 MHz ( period = 4.522 ns )                    ; UARTIn:u2|r_Clk_Count[0]        ; UARTIn:u2|r_SM_Main.s_RX_Data_Bits ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.258 ns                ;
+; N/A                                     ; 222.97 MHz ( period = 4.485 ns )                    ; UARTInAdapter:u3|\FSM:p_Byte[6] ; UARTInAdapter:u3|t_Guitar[0][0]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.213 ns                ;
+; N/A                                     ; 222.97 MHz ( period = 4.485 ns )                    ; UARTInAdapter:u3|\FSM:p_Byte[6] ; UARTInAdapter:u3|t_Guitar[0][1]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.213 ns                ;
+; N/A                                     ; 222.97 MHz ( period = 4.485 ns )                    ; UARTInAdapter:u3|\FSM:p_Byte[6] ; UARTInAdapter:u3|t_Guitar[0][2]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.213 ns                ;
+; N/A                                     ; 222.97 MHz ( period = 4.485 ns )                    ; UARTInAdapter:u3|\FSM:p_Byte[6] ; UARTInAdapter:u3|t_Guitar[0][3]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.213 ns                ;
+; N/A                                     ; 222.97 MHz ( period = 4.485 ns )                    ; UARTInAdapter:u3|\FSM:p_Byte[6] ; UARTInAdapter:u3|t_Guitar[0][4]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.213 ns                ;
+; N/A                                     ; 222.97 MHz ( period = 4.485 ns )                    ; UARTInAdapter:u3|\FSM:p_Byte[6] ; UARTInAdapter:u3|t_Guitar[0][5]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.213 ns                ;
+; N/A                                     ; 222.97 MHz ( period = 4.485 ns )                    ; UARTInAdapter:u3|\FSM:p_Byte[6] ; UARTInAdapter:u3|t_Guitar[0][6]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.213 ns                ;
+; N/A                                     ; 222.97 MHz ( period = 4.485 ns )                    ; UARTInAdapter:u3|\FSM:p_Byte[6] ; UARTInAdapter:u3|t_Guitar[0][7]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.213 ns                ;
+; N/A                                     ; 224.01 MHz ( period = 4.464 ns )                    ; UARTIn:u2|r_Clk_Count[7]        ; UARTIn:u2|r_RX_Byte[1]             ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.204 ns                ;
+; N/A                                     ; 226.14 MHz ( period = 4.422 ns )                    ; UARTIn:u2|r_Clk_Count[3]        ; UARTIn:u2|r_RX_Byte[1]             ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.162 ns                ;
+; N/A                                     ; 226.76 MHz ( period = 4.410 ns )                    ; UARTIn:u2|r_Clk_Count[0]        ; UARTIn:u2|r_RX_Byte[4]             ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.152 ns                ;
+; N/A                                     ; 226.81 MHz ( period = 4.409 ns )                    ; UARTIn:u2|r_Clk_Count[5]        ; UARTIn:u2|r_RX_Byte[1]             ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.149 ns                ;
+; N/A                                     ; 227.07 MHz ( period = 4.404 ns )                    ; UARTIn:u2|r_Clk_Count[7]        ; UARTIn:u2|r_SM_Main.s_Idle         ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.148 ns                ;
+; N/A                                     ; 228.31 MHz ( period = 4.380 ns )                    ; UARTIn:u2|r_Clk_Count[7]        ; UARTIn:u2|r_Bit_Index[2]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.118 ns                ;
+; N/A                                     ; 228.36 MHz ( period = 4.379 ns )                    ; UARTIn:u2|r_RX_Byte[6]          ; UARTInAdapter:u3|t_Guitar[0][0]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.109 ns                ;
+; N/A                                     ; 228.36 MHz ( period = 4.379 ns )                    ; UARTIn:u2|r_RX_Byte[6]          ; UARTInAdapter:u3|t_Guitar[0][1]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.109 ns                ;
+; N/A                                     ; 228.36 MHz ( period = 4.379 ns )                    ; UARTIn:u2|r_RX_Byte[6]          ; UARTInAdapter:u3|t_Guitar[0][2]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.109 ns                ;
+; N/A                                     ; 228.36 MHz ( period = 4.379 ns )                    ; UARTIn:u2|r_RX_Byte[6]          ; UARTInAdapter:u3|t_Guitar[0][3]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.109 ns                ;
+; N/A                                     ; 228.36 MHz ( period = 4.379 ns )                    ; UARTIn:u2|r_RX_Byte[6]          ; UARTInAdapter:u3|t_Guitar[0][4]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.109 ns                ;
+; N/A                                     ; 228.36 MHz ( period = 4.379 ns )                    ; UARTIn:u2|r_RX_Byte[6]          ; UARTInAdapter:u3|t_Guitar[0][5]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.109 ns                ;
+; N/A                                     ; 228.36 MHz ( period = 4.379 ns )                    ; UARTIn:u2|r_RX_Byte[6]          ; UARTInAdapter:u3|t_Guitar[0][6]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.109 ns                ;
+; N/A                                     ; 228.36 MHz ( period = 4.379 ns )                    ; UARTIn:u2|r_RX_Byte[6]          ; UARTInAdapter:u3|t_Guitar[0][7]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.109 ns                ;
+; N/A                                     ; 228.52 MHz ( period = 4.376 ns )                    ; UARTIn:u2|r_Clk_Count[2]        ; UARTIn:u2|r_RX_Byte[1]             ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.116 ns                ;
+; N/A                                     ; 229.10 MHz ( period = 4.365 ns )                    ; UARTIn:u2|r_Clk_Count[8]        ; UARTIn:u2|r_RX_Byte[1]             ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.105 ns                ;
+; N/A                                     ; 229.31 MHz ( period = 4.361 ns )                    ; UARTIn:u2|r_Clk_Count[0]        ; UARTIn:u2|r_RX_Byte[5]             ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.103 ns                ;
+; N/A                                     ; 229.36 MHz ( period = 4.360 ns )                    ; UARTIn:u2|r_Clk_Count[7]        ; UARTIn:u2|r_SM_Main.s_RX_Data_Bits ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.096 ns                ;
+; N/A                                     ; 229.62 MHz ( period = 4.355 ns )                    ; UARTIn:u2|r_Clk_Count[0]        ; UARTIn:u2|r_SM_Main.s_Idle         ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.099 ns                ;
+; N/A                                     ; 229.73 MHz ( period = 4.353 ns )                    ; UARTIn:u2|r_Clk_Count[1]        ; UARTIn:u2|r_Clk_Count[5]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.089 ns                ;
+; N/A                                     ; 229.73 MHz ( period = 4.353 ns )                    ; UARTIn:u2|r_Clk_Count[1]        ; UARTIn:u2|r_Clk_Count[4]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.089 ns                ;
+; N/A                                     ; 229.73 MHz ( period = 4.353 ns )                    ; UARTIn:u2|r_Clk_Count[1]        ; UARTIn:u2|r_Clk_Count[6]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.089 ns                ;
+; N/A                                     ; 229.73 MHz ( period = 4.353 ns )                    ; UARTIn:u2|r_Clk_Count[1]        ; UARTIn:u2|r_Clk_Count[9]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.089 ns                ;
+; N/A                                     ; 229.73 MHz ( period = 4.353 ns )                    ; UARTIn:u2|r_Clk_Count[1]        ; UARTIn:u2|r_Clk_Count[3]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.089 ns                ;
+; N/A                                     ; 229.73 MHz ( period = 4.353 ns )                    ; UARTIn:u2|r_Clk_Count[1]        ; UARTIn:u2|r_Clk_Count[0]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.089 ns                ;
+; N/A                                     ; 229.73 MHz ( period = 4.353 ns )                    ; UARTIn:u2|r_Clk_Count[1]        ; UARTIn:u2|r_Clk_Count[7]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.089 ns                ;
+; N/A                                     ; 229.73 MHz ( period = 4.353 ns )                    ; UARTIn:u2|r_Clk_Count[1]        ; UARTIn:u2|r_Clk_Count[1]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.089 ns                ;
+; N/A                                     ; 229.73 MHz ( period = 4.353 ns )                    ; UARTIn:u2|r_Clk_Count[1]        ; UARTIn:u2|r_Clk_Count[2]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.089 ns                ;
+; N/A                                     ; 229.73 MHz ( period = 4.353 ns )                    ; UARTIn:u2|r_Clk_Count[1]        ; UARTIn:u2|r_Clk_Count[8]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.089 ns                ;
+; N/A                                     ; 230.52 MHz ( period = 4.338 ns )                    ; UARTIn:u2|r_Clk_Count[3]        ; UARTIn:u2|r_Bit_Index[2]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.076 ns                ;
+; N/A                                     ; 231.21 MHz ( period = 4.325 ns )                    ; UARTIn:u2|r_Clk_Count[5]        ; UARTIn:u2|r_Bit_Index[2]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.063 ns                ;
+; N/A                                     ; 231.59 MHz ( period = 4.318 ns )                    ; UARTIn:u2|r_Clk_Count[3]        ; UARTIn:u2|r_SM_Main.s_RX_Data_Bits ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.054 ns                ;
+; N/A                                     ; 232.29 MHz ( period = 4.305 ns )                    ; UARTIn:u2|r_Clk_Count[5]        ; UARTIn:u2|r_SM_Main.s_RX_Data_Bits ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.041 ns                ;
+; N/A                                     ; 232.56 MHz ( period = 4.300 ns )                    ; UARTIn:u2|r_RX_Byte[5]          ; UARTInAdapter:u3|t_Guitar[0][0]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.028 ns                ;
+; N/A                                     ; 232.56 MHz ( period = 4.300 ns )                    ; UARTIn:u2|r_RX_Byte[5]          ; UARTInAdapter:u3|t_Guitar[0][1]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.028 ns                ;
+; N/A                                     ; 232.56 MHz ( period = 4.300 ns )                    ; UARTIn:u2|r_RX_Byte[5]          ; UARTInAdapter:u3|t_Guitar[0][2]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.028 ns                ;
+; N/A                                     ; 232.56 MHz ( period = 4.300 ns )                    ; UARTIn:u2|r_RX_Byte[5]          ; UARTInAdapter:u3|t_Guitar[0][3]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.028 ns                ;
+; N/A                                     ; 232.56 MHz ( period = 4.300 ns )                    ; UARTIn:u2|r_RX_Byte[5]          ; UARTInAdapter:u3|t_Guitar[0][4]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.028 ns                ;
+; N/A                                     ; 232.56 MHz ( period = 4.300 ns )                    ; UARTIn:u2|r_RX_Byte[5]          ; UARTInAdapter:u3|t_Guitar[0][5]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.028 ns                ;
+; N/A                                     ; 232.56 MHz ( period = 4.300 ns )                    ; UARTIn:u2|r_RX_Byte[5]          ; UARTInAdapter:u3|t_Guitar[0][6]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.028 ns                ;
+; N/A                                     ; 232.56 MHz ( period = 4.300 ns )                    ; UARTIn:u2|r_RX_Byte[5]          ; UARTInAdapter:u3|t_Guitar[0][7]    ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.028 ns                ;
+; N/A                                     ; 232.67 MHz ( period = 4.298 ns )                    ; UARTIn:u2|r_Clk_Count[4]        ; UARTIn:u2|r_SM_Main.s_Idle         ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.042 ns                ;
+; N/A                                     ; 232.99 MHz ( period = 4.292 ns )                    ; UARTIn:u2|r_Clk_Count[2]        ; UARTIn:u2|r_Bit_Index[2]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.030 ns                ;
+; N/A                                     ; 233.59 MHz ( period = 4.281 ns )                    ; UARTIn:u2|r_Clk_Count[8]        ; UARTIn:u2|r_Bit_Index[2]           ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.019 ns                ;
+; N/A                                     ; 234.08 MHz ( period = 4.272 ns )                    ; UARTIn:u2|r_Clk_Count[9]        ; UARTIn:u2|r_SM_Main.s_Idle         ; clk_100m   ; clk_100m ; None                        ; None                      ; 4.016 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                 ;                                    ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+---------------------------------+------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Clock Hold: 'fclk'                                                                                                                                                                                                                                              ;
-+------------------------------------------+--------------------------------------------------+------------------------------------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
-; Minimum Slack                            ; From                                             ; To                                                   ; From Clock ; To Clock ; Required Hold Relationship ; Required Shortest P2P Time ; Actual Shortest P2P Time ;
-+------------------------------------------+--------------------------------------------------+------------------------------------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
-; Not operational: Clock Skew > Data Delay ; input_keyboard:keyboard_test|Keyboard:u0|code[2] ; input_keyboard:keyboard_test|Keyboard:u0|scancode[2] ; fclk       ; fclk     ; None                       ; None                       ; 2.854 ns                 ;
-; Not operational: Clock Skew > Data Delay ; input_keyboard:keyboard_test|Keyboard:u0|code[7] ; input_keyboard:keyboard_test|Keyboard:u0|scancode[7] ; fclk       ; fclk     ; None                       ; None                       ; 3.137 ns                 ;
-; Not operational: Clock Skew > Data Delay ; input_keyboard:keyboard_test|Keyboard:u0|code[4] ; input_keyboard:keyboard_test|Keyboard:u0|scancode[4] ; fclk       ; fclk     ; None                       ; None                       ; 3.140 ns                 ;
-; Not operational: Clock Skew > Data Delay ; input_keyboard:keyboard_test|Keyboard:u0|code[6] ; input_keyboard:keyboard_test|Keyboard:u0|scancode[6] ; fclk       ; fclk     ; None                       ; None                       ; 3.143 ns                 ;
-; Not operational: Clock Skew > Data Delay ; input_keyboard:keyboard_test|Keyboard:u0|code[1] ; input_keyboard:keyboard_test|Keyboard:u0|scancode[1] ; fclk       ; fclk     ; None                       ; None                       ; 3.140 ns                 ;
-; Not operational: Clock Skew > Data Delay ; input_keyboard:keyboard_test|Keyboard:u0|code[0] ; input_keyboard:keyboard_test|Keyboard:u0|scancode[0] ; fclk       ; fclk     ; None                       ; None                       ; 3.294 ns                 ;
-; Not operational: Clock Skew > Data Delay ; input_keyboard:keyboard_test|Keyboard:u0|code[3] ; input_keyboard:keyboard_test|Keyboard:u0|scancode[3] ; fclk       ; fclk     ; None                       ; None                       ; 3.500 ns                 ;
-; Not operational: Clock Skew > Data Delay ; input_keyboard:keyboard_test|Keyboard:u0|code[5] ; input_keyboard:keyboard_test|Keyboard:u0|scancode[5] ; fclk       ; fclk     ; None                       ; None                       ; 3.515 ns                 ;
-+------------------------------------------+--------------------------------------------------+------------------------------------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
++-----------------------------------------------------------------------------+
+; tsu                                                                         ;
++-------+--------------+------------+------+-----------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From ; To                    ; To Clock ;
++-------+--------------+------------+------+-----------------------+----------+
+; N/A   ; None         ; 7.105 ns   ; RXD  ; UARTIn:u2|r_RX_Data_R ; clk_100m ;
++-------+--------------+------------+------+-----------------------+----------+
 
 
-+----------------------------------------------------------------------------------------------------------+
-; tsu                                                                                                      ;
-+-------+--------------+------------+-----------+-----------------------------------------------+----------+
-; Slack ; Required tsu ; Actual tsu ; From      ; To                                            ; To Clock ;
-+-------+--------------+------------+-----------+-----------------------------------------------+----------+
-; N/A   ; None         ; 4.842 ns   ; i_KB_Data ; input_keyboard:keyboard_test|Keyboard:u0|data ; fclk     ;
-; N/A   ; None         ; 4.830 ns   ; clkin     ; input_keyboard:keyboard_test|Keyboard:u0|clk1 ; fclk     ;
-+-------+--------------+------------+-----------+-----------------------------------------------+----------+
++--------------------------------------------------------------------------------------------+
+; tco                                                                                        ;
++-------+--------------+------------+---------------------------------+---------+------------+
+; Slack ; Required tco ; Actual tco ; From                            ; To      ; From Clock ;
++-------+--------------+------------+---------------------------------+---------+------------+
+; N/A   ; None         ; 10.309 ns  ; UARTInAdapter:u3|t_Guitar[0][2] ; seg0[3] ; clk_100m   ;
+; N/A   ; None         ; 10.306 ns  ; UARTInAdapter:u3|t_Guitar[0][2] ; seg0[2] ; clk_100m   ;
+; N/A   ; None         ; 10.276 ns  ; UARTInAdapter:u3|t_Guitar[0][1] ; seg0[1] ; clk_100m   ;
+; N/A   ; None         ; 10.259 ns  ; UARTInAdapter:u3|t_Guitar[0][0] ; seg0[1] ; clk_100m   ;
+; N/A   ; None         ; 10.241 ns  ; UARTInAdapter:u3|t_Guitar[0][3] ; seg0[3] ; clk_100m   ;
+; N/A   ; None         ; 10.235 ns  ; UARTInAdapter:u3|t_Guitar[0][1] ; seg0[2] ; clk_100m   ;
+; N/A   ; None         ; 9.987 ns   ; UARTInAdapter:u3|t_Guitar[0][0] ; seg0[2] ; clk_100m   ;
+; N/A   ; None         ; 9.962 ns   ; UARTInAdapter:u3|t_Guitar[0][2] ; seg0[5] ; clk_100m   ;
+; N/A   ; None         ; 9.947 ns   ; UARTInAdapter:u3|t_Guitar[0][2] ; seg0[4] ; clk_100m   ;
+; N/A   ; None         ; 9.922 ns   ; UARTInAdapter:u3|t_Guitar[0][1] ; seg0[5] ; clk_100m   ;
+; N/A   ; None         ; 9.917 ns   ; UARTInAdapter:u3|t_Guitar[0][1] ; seg0[4] ; clk_100m   ;
+; N/A   ; None         ; 9.905 ns   ; UARTInAdapter:u3|t_Guitar[0][0] ; seg0[6] ; clk_100m   ;
+; N/A   ; None         ; 9.893 ns   ; UARTInAdapter:u3|t_Guitar[0][1] ; seg0[6] ; clk_100m   ;
+; N/A   ; None         ; 9.859 ns   ; UARTInAdapter:u3|t_Guitar[0][3] ; seg0[1] ; clk_100m   ;
+; N/A   ; None         ; 9.854 ns   ; UARTInAdapter:u3|t_Guitar[0][3] ; seg0[2] ; clk_100m   ;
+; N/A   ; None         ; 9.851 ns   ; UARTInAdapter:u3|t_Guitar[0][0] ; seg0[0] ; clk_100m   ;
+; N/A   ; None         ; 9.847 ns   ; UARTInAdapter:u3|t_Guitar[0][1] ; seg0[3] ; clk_100m   ;
+; N/A   ; None         ; 9.843 ns   ; UARTInAdapter:u3|t_Guitar[0][3] ; seg0[0] ; clk_100m   ;
+; N/A   ; None         ; 9.629 ns   ; UARTInAdapter:u3|t_Guitar[0][0] ; seg0[5] ; clk_100m   ;
+; N/A   ; None         ; 9.625 ns   ; UARTInAdapter:u3|t_Guitar[0][0] ; seg0[4] ; clk_100m   ;
+; N/A   ; None         ; 9.622 ns   ; UARTIn:u2|r_RX_Byte[6]          ; seg2[6] ; clk_100m   ;
+; N/A   ; None         ; 9.610 ns   ; UARTInAdapter:u3|t_Guitar[0][6] ; seg1[1] ; clk_100m   ;
+; N/A   ; None         ; 9.595 ns   ; UARTInAdapter:u3|t_Guitar[0][6] ; seg1[0] ; clk_100m   ;
+; N/A   ; None         ; 9.570 ns   ; UARTInAdapter:u3|t_Guitar[0][7] ; seg1[1] ; clk_100m   ;
+; N/A   ; None         ; 9.564 ns   ; UARTInAdapter:u3|t_Guitar[0][7] ; seg1[0] ; clk_100m   ;
+; N/A   ; None         ; 9.538 ns   ; UARTInAdapter:u3|t_Guitar[0][2] ; seg0[1] ; clk_100m   ;
+; N/A   ; None         ; 9.529 ns   ; UARTInAdapter:u3|t_Guitar[0][0] ; seg0[3] ; clk_100m   ;
+; N/A   ; None         ; 9.523 ns   ; UARTInAdapter:u3|t_Guitar[0][5] ; seg1[1] ; clk_100m   ;
+; N/A   ; None         ; 9.512 ns   ; UARTInAdapter:u3|t_Guitar[0][5] ; seg1[0] ; clk_100m   ;
+; N/A   ; None         ; 9.500 ns   ; UARTInAdapter:u3|t_Guitar[0][3] ; seg0[5] ; clk_100m   ;
+; N/A   ; None         ; 9.492 ns   ; UARTInAdapter:u3|t_Guitar[0][3] ; seg0[4] ; clk_100m   ;
+; N/A   ; None         ; 9.451 ns   ; UARTInAdapter:u3|t_Guitar[0][2] ; seg0[6] ; clk_100m   ;
+; N/A   ; None         ; 9.402 ns   ; UARTInAdapter:u3|t_Guitar[0][2] ; seg0[0] ; clk_100m   ;
+; N/A   ; None         ; 9.256 ns   ; UARTInAdapter:u3|t_Guitar[0][6] ; seg1[3] ; clk_100m   ;
+; N/A   ; None         ; 9.250 ns   ; UARTInAdapter:u3|t_Guitar[0][6] ; seg1[2] ; clk_100m   ;
+; N/A   ; None         ; 9.244 ns   ; UARTInAdapter:u3|t_Guitar[0][6] ; seg1[6] ; clk_100m   ;
+; N/A   ; None         ; 9.214 ns   ; UARTInAdapter:u3|t_Guitar[0][7] ; seg1[2] ; clk_100m   ;
+; N/A   ; None         ; 9.182 ns   ; UARTInAdapter:u3|t_Guitar[0][7] ; seg1[3] ; clk_100m   ;
+; N/A   ; None         ; 9.160 ns   ; UARTInAdapter:u3|t_Guitar[0][5] ; seg1[6] ; clk_100m   ;
+; N/A   ; None         ; 9.148 ns   ; UARTInAdapter:u3|t_Guitar[0][3] ; seg0[6] ; clk_100m   ;
+; N/A   ; None         ; 9.124 ns   ; UARTInAdapter:u3|t_Guitar[0][5] ; seg1[2] ; clk_100m   ;
+; N/A   ; None         ; 9.107 ns   ; UARTInAdapter:u3|t_Guitar[0][4] ; seg1[1] ; clk_100m   ;
+; N/A   ; None         ; 9.106 ns   ; UARTInAdapter:u3|t_Guitar[0][4] ; seg1[0] ; clk_100m   ;
+; N/A   ; None         ; 9.103 ns   ; UARTInAdapter:u3|t_Guitar[0][5] ; seg1[5] ; clk_100m   ;
+; N/A   ; None         ; 9.097 ns   ; UARTInAdapter:u3|t_Guitar[0][1] ; seg0[0] ; clk_100m   ;
+; N/A   ; None         ; 9.036 ns   ; UARTInAdapter:u3|t_Guitar[0][5] ; seg1[3] ; clk_100m   ;
+; N/A   ; None         ; 8.827 ns   ; UARTInAdapter:u3|t_Guitar[0][6] ; seg1[4] ; clk_100m   ;
+; N/A   ; None         ; 8.797 ns   ; UARTInAdapter:u3|t_Guitar[0][7] ; seg1[5] ; clk_100m   ;
+; N/A   ; None         ; 8.786 ns   ; UARTInAdapter:u3|t_Guitar[0][7] ; seg1[4] ; clk_100m   ;
+; N/A   ; None         ; 8.752 ns   ; UARTInAdapter:u3|t_Guitar[0][4] ; seg1[2] ; clk_100m   ;
+; N/A   ; None         ; 8.745 ns   ; UARTInAdapter:u3|t_Guitar[0][4] ; seg1[6] ; clk_100m   ;
+; N/A   ; None         ; 8.514 ns   ; UARTIn:u2|r_RX_Byte[4]          ; seg2[4] ; clk_100m   ;
+; N/A   ; None         ; 8.476 ns   ; UARTInAdapter:u3|t_Guitar[0][4] ; seg1[3] ; clk_100m   ;
+; N/A   ; None         ; 8.463 ns   ; UARTInAdapter:u3|t_Guitar[0][7] ; seg1[6] ; clk_100m   ;
+; N/A   ; None         ; 8.391 ns   ; UARTInAdapter:u3|t_Guitar[0][4] ; seg1[5] ; clk_100m   ;
+; N/A   ; None         ; 8.374 ns   ; UARTInAdapter:u3|t_Guitar[0][4] ; seg1[4] ; clk_100m   ;
+; N/A   ; None         ; 8.179 ns   ; UARTIn:u2|r_RX_Byte[5]          ; seg2[5] ; clk_100m   ;
+; N/A   ; None         ; 8.155 ns   ; UARTIn:u2|r_RX_Byte[0]          ; seg2[0] ; clk_100m   ;
+; N/A   ; None         ; 8.145 ns   ; UARTIn:u2|r_RX_Byte[2]          ; seg2[2] ; clk_100m   ;
+; N/A   ; None         ; 8.138 ns   ; UARTIn:u2|r_RX_Byte[3]          ; seg2[3] ; clk_100m   ;
+; N/A   ; None         ; 8.104 ns   ; UARTInAdapter:u3|t_Guitar[0][6] ; seg1[5] ; clk_100m   ;
+; N/A   ; None         ; 8.087 ns   ; UARTInAdapter:u3|t_Guitar[0][5] ; seg1[4] ; clk_100m   ;
+; N/A   ; None         ; 7.798 ns   ; UARTIn:u2|r_RX_Byte[1]          ; seg2[1] ; clk_100m   ;
++-------+--------------+------------+---------------------------------+---------+------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------+
-; tco                                                                                                             ;
-+-------+--------------+------------+------------------------------------------------------+---------+------------+
-; Slack ; Required tco ; Actual tco ; From                                                 ; To      ; From Clock ;
-+-------+--------------+------------+------------------------------------------------------+---------+------------+
-; N/A   ; None         ; 14.628 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[6] ; seg1[6] ; fclk       ;
-; N/A   ; None         ; 14.599 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[2] ; seg0[5] ; fclk       ;
-; N/A   ; None         ; 14.575 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[2] ; seg0[6] ; fclk       ;
-; N/A   ; None         ; 14.556 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[2] ; seg0[4] ; fclk       ;
-; N/A   ; None         ; 14.490 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[7] ; seg1[6] ; fclk       ;
-; N/A   ; None         ; 14.314 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[1] ; seg0[4] ; fclk       ;
-; N/A   ; None         ; 14.274 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[6] ; seg1[5] ; fclk       ;
-; N/A   ; None         ; 14.274 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[1] ; seg0[6] ; fclk       ;
-; N/A   ; None         ; 14.265 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[1] ; seg0[5] ; fclk       ;
-; N/A   ; None         ; 14.261 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[4] ; seg1[6] ; fclk       ;
-; N/A   ; None         ; 14.255 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[6] ; seg1[4] ; fclk       ;
-; N/A   ; None         ; 14.245 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[2] ; seg0[1] ; fclk       ;
-; N/A   ; None         ; 14.231 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[5] ; seg1[6] ; fclk       ;
-; N/A   ; None         ; 14.227 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[0] ; seg0[5] ; fclk       ;
-; N/A   ; None         ; 14.223 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[0] ; seg0[4] ; fclk       ;
-; N/A   ; None         ; 14.222 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[2] ; seg0[2] ; fclk       ;
-; N/A   ; None         ; 14.194 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[0] ; seg0[6] ; fclk       ;
-; N/A   ; None         ; 14.191 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[2] ; seg0[3] ; fclk       ;
-; N/A   ; None         ; 14.130 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[7] ; seg1[5] ; fclk       ;
-; N/A   ; None         ; 14.111 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[7] ; seg1[4] ; fclk       ;
-; N/A   ; None         ; 14.008 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[3] ; seg0[5] ; fclk       ;
-; N/A   ; None         ; 14.005 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[3] ; seg0[4] ; fclk       ;
-; N/A   ; None         ; 13.971 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[3] ; seg0[6] ; fclk       ;
-; N/A   ; None         ; 13.941 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[1] ; seg0[1] ; fclk       ;
-; N/A   ; None         ; 13.931 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[6] ; seg1[3] ; fclk       ;
-; N/A   ; None         ; 13.926 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[6] ; seg1[2] ; fclk       ;
-; N/A   ; None         ; 13.918 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[1] ; seg0[3] ; fclk       ;
-; N/A   ; None         ; 13.911 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[4] ; seg1[5] ; fclk       ;
-; N/A   ; None         ; 13.900 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[1] ; seg0[2] ; fclk       ;
-; N/A   ; None         ; 13.892 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[4] ; seg1[4] ; fclk       ;
-; N/A   ; None         ; 13.871 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[5] ; seg1[5] ; fclk       ;
-; N/A   ; None         ; 13.870 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[2] ; seg0[0] ; fclk       ;
-; N/A   ; None         ; 13.864 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[0] ; seg0[1] ; fclk       ;
-; N/A   ; None         ; 13.852 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[5] ; seg1[4] ; fclk       ;
-; N/A   ; None         ; 13.850 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[0] ; seg0[2] ; fclk       ;
-; N/A   ; None         ; 13.823 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[0] ; seg0[3] ; fclk       ;
-; N/A   ; None         ; 13.798 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[7] ; seg1[3] ; fclk       ;
-; N/A   ; None         ; 13.796 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[7] ; seg1[2] ; fclk       ;
-; N/A   ; None         ; 13.645 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[3] ; seg0[1] ; fclk       ;
-; N/A   ; None         ; 13.631 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[3] ; seg0[2] ; fclk       ;
-; N/A   ; None         ; 13.605 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[3] ; seg0[3] ; fclk       ;
-; N/A   ; None         ; 13.577 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[6] ; seg1[0] ; fclk       ;
-; N/A   ; None         ; 13.575 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[4] ; seg1[3] ; fclk       ;
-; N/A   ; None         ; 13.573 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[4] ; seg1[2] ; fclk       ;
-; N/A   ; None         ; 13.570 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[1] ; seg0[0] ; fclk       ;
-; N/A   ; None         ; 13.543 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[6] ; seg1[1] ; fclk       ;
-; N/A   ; None         ; 13.541 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[5] ; seg1[3] ; fclk       ;
-; N/A   ; None         ; 13.495 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[5] ; seg1[2] ; fclk       ;
-; N/A   ; None         ; 13.489 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[0] ; seg0[0] ; fclk       ;
-; N/A   ; None         ; 13.445 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[7] ; seg1[1] ; fclk       ;
-; N/A   ; None         ; 13.442 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[7] ; seg1[0] ; fclk       ;
-; N/A   ; None         ; 13.270 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[3] ; seg0[0] ; fclk       ;
-; N/A   ; None         ; 13.222 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[4] ; seg1[1] ; fclk       ;
-; N/A   ; None         ; 13.220 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[4] ; seg1[0] ; fclk       ;
-; N/A   ; None         ; 13.185 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[5] ; seg1[0] ; fclk       ;
-; N/A   ; None         ; 13.179 ns  ; input_keyboard:keyboard_test|Keyboard:u0|scancode[5] ; seg1[1] ; fclk       ;
-+-------+--------------+------------+------------------------------------------------------+---------+------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; th                                                                                                             ;
-+---------------+-------------+-----------+-----------+-----------------------------------------------+----------+
-; Minimum Slack ; Required th ; Actual th ; From      ; To                                            ; To Clock ;
-+---------------+-------------+-----------+-----------+-----------------------------------------------+----------+
-; N/A           ; None        ; -4.564 ns ; clkin     ; input_keyboard:keyboard_test|Keyboard:u0|clk1 ; fclk     ;
-; N/A           ; None        ; -4.576 ns ; i_KB_Data ; input_keyboard:keyboard_test|Keyboard:u0|data ; fclk     ;
-+---------------+-------------+-----------+-----------+-----------------------------------------------+----------+
++-----------------------------------------------------------------------------------+
+; th                                                                                ;
++---------------+-------------+-----------+------+-----------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From ; To                    ; To Clock ;
++---------------+-------------+-----------+------+-----------------------+----------+
+; N/A           ; None        ; -6.839 ns ; RXD  ; UARTIn:u2|r_RX_Data_R ; clk_100m ;
++---------------+-------------+-----------+------+-----------------------+----------+
 
 
 +--------------------------+
@@ -337,116 +413,79 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Classic Timing Analyzer
     Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
-    Info: Processing started: Fri May 26 22:33:45 2017
+    Info: Processing started: Sat May 27 12:03:23 2017
 Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off ProjectGuitar -c main --timing_analysis_only
 Info: Parallel compilation is enabled and will use 2 of the 2 processors detected
-Warning: Timing Analysis is analyzing one or more combinational loops as latches
-    Warning: Node "input_keyboard:keyboard_test|Keyboard:u0|scancode[1]" is a latch
-    Warning: Node "input_keyboard:keyboard_test|Keyboard:u0|scancode[2]" is a latch
-    Warning: Node "input_keyboard:keyboard_test|Keyboard:u0|scancode[3]" is a latch
-    Warning: Node "input_keyboard:keyboard_test|Keyboard:u0|scancode[0]" is a latch
-    Warning: Node "input_keyboard:keyboard_test|Keyboard:u0|scancode[6]" is a latch
-    Warning: Node "input_keyboard:keyboard_test|Keyboard:u0|scancode[5]" is a latch
-    Warning: Node "input_keyboard:keyboard_test|Keyboard:u0|scancode[4]" is a latch
-    Warning: Node "input_keyboard:keyboard_test|Keyboard:u0|scancode[7]" is a latch
 Warning: Found pins functioning as undefined clocks and/or memory enables
-    Info: Assuming node "fclk" is an undefined clock
-Warning: Found 1 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
-    Info: Detected ripple clock "input_keyboard:keyboard_test|Keyboard:u0|fok" as buffer
-Info: Clock "fclk" has Internal fmax of 221.73 MHz between source register "input_keyboard:keyboard_test|Keyboard:u0|code[6]" and destination register "input_keyboard:keyboard_test|Keyboard:u0|state.delay" (period= 4.51 ns)
-    Info: + Longest register to register delay is 4.246 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X5_Y18_N5; Fanout = 3; REG Node = 'input_keyboard:keyboard_test|Keyboard:u0|code[6]'
-        Info: 2: + IC(0.824 ns) + CELL(0.650 ns) = 1.474 ns; Loc. = LCCOMB_X5_Y18_N18; Fanout = 1; COMB Node = 'input_keyboard:keyboard_test|Keyboard:u0|process_0~2'
-        Info: 3: + IC(0.424 ns) + CELL(0.623 ns) = 2.521 ns; Loc. = LCCOMB_X5_Y18_N8; Fanout = 2; COMB Node = 'input_keyboard:keyboard_test|Keyboard:u0|process_0~3'
-        Info: 4: + IC(0.665 ns) + CELL(0.206 ns) = 3.392 ns; Loc. = LCCOMB_X5_Y18_N20; Fanout = 1; COMB Node = 'input_keyboard:keyboard_test|Keyboard:u0|Selector0~1'
-        Info: 5: + IC(0.376 ns) + CELL(0.370 ns) = 4.138 ns; Loc. = LCCOMB_X5_Y18_N30; Fanout = 1; COMB Node = 'input_keyboard:keyboard_test|Keyboard:u0|Selector0~2'
-        Info: 6: + IC(0.000 ns) + CELL(0.108 ns) = 4.246 ns; Loc. = LCFF_X5_Y18_N31; Fanout = 1; REG Node = 'input_keyboard:keyboard_test|Keyboard:u0|state.delay'
-        Info: Total cell delay = 1.957 ns ( 46.09 % )
-        Info: Total interconnect delay = 2.289 ns ( 53.91 % )
-    Info: - Smallest clock skew is 0.000 ns
-        Info: + Shortest clock path from clock "fclk" to destination register is 3.312 ns
-            Info: 1: + IC(0.000 ns) + CELL(1.100 ns) = 1.100 ns; Loc. = PIN_N2; Fanout = 2; CLK Node = 'fclk'
-            Info: 2: + IC(0.135 ns) + CELL(0.000 ns) = 1.235 ns; Loc. = CLKCTRL_G2; Fanout = 24; COMB Node = 'fclk~clkctrl'
-            Info: 3: + IC(1.411 ns) + CELL(0.666 ns) = 3.312 ns; Loc. = LCFF_X5_Y18_N31; Fanout = 1; REG Node = 'input_keyboard:keyboard_test|Keyboard:u0|state.delay'
-            Info: Total cell delay = 1.766 ns ( 53.32 % )
-            Info: Total interconnect delay = 1.546 ns ( 46.68 % )
-        Info: - Longest clock path from clock "fclk" to source register is 3.312 ns
-            Info: 1: + IC(0.000 ns) + CELL(1.100 ns) = 1.100 ns; Loc. = PIN_N2; Fanout = 2; CLK Node = 'fclk'
-            Info: 2: + IC(0.135 ns) + CELL(0.000 ns) = 1.235 ns; Loc. = CLKCTRL_G2; Fanout = 24; COMB Node = 'fclk~clkctrl'
-            Info: 3: + IC(1.411 ns) + CELL(0.666 ns) = 3.312 ns; Loc. = LCFF_X5_Y18_N5; Fanout = 3; REG Node = 'input_keyboard:keyboard_test|Keyboard:u0|code[6]'
-            Info: Total cell delay = 1.766 ns ( 53.32 % )
-            Info: Total interconnect delay = 1.546 ns ( 46.68 % )
+    Info: Assuming node "clk_100m" is an undefined clock
+Info: Clock "clk_100m" has Internal fmax of 184.26 MHz between source register "UARTIn:u2|r_RX_Byte[1]" and destination register "UARTInAdapter:u3|t_Guitar[0][0]" (period= 5.427 ns)
+    Info: + Longest register to register delay is 5.157 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X33_Y1_N3; Fanout = 5; REG Node = 'UARTIn:u2|r_RX_Byte[1]'
+        Info: 2: + IC(1.105 ns) + CELL(0.616 ns) = 1.721 ns; Loc. = LCCOMB_X34_Y1_N10; Fanout = 1; COMB Node = 'UARTInAdapter:u3|Equal0~0'
+        Info: 3: + IC(0.396 ns) + CELL(0.651 ns) = 2.768 ns; Loc. = LCCOMB_X34_Y1_N0; Fanout = 12; COMB Node = 'UARTInAdapter:u3|Equal0~4'
+        Info: 4: + IC(0.371 ns) + CELL(0.206 ns) = 3.345 ns; Loc. = LCCOMB_X34_Y1_N4; Fanout = 8; COMB Node = 'UARTInAdapter:u3|t_Guitar[0][3]~48'
+        Info: 5: + IC(0.957 ns) + CELL(0.855 ns) = 5.157 ns; Loc. = LCFF_X30_Y1_N25; Fanout = 7; REG Node = 'UARTInAdapter:u3|t_Guitar[0][0]'
+        Info: Total cell delay = 2.328 ns ( 45.14 % )
+        Info: Total interconnect delay = 2.829 ns ( 54.86 % )
+    Info: - Smallest clock skew is -0.006 ns
+        Info: + Shortest clock path from clock "clk_100m" to destination register is 3.341 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.100 ns) = 1.100 ns; Loc. = PIN_N2; Fanout = 1; CLK Node = 'clk_100m'
+            Info: 2: + IC(0.135 ns) + CELL(0.000 ns) = 1.235 ns; Loc. = CLKCTRL_G2; Fanout = 47; COMB Node = 'clk_100m~clkctrl'
+            Info: 3: + IC(1.440 ns) + CELL(0.666 ns) = 3.341 ns; Loc. = LCFF_X30_Y1_N25; Fanout = 7; REG Node = 'UARTInAdapter:u3|t_Guitar[0][0]'
+            Info: Total cell delay = 1.766 ns ( 52.86 % )
+            Info: Total interconnect delay = 1.575 ns ( 47.14 % )
+        Info: - Longest clock path from clock "clk_100m" to source register is 3.347 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.100 ns) = 1.100 ns; Loc. = PIN_N2; Fanout = 1; CLK Node = 'clk_100m'
+            Info: 2: + IC(0.135 ns) + CELL(0.000 ns) = 1.235 ns; Loc. = CLKCTRL_G2; Fanout = 47; COMB Node = 'clk_100m~clkctrl'
+            Info: 3: + IC(1.446 ns) + CELL(0.666 ns) = 3.347 ns; Loc. = LCFF_X33_Y1_N3; Fanout = 5; REG Node = 'UARTIn:u2|r_RX_Byte[1]'
+            Info: Total cell delay = 1.766 ns ( 52.76 % )
+            Info: Total interconnect delay = 1.581 ns ( 47.24 % )
     Info: + Micro clock to output delay of source is 0.304 ns
     Info: + Micro setup delay of destination is -0.040 ns
-Warning: Circuit may not operate. Detected 8 non-operational path(s) clocked by clock "fclk" with clock skew larger than data delay. See Compilation Report for details.
-Info: Found hold time violation between source  pin or register "input_keyboard:keyboard_test|Keyboard:u0|code[2]" and destination pin or register "input_keyboard:keyboard_test|Keyboard:u0|scancode[2]" for clock "fclk" (Hold time is 1.489 ns)
-    Info: + Largest clock skew is 4.647 ns
-        Info: + Longest clock path from clock "fclk" to destination register is 7.959 ns
-            Info: 1: + IC(0.000 ns) + CELL(1.100 ns) = 1.100 ns; Loc. = PIN_N2; Fanout = 2; CLK Node = 'fclk'
-            Info: 2: + IC(1.718 ns) + CELL(0.970 ns) = 3.788 ns; Loc. = LCFF_X4_Y18_N5; Fanout = 1; REG Node = 'input_keyboard:keyboard_test|Keyboard:u0|fok'
-            Info: 3: + IC(2.001 ns) + CELL(0.000 ns) = 5.789 ns; Loc. = CLKCTRL_G1; Fanout = 8; COMB Node = 'input_keyboard:keyboard_test|Keyboard:u0|fok~clkctrl'
-            Info: 4: + IC(1.964 ns) + CELL(0.206 ns) = 7.959 ns; Loc. = LCCOMB_X13_Y4_N26; Fanout = 7; REG Node = 'input_keyboard:keyboard_test|Keyboard:u0|scancode[2]'
-            Info: Total cell delay = 2.276 ns ( 28.60 % )
-            Info: Total interconnect delay = 5.683 ns ( 71.40 % )
-        Info: - Shortest clock path from clock "fclk" to source register is 3.312 ns
-            Info: 1: + IC(0.000 ns) + CELL(1.100 ns) = 1.100 ns; Loc. = PIN_N2; Fanout = 2; CLK Node = 'fclk'
-            Info: 2: + IC(0.135 ns) + CELL(0.000 ns) = 1.235 ns; Loc. = CLKCTRL_G2; Fanout = 24; COMB Node = 'fclk~clkctrl'
-            Info: 3: + IC(1.411 ns) + CELL(0.666 ns) = 3.312 ns; Loc. = LCFF_X5_Y18_N13; Fanout = 3; REG Node = 'input_keyboard:keyboard_test|Keyboard:u0|code[2]'
-            Info: Total cell delay = 1.766 ns ( 53.32 % )
-            Info: Total interconnect delay = 1.546 ns ( 46.68 % )
-    Info: - Micro clock to output delay of source is 0.304 ns
-    Info: - Shortest register to register delay is 2.854 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X5_Y18_N13; Fanout = 3; REG Node = 'input_keyboard:keyboard_test|Keyboard:u0|code[2]'
-        Info: 2: + IC(2.488 ns) + CELL(0.366 ns) = 2.854 ns; Loc. = LCCOMB_X13_Y4_N26; Fanout = 7; REG Node = 'input_keyboard:keyboard_test|Keyboard:u0|scancode[2]'
-        Info: Total cell delay = 0.366 ns ( 12.82 % )
-        Info: Total interconnect delay = 2.488 ns ( 87.18 % )
-    Info: + Micro hold delay of destination is 0.000 ns
-    Info: Delay path is controlled by inverted clocks -- if clock duty cycle is 50%, fmax is divided by two
-Info: tsu for register "input_keyboard:keyboard_test|Keyboard:u0|data" (data pin = "i_KB_Data", clock pin = "fclk") is 4.842 ns
-    Info: + Longest pin to register delay is 8.194 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.924 ns) = 0.924 ns; Loc. = PIN_AD7; Fanout = 1; PIN Node = 'i_KB_Data'
-        Info: 2: + IC(6.810 ns) + CELL(0.460 ns) = 8.194 ns; Loc. = LCFF_X5_Y18_N9; Fanout = 13; REG Node = 'input_keyboard:keyboard_test|Keyboard:u0|data'
-        Info: Total cell delay = 1.384 ns ( 16.89 % )
-        Info: Total interconnect delay = 6.810 ns ( 83.11 % )
+Info: tsu for register "UARTIn:u2|r_RX_Data_R" (data pin = "RXD", clock pin = "clk_100m") is 7.105 ns
+    Info: + Longest pin to register delay is 10.493 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.924 ns) = 0.924 ns; Loc. = PIN_C19; Fanout = 1; PIN Node = 'RXD'
+        Info: 2: + IC(9.109 ns) + CELL(0.460 ns) = 10.493 ns; Loc. = LCFF_X34_Y2_N17; Fanout = 1; REG Node = 'UARTIn:u2|r_RX_Data_R'
+        Info: Total cell delay = 1.384 ns ( 13.19 % )
+        Info: Total interconnect delay = 9.109 ns ( 86.81 % )
     Info: + Micro setup delay of destination is -0.040 ns
-    Info: - Shortest clock path from clock "fclk" to destination register is 3.312 ns
-        Info: 1: + IC(0.000 ns) + CELL(1.100 ns) = 1.100 ns; Loc. = PIN_N2; Fanout = 2; CLK Node = 'fclk'
-        Info: 2: + IC(0.135 ns) + CELL(0.000 ns) = 1.235 ns; Loc. = CLKCTRL_G2; Fanout = 24; COMB Node = 'fclk~clkctrl'
-        Info: 3: + IC(1.411 ns) + CELL(0.666 ns) = 3.312 ns; Loc. = LCFF_X5_Y18_N9; Fanout = 13; REG Node = 'input_keyboard:keyboard_test|Keyboard:u0|data'
-        Info: Total cell delay = 1.766 ns ( 53.32 % )
-        Info: Total interconnect delay = 1.546 ns ( 46.68 % )
-Info: tco from clock "fclk" to destination pin "seg1[6]" through register "input_keyboard:keyboard_test|Keyboard:u0|scancode[6]" is 14.628 ns
-    Info: + Longest clock path from clock "fclk" to source register is 7.970 ns
-        Info: 1: + IC(0.000 ns) + CELL(1.100 ns) = 1.100 ns; Loc. = PIN_N2; Fanout = 2; CLK Node = 'fclk'
-        Info: 2: + IC(1.718 ns) + CELL(0.970 ns) = 3.788 ns; Loc. = LCFF_X4_Y18_N5; Fanout = 1; REG Node = 'input_keyboard:keyboard_test|Keyboard:u0|fok'
-        Info: 3: + IC(2.001 ns) + CELL(0.000 ns) = 5.789 ns; Loc. = CLKCTRL_G1; Fanout = 8; COMB Node = 'input_keyboard:keyboard_test|Keyboard:u0|fok~clkctrl'
-        Info: 4: + IC(1.975 ns) + CELL(0.206 ns) = 7.970 ns; Loc. = LCCOMB_X23_Y4_N26; Fanout = 7; REG Node = 'input_keyboard:keyboard_test|Keyboard:u0|scancode[6]'
-        Info: Total cell delay = 2.276 ns ( 28.56 % )
-        Info: Total interconnect delay = 5.694 ns ( 71.44 % )
-    Info: + Micro clock to output delay of source is 0.000 ns
-    Info: + Longest register to pin delay is 6.658 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCCOMB_X23_Y4_N26; Fanout = 7; REG Node = 'input_keyboard:keyboard_test|Keyboard:u0|scancode[6]'
-        Info: 2: + IC(0.790 ns) + CELL(0.651 ns) = 1.441 ns; Loc. = LCCOMB_X23_Y4_N28; Fanout = 1; COMB Node = 'input_keyboard:keyboard_test|seg7:u2|Mux0~0'
-        Info: 3: + IC(1.981 ns) + CELL(3.236 ns) = 6.658 ns; Loc. = PIN_AE9; Fanout = 0; PIN Node = 'seg1[6]'
-        Info: Total cell delay = 3.887 ns ( 58.38 % )
-        Info: Total interconnect delay = 2.771 ns ( 41.62 % )
-Info: th for register "input_keyboard:keyboard_test|Keyboard:u0|clk1" (data pin = "clkin", clock pin = "fclk") is -4.564 ns
-    Info: + Longest clock path from clock "fclk" to destination register is 3.310 ns
-        Info: 1: + IC(0.000 ns) + CELL(1.100 ns) = 1.100 ns; Loc. = PIN_N2; Fanout = 2; CLK Node = 'fclk'
-        Info: 2: + IC(0.135 ns) + CELL(0.000 ns) = 1.235 ns; Loc. = CLKCTRL_G2; Fanout = 24; COMB Node = 'fclk~clkctrl'
-        Info: 3: + IC(1.409 ns) + CELL(0.666 ns) = 3.310 ns; Loc. = LCFF_X4_Y18_N31; Fanout = 5; REG Node = 'input_keyboard:keyboard_test|Keyboard:u0|clk1'
-        Info: Total cell delay = 1.766 ns ( 53.35 % )
-        Info: Total interconnect delay = 1.544 ns ( 46.65 % )
+    Info: - Shortest clock path from clock "clk_100m" to destination register is 3.348 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.100 ns) = 1.100 ns; Loc. = PIN_N2; Fanout = 1; CLK Node = 'clk_100m'
+        Info: 2: + IC(0.135 ns) + CELL(0.000 ns) = 1.235 ns; Loc. = CLKCTRL_G2; Fanout = 47; COMB Node = 'clk_100m~clkctrl'
+        Info: 3: + IC(1.447 ns) + CELL(0.666 ns) = 3.348 ns; Loc. = LCFF_X34_Y2_N17; Fanout = 1; REG Node = 'UARTIn:u2|r_RX_Data_R'
+        Info: Total cell delay = 1.766 ns ( 52.75 % )
+        Info: Total interconnect delay = 1.582 ns ( 47.25 % )
+Info: tco from clock "clk_100m" to destination pin "seg0[3]" through register "UARTInAdapter:u3|t_Guitar[0][2]" is 10.309 ns
+    Info: + Longest clock path from clock "clk_100m" to source register is 3.341 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.100 ns) = 1.100 ns; Loc. = PIN_N2; Fanout = 1; CLK Node = 'clk_100m'
+        Info: 2: + IC(0.135 ns) + CELL(0.000 ns) = 1.235 ns; Loc. = CLKCTRL_G2; Fanout = 47; COMB Node = 'clk_100m~clkctrl'
+        Info: 3: + IC(1.440 ns) + CELL(0.666 ns) = 3.341 ns; Loc. = LCFF_X30_Y1_N13; Fanout = 7; REG Node = 'UARTInAdapter:u3|t_Guitar[0][2]'
+        Info: Total cell delay = 1.766 ns ( 52.86 % )
+        Info: Total interconnect delay = 1.575 ns ( 47.14 % )
+    Info: + Micro clock to output delay of source is 0.304 ns
+    Info: + Longest register to pin delay is 6.664 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X30_Y1_N13; Fanout = 7; REG Node = 'UARTInAdapter:u3|t_Guitar[0][2]'
+        Info: 2: + IC(0.526 ns) + CELL(0.647 ns) = 1.173 ns; Loc. = LCCOMB_X30_Y1_N24; Fanout = 1; COMB Node = 'seg7:u4|Mux3~0'
+        Info: 3: + IC(2.275 ns) + CELL(3.216 ns) = 6.664 ns; Loc. = PIN_AC8; Fanout = 0; PIN Node = 'seg0[3]'
+        Info: Total cell delay = 3.863 ns ( 57.97 % )
+        Info: Total interconnect delay = 2.801 ns ( 42.03 % )
+Info: th for register "UARTIn:u2|r_RX_Data_R" (data pin = "RXD", clock pin = "clk_100m") is -6.839 ns
+    Info: + Longest clock path from clock "clk_100m" to destination register is 3.348 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.100 ns) = 1.100 ns; Loc. = PIN_N2; Fanout = 1; CLK Node = 'clk_100m'
+        Info: 2: + IC(0.135 ns) + CELL(0.000 ns) = 1.235 ns; Loc. = CLKCTRL_G2; Fanout = 47; COMB Node = 'clk_100m~clkctrl'
+        Info: 3: + IC(1.447 ns) + CELL(0.666 ns) = 3.348 ns; Loc. = LCFF_X34_Y2_N17; Fanout = 1; REG Node = 'UARTIn:u2|r_RX_Data_R'
+        Info: Total cell delay = 1.766 ns ( 52.75 % )
+        Info: Total interconnect delay = 1.582 ns ( 47.25 % )
     Info: + Micro hold delay of destination is 0.306 ns
-    Info: - Shortest pin to register delay is 8.180 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.924 ns) = 0.924 ns; Loc. = PIN_AD6; Fanout = 1; PIN Node = 'clkin'
-        Info: 2: + IC(6.796 ns) + CELL(0.460 ns) = 8.180 ns; Loc. = LCFF_X4_Y18_N31; Fanout = 5; REG Node = 'input_keyboard:keyboard_test|Keyboard:u0|clk1'
-        Info: Total cell delay = 1.384 ns ( 16.92 % )
-        Info: Total interconnect delay = 6.796 ns ( 83.08 % )
-Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 12 warnings
-    Info: Peak virtual memory: 236 megabytes
-    Info: Processing ended: Fri May 26 22:33:45 2017
-    Info: Elapsed time: 00:00:00
+    Info: - Shortest pin to register delay is 10.493 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.924 ns) = 0.924 ns; Loc. = PIN_C19; Fanout = 1; PIN Node = 'RXD'
+        Info: 2: + IC(9.109 ns) + CELL(0.460 ns) = 10.493 ns; Loc. = LCFF_X34_Y2_N17; Fanout = 1; REG Node = 'UARTIn:u2|r_RX_Data_R'
+        Info: Total cell delay = 1.384 ns ( 13.19 % )
+        Info: Total interconnect delay = 9.109 ns ( 86.81 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 237 megabytes
+    Info: Processing ended: Sat May 27 12:03:24 2017
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 
 
