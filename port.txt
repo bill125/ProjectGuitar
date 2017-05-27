@@ -4,7 +4,7 @@ entity ImpulseGen is
 	 pausePeriod: integer := 10
 	 );
 	port (
-		start : in std_logic;
+		start : inout std_logic;
 		hclk : in std_logic;
 		clk : out std_logic
 	);
@@ -15,7 +15,7 @@ entity NoteGen is
 	triggeredString : in integer range from 0 to 5;
 	strings : in GuitarStatus;
 	impulse_in, hclk : in std_logic;
-	note : out integer range from 0 to 88;
+	noteLevel : out integer range from 0 to 88;
 	impulse_out : out std_logic
 	);
 End entity NoteGen;
