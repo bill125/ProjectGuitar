@@ -1,0 +1,64 @@
+<internal_error>
+	<executable>quartus_map.exe</executable>
+	<sub_system>unknown</sub_system>
+	<file>unknown</file>
+	<line>0</line>
+	<callstack>
+	0x05de4081: synth_vrfx + 0x1b4081 (?elaborate@VRFX_ELABORATOR@@UAIPAVHDB_COMPONENT_SCHEMA@@PAVBASEX_ELABORATE_INFO@@@Z + 0x16cb01)
+	0x05de449b: synth_vrfx + 0x1b449b (?elaborate@VRFX_ELABORATOR@@UAIPAVHDB_COMPONENT_SCHEMA@@PAVBASEX_ELABORATE_INFO@@@Z + 0x16cf1b)
+	</callstack>
+	<error>Access Violation at 0X05DE4081</error>
+	<date>Wed May 31 19:38:15 2017</date>
+	<version>Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version</version>
+	<full_error>Access Violation at 0X05DE4081
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version </full_error>
+</internal_error>
+
+<internal_error>
+	<executable>quartus_map.exe</executable>
+	<sub_system>unknown</sub_system>
+	<file>unknown</file>
+	<line>0</line>
+	<callstack>
+	0x05ea4081: synth_vrfx + 0x1b4081 (?elaborate@VRFX_ELABORATOR@@UAIPAVHDB_COMPONENT_SCHEMA@@PAVBASEX_ELABORATE_INFO@@@Z + 0x16cb01)
+	0x05ea449b: synth_vrfx + 0x1b449b (?elaborate@VRFX_ELABORATOR@@UAIPAVHDB_COMPONENT_SCHEMA@@PAVBASEX_ELABORATE_INFO@@@Z + 0x16cf1b)
+	</callstack>
+	<error>Access Violation at 0X05EA4081</error>
+	<date>Wed May 31 19:38:24 2017</date>
+	<version>Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version</version>
+	<full_error>Access Violation at 0X05EA4081
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version </full_error>
+</internal_error>
+
+<internal_error>
+	<executable>quartus_map.exe</executable>
+	<sub_system>unknown</sub_system>
+	<file>unknown</file>
+	<line>0</line>
+	<callstack>
+	0x05dd4081: synth_vrfx + 0x1b4081 (?elaborate@VRFX_ELABORATOR@@UAIPAVHDB_COMPONENT_SCHEMA@@PAVBASEX_ELABORATE_INFO@@@Z + 0x16cb01)
+	0x05dd449b: synth_vrfx + 0x1b449b (?elaborate@VRFX_ELABORATOR@@UAIPAVHDB_COMPONENT_SCHEMA@@PAVBASEX_ELABORATE_INFO@@@Z + 0x16cf1b)
+	</callstack>
+	<error>Access Violation at 0X05DD4081</error>
+	<date>Wed May 31 19:40:56 2017</date>
+	<version>Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version</version>
+	<full_error>Access Violation at 0X05DD4081
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version </full_error>
+</internal_error>
+
+<internal_error>
+	<executable>quartus_map.exe</executable>
+	<sub_system>unknown</sub_system>
+	<file>unknown</file>
+	<line>0</line>
+	<callstack>
+	0x05dc4081: synth_vrfx + 0x1b4081 (?elaborate@VRFX_ELABORATOR@@UAIPAVHDB_COMPONENT_SCHEMA@@PAVBASEX_ELABORATE_INFO@@@Z + 0x16cb01)
+	0x05dc449b: synth_vrfx + 0x1b449b (?elaborate@VRFX_ELABORATOR@@UAIPAVHDB_COMPONENT_SCHEMA@@PAVBASEX_ELABORATE_INFO@@@Z + 0x16cf1b)
+	</callstack>
+	<error>Access Violation at 0X05DC4081</error>
+	<date>Wed May 31 21:22:27 2017</date>
+	<version>Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version</version>
+	<full_error>Access Violation at 0X05DC4081
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version </full_error>
+</internal_error>
+
