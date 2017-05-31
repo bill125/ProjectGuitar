@@ -84,13 +84,13 @@ GND*                         : A10       :        :                   :         
 VCCIO3                       : A11       : power  :                   : 3.3V    : 3         :                
 GND                          : A12       : gnd    :                   :         :           :                
 GND+                         : A13       :        :                   :         : 4         :                
-GND*                         : A14       :        :                   :         : 4         :                
+o_cnt[0]                     : A14       : output : 3.3-V LVTTL       :         : 4         : N              
 GND                          : A15       : gnd    :                   :         :           :                
 VCCIO4                       : A16       : power  :                   : 3.3V    : 4         :                
 GND*                         : A17       :        :                   :         : 4         :                
 GND*                         : A18       :        :                   :         : 4         :                
 GND*                         : A19       :        :                   :         : 4         :                
-GND*                         : A20       :        :                   :         : 4         :                
+TXD                          : A20       : output : 3.3-V LVTTL       :         : 4         : Y              
 GND*                         : A21       :        :                   :         : 4         :                
 GND*                         : A22       :        :                   :         : 4         :                
 GND*                         : A23       :        :                   :         : 4         :                
@@ -106,7 +106,7 @@ GND*                         : AA7       :        :                   :         
 VCCA_PLL1                    : AA8       : power  :                   : 1.2V    :           :                
 GND*                         : AA9       :        :                   :         : 8         :                
 GND*                         : AA10      :        :                   :         : 8         :                
-TXD                          : AA11      : output : 3.3-V LVTTL       :         : 8         : N              
+GND*                         : AA11      :        :                   :         : 8         :                
 GND*                         : AA12      :        :                   :         : 8         :                
 GND*                         : AA13      :        :                   :         : 7         :                
 GND*                         : AA14      :        :                   :         : 7         :                
@@ -177,7 +177,7 @@ GND*                         : AC26      :        :                   :         
 VCCIO1                       : AD1       : power  :                   : 3.3V    : 1         :                
 GND*                         : AD2       :        :                   :         : 1         :                
 GND*                         : AD3       :        :                   :         : 1         :                
-GND*                         : AD4       :        :                   :         : 8         :                
+click                        : AD4       : input  : 3.3-V LVTTL       :         : 8         : Y              
 GND*                         : AD5       :        :                   :         : 8         :                
 clk_in                       : AD6       : input  : 3.3-V LVTTL       :         : 8         : Y              
 i_KB_Data                    : AD7       : input  : 3.3-V LVTTL       :         : 8         : Y              
@@ -196,7 +196,7 @@ GND*                         : AD19      :        :                   :         
 VCCIO7                       : AD20      : power  :                   : 3.3V    : 7         :                
 GND*                         : AD21      :        :                   :         : 7         :                
 GND*                         : AD22      :        :                   :         : 7         :                
-GND*                         : AD23      :        :                   :         : 7         :                
+clk_out                      : AD23      : output : 3.3-V LVTTL       :         : 7         : Y              
 GND*                         : AD24      :        :                   :         : 6         :                
 GND*                         : AD25      :        :                   :         : 6         :                
 VCCIO6                       : AD26      : power  :                   : 3.3V    : 6         :                
@@ -209,7 +209,7 @@ seg0[5]                      : AE6       : output : 3.3-V LVTTL       :         
 seg1[0]                      : AE7       : output : 3.3-V LVTTL       :         : 8         : Y              
 seg1[3]                      : AE8       : output : 3.3-V LVTTL       :         : 8         : Y              
 seg1[6]                      : AE9       : output : 3.3-V LVTTL       :         : 8         : Y              
-seg2[4]                      : AE10      : output : 3.3-V LVTTL       :         : 8         : Y              
+seg2[5]                      : AE10      : output : 3.3-V LVTTL       :         : 8         : Y              
 GND*                         : AE11      :        :                   :         : 8         :                
 GND*                         : AE12      :        :                   :         : 8         :                
 GND*                         : AE13      :        :                   :         : 8         :                
@@ -234,7 +234,7 @@ seg0[4]                      : AF6       : output : 3.3-V LVTTL       :         
 seg1[1]                      : AF7       : output : 3.3-V LVTTL       :         : 8         : Y              
 seg1[2]                      : AF8       : output : 3.3-V LVTTL       :         : 8         : Y              
 seg2[0]                      : AF9       : output : 3.3-V LVTTL       :         : 8         : Y              
-seg2[5]                      : AF10      : output : 3.3-V LVTTL       :         : 8         : Y              
+seg2[4]                      : AF10      : output : 3.3-V LVTTL       :         : 8         : Y              
 VCCIO8                       : AF11      : power  :                   : 3.3V    : 8         :                
 GND                          : AF12      : gnd    :                   :         :           :                
 GND*                         : AF13      :        :                   :         : 8         :                
@@ -245,7 +245,7 @@ GND*                         : AF17      :        :                   :         
 GND*                         : AF18      :        :                   :         : 7         :                
 GND*                         : AF19      :        :                   :         : 7         :                
 GND*                         : AF20      :        :                   :         : 7         :                
-GND*                         : AF21      :        :                   :         : 7         :                
+o_cnt[1]                     : AF21      : output : 3.3-V LVTTL       :         : 7         : N              
 GND*                         : AF22      :        :                   :         : 7         :                
 GND*                         : AF23      :        :                   :         : 7         :                
 VCCIO7                       : AF24      : power  :                   : 3.3V    : 7         :                
@@ -666,7 +666,7 @@ GND*                         : U23       :        :                   :         
 GND*                         : U24       :        :                   :         : 6         :                
 GND*                         : U25       :        :                   :         : 6         :                
 GND*                         : U26       :        :                   :         : 6         :                
-GND*                         : V1        :        :                   :         : 1         :                
+o_cnt[2]                     : V1        : output : 3.3-V LVTTL       :         : 1         : N              
 GND*                         : V2        :        :                   :         : 1         :                
 GND*                         : V3        :        :                   :         : 1         :                
 GND*                         : V4        :        :                   :         : 1         :                
