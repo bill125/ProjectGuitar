@@ -1,5 +1,5 @@
 Analysis & Synthesis report for main
-Sat May 27 21:41:12 2017
+Wed May 31 12:11:03 2017
 Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
 
 
@@ -9,7 +9,22 @@ Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
   1. Legal Notice
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
-  4. Analysis & Synthesis Messages
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. State Machine - |main|KeyboardInput:u0|Keyboard:u0|state
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Parameter Settings for User Entity Instance: KeyboardAdapter:u1
+ 11. Parameter Settings for User Entity Instance: FreqDiv:fd_inst1
+ 12. Parameter Settings for User Entity Instance: FreqDiv:fd_inst2
+ 13. Parameter Settings for User Entity Instance: FreqDiv:fd_inst3
+ 14. Port Connectivity Checks: "FreqDiv:fd_inst3"
+ 15. Port Connectivity Checks: "FreqDiv:fd_inst2"
+ 16. Port Connectivity Checks: "FreqDiv:fd_inst1"
+ 17. Port Connectivity Checks: "seg7:u2"
+ 18. Port Connectivity Checks: "KeyboardAdapter:u1"
+ 19. Analysis & Synthesis Messages
 
 
 
@@ -35,20 +50,20 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Sat May 27 21:41:12 2017        ;
+; Analysis & Synthesis Status        ; Successful - Wed May 31 12:11:03 2017    ;
 ; Quartus II Version                 ; 9.0 Build 132 02/25/2009 SJ Full Version ;
 ; Revision Name                      ; main                                     ;
 ; Top-level Entity Name              ; main                                     ;
 ; Family                             ; Cyclone II                               ;
-; Total logic elements               ; N/A until Partition Merge                ;
-;     Total combinational functions  ; N/A until Partition Merge                ;
-;     Dedicated logic registers      ; N/A until Partition Merge                ;
-; Total registers                    ; N/A until Partition Merge                ;
-; Total pins                         ; N/A until Partition Merge                ;
-; Total virtual pins                 ; N/A until Partition Merge                ;
-; Total memory bits                  ; N/A until Partition Merge                ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                ;
-; Total PLLs                         ; N/A until Partition Merge                ;
+; Total logic elements               ; 71                                       ;
+;     Total combinational functions  ; 59                                       ;
+;     Dedicated logic registers      ; 29                                       ;
+; Total registers                    ; 29                                       ;
+; Total pins                         ; 32                                       ;
+; Total virtual pins                 ; 0                                        ;
+; Total memory bits                  ; 0                                        ;
+; Embedded Multiplier 9-bit elements ; 0                                        ;
+; Total PLLs                         ; 0                                        ;
 +------------------------------------+------------------------------------------+
 
 
@@ -127,13 +142,225 @@ applicable agreement for further details.
 +----------------------------------------------------------------+--------------------+--------------------+
 
 
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                  ;
++----------------------------------+-----------------+-----------------------+----------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                               ;
++----------------------------------+-----------------+-----------------------+----------------------------------------------------------------------------+
+; Keyboard.vhd                     ; yes             ; User VHDL File        ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/Keyboard.vhd         ;
+; seg7.vhd                         ; yes             ; User VHDL File        ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/seg7.vhd             ;
+; main.vhd                         ; yes             ; User VHDL File        ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/main.vhd             ;
+; constant_package.vhd             ; yes             ; User VHDL File        ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/constant_package.vhd ;
+; FreqDiv.vhd                      ; yes             ; User VHDL File        ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/FreqDiv.vhd          ;
+; KeyboardInput.vhd                ; yes             ; Auto-Found VHDL File  ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/KeyboardInput.vhd    ;
+; KeyboardAdapter.vhd              ; yes             ; Auto-Found VHDL File  ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/KeyboardAdapter.vhd  ;
++----------------------------------+-----------------+-----------------------+----------------------------------------------------------------------------+
+
+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Estimated Total logic elements              ; 71       ;
+;                                             ;          ;
+; Total combinational functions               ; 59       ;
+; Logic element usage by number of LUT inputs ;          ;
+;     -- 4 input functions                    ; 40       ;
+;     -- 3 input functions                    ; 16       ;
+;     -- <=2 input functions                  ; 3        ;
+;                                             ;          ;
+; Logic elements by mode                      ;          ;
+;     -- normal mode                          ; 59       ;
+;     -- arithmetic mode                      ; 0        ;
+;                                             ;          ;
+; Total registers                             ; 29       ;
+;     -- Dedicated logic registers            ; 29       ;
+;     -- I/O registers                        ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 32       ;
+; Maximum fan-out node                        ; clk_100m ;
+; Maximum fan-out                             ; 25       ;
+; Total fan-out                               ; 326      ;
+; Average fan-out                             ; 2.72     ;
++---------------------------------------------+----------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                        ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+--------------+
+; |main                      ; 59 (0)            ; 29 (0)       ; 0           ; 0            ; 0       ; 0         ; 32   ; 0            ; |main                              ; work         ;
+;    |KeyboardAdapter:u1|    ; 11 (11)           ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|KeyboardAdapter:u1           ; work         ;
+;    |KeyboardInput:u0|      ; 41 (0)            ; 25 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|KeyboardInput:u0             ; work         ;
+;       |Keyboard:u0|        ; 27 (27)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|KeyboardInput:u0|Keyboard:u0 ; work         ;
+;       |seg7:u1|            ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|KeyboardInput:u0|seg7:u1     ; work         ;
+;       |seg7:u2|            ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|KeyboardInput:u0|seg7:u2     ; work         ;
+;    |seg7:u2|               ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|seg7:u2                      ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |main|KeyboardInput:u0|Keyboard:u0|state                                                                                                                    ;
++--------------+--------------+------------+--------------+----------+----------+----------+----------+----------+----------+----------+----------+-------------+-------------+
+; Name         ; state.finish ; state.stop ; state.parity ; state.d7 ; state.d6 ; state.d5 ; state.d4 ; state.d3 ; state.d2 ; state.d1 ; state.d0 ; state.start ; state.delay ;
++--------------+--------------+------------+--------------+----------+----------+----------+----------+----------+----------+----------+----------+-------------+-------------+
+; state.delay  ; 0            ; 0          ; 0            ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0           ; 0           ;
+; state.start  ; 0            ; 0          ; 0            ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1           ; 1           ;
+; state.d0     ; 0            ; 0          ; 0            ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0           ; 1           ;
+; state.d1     ; 0            ; 0          ; 0            ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0           ; 1           ;
+; state.d2     ; 0            ; 0          ; 0            ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0           ; 1           ;
+; state.d3     ; 0            ; 0          ; 0            ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0           ; 1           ;
+; state.d4     ; 0            ; 0          ; 0            ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0           ; 1           ;
+; state.d5     ; 0            ; 0          ; 0            ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0           ; 1           ;
+; state.d6     ; 0            ; 0          ; 0            ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0           ; 1           ;
+; state.d7     ; 0            ; 0          ; 0            ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0           ; 1           ;
+; state.parity ; 0            ; 0          ; 1            ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0           ; 1           ;
+; state.stop   ; 0            ; 1          ; 0            ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0           ; 1           ;
+; state.finish ; 1            ; 0          ; 0            ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0           ; 1           ;
++--------------+--------------+------------+--------------+----------+----------+----------+----------+----------+----------+----------+----------+-------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                            ;
++----------------------------------------------------+----------------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal              ; Free of Timing Hazards ;
++----------------------------------------------------+----------------------------------+------------------------+
+; KeyboardInput:u0|Keyboard:u0|scancode[0]           ; KeyboardInput:u0|Keyboard:u0|fok ; yes                    ;
+; KeyboardInput:u0|Keyboard:u0|scancode[1]           ; KeyboardInput:u0|Keyboard:u0|fok ; yes                    ;
+; KeyboardInput:u0|Keyboard:u0|scancode[2]           ; KeyboardInput:u0|Keyboard:u0|fok ; yes                    ;
+; KeyboardInput:u0|Keyboard:u0|scancode[3]           ; KeyboardInput:u0|Keyboard:u0|fok ; yes                    ;
+; KeyboardInput:u0|Keyboard:u0|scancode[4]           ; KeyboardInput:u0|Keyboard:u0|fok ; yes                    ;
+; KeyboardInput:u0|Keyboard:u0|scancode[5]           ; KeyboardInput:u0|Keyboard:u0|fok ; yes                    ;
+; KeyboardInput:u0|Keyboard:u0|scancode[6]           ; KeyboardInput:u0|Keyboard:u0|fok ; yes                    ;
+; KeyboardInput:u0|Keyboard:u0|scancode[7]           ; KeyboardInput:u0|Keyboard:u0|fok ; yes                    ;
+; Number of user-specified and inferred latches = 8  ;                                  ;                        ;
++----------------------------------------------------+----------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 29    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 22    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 11    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: KeyboardAdapter:u1 ;
++----------------+----------+-------------------------------------+
+; Parameter Name ; Value    ; Type                                ;
++----------------+----------+-------------------------------------+
+; string_0       ; 01001011 ; Unsigned Binary                     ;
+; string_1       ; 01000010 ; Unsigned Binary                     ;
+; string_2       ; 00111011 ; Unsigned Binary                     ;
+; string_3       ; 00110010 ; Unsigned Binary                     ;
+; string_4       ; 00110001 ; Unsigned Binary                     ;
+; string_5       ; 00111010 ; Unsigned Binary                     ;
++----------------+----------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: FreqDiv:fd_inst1 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; div            ; 4     ; Signed Integer                       ;
+; half           ; 2     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: FreqDiv:fd_inst2 ;
++----------------+--------+-------------------------------------+
+; Parameter Name ; Value  ; Type                                ;
++----------------+--------+-------------------------------------+
+; div            ; 100000 ; Signed Integer                      ;
+; half           ; 50000  ; Signed Integer                      ;
++----------------+--------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: FreqDiv:fd_inst3 ;
++----------------+-----------+----------------------------------+
+; Parameter Name ; Value     ; Type                             ;
++----------------+-----------+----------------------------------+
+; div            ; 100000000 ; Signed Integer                   ;
+; half           ; 50000000  ; Signed Integer                   ;
++----------------+-----------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FreqDiv:fd_inst3"                                                                   ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; rst  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; o    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FreqDiv:fd_inst2"                                                                   ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; rst  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; o    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FreqDiv:fd_inst1"                                                                   ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; rst  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; o    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------+
+; Port Connectivity Checks: "seg7:u2"       ;
++---------+-------+----------+--------------+
+; Port    ; Type  ; Severity ; Details      ;
++---------+-------+----------+--------------+
+; code[3] ; Input ; Info     ; Stuck at GND ;
++---------+-------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "KeyboardAdapter:u1"                                                                  ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; o_key ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; o_clk ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
-    Info: Processing started: Sat May 27 21:41:11 2017
+    Info: Processing started: Wed May 31 12:11:02 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ProjectGuitar -c main
 Info: Found 2 design units, including 1 entities, in source file UARTIn.vhd
     Info: Found design unit 1: UARTIn-UARTIn_bhv
@@ -156,15 +383,59 @@ Info: Found 1 design units, including 0 entities, in source file constant_packag
 Info: Found 2 design units, including 1 entities, in source file UARTInAdapter.vhd
     Info: Found design unit 1: UARTInAdapter-UARTInAdapter_bhv
     Info: Found entity 1: UARTInAdapter
-Error (10349): VHDL Association List error at main.vhd(97): formal "i_Clk" does not exist File: C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/main.vhd Line: 97
-Error (10346): VHDL error at main.vhd(95): formal port or parameter "hclk" must have actual or default value File: C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/main.vhd Line: 95
-Error (10784): HDL error at main.vhd(26): see declaration for object "hclk" File: C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/main.vhd Line: 26
-Error (10346): VHDL error at main.vhd(95): formal port or parameter "i_Byte" must have actual or default value File: C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/main.vhd Line: 95
-Error (10784): HDL error at main.vhd(27): see declaration for object "i_Byte" File: C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/main.vhd Line: 27
-Error: Quartus II Analysis & Synthesis was unsuccessful. 5 errors, 1 warning
-    Error: Peak virtual memory: 280 megabytes
-    Error: Processing ended: Sat May 27 21:41:12 2017
-    Error: Elapsed time: 00:00:01
-    Error: Total CPU time (on all processors): 00:00:01
+Warning: Entity "FreqDiv" obtained from "C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/FreqDiv.vhd" instead of from Quartus II megafunction library
+Info: Found 2 design units, including 1 entities, in source file FreqDiv.vhd
+    Info: Found design unit 1: FreqDiv-FreqDiv_bhv
+    Info: Found entity 1: FreqDiv
+Info: Found 2 design units, including 1 entities, in source file UARTOutAdapter.vhd
+    Info: Found design unit 1: UARTOutAdapter-UARTOutAdapter_bhv
+    Info: Found entity 1: UARTOutAdapter
+Info: Elaborating entity "main" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at main.vhd(10): used implicit default value for signal "TXD" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at main.vhd(12): used implicit default value for signal "o_cnt" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10036): Verilog HDL or VHDL warning at main.vhd(108): object "clk_1000" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at main.vhd(108): object "clk_25m" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at main.vhd(108): object "clk_1" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at main.vhd(116): object "a_kb_clk" assigned a value but never read
+Warning (10541): VHDL Signal Declaration warning at main.vhd(119): used implicit default value for signal "t_TX_BV" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning: Using design file KeyboardInput.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: KeyboardInput-behave
+    Info: Found entity 1: KeyboardInput
+Info: Elaborating entity "KeyboardInput" for hierarchy "KeyboardInput:u0"
+Info: Elaborating entity "Keyboard" for hierarchy "KeyboardInput:u0|Keyboard:u0"
+Info (10041): Inferred latch for "scancode[0]" at Keyboard.vhd(30)
+Info (10041): Inferred latch for "scancode[1]" at Keyboard.vhd(30)
+Info (10041): Inferred latch for "scancode[2]" at Keyboard.vhd(30)
+Info (10041): Inferred latch for "scancode[3]" at Keyboard.vhd(30)
+Info (10041): Inferred latch for "scancode[4]" at Keyboard.vhd(30)
+Info (10041): Inferred latch for "scancode[5]" at Keyboard.vhd(30)
+Info (10041): Inferred latch for "scancode[6]" at Keyboard.vhd(30)
+Info (10041): Inferred latch for "scancode[7]" at Keyboard.vhd(30)
+Info: Elaborating entity "seg7" for hierarchy "KeyboardInput:u0|seg7:u1"
+Warning: Using design file KeyboardAdapter.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: KeyboardAdapter-KeyboardAdapter_bhv
+    Info: Found entity 1: KeyboardAdapter
+Info: Elaborating entity "KeyboardAdapter" for hierarchy "KeyboardAdapter:u1"
+Info: Elaborating entity "FreqDiv" for hierarchy "FreqDiv:fd_inst1"
+Info: Elaborating entity "FreqDiv" for hierarchy "FreqDiv:fd_inst2"
+Info: Elaborating entity "FreqDiv" for hierarchy "FreqDiv:fd_inst3"
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "TXD" is stuck at GND
+    Warning (13410): Pin "clk_out" is stuck at GND
+    Warning (13410): Pin "o_cnt[0]" is stuck at GND
+    Warning (13410): Pin "o_cnt[1]" is stuck at GND
+    Warning (13410): Pin "o_cnt[2]" is stuck at GND
+Warning: Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "RXD"
+    Warning (15610): No output dependent on input pin "click"
+Info: Implemented 103 device resources after synthesis - the final resource count might be different
+    Info: Implemented 6 input pins
+    Info: Implemented 26 output pins
+    Info: Implemented 71 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 20 warnings
+    Info: Peak virtual memory: 289 megabytes
+    Info: Processing ended: Wed May 31 12:11:03 2017
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
 
 

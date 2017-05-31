@@ -1,8 +1,16 @@
 
-State Machine - |main|UARTIn:u2|r_SM_Main
-Name r_SM_Main.s_Cleanup r_SM_Main.s_RX_Stop_Bit r_SM_Main.s_RX_Data_Bits r_SM_Main.s_RX_Start_Bit r_SM_Main.s_Idle 
-r_SM_Main.s_Idle 0 0 0 0 0 
-r_SM_Main.s_RX_Start_Bit 0 0 0 1 1 
-r_SM_Main.s_RX_Data_Bits 0 0 1 0 1 
-r_SM_Main.s_RX_Stop_Bit 0 1 0 0 1 
-r_SM_Main.s_Cleanup 1 0 0 0 1 
+State Machine - |main|KeyboardInput:u0|Keyboard:u0|state
+Name state.finish state.stop state.parity state.d7 state.d6 state.d5 state.d4 state.d3 state.d2 state.d1 state.d0 state.start state.delay 
+state.delay 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.start 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.d0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.d1 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.d2 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.d3 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.d4 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.d5 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.d6 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.d7 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.parity 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.stop 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.finish 1 0 0 0 0 0 0 0 0 0 0 0 1 
