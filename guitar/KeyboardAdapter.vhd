@@ -54,6 +54,7 @@ begin
 				end case;
 				-- generate impulse
 				wait_times := 3;
+                --o_clk <= '1';
 			end if;
 		end if;
 	end process;

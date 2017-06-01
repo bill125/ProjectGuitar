@@ -52,6 +52,7 @@ entity main is
       triggeredString : out integer range 0 to 5;
       strings : out GuitarStatus;
       notegen_RX_DV : out std_logic;
+      clk_25m_out : out std_logic;
     
     clk_out : out std_logic
  	);
@@ -211,16 +212,16 @@ begin
   f_25: FreqDiv
     generic map(4, 2)
     port map(clk_100m, '0', clk_25m);--1m
-
+  clk_25m_out <= clk_25m;
   u0 : KeyboardInput 
  	port map (
       datain => i_KB_data,
       clkin => clk_in,
-      fclk => clk_100m,
+      fclk => clk_25m,
       rst_in => rst_in,
       key_out => t_key,
-      -- seg0 => seg0,
-      -- seg1 => seg1,
+      seg0 => seg0,
+      seg1 => seg1,
       clk_out => raw_kb_TX_DV
       );
   
@@ -228,17 +229,17 @@ begin
  	port map (
       i_key => t_key,
       i_clk => raw_kb_TX_DV,
-      hclk => clk_100m,
+      hclk => clk_25m,
       o_triggeredString => gu_triggeredString,
       o_clk => a_kb_TX_DV
       );
 
   uart_in : UARTIn
     generic map (
-      g_CLKS_PER_BIT => 868 -- Needs to be set correctly
+      g_CLKS_PER_BIT => 217-- Needs to be set correctly
       )
     port map (
-      i_Clk => clk_100m, -- TODO: reduce frequency maybe
+      i_Clk => clk_25m, -- TODO: reduce frequency maybe
       i_RX_Serial => r_uart_RX_Serial,
       o_RX_DV => uart_in_TX_DV,
       o_RX_Byte => uart_in_byte
@@ -256,7 +257,7 @@ begin
     port map (
       i_triggeredString => gu_triggeredString,
       i_strings => gu_strings,
-      i_RX_DV => uart_in_TX_DV,
+      i_RX_DV => a_kb_TX_DV,
       i_clk => clk, -- TODO: reduce frequency
       o_noteLevel => gu_noteLevel,
       o_TX_DV => note_gen_TX_DV
@@ -265,7 +266,7 @@ begin
   triggeredString <= gu_triggeredString;
   noteLevel <= gu_noteLevel;
   strings <= gu_strings;
-  notegen_RX_DV <= uart_in_TX_DV;
+  notegen_RX_DV <= a_kb_TX_DV;
   
   programme_inst : Programme
     port map (
@@ -294,8 +295,8 @@ begin
               o_TX_DV => uart_out_a_TX_DV,
               o_cnt => t_cnt
               );
-  u4 : seg7 port map (uart_out_a_byte(3 downto 0), seg0);
-  u5 : seg7 port map (uart_out_a_byte(7 downto 4), seg1);
+  -- u4 : seg7 port map (uart_out_a_byte(3 downto 0), seg0);
+  -- u5 : seg7 port map (uart_out_a_byte(7 downto 4), seg1);
   u2 : seg7 port map (conv_std_logic_vector(gu_triggeredString, 4), seg2);
   o_cnt <= t_cnt;
   clk_out <= uart_out_a_TX_DV;

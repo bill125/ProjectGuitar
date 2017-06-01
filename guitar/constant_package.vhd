@@ -5,7 +5,7 @@ use IEEE.numeric_std.all;
 package definitions is
 	subtype StringStatus is std_logic_vector(7 downto 0);
 	type GuitarStatus is array (0 to 5) of StringStatus;
-    constant MaxLength : integer := 255;
+    constant MaxLength : integer := 25; --TODO
     constant MaxIntervals : integer := 511;
     type Noise is array (0 to MaxLength) of integer range 0 to 88;
     type IntArray is array (0 to MaxLength) of integer range 0 to MaxIntervals;--TODO: range?
