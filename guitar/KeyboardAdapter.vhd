@@ -53,7 +53,7 @@ begin
 					when others => o_triggeredString <= 0;
 				end case;
 				-- generate impulse
-				wait_times := 3;
+				wait_times := 1;
 			end if;
 		end if;
 	end process;

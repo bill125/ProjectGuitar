@@ -294,8 +294,8 @@ begin
               o_TX_DV => uart_out_a_TX_DV,
               o_cnt => t_cnt
               );
-  u4 : seg7 port map (uart_out_a_byte(3 downto 0), seg0);
-  u5 : seg7 port map (uart_out_a_byte(7 downto 4), seg1);
+  -- u4 : seg7 port map (uart_out_a_byte(3 downto 0), seg0);
+  -- u5 : seg7 port map (uart_out_a_byte(7 downto 4), seg1);
   u2 : seg7 port map (conv_std_logic_vector(gu_triggeredString, 4), seg2);
   o_cnt <= t_cnt;
   clk_out <= uart_out_a_TX_DV;

@@ -24,11 +24,12 @@ architecture KeyboardAdapter_bhv of KeyboardAdapter is
 
 begin
 	o_key <= i_key;
-	receive_trigger : process(i_clk)
+	receive_trigger : process(hclk)
 		variable ignore_status : std_logic := '0';
+		variable l_clk : std_logic := '0';
 		variable wait_times : integer := 0;
 	begin
-		if (i_clk'event and i_clk = '1') then 
+		if (hclk'event and hclk = '1') then 
 			if wait_times >= 1 then
 				wait_times := wait_times - 1;
 				if wait_times = 1 then
@@ -37,24 +38,28 @@ begin
 			else
 				o_clk <= '0';
 			end if;
-		
-			if ignore_status = '1' then
-				ignore_status := '0';
-			elsif i_key = "11110000" then 
-				ignore_status := '1';
-			else
-				case i_key is
-					when string_0 => o_triggeredString <= 0;
-					when string_1 => o_triggeredString <= 1;
-					when string_2 => o_triggeredString <= 2;
-					when string_3 => o_triggeredString <= 3;
-					when string_4 => o_triggeredString <= 4;
-					when string_5 => o_triggeredString <= 5;
-					when others => o_triggeredString <= 0;
-				end case;
-				-- generate impulse
-				wait_times := 3;
+			
+			if i_clk /= l_clk and i_clk = '1' then
+				if ignore_status = '1' then
+					ignore_status := '0';
+				elsif i_key = "11110000" then 
+					ignore_status := '1';
+				else
+					case i_key is
+						when string_0 => o_triggeredString <= 0;
+						when string_1 => o_triggeredString <= 1;
+						when string_2 => o_triggeredString <= 2;
+						when string_3 => o_triggeredString <= 3;
+						when string_4 => o_triggeredString <= 4;
+						when string_5 => o_triggeredString <= 5;
+						when others => o_triggeredString <= 0;
+					end case;
+					
+					wait_times := 20;
+				end if;
 			end if;
+			
+			l_clk := i_clk;
 		end if;
 	end process;
 end KeyboardAdapter_bhv;

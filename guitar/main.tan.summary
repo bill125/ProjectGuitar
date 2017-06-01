@@ -5,9 +5,9 @@ Timing Analyzer Summary
 Type           : Worst-case tsu
 Slack          : N/A
 Required Time  : None
-Actual Time    : 7.283 ns
-From           : clk_in
-To             : sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|acq_trigger_in_reg[9]
+Actual Time    : 6.989 ns
+From           : i_KB_Data
+To             : KeyboardInput:u0|Keyboard:u0|data
 From Clock     : --
 To Clock       : clk_100m
 Failed Paths   : 0
@@ -15,9 +15,9 @@ Failed Paths   : 0
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 23.337 ns
+Actual Time    : 21.999 ns
 From           : KeyboardAdapter:u1|o_triggeredString[2]
-To             : seg2[5]
+To             : noteLevel[6]
 From Clock     : clk_100m
 To Clock       : --
 Failed Paths   : 0
@@ -35,9 +35,9 @@ Failed Paths   : 0
 Type           : Worst-case th
 Slack          : N/A
 Required Time  : None
-Actual Time    : 0.141 ns
-From           : altera_internal_jtag~TDIUTAP
-To             : sld_hub:sld_hub_inst|irsr_reg[8]
+Actual Time    : 0.770 ns
+From           : altera_internal_jtag~TMSUTAP
+To             : sld_hub:sld_hub_inst|sld_shadow_jsm:shadow_jsm|state[0]
 From Clock     : --
 To Clock       : altera_internal_jtag~TCKUTAP
 Failed Paths   : 0
@@ -45,9 +45,9 @@ Failed Paths   : 0
 Type           : Clock Setup: 'clk_100m'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 79.22 MHz ( period = 12.623 ns )
-From           : KeyboardAdapter:u1|o_triggeredString[0]
-To             : sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|acq_trigger_in_reg[11]
+Actual Time    : 75.26 MHz ( period = 13.287 ns )
+From           : KeyboardAdapter:u1|o_triggeredString[2]
+To             : sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|acq_data_in_reg[15]
 From Clock     : clk_100m
 To Clock       : clk_100m
 Failed Paths   : 0
@@ -55,7 +55,7 @@ Failed Paths   : 0
 Type           : Clock Setup: 'altera_internal_jtag~TCKUTAP'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 97.09 MHz ( period = 10.300 ns )
+Actual Time    : 96.41 MHz ( period = 10.372 ns )
 From           : sld_hub:sld_hub_inst|irf_reg[1][4]
 To             : sld_hub:sld_hub_inst|tdo
 From Clock     : altera_internal_jtag~TCKUTAP
@@ -66,11 +66,11 @@ Type           : Clock Hold: 'clk_100m'
 Slack          : Not operational: Clock Skew > Data Delay
 Required Time  : None
 Actual Time    : N/A
-From           : UARTOutAdapter:uart_out_adapter|t_Bytes[0]
-To             : UARTOut:uart_out|r_TX_Data[0]
+From           : KeyboardInput:u0|Keyboard:u0|code[7]
+To             : KeyboardInput:u0|Keyboard:u0|scancode[7]
 From Clock     : clk_100m
 To Clock       : clk_100m
-Failed Paths   : 61
+Failed Paths   : 65
 
 Type           : Total number of failed paths
 Slack          : 
@@ -80,7 +80,7 @@ From           :
 To             : 
 From Clock     : 
 To Clock       : 
-Failed Paths   : 61
+Failed Paths   : 65
 
 --------------------------------------------------------------------------------------
 
