@@ -55,6 +55,8 @@ begin
 						when string_3 => o_triggeredString <= 3;
 						when string_4 => o_triggeredString <= 4;
 						when string_5 => o_triggeredString <= 5;
+						when "01110010" => o_triggeredString <= 0;
+						when "01110101" => o_triggeredString <= 0;
 						when others => 
 							wait_times := 0;
 							o_triggeredString <= 0;
