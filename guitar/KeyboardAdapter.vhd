@@ -4,33 +4,44 @@ use ieee.numeric_std.all;
  
 entity KeyboardAdapter is
 	generic (
-		string_0 : logic_vector(7 downto 0) := "01001011"; -- 'L' : 4B
-		string_1 : logic_vector(7 downto 0) := "01000010"; -- 'K' : 42
-		string_2 : logic_vector(7 downto 0) := "00111011"; -- 'J' : 3B
-		string_3 : logic_vector(7 downto 0) := "00110010"; -- 'B' : 32
-		string_4 : logic_vector(7 downto 0) := "00110001"; -- 'N' : 31
-		string_5 : logic_vector(7 downto 0) := "00110110"; -- 'M' : 3A
+		string_0 : std_logic_vector(7 downto 0) := "01001011"; -- 'L' : 4B
+		string_1 : std_logic_vector(7 downto 0) := "01000010"; -- 'K' : 42
+		string_2 : std_logic_vector(7 downto 0) := "00111011"; -- 'J' : 3B
+		string_3 : std_logic_vector(7 downto 0) := "00110010"; -- 'B' : 32
+		string_4 : std_logic_vector(7 downto 0) := "00110001"; -- 'N' : 31
+		string_5 : std_logic_vector(7 downto 0) := "00111010"  -- 'M' : 3A
 	);
 	port (
-		i_key : in std_logic_vector(7 downto 0),
+		i_key : in std_logic_vector(7 downto 0);
 		i_clk, hclk : in std_logic;
 		o_key : out std_logic_vector(7 downto 0);
 		o_triggeredString : out integer range 0 to 5;
-		o_clk : out std_logic;
+		o_clk : out std_logic
 	);
 end KeyboardAdapter;
  
 architecture KeyboardAdapter_bhv of KeyboardAdapter is
-variable ignore_status : std_logic := '0';
+
 begin
 	o_key <= i_key;
-	receive_trigger : process(clk_in)
+	receive_trigger : process(i_clk)
+		variable ignore_status : std_logic := '0';
+		variable wait_times : integer := 0;
 	begin
-		if (clk_in'event and clk_in = '1') then begin
+		if (i_clk'event and i_clk = '1') then 
+			if wait_times >= 1 then
+				wait_times := wait_times - 1;
+				if wait_times = 1 then
+					o_clk <= '1';
+				end if;
+			else
+				o_clk <= '0';
+			end if;
+		
 			if ignore_status = '1' then
-				ignore_status = '0';
-			elsif i_key = "11110000" then begin
-				ignore_status = '1';
+				ignore_status := '0';
+			elsif i_key = "11110000" then 
+				ignore_status := '1';
 			else
 				case i_key is
 					when string_0 => o_triggeredString <= 0;
@@ -42,7 +53,8 @@ begin
 					when others => o_triggeredString <= 0;
 				end case;
 				-- generate impulse
-			end;
-		end;
-	end;
+				wait_times := 3;
+			end if;
+		end if;
+	end process;
 end KeyboardAdapter_bhv;

@@ -5,9 +5,9 @@ Timing Analyzer Summary
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 16.138 ns
-From           : looper:i1|cntId[13][5]
-To             : cntId[13][5]
+Actual Time    : 17.060 ns
+From           : looper:i1|r_SM_Main.s_Play
+To             : stx[0]
 From Clock     : i_clk
 To Clock       : --
 Failed Paths   : 0
@@ -15,9 +15,9 @@ Failed Paths   : 0
 Type           : Clock Setup: 'i_clk'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 74.04 MHz ( period = 13.506 ns )
-From           : looper:i1|cntId[0][3]
-To             : looper:i1|index[1]
+Actual Time    : 44.66 MHz ( period = 22.392 ns )
+From           : i_key[3]
+To             : looper:i1|cntId[244][3]
 From Clock     : i_clk
 To Clock       : i_clk
 Failed Paths   : 0
