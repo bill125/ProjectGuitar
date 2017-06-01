@@ -332,13 +332,13 @@ Chip Device Options:
 	power up = low
 
 	INPUTS (Driven By):
-		0: [CLK]	  KeyboardInput:u0|Keyboard:u0|fok	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		0: [CLK]	  clk_100m	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		1: [DATAIN]	  KeyboardAdapter:u1|Mux2~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: NO ITERM
 		3: NO ITERM
 		4: NO ITERM
 		5: NO ITERM
-		6: [ENA]	  KeyboardAdapter:u1|o_triggeredString[0]~3	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: [ENA]	  KeyboardAdapter:u1|o_triggeredString[0]~6	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 	OUTPUTS (Int. Connections):
 		0: [REGOUT]	KeyboardAdapter:u1|o_triggeredString[0]	LIT INDEX 0 FANOUTS 7 REGED POS
 
@@ -355,13 +355,13 @@ Chip Device Options:
 	power up = low
 
 	INPUTS (Driven By):
-		0: [CLK]	  KeyboardInput:u0|Keyboard:u0|fok	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		0: [CLK]	  clk_100m	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		1: [DATAIN]	  KeyboardAdapter:u1|Mux1~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: NO ITERM
 		3: NO ITERM
 		4: NO ITERM
 		5: NO ITERM
-		6: [ENA]	  KeyboardAdapter:u1|o_triggeredString[0]~3	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: [ENA]	  KeyboardAdapter:u1|o_triggeredString[0]~6	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 	OUTPUTS (Int. Connections):
 		0: [REGOUT]	KeyboardAdapter:u1|o_triggeredString[1]	LIT INDEX 0 FANOUTS 7 REGED POS
 
@@ -378,13 +378,13 @@ Chip Device Options:
 	power up = low
 
 	INPUTS (Driven By):
-		0: [CLK]	  KeyboardInput:u0|Keyboard:u0|fok	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		0: [CLK]	  clk_100m	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		1: [DATAIN]	  KeyboardAdapter:u1|Mux0~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: NO ITERM
 		3: NO ITERM
 		4: NO ITERM
 		5: NO ITERM
-		6: [ENA]	  KeyboardAdapter:u1|o_triggeredString[0]~3	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: [ENA]	  KeyboardAdapter:u1|o_triggeredString[0]~6	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 	OUTPUTS (Int. Connections):
 		0: [REGOUT]	KeyboardAdapter:u1|o_triggeredString[2]	LIT INDEX 0 FANOUTS 7 REGED POS
 
@@ -579,7 +579,7 @@ Chip Device Options:
 		5: NO ITERM
 		6: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [REGOUT]	KeyboardInput:u0|Keyboard:u0|fok	LIT INDEX 0 FANOUTS 12 REGED POS
+		0: [REGOUT]	KeyboardInput:u0|Keyboard:u0|fok	LIT INDEX 0 FANOUTS 11 REGED POS
 
 	PARAMETER LIST:
 		EMPTY!!
@@ -759,7 +759,7 @@ Chip Device Options:
 		3: [DATAD]	  KeyboardInput:u0|Keyboard:u0|scancode[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	KeyboardAdapter:u1|Equal1~0	LIT INDEX 0 FANOUTS 3
+		0: [COMBOUT]	KeyboardAdapter:u1|Equal1~0	LIT INDEX 0 FANOUTS 1
 		1: NONE
 
 	PARAMETER LIST:
@@ -810,29 +810,6 @@ Chip Device Options:
 
 
 - ATOM ------------------------
-	ATOM_NAME: KeyboardAdapter:u1|\receive_trigger:ignore_status -- NON-UNIQUE
-	Atom Hier Name: 
-	Atom Id: 64
-	Atom Type: cycloneii_lcell_ff
-
-	power up = low
-
-	INPUTS (Driven By):
-		0: [CLK]	  KeyboardInput:u0|Keyboard:u0|fok	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		1: [DATAIN]	  KeyboardAdapter:u1|ignore_status~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: NO ITERM
-		3: NO ITERM
-		4: NO ITERM
-		5: NO ITERM
-		6: NO ITERM
-	OUTPUTS (Int. Connections):
-		0: [REGOUT]	KeyboardAdapter:u1|\receive_trigger:ignore_status	LIT INDEX 0 FANOUTS 2 REGED POS
-
-	PARAMETER LIST:
-		EMPTY!!
-
-
-- ATOM ------------------------
 	ATOM_NAME: KeyboardAdapter:u1|Equal1~1 -- NON-UNIQUE
 	Atom Hier Name: 
 	Atom Id: 65
@@ -845,7 +822,7 @@ Chip Device Options:
 		3: NO ITERM
 		4: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	KeyboardAdapter:u1|Equal1~1	LIT INDEX 0 FANOUTS 4
+		0: [COMBOUT]	KeyboardAdapter:u1|Equal1~1	LIT INDEX 0 FANOUTS 3
 		1: NONE
 
 	PARAMETER LIST:
@@ -866,7 +843,7 @@ Chip Device Options:
 		3: [DATAD]	  KeyboardInput:u0|Keyboard:u0|scancode[3]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	KeyboardAdapter:u1|Equal1~2	LIT INDEX 0 FANOUTS 2
+		0: [COMBOUT]	KeyboardAdapter:u1|Equal1~2	LIT INDEX 0 FANOUTS 1
 		1: NONE
 
 	PARAMETER LIST:
@@ -875,30 +852,97 @@ Chip Device Options:
 
 
 - ATOM ------------------------
-	ATOM_NAME: KeyboardAdapter:u1|o_triggeredString[0]~3 -- NON-UNIQUE
+	ATOM_NAME: KeyboardAdapter:u1|Equal1~3 -- NON-UNIQUE
 	Atom Hier Name: 
 	Atom Id: 67
 	Atom Type: cycloneii_lcell_comb
 
 	INPUTS (Driven By):
-		0: [DATAA]	  KeyboardAdapter:u1|\receive_trigger:ignore_status	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		1: [DATAB]	  KeyboardAdapter:u1|Equal1~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAC]	  KeyboardAdapter:u1|Equal1~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAD]	  KeyboardAdapter:u1|Equal1~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		0: [DATAA]	  KeyboardAdapter:u1|Equal1~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAB]	  KeyboardAdapter:u1|Equal1~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAC]	  KeyboardInput:u0|Keyboard:u0|scancode[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAD]	  KeyboardInput:u0|Keyboard:u0|scancode[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	KeyboardAdapter:u1|o_triggeredString[0]~3	LIT INDEX 0 FANOUTS 3
+		0: [COMBOUT]	KeyboardAdapter:u1|Equal1~3	LIT INDEX 0 FANOUTS 2
 		1: NONE
 
 	PARAMETER LIST:
 		sum_lutc_input                 = datac
-		lut_mask                       = 1555
+		lut_mask                       = 0008
+
+
+- ATOM ------------------------
+	ATOM_NAME: KeyboardAdapter:u1|\receive_trigger:ignore_status -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 68
+	Atom Type: cycloneii_lcell_ff
+
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk_100m	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAIN]	  KeyboardAdapter:u1|\receive_trigger:ignore_status~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [REGOUT]	KeyboardAdapter:u1|\receive_trigger:ignore_status	LIT INDEX 0 FANOUTS 2 REGED POS
+
+	PARAMETER LIST:
+		EMPTY!!
+
+
+- ATOM ------------------------
+	ATOM_NAME: KeyboardAdapter:u1|\receive_trigger:l_clk -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 69
+	Atom Type: cycloneii_lcell_ff
+
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk_100m	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAIN]	  KeyboardInput:u0|Keyboard:u0|fok	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [REGOUT]	KeyboardAdapter:u1|\receive_trigger:l_clk	LIT INDEX 0 FANOUTS 2 REGED POS
+
+	PARAMETER LIST:
+		EMPTY!!
+
+
+- ATOM ------------------------
+	ATOM_NAME: KeyboardAdapter:u1|o_triggeredString[0]~6 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 70
+	Atom Type: cycloneii_lcell_comb
+
+	INPUTS (Driven By):
+		0: [DATAA]	  KeyboardInput:u0|Keyboard:u0|fok	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAB]	  KeyboardAdapter:u1|Equal1~3	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAC]	  KeyboardAdapter:u1|\receive_trigger:ignore_status	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAD]	  KeyboardAdapter:u1|\receive_trigger:l_clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	KeyboardAdapter:u1|o_triggeredString[0]~6	LIT INDEX 0 FANOUTS 3
+		1: NONE
+
+	PARAMETER LIST:
+		sum_lutc_input                 = datac
+		lut_mask                       = 0002
 
 
 - ATOM ------------------------
 	ATOM_NAME: KeyboardAdapter:u1|Mux1~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 68
+	Atom Id: 71
 	Atom Type: cycloneii_lcell_comb
 
 	INPUTS (Driven By):
@@ -919,7 +963,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardAdapter:u1|Mux1~1 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 69
+	Atom Id: 72
 	Atom Type: cycloneii_lcell_comb
 
 	INPUTS (Driven By):
@@ -940,7 +984,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardAdapter:u1|Mux0~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 70
+	Atom Id: 73
 	Atom Type: cycloneii_lcell_comb
 
 	INPUTS (Driven By):
@@ -961,7 +1005,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardAdapter:u1|Mux0~1 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 71
+	Atom Id: 74
 	Atom Type: cycloneii_lcell_comb
 
 	INPUTS (Driven By):
@@ -982,7 +1026,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|data -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 72
+	Atom Id: 75
 	Atom Type: cycloneii_lcell_ff
 
 	power up = low
@@ -1005,7 +1049,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|state.d0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 73
+	Atom Id: 76
 	Atom Type: cycloneii_lcell_ff
 
 	power up = low
@@ -1028,7 +1072,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|clk2 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 74
+	Atom Id: 77
 	Atom Type: cycloneii_lcell_ff
 
 	power up = low
@@ -1051,7 +1095,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|clk1 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 75
+	Atom Id: 78
 	Atom Type: cycloneii_lcell_ff
 
 	power up = low
@@ -1074,7 +1118,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|clk -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 76
+	Atom Id: 79
 	Atom Type: cycloneii_lcell_comb
 
 	INPUTS (Driven By):
@@ -1095,7 +1139,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|code[0]~8 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 77
+	Atom Id: 80
 	Atom Type: cycloneii_lcell_comb
 
 	INPUTS (Driven By):
@@ -1116,7 +1160,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|state.finish -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 80
+	Atom Id: 82
 	Atom Type: cycloneii_lcell_ff
 
 	power up = low
@@ -1139,7 +1183,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|state.d1 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 81
+	Atom Id: 83
 	Atom Type: cycloneii_lcell_ff
 
 	power up = low
@@ -1162,7 +1206,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|code[1]~9 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 82
+	Atom Id: 84
 	Atom Type: cycloneii_lcell_comb
 
 	INPUTS (Driven By):
@@ -1183,7 +1227,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|state.d2 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 83
+	Atom Id: 85
 	Atom Type: cycloneii_lcell_ff
 
 	power up = low
@@ -1206,7 +1250,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|code[2]~10 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 84
+	Atom Id: 86
 	Atom Type: cycloneii_lcell_comb
 
 	INPUTS (Driven By):
@@ -1227,7 +1271,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|state.d3 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 85
+	Atom Id: 87
 	Atom Type: cycloneii_lcell_ff
 
 	power up = low
@@ -1250,7 +1294,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|code[3]~11 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 86
+	Atom Id: 88
 	Atom Type: cycloneii_lcell_comb
 
 	INPUTS (Driven By):
@@ -1271,7 +1315,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|state.d4 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 87
+	Atom Id: 89
 	Atom Type: cycloneii_lcell_ff
 
 	power up = low
@@ -1294,7 +1338,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|code[4]~12 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 88
+	Atom Id: 90
 	Atom Type: cycloneii_lcell_comb
 
 	INPUTS (Driven By):
@@ -1315,7 +1359,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|state.d5 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 89
+	Atom Id: 91
 	Atom Type: cycloneii_lcell_ff
 
 	power up = low
@@ -1338,7 +1382,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|code[5]~13 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 90
+	Atom Id: 92
 	Atom Type: cycloneii_lcell_comb
 
 	INPUTS (Driven By):
@@ -1359,7 +1403,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|state.d6 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 91
+	Atom Id: 93
 	Atom Type: cycloneii_lcell_ff
 
 	power up = low
@@ -1382,7 +1426,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|code[6]~14 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 92
+	Atom Id: 94
 	Atom Type: cycloneii_lcell_comb
 
 	INPUTS (Driven By):
@@ -1403,7 +1447,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|state.d7 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 93
+	Atom Id: 95
 	Atom Type: cycloneii_lcell_ff
 
 	power up = low
@@ -1426,7 +1470,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|code[7]~15 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 94
+	Atom Id: 96
 	Atom Type: cycloneii_lcell_comb
 
 	INPUTS (Driven By):
@@ -1445,30 +1489,30 @@ Chip Device Options:
 
 
 - ATOM ------------------------
-	ATOM_NAME: KeyboardAdapter:u1|ignore_status~2 -- NON-UNIQUE
+	ATOM_NAME: KeyboardAdapter:u1|\receive_trigger:ignore_status~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 95
+	Atom Id: 97
 	Atom Type: cycloneii_lcell_comb
 
 	INPUTS (Driven By):
-		0: [DATAA]	  KeyboardAdapter:u1|Equal1~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		1: [DATAB]	  KeyboardAdapter:u1|Equal1~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAC]	  KeyboardAdapter:u1|Equal1~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAD]	  KeyboardAdapter:u1|\receive_trigger:ignore_status	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		0: [DATAA]	  KeyboardAdapter:u1|\receive_trigger:ignore_status	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAB]	  KeyboardAdapter:u1|\receive_trigger:l_clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAC]	  KeyboardAdapter:u1|Equal1~3	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAD]	  KeyboardInput:u0|Keyboard:u0|fok	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	KeyboardAdapter:u1|ignore_status~2	LIT INDEX 0 FANOUTS 1
+		0: [COMBOUT]	KeyboardAdapter:u1|\receive_trigger:ignore_status~0	LIT INDEX 0 FANOUTS 1
 		1: NONE
 
 	PARAMETER LIST:
 		sum_lutc_input                 = datac
-		lut_mask                       = 0080
+		lut_mask                       = 98aa
 
 
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|state.start -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 97
+	Atom Id: 99
 	Atom Type: cycloneii_lcell_ff
 
 	power up = low
@@ -1491,7 +1535,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|Selector2~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 98
+	Atom Id: 100
 	Atom Type: cycloneii_lcell_comb
 
 	INPUTS (Driven By):
@@ -1512,7 +1556,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|state.stop -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 100
+	Atom Id: 102
 	Atom Type: cycloneii_lcell_ff
 
 	power up = low
@@ -1535,7 +1579,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|Selector12~11 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 101
+	Atom Id: 103
 	Atom Type: cycloneii_lcell_comb
 
 	INPUTS (Driven By):
@@ -1556,7 +1600,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|state.delay -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 102
+	Atom Id: 104
 	Atom Type: cycloneii_lcell_ff
 
 	power up = low
@@ -1579,7 +1623,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|Selector1~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 103
+	Atom Id: 105
 	Atom Type: cycloneii_lcell_comb
 
 	INPUTS (Driven By):
@@ -1600,7 +1644,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|process_0~1 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 104
+	Atom Id: 106
 	Atom Type: cycloneii_lcell_comb
 
 	INPUTS (Driven By):
@@ -1621,7 +1665,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|process_0~2 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 105
+	Atom Id: 107
 	Atom Type: cycloneii_lcell_comb
 
 	INPUTS (Driven By):
@@ -1642,7 +1686,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|process_0~3 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 106
+	Atom Id: 108
 	Atom Type: cycloneii_lcell_comb
 
 	INPUTS (Driven By):
@@ -1663,7 +1707,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|state.parity -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 107
+	Atom Id: 109
 	Atom Type: cycloneii_lcell_ff
 
 	power up = low
@@ -1686,7 +1730,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|Selector11~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 108
+	Atom Id: 110
 	Atom Type: cycloneii_lcell_comb
 
 	INPUTS (Driven By):
@@ -1707,7 +1751,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|Selector0~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 109
+	Atom Id: 111
 	Atom Type: cycloneii_lcell_comb
 
 	INPUTS (Driven By):
@@ -1728,7 +1772,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|Selector0~1 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 110
+	Atom Id: 112
 	Atom Type: cycloneii_lcell_comb
 
 	INPUTS (Driven By):
@@ -1749,7 +1793,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|Selector0~2 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 111
+	Atom Id: 113
 	Atom Type: cycloneii_lcell_comb
 
 	INPUTS (Driven By):
@@ -1770,7 +1814,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|scancode[0] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 112
+	Atom Id: 114
 	Atom Type: cycloneii_lcell_comb
 
 	INPUTS (Driven By):
@@ -1780,7 +1824,7 @@ Chip Device Options:
 		3: [DATAD]	  KeyboardInput:u0|Keyboard:u0|fok	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	KeyboardInput:u0|Keyboard:u0|scancode[0]	LIT INDEX 0 FANOUTS 11
+		0: [COMBOUT]	KeyboardInput:u0|Keyboard:u0|scancode[0]	LIT INDEX 0 FANOUTS 12
 		1: NONE
 
 	PARAMETER LIST:
@@ -1791,7 +1835,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|scancode[1] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 113
+	Atom Id: 115
 	Atom Type: cycloneii_lcell_comb
 
 	INPUTS (Driven By):
@@ -1812,7 +1856,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|scancode[2] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 114
+	Atom Id: 116
 	Atom Type: cycloneii_lcell_comb
 
 	INPUTS (Driven By):
@@ -1822,7 +1866,7 @@ Chip Device Options:
 		3: [DATAD]	  KeyboardInput:u0|Keyboard:u0|fok	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	KeyboardInput:u0|Keyboard:u0|scancode[2]	LIT INDEX 0 FANOUTS 11
+		0: [COMBOUT]	KeyboardInput:u0|Keyboard:u0|scancode[2]	LIT INDEX 0 FANOUTS 12
 		1: NONE
 
 	PARAMETER LIST:
@@ -1833,7 +1877,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|scancode[3] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 115
+	Atom Id: 117
 	Atom Type: cycloneii_lcell_comb
 
 	INPUTS (Driven By):
@@ -1854,7 +1898,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|scancode[4] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 116
+	Atom Id: 118
 	Atom Type: cycloneii_lcell_comb
 
 	INPUTS (Driven By):
@@ -1875,7 +1919,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|scancode[5] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 117
+	Atom Id: 119
 	Atom Type: cycloneii_lcell_comb
 
 	INPUTS (Driven By):
@@ -1896,7 +1940,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|scancode[6] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 118
+	Atom Id: 120
 	Atom Type: cycloneii_lcell_comb
 
 	INPUTS (Driven By):
@@ -1917,7 +1961,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: KeyboardInput:u0|Keyboard:u0|scancode[7] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 119
+	Atom Id: 121
 	Atom Type: cycloneii_lcell_comb
 
 	INPUTS (Driven By):
@@ -1938,7 +1982,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: RXD -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 139
+	Atom Id: 141
 	Atom Type: cycloneii_io
 
 	INPUTS (Driven By):
@@ -1993,7 +2037,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: click -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 140
+	Atom Id: 142
 	Atom Type: cycloneii_io
 
 	INPUTS (Driven By):
@@ -2048,7 +2092,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: TXD -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 141
+	Atom Id: 143
 	Atom Type: cycloneii_io
 
 	INPUTS (Driven By):
@@ -2103,7 +2147,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: clk_out -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 142
+	Atom Id: 144
 	Atom Type: cycloneii_io
 
 	INPUTS (Driven By):
@@ -2158,7 +2202,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: o_cnt[0] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 143
+	Atom Id: 145
 	Atom Type: cycloneii_io
 
 	INPUTS (Driven By):
@@ -2213,7 +2257,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: o_cnt[1] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 144
+	Atom Id: 146
 	Atom Type: cycloneii_io
 
 	INPUTS (Driven By):
@@ -2268,7 +2312,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: o_cnt[2] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 145
+	Atom Id: 147
 	Atom Type: cycloneii_io
 
 	INPUTS (Driven By):
@@ -2323,7 +2367,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg0[0] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 146
+	Atom Id: 148
 	Atom Type: cycloneii_io
 
 	INPUTS (Driven By):
@@ -2378,7 +2422,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg0[1] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 147
+	Atom Id: 149
 	Atom Type: cycloneii_io
 
 	INPUTS (Driven By):
@@ -2433,7 +2477,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg0[2] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 148
+	Atom Id: 150
 	Atom Type: cycloneii_io
 
 	INPUTS (Driven By):
@@ -2488,7 +2532,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg0[3] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 149
+	Atom Id: 151
 	Atom Type: cycloneii_io
 
 	INPUTS (Driven By):
@@ -2543,7 +2587,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg0[4] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 150
+	Atom Id: 152
 	Atom Type: cycloneii_io
 
 	INPUTS (Driven By):
@@ -2598,7 +2642,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg0[5] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 151
+	Atom Id: 153
 	Atom Type: cycloneii_io
 
 	INPUTS (Driven By):
@@ -2653,7 +2697,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg0[6] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 152
+	Atom Id: 154
 	Atom Type: cycloneii_io
 
 	INPUTS (Driven By):
@@ -2708,7 +2752,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg1[0] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 153
+	Atom Id: 155
 	Atom Type: cycloneii_io
 
 	INPUTS (Driven By):
@@ -2763,7 +2807,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg1[1] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 154
+	Atom Id: 156
 	Atom Type: cycloneii_io
 
 	INPUTS (Driven By):
@@ -2818,7 +2862,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg1[2] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 155
+	Atom Id: 157
 	Atom Type: cycloneii_io
 
 	INPUTS (Driven By):
@@ -2873,7 +2917,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg1[3] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 156
+	Atom Id: 158
 	Atom Type: cycloneii_io
 
 	INPUTS (Driven By):
@@ -2928,7 +2972,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg1[4] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 157
+	Atom Id: 159
 	Atom Type: cycloneii_io
 
 	INPUTS (Driven By):
@@ -2983,7 +3027,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg1[5] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 158
+	Atom Id: 160
 	Atom Type: cycloneii_io
 
 	INPUTS (Driven By):
@@ -3038,7 +3082,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg1[6] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 159
+	Atom Id: 161
 	Atom Type: cycloneii_io
 
 	INPUTS (Driven By):
@@ -3093,7 +3137,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg2[0] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 160
+	Atom Id: 162
 	Atom Type: cycloneii_io
 
 	INPUTS (Driven By):
@@ -3148,7 +3192,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg2[1] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 161
+	Atom Id: 163
 	Atom Type: cycloneii_io
 
 	INPUTS (Driven By):
@@ -3203,7 +3247,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg2[2] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 162
+	Atom Id: 164
 	Atom Type: cycloneii_io
 
 	INPUTS (Driven By):
@@ -3258,7 +3302,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg2[3] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 163
+	Atom Id: 165
 	Atom Type: cycloneii_io
 
 	INPUTS (Driven By):
@@ -3313,7 +3357,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg2[4] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 164
+	Atom Id: 166
 	Atom Type: cycloneii_io
 
 	INPUTS (Driven By):
@@ -3368,7 +3412,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg2[5] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 165
+	Atom Id: 167
 	Atom Type: cycloneii_io
 
 	INPUTS (Driven By):
@@ -3423,7 +3467,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg2[6] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 166
+	Atom Id: 168
 	Atom Type: cycloneii_io
 
 	INPUTS (Driven By):
@@ -3478,7 +3522,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: clk_100m -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 167
+	Atom Id: 169
 	Atom Type: cycloneii_io
 
 	INPUTS (Driven By):
@@ -3494,7 +3538,7 @@ Chip Device Options:
 		9: NO ITERM
 		10: [PADIO]	DISCONNECTED
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	clk_100m	LIT INDEX 0 FANOUTS 25
+		0: [COMBOUT]	clk_100m	LIT INDEX 0 FANOUTS 30
 		1: NONE
 		2: NONE
 		3: NONE
@@ -3533,7 +3577,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: rst_in -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 168
+	Atom Id: 170
 	Atom Type: cycloneii_io
 
 	INPUTS (Driven By):
@@ -3588,7 +3632,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: i_KB_Data -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 169
+	Atom Id: 171
 	Atom Type: cycloneii_io
 
 	INPUTS (Driven By):
@@ -3643,7 +3687,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: clk_in -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 170
+	Atom Id: 172
 	Atom Type: cycloneii_io
 
 	INPUTS (Driven By):
@@ -3698,7 +3742,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: ~QUARTUS_CREATED_GND~I -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 171
+	Atom Id: 173
 	Atom Type: cycloneii_lcell_comb
 
 	INPUTS (Driven By):
@@ -3718,7 +3762,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: ~ASDO~ -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 172
+	Atom Id: 174
 	Atom Type: cycloneii_io
 
 	INPUTS (Driven By):
@@ -3773,7 +3817,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: ~nCSO~ -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 173
+	Atom Id: 175
 	Atom Type: cycloneii_io
 
 	INPUTS (Driven By):
@@ -3828,7 +3872,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: ~LVDS195p/nCEO~ -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 174
+	Atom Id: 176
 	Atom Type: cycloneii_io
 
 	INPUTS (Driven By):

@@ -87,8 +87,13 @@ GND+                         : A13       :        :                   :         
 GND*                         : A14       :        :                   :         : 4         :                
 GND                          : A15       : gnd    :                   :         :           :                
 VCCIO4                       : A16       : power  :                   : 3.3V    : 4         :                
+<<<<<<< HEAD
 strings[3][6]                : A17       : output : 3.3-V LVTTL       :         : 4         : N              
 o_cnt[2]                     : A18       : output : 3.3-V LVTTL       :         : 4         : N              
+=======
+strings[4][1]                : A17       : output : 3.3-V LVTTL       :         : 4         : N              
+strings[5][1]                : A18       : output : 3.3-V LVTTL       :         : 4         : N              
+>>>>>>> 68f519c4e87a94eda05c0f92aee93f5b401e4eef
 GND*                         : A19       :        :                   :         : 4         :                
 w_uart_TX_Serial             : A20       : output : 3.3-V LVTTL       :         : 4         : Y              
 GND*                         : A21       :        :                   :         : 4         :                
@@ -108,12 +113,21 @@ GND*                         : AA9       :        :                   :         
 GND*                         : AA10      :        :                   :         : 8         :                
 GND*                         : AA11      :        :                   :         : 8         :                
 GND*                         : AA12      :        :                   :         : 8         :                
+<<<<<<< HEAD
 strings[2][4]                : AA13      : output : 3.3-V LVTTL       :         : 7         : N              
 strings[2][7]                : AA14      : output : 3.3-V LVTTL       :         : 7         : N              
 strings[1][6]                : AA15      : output : 3.3-V LVTTL       :         : 7         : N              
 strings[1][1]                : AA16      : output : 3.3-V LVTTL       :         : 7         : N              
 noteLevel[3]                 : AA17      : output : 3.3-V LVTTL       :         : 7         : N              
 strings[4][5]                : AA18      : output : 3.3-V LVTTL       :         : 7         : N              
+=======
+strings[0][5]                : AA13      : output : 3.3-V LVTTL       :         : 7         : N              
+strings[0][0]                : AA14      : output : 3.3-V LVTTL       :         : 7         : N              
+strings[1][2]                : AA15      : output : 3.3-V LVTTL       :         : 7         : N              
+triggeredString[1]           : AA16      : output : 3.3-V LVTTL       :         : 7         : N              
+strings[5][5]                : AA17      : output : 3.3-V LVTTL       :         : 7         : N              
+strings[2][2]                : AA18      : output : 3.3-V LVTTL       :         : 7         : N              
+>>>>>>> 68f519c4e87a94eda05c0f92aee93f5b401e4eef
 VCCA_PLL4                    : AA19      : power  :                   : 1.2V    :           :                
 GND*                         : AA20      :        :                   :         : 7         :                
 GND_PLL4                     : AA21      : gnd    :                   :         :           :                
@@ -136,10 +150,17 @@ GND                          : AB11      : gnd    :                   :         
 seg2[3]                      : AB12      : output : 3.3-V LVTTL       :         : 8         : Y              
 VCCIO8                       : AB13      : power  :                   : 3.3V    : 8         :                
 VCCIO7                       : AB14      : power  :                   : 3.3V    : 7         :                
+<<<<<<< HEAD
 strings[5][3]                : AB15      : output : 3.3-V LVTTL       :         : 7         : N              
 GND                          : AB16      : gnd    :                   :         :           :                
 VCCIO7                       : AB17      : power  :                   : 3.3V    : 7         :                
 strings[4][6]                : AB18      : output : 3.3-V LVTTL       :         : 7         : N              
+=======
+strings[0][6]                : AB15      : output : 3.3-V LVTTL       :         : 7         : N              
+GND                          : AB16      : gnd    :                   :         :           :                
+VCCIO7                       : AB17      : power  :                   : 3.3V    : 7         :                
+noteLevel[6]                 : AB18      : output : 3.3-V LVTTL       :         : 7         : N              
+>>>>>>> 68f519c4e87a94eda05c0f92aee93f5b401e4eef
 GND                          : AB19      : gnd    :                   :         :           :                
 GND*                         : AB20      :        :                   :         : 7         :                
 GND*                         : AB21      :        :                   :         : 7         :                
@@ -161,12 +182,21 @@ seg1[4]                      : AC10      : output : 3.3-V LVTTL       :         
 seg2[2]                      : AC11      : output : 3.3-V LVTTL       :         : 8         : Y              
 GND*                         : AC12      :        :                   :         : 8         :                
 GND+                         : AC13      :        :                   :         : 8         :                
+<<<<<<< HEAD
 strings[5][6]                : AC14      : output : 3.3-V LVTTL       :         : 7         : N              
 strings[5][1]                : AC15      : output : 3.3-V LVTTL       :         : 7         : N              
 strings[2][0]                : AC16      : output : 3.3-V LVTTL       :         : 7         : N              
 strings[2][1]                : AC17      : output : 3.3-V LVTTL       :         : 7         : N              
 strings[0][5]                : AC18      : output : 3.3-V LVTTL       :         : 7         : N              
 noteLevel[5]                 : AC19      : output : 3.3-V LVTTL       :         : 7         : N              
+=======
+GND*                         : AC14      :        :                   :         : 7         :                
+strings[0][7]                : AC15      : output : 3.3-V LVTTL       :         : 7         : N              
+strings[0][4]                : AC16      : output : 3.3-V LVTTL       :         : 7         : N              
+strings[3][1]                : AC17      : output : 3.3-V LVTTL       :         : 7         : N              
+o_cnt[2]                     : AC18      : output : 3.3-V LVTTL       :         : 7         : N              
+GND*                         : AC19      :        :                   :         : 7         :                
+>>>>>>> 68f519c4e87a94eda05c0f92aee93f5b401e4eef
 GND*                         : AC20      :        :                   :         : 7         :                
 GND*                         : AC21      :        :                   :         : 7         :                
 GND*                         : AC22      :        :                   :         : 7         :                
@@ -189,8 +219,13 @@ GND*                         : AD12      :        :                   :         
 GND+                         : AD13      :        :                   :         : 8         :                
 GND                          : AD14      : gnd    :                   :         :           :                
 seg2[6]                      : AD15      : output : 3.3-V LVTTL       :         : 7         : Y              
+<<<<<<< HEAD
 strings[5][5]                : AD16      : output : 3.3-V LVTTL       :         : 7         : N              
 strings[2][2]                : AD17      : output : 3.3-V LVTTL       :         : 7         : N              
+=======
+strings[4][4]                : AD16      : output : 3.3-V LVTTL       :         : 7         : N              
+strings[2][4]                : AD17      : output : 3.3-V LVTTL       :         : 7         : N              
+>>>>>>> 68f519c4e87a94eda05c0f92aee93f5b401e4eef
 GND                          : AD18      : gnd    :                   :         :           :                
 strings[4][7]                : AD19      : output : 3.3-V LVTTL       :         : 7         : N              
 VCCIO7                       : AD20      : power  :                   : 3.3V    : 7         :                
@@ -214,11 +249,19 @@ GND*                         : AE11      :        :                   :         
 GND*                         : AE12      :        :                   :         : 8         :                
 strings[0][7]                : AE13      : output : 3.3-V LVTTL       :         : 8         : N              
 GND+                         : AE14      :        :                   :         : 7         :                
+<<<<<<< HEAD
 strings[1][2]                : AE15      : output : 3.3-V LVTTL       :         : 7         : N              
 strings[1][4]                : AE16      : output : 3.3-V LVTTL       :         : 7         : N              
 strings[5][0]                : AE17      : output : 3.3-V LVTTL       :         : 7         : N              
 triggeredString[2]           : AE18      : output : 3.3-V LVTTL       :         : 7         : N              
 strings[3][3]                : AE19      : output : 3.3-V LVTTL       :         : 7         : N              
+=======
+GND*                         : AE15      :        :                   :         : 7         :                
+strings[1][4]                : AE16      : output : 3.3-V LVTTL       :         : 7         : N              
+strings[1][6]                : AE17      : output : 3.3-V LVTTL       :         : 7         : N              
+strings[1][7]                : AE18      : output : 3.3-V LVTTL       :         : 7         : N              
+strings[5][4]                : AE19      : output : 3.3-V LVTTL       :         : 7         : N              
+>>>>>>> 68f519c4e87a94eda05c0f92aee93f5b401e4eef
 GND*                         : AE20      :        :                   :         : 7         :                
 GND*                         : AE21      :        :                   :         : 7         :                
 GND*                         : AE22      :        :                   :         : 7         :                
@@ -241,11 +284,19 @@ clk_25m_out                  : AF13      : output : 3.3-V LVTTL       :         
 GND+                         : AF14      :        :                   :         : 7         :                
 GND                          : AF15      : gnd    :                   :         :           :                
 VCCIO7                       : AF16      : power  :                   : 3.3V    : 7         :                
+<<<<<<< HEAD
 strings[5][4]                : AF17      : output : 3.3-V LVTTL       :         : 7         : N              
 strings[0][6]                : AF18      : output : 3.3-V LVTTL       :         : 7         : N              
 strings[3][4]                : AF19      : output : 3.3-V LVTTL       :         : 7         : N              
 strings[4][2]                : AF20      : output : 3.3-V LVTTL       :         : 7         : N              
 strings[4][0]                : AF21      : output : 3.3-V LVTTL       :         : 7         : N              
+=======
+strings[5][3]                : AF17      : output : 3.3-V LVTTL       :         : 7         : N              
+noteLevel[3]                 : AF18      : output : 3.3-V LVTTL       :         : 7         : N              
+strings[2][0]                : AF19      : output : 3.3-V LVTTL       :         : 7         : N              
+GND*                         : AF20      :        :                   :         : 7         :                
+GND*                         : AF21      :        :                   :         : 7         :                
+>>>>>>> 68f519c4e87a94eda05c0f92aee93f5b401e4eef
 GND*                         : AF22      :        :                   :         : 7         :                
 GND*                         : AF23      :        :                   :         : 7         :                
 VCCIO7                       : AF24      : power  :                   : 3.3V    : 7         :                
@@ -264,10 +315,17 @@ GND*                         : B11       :        :                   :         
 GND*                         : B12       :        :                   :         : 3         :                
 GND+                         : B13       :        :                   :         : 4         :                
 GND*                         : B14       :        :                   :         : 4         :                
+<<<<<<< HEAD
 GND*                         : B15       :        :                   :         : 4         :                
 GND*                         : B16       :        :                   :         : 4         :                
 strings[0][2]                : B17       : output : 3.3-V LVTTL       :         : 4         : N              
 strings[4][3]                : B18       : output : 3.3-V LVTTL       :         : 4         : N              
+=======
+notegen_RX_DV                : B15       : output : 3.3-V LVTTL       :         : 4         : N              
+strings[1][0]                : B16       : output : 3.3-V LVTTL       :         : 4         : N              
+strings[0][1]                : B17       : output : 3.3-V LVTTL       :         : 4         : N              
+strings[2][6]                : B18       : output : 3.3-V LVTTL       :         : 4         : N              
+>>>>>>> 68f519c4e87a94eda05c0f92aee93f5b401e4eef
 GND*                         : B19       :        :                   :         : 4         :                
 GND*                         : B20       :        :                   :         : 4         :                
 GND*                         : B21       :        :                   :         : 4         :                
@@ -290,9 +348,15 @@ GND*                         : C11       :        :                   :         
 GND*                         : C12       :        :                   :         : 3         :                
 GND+                         : C13       :        :                   :         : 3         :                
 GND                          : C14       : gnd    :                   :         :           :                
+<<<<<<< HEAD
 GND*                         : C15       :        :                   :         : 4         :                
 GND*                         : C16       :        :                   :         : 4         :                
 noteLevel[2]                 : C17       : output : 3.3-V LVTTL       :         : 4         : N              
+=======
+strings[4][6]                : C15       : output : 3.3-V LVTTL       :         : 4         : N              
+strings[4][7]                : C16       : output : 3.3-V LVTTL       :         : 4         : N              
+clk_out                      : C17       : output : 3.3-V LVTTL       :         : 4         : N              
+>>>>>>> 68f519c4e87a94eda05c0f92aee93f5b401e4eef
 GND                          : C18       : gnd    :                   :         :           :                
 r_uart_RX_Serial             : C19       : input  : 3.3-V LVTTL       :         : 4         : Y              
 VCCIO4                       : C20       : power  :                   : 3.3V    : 4         :                
@@ -316,9 +380,15 @@ GND*                         : D11       :        :                   :         
 GND*                         : D12       :        :                   :         : 3         :                
 GND+                         : D13       :        :                   :         : 3         :                
 GND*                         : D14       :        :                   :         : 4         :                
+<<<<<<< HEAD
 GND*                         : D15       :        :                   :         : 4         :                
 GND*                         : D16       :        :                   :         : 4         :                
 notegen_RX_DV                : D17       : output : 3.3-V LVTTL       :         : 4         : N              
+=======
+strings[4][0]                : D15       : output : 3.3-V LVTTL       :         : 4         : N              
+strings[0][3]                : D16       : output : 3.3-V LVTTL       :         : 4         : N              
+GND*                         : D17       :        :                   :         : 4         :                
+>>>>>>> 68f519c4e87a94eda05c0f92aee93f5b401e4eef
 GND*                         : D18       :        :                   :         : 4         :                
 GND*                         : D19       :        :                   :         : 4         :                
 GND*                         : D20       :        :                   :         : 4         :                
@@ -342,7 +412,7 @@ GND                          : E11       : gnd    :                   :         
 GND*                         : E12       :        :                   :         : 3         :                
 VCCIO3                       : E13       : power  :                   : 3.3V    : 3         :                
 VCCIO4                       : E14       : power  :                   : 3.3V    : 4         :                
-GND*                         : E15       :        :                   :         : 4         :                
+strings[4][3]                : E15       : output : 3.3-V LVTTL       :         : 4         : N              
 GND                          : E16       : gnd    :                   :         :           :                
 VCCIO4                       : E17       : power  :                   : 3.3V    : 4         :                
 GND*                         : E18       :        :                   :         : 4         :                
@@ -368,10 +438,17 @@ GND*                         : F11       :        :                   :         
 GND*                         : F12       :        :                   :         : 3         :                
 GND*                         : F13       :        :                   :         : 4         :                
 GND*                         : F14       :        :                   :         : 4         :                
+<<<<<<< HEAD
 strings[2][3]                : F15       : output : 3.3-V LVTTL       :         : 4         : N              
 triggeredString[0]           : F16       : output : 3.3-V LVTTL       :         : 4         : N              
 GND*                         : F17       :        :                   :         : 4         :                
 noteLevel[4]                 : F18       : output : 3.3-V LVTTL       :         : 4         : N              
+=======
+strings[1][5]                : F15       : output : 3.3-V LVTTL       :         : 4         : N              
+strings[3][2]                : F16       : output : 3.3-V LVTTL       :         : 4         : N              
+GND*                         : F17       :        :                   :         : 4         :                
+GND*                         : F18       :        :                   :         : 4         :                
+>>>>>>> 68f519c4e87a94eda05c0f92aee93f5b401e4eef
 GNDA_PLL2                    : F19       : gnd    :                   :         :           :                
 GND*                         : F20       :        :                   :         : 5         :                
 GND*                         : F21       :        :                   :         : 5         :                
@@ -394,9 +471,15 @@ GND*                         : G11       :        :                   :         
 GND*                         : G12       :        :                   :         : 3         :                
 GND*                         : G13       :        :                   :         : 4         :                
 GND*                         : G14       :        :                   :         : 4         :                
+<<<<<<< HEAD
 strings[5][7]                : G15       : output : 3.3-V LVTTL       :         : 4         : N              
 strings[3][0]                : G16       : output : 3.3-V LVTTL       :         : 4         : N              
 o_cnt[0]                     : G17       : output : 3.3-V LVTTL       :         : 4         : N              
+=======
+strings[1][3]                : G15       : output : 3.3-V LVTTL       :         : 4         : N              
+o_cnt[1]                     : G16       : output : 3.3-V LVTTL       :         : 4         : N              
+strings[5][2]                : G17       : output : 3.3-V LVTTL       :         : 4         : N              
+>>>>>>> 68f519c4e87a94eda05c0f92aee93f5b401e4eef
 GND*                         : G18       :        :                   :         : 4         :                
 VCCA_PLL2                    : G19       : power  :                   : 1.2V    :           :                
 GND_PLL2                     : G20       : gnd    :                   :         :           :                
@@ -482,7 +565,11 @@ GND*                         : K21       :        :                   :         
 GND*                         : K22       :        :                   :         : 5         :                
 GND*                         : K23       :        :                   :         : 5         :                
 GND*                         : K24       :        :                   :         : 5         :                
+<<<<<<< HEAD
 GND*                         : K25       :        :                   :         : 5         :                
+=======
+noteLevel[2]                 : K25       : output : 3.3-V LVTTL       :         : 5         : N              
+>>>>>>> 68f519c4e87a94eda05c0f92aee93f5b401e4eef
 GND*                         : K26       :        :                   :         : 5         :                
 VCCIO2                       : L1        : power  :                   : 3.3V    : 2         :                
 GND*                         : L2        :        :                   :         : 2         :                
@@ -528,6 +615,7 @@ GND                          : M15       : gnd    :                   :         
 VCCINT                       : M16       : power  :                   : 1.2V    :           :                
 VCCINT                       : M17       : power  :                   : 1.2V    :           :                
 VCCIO5                       : M18       : power  :                   : 3.3V    : 5         :                
+<<<<<<< HEAD
 GND*                         : M19       :        :                   :         : 5         :                
 o_cnt[1]                     : M20       : output : 3.3-V LVTTL       :         : 5         : N              
 GND*                         : M21       :        :                   :         : 5         :                
@@ -535,6 +623,15 @@ GND*                         : M22       :        :                   :         
 GND*                         : M23       :        :                   :         : 5         :                
 GND*                         : M24       :        :                   :         : 5         :                
 noteLevel[0]                 : M25       : output : 3.3-V LVTTL       :         : 5         : N              
+=======
+strings[3][7]                : M19       : output : 3.3-V LVTTL       :         : 5         : N              
+strings[3][3]                : M20       : output : 3.3-V LVTTL       :         : 5         : N              
+o_cnt[0]                     : M21       : output : 3.3-V LVTTL       :         : 5         : N              
+GND*                         : M22       :        :                   :         : 5         :                
+strings[5][0]                : M23       : output : 3.3-V LVTTL       :         : 5         : N              
+triggeredString[0]           : M24       : output : 3.3-V LVTTL       :         : 5         : N              
+strings[1][1]                : M25       : output : 3.3-V LVTTL       :         : 5         : N              
+>>>>>>> 68f519c4e87a94eda05c0f92aee93f5b401e4eef
 GND                          : M26       : gnd    :                   :         :           :                
 GND+                         : N1        :        :                   :         : 2         :                
 clk_100m                     : N2        : input  : 3.3-V LVTTL       :         : 2         : Y              
@@ -555,11 +652,19 @@ GND                          : N16       : gnd    :                   :         
 VCCINT                       : N17       : power  :                   : 1.2V    :           :                
 GND                          : N18       : gnd    :                   :         :           :                
 GND                          : N19       : gnd    :                   :         :           :                
+<<<<<<< HEAD
 GND*                         : N20       :        :                   :         : 5         :                
 GND*                         : N21       :        :                   :         : 5         :                
 VCCIO5                       : N22       : power  :                   : 3.3V    : 5         :                
 clk_out                      : N23       : output : 3.3-V LVTTL       :         : 5         : N              
 GND*                         : N24       :        :                   :         : 5         :                
+=======
+strings[3][4]                : N20       : output : 3.3-V LVTTL       :         : 5         : N              
+noteLevel[1]                 : N21       : output : 3.3-V LVTTL       :         : 5         : N              
+VCCIO5                       : N22       : power  :                   : 3.3V    : 5         :                
+noteLevel[0]                 : N23       : output : 3.3-V LVTTL       :         : 5         : N              
+strings[2][3]                : N24       : output : 3.3-V LVTTL       :         : 5         : N              
+>>>>>>> 68f519c4e87a94eda05c0f92aee93f5b401e4eef
 GND+                         : N25       :        :                   :         : 5         :                
 GND+                         : N26       :        :                   :         : 5         :                
 GND+                         : P1        :        :                   :         : 1         :                
@@ -584,8 +689,13 @@ GND                          : P19       : gnd    :                   :         
 MSEL0                        : P20       :        :                   :         : 6         :                
 MSEL1                        : P21       :        :                   :         : 6         :                
 VCCIO6                       : P22       : power  :                   : 3.3V    : 6         :                
+<<<<<<< HEAD
 GND*                         : P23       :        :                   :         : 6         :                
 GND*                         : P24       :        :                   :         : 6         :                
+=======
+noteLevel[4]                 : P23       : output : 3.3-V LVTTL       :         : 6         : N              
+triggeredString[2]           : P24       : output : 3.3-V LVTTL       :         : 6         : N              
+>>>>>>> 68f519c4e87a94eda05c0f92aee93f5b401e4eef
 GND+                         : P25       :        :                   :         : 6         :                
 GND+                         : P26       :        :                   :         : 6         :                
 GND                          : R1        : gnd    :                   :         :           :                
@@ -607,12 +717,21 @@ VCCINT                       : R16       : power  :                   : 1.2V    
 GND                          : R17       : gnd    :                   :         :           :                
 VCCIO6                       : R18       : power  :                   : 3.3V    : 6         :                
 VCCINT                       : R19       : power  :                   : 1.2V    :           :                
+<<<<<<< HEAD
 GND*                         : R20       :        :                   :         : 6         :                
 GND                          : R21       : gnd    :                   :         :           :                
 nSTATUS                      : R22       :        :                   :         : 6         :                
 CONF_DONE                    : R23       :        :                   :         : 6         :                
 GND*                         : R24       :        :                   :         : 6         :                
 GND*                         : R25       :        :                   :         : 6         :                
+=======
+strings[3][5]                : R20       : output : 3.3-V LVTTL       :         : 6         : N              
+GND                          : R21       : gnd    :                   :         :           :                
+nSTATUS                      : R22       :        :                   :         : 6         :                
+CONF_DONE                    : R23       :        :                   :         : 6         :                
+strings[2][1]                : R24       : output : 3.3-V LVTTL       :         : 6         : N              
+strings[2][5]                : R25       : output : 3.3-V LVTTL       :         : 6         : N              
+>>>>>>> 68f519c4e87a94eda05c0f92aee93f5b401e4eef
 GND                          : R26       : gnd    :                   :         :           :                
 VCCIO1                       : T1        : power  :                   : 3.3V    : 1         :                
 GND*                         : T2        :        :                   :         : 1         :                
@@ -635,10 +754,17 @@ VCCINT                       : T18       : power  :                   : 1.2V    
 VCCINT                       : T19       : power  :                   : 1.2V    :           :                
 GND*                         : T20       :        :                   :         : 6         :                
 GND*                         : T21       :        :                   :         : 6         :                
+<<<<<<< HEAD
 GND*                         : T22       :        :                   :         : 6         :                
 GND*                         : T23       :        :                   :         : 6         :                
 GND*                         : T24       :        :                   :         : 6         :                
 noteLevel[6]                 : T25       : output : 3.3-V LVTTL       :         : 6         : N              
+=======
+strings[3][0]                : T22       : output : 3.3-V LVTTL       :         : 6         : N              
+strings[5][7]                : T23       : output : 3.3-V LVTTL       :         : 6         : N              
+strings[3][6]                : T24       : output : 3.3-V LVTTL       :         : 6         : N              
+strings[5][6]                : T25       : output : 3.3-V LVTTL       :         : 6         : N              
+>>>>>>> 68f519c4e87a94eda05c0f92aee93f5b401e4eef
 VCCIO6                       : T26       : power  :                   : 3.3V    : 6         :                
 GND*                         : U1        :        :                   :         : 1         :                
 GND*                         : U2        :        :                   :         : 1         :                
@@ -660,12 +786,21 @@ GND                          : U17       : gnd    :                   :         
 VCCINT                       : U18       : power  :                   : 1.2V    :           :                
 GND                          : U19       : gnd    :                   :         :           :                
 GND*                         : U20       :        :                   :         : 6         :                
+<<<<<<< HEAD
 triggeredString[1]           : U21       : output : 3.3-V LVTTL       :         : 6         : N              
 strings[4][1]                : U22       : output : 3.3-V LVTTL       :         : 6         : N              
 strings[1][7]                : U23       : output : 3.3-V LVTTL       :         : 6         : N              
 GND*                         : U24       :        :                   :         : 6         :                
 GND*                         : U25       :        :                   :         : 6         :                
 GND*                         : U26       :        :                   :         : 6         :                
+=======
+GND*                         : U21       :        :                   :         : 6         :                
+GND*                         : U22       :        :                   :         : 6         :                
+GND*                         : U23       :        :                   :         : 6         :                
+GND*                         : U24       :        :                   :         : 6         :                
+strings[4][2]                : U25       : output : 3.3-V LVTTL       :         : 6         : N              
+strings[0][2]                : U26       : output : 3.3-V LVTTL       :         : 6         : N              
+>>>>>>> 68f519c4e87a94eda05c0f92aee93f5b401e4eef
 GND*                         : V1        :        :                   :         : 1         :                
 GND*                         : V2        :        :                   :         : 1         :                
 GND*                         : V3        :        :                   :         : 1         :                
@@ -730,10 +865,17 @@ GND                          : Y9        : gnd    :                   :         
 GND*                         : Y10       :        :                   :         : 8         :                
 GND*                         : Y11       :        :                   :         : 8         :                
 GND*                         : Y12       :        :                   :         : 8         :                
+<<<<<<< HEAD
 strings[2][5]                : Y13       : output : 3.3-V LVTTL       :         : 7         : N              
 strings[5][2]                : Y14       : output : 3.3-V LVTTL       :         : 7         : N              
 strings[1][5]                : Y15       : output : 3.3-V LVTTL       :         : 7         : N              
 strings[3][2]                : Y16       : output : 3.3-V LVTTL       :         : 7         : N              
+=======
+GND*                         : Y13       :        :                   :         : 7         :                
+strings[4][5]                : Y14       : output : 3.3-V LVTTL       :         : 7         : N              
+strings[2][7]                : Y15       : output : 3.3-V LVTTL       :         : 7         : N              
+noteLevel[5]                 : Y16       : output : 3.3-V LVTTL       :         : 7         : N              
+>>>>>>> 68f519c4e87a94eda05c0f92aee93f5b401e4eef
 GND                          : Y17       : gnd    :                   :         :           :                
 GND*                         : Y18       :        :                   :         : 7         :                
 GNDA_PLL4                    : Y19       : gnd    :                   :         :           :                
