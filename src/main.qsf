@@ -95,3 +95,4 @@ set_location_assignment PIN_A20 -to TXD
 set_location_assignment PIN_AD23 -to clk_out
 set_global_assignment -name FMAX_REQUIREMENT "100 MHz" -section_id clk_100m
 set_instance_assignment -name CLOCK_SETTINGS clk_100m -to clk_100m
+set_global_assignment -name MISC_FILE "Y:/workspace/course/2.2/shushe/ProjectGuitar/src/main.dpf"
