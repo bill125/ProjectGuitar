@@ -258,7 +258,7 @@ begin
       i_triggeredString => gu_triggeredString,
       i_strings => gu_strings,
       i_RX_DV => a_kb_TX_DV,
-      i_clk => clk, -- TODO: reduce frequency
+      i_clk => clk_25m, -- TODO: reduce frequency
       o_noteLevel => gu_noteLevel,
       o_TX_DV => note_gen_TX_DV
       );
@@ -284,7 +284,7 @@ begin
   
   uart_out_adapter : UARTOutAdapter
     port map (
-              i_Clk => clk_100m,
+              i_Clk => clk_25m,
               i_isOn => '1',
               i_noteLevel => gu_noteLevel,
               i_vel => gu_vel,
