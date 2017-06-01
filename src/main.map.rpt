@@ -1,5 +1,5 @@
 Analysis & Synthesis report for main
-Thu Jun 01 17:49:56 2017
+Thu Jun 01 18:37:10 2017
 Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
 
 
@@ -50,15 +50,15 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Jun 01 17:49:56 2017    ;
+; Analysis & Synthesis Status        ; Successful - Thu Jun 01 18:37:10 2017    ;
 ; Quartus II Version                 ; 9.0 Build 132 02/25/2009 SJ Full Version ;
 ; Revision Name                      ; main                                     ;
 ; Top-level Entity Name              ; main                                     ;
 ; Family                             ; Cyclone II                               ;
-; Total logic elements               ; 73                                       ;
-;     Total combinational functions  ; 60                                       ;
-;     Dedicated logic registers      ; 30                                       ;
-; Total registers                    ; 30                                       ;
+; Total logic elements               ; 75                                       ;
+;     Total combinational functions  ; 62                                       ;
+;     Dedicated logic registers      ; 32                                       ;
+; Total registers                    ; 32                                       ;
 ; Total pins                         ; 32                                       ;
 ; Total virtual pins                 ; 0                                        ;
 ; Total memory bits                  ; 0                                        ;
@@ -157,33 +157,33 @@ applicable agreement for further details.
 +----------------------------------+-----------------+-----------------------+----------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary            ;
-+---------------------------------------------+----------+
-; Resource                                    ; Usage    ;
-+---------------------------------------------+----------+
-; Estimated Total logic elements              ; 73       ;
-;                                             ;          ;
-; Total combinational functions               ; 60       ;
-; Logic element usage by number of LUT inputs ;          ;
-;     -- 4 input functions                    ; 41       ;
-;     -- 3 input functions                    ; 16       ;
-;     -- <=2 input functions                  ; 3        ;
-;                                             ;          ;
-; Logic elements by mode                      ;          ;
-;     -- normal mode                          ; 60       ;
-;     -- arithmetic mode                      ; 0        ;
-;                                             ;          ;
-; Total registers                             ; 30       ;
-;     -- Dedicated logic registers            ; 30       ;
-;     -- I/O registers                        ; 0        ;
-;                                             ;          ;
-; I/O pins                                    ; 32       ;
-; Maximum fan-out node                        ; clk_100m ;
-; Maximum fan-out                             ; 30       ;
-; Total fan-out                               ; 332      ;
-; Average fan-out                             ; 2.72     ;
-+---------------------------------------------+----------+
++-----------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                           ;
++---------------------------------------------+-------------------------+
+; Resource                                    ; Usage                   ;
++---------------------------------------------+-------------------------+
+; Estimated Total logic elements              ; 75                      ;
+;                                             ;                         ;
+; Total combinational functions               ; 62                      ;
+; Logic element usage by number of LUT inputs ;                         ;
+;     -- 4 input functions                    ; 41                      ;
+;     -- 3 input functions                    ; 16                      ;
+;     -- <=2 input functions                  ; 5                       ;
+;                                             ;                         ;
+; Logic elements by mode                      ;                         ;
+;     -- normal mode                          ; 62                      ;
+;     -- arithmetic mode                      ; 0                       ;
+;                                             ;                         ;
+; Total registers                             ; 32                      ;
+;     -- Dedicated logic registers            ; 32                      ;
+;     -- I/O registers                        ; 0                       ;
+;                                             ;                         ;
+; I/O pins                                    ; 32                      ;
+; Maximum fan-out node                        ; FreqDiv:fd_inst1|output ;
+; Maximum fan-out                             ; 31                      ;
+; Total fan-out                               ; 339                     ;
+; Average fan-out                             ; 2.69                    ;
++---------------------------------------------+-------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -191,7 +191,8 @@ applicable agreement for further details.
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+--------------+
-; |main                      ; 60 (0)            ; 30 (0)       ; 0           ; 0            ; 0       ; 0         ; 32   ; 0            ; |main                              ; work         ;
+; |main                      ; 62 (0)            ; 32 (0)       ; 0           ; 0            ; 0       ; 0         ; 32   ; 0            ; |main                              ; work         ;
+;    |FreqDiv:fd_inst1|      ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FreqDiv:fd_inst1             ; work         ;
 ;    |KeyboardAdapter:u1|    ; 12 (12)           ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|KeyboardAdapter:u1           ; work         ;
 ;    |KeyboardInput:u0|      ; 41 (0)            ; 25 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|KeyboardInput:u0             ; work         ;
 ;       |Keyboard:u0|        ; 27 (27)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|KeyboardInput:u0|Keyboard:u0 ; work         ;
@@ -247,7 +248,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 30    ;
+; Total registers                              ; 32    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 22    ;
@@ -325,14 +326,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "FreqDiv:fd_inst1"                                                                   ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; rst  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; o    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
++----------------------------------------------+
+; Port Connectivity Checks: "FreqDiv:fd_inst1" ;
++------+-------+----------+--------------------+
+; Port ; Type  ; Severity ; Details            ;
++------+-------+----------+--------------------+
+; rst  ; Input ; Info     ; Stuck at GND       ;
++------+-------+----------+--------------------+
 
 
 +-------------------------------------------+
@@ -360,7 +360,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
-    Info: Processing started: Thu Jun 01 17:49:55 2017
+    Info: Processing started: Thu Jun 01 18:37:08 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ProjectGuitar -c main
 Info: Found 2 design units, including 1 entities, in source file UARTIn.vhd
     Info: Found design unit 1: UARTIn-UARTIn_bhv
@@ -394,7 +394,6 @@ Info: Elaborating entity "main" for the top level hierarchy
 Warning (10541): VHDL Signal Declaration warning at main.vhd(10): used implicit default value for signal "TXD" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Warning (10541): VHDL Signal Declaration warning at main.vhd(12): used implicit default value for signal "o_cnt" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Warning (10036): Verilog HDL or VHDL warning at main.vhd(108): object "clk_1000" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at main.vhd(108): object "clk_25m" assigned a value but never read
 Warning (10036): Verilog HDL or VHDL warning at main.vhd(108): object "clk_1" assigned a value but never read
 Warning (10036): Verilog HDL or VHDL warning at main.vhd(116): object "a_kb_clk" assigned a value but never read
 Warning (10541): VHDL Signal Declaration warning at main.vhd(119): used implicit default value for signal "t_TX_BV" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
@@ -428,14 +427,14 @@ Warning: Output pins are stuck at VCC or GND
 Warning: Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "RXD"
     Warning (15610): No output dependent on input pin "click"
-Info: Implemented 105 device resources after synthesis - the final resource count might be different
+Info: Implemented 107 device resources after synthesis - the final resource count might be different
     Info: Implemented 6 input pins
     Info: Implemented 26 output pins
-    Info: Implemented 73 logic cells
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 20 warnings
+    Info: Implemented 75 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 19 warnings
     Info: Peak virtual memory: 289 megabytes
-    Info: Processing ended: Thu Jun 01 17:49:56 2017
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Thu Jun 01 18:37:10 2017
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
 

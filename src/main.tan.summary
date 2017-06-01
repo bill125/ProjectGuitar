@@ -5,7 +5,7 @@ Timing Analyzer Summary
 Type           : Worst-case tsu
 Slack          : N/A
 Required Time  : None
-Actual Time    : 4.230 ns
+Actual Time    : 1.016 ns
 From           : i_KB_Data
 To             : KeyboardInput:u0|Keyboard:u0|data
 From Clock     : --
@@ -15,9 +15,9 @@ Failed Paths   : 0
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 17.358 ns
-From           : KeyboardInput:u0|Keyboard:u0|scancode[3]
-To             : seg0[0]
+Actual Time    : 14.472 ns
+From           : KeyboardAdapter:u1|o_triggeredString[1]
+To             : seg2[6]
 From Clock     : clk_100m
 To Clock       : --
 Failed Paths   : 0
@@ -25,7 +25,7 @@ Failed Paths   : 0
 Type           : Worst-case th
 Slack          : N/A
 Required Time  : None
-Actual Time    : -3.960 ns
+Actual Time    : -0.745 ns
 From           : clk_in
 To             : KeyboardInput:u0|Keyboard:u0|clk1
 From Clock     : --
@@ -33,21 +33,21 @@ To Clock       : clk_100m
 Failed Paths   : 0
 
 Type           : Clock Setup: 'clk_100m'
-Slack          : -4.834 ns
+Slack          : 1.168 ns
 Required Time  : 100.00 MHz ( period = 10.000 ns )
-Actual Time    : 50.84 MHz ( period = 19.668 ns )
-From           : KeyboardInput:u0|Keyboard:u0|scancode[6]
+Actual Time    : 130.48 MHz ( period = 7.664 ns )
+From           : KeyboardInput:u0|Keyboard:u0|scancode[1]
 To             : KeyboardAdapter:u1|o_triggeredString[2]
 From Clock     : clk_100m
 To Clock       : clk_100m
-Failed Paths   : 32
+Failed Paths   : 0
 
 Type           : Clock Hold: 'clk_100m'
-Slack          : 0.498 ns
+Slack          : 0.499 ns
 Required Time  : 100.00 MHz ( period = 10.000 ns )
 Actual Time    : N/A
-From           : KeyboardInput:u0|Keyboard:u0|code[4]
-To             : KeyboardInput:u0|Keyboard:u0|scancode[4]
+From           : KeyboardAdapter:u1|\receive_trigger:ignore_status
+To             : KeyboardAdapter:u1|\receive_trigger:ignore_status
 From Clock     : clk_100m
 To Clock       : clk_100m
 Failed Paths   : 0
@@ -60,7 +60,7 @@ From           :
 To             : 
 From Clock     : 
 To Clock       : 
-Failed Paths   : 32
+Failed Paths   : 0
 
 --------------------------------------------------------------------------------------
 

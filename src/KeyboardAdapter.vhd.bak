@@ -54,7 +54,7 @@ begin
 						when string_5 => o_triggeredString <= 5;
 						when others => o_triggeredString <= 0;
 					end case;
-					-- generate impulse
+					
 					wait_times := 20;
 				end if;
 			end if;

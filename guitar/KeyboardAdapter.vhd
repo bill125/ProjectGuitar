@@ -34,12 +34,14 @@ begin
 				wait_times := wait_times - 1;
 				if wait_times = 1 then
 					o_clk <= '1';
+				else
+					o_clk <= '0';
 				end if;
 			else
 				o_clk <= '0';
 			end if;
 			
-			if i_clk /= l_clk and i_clk = '1' then
+			if l_clk = '0' and i_clk = '1' then
 				if ignore_status = '1' then
 					ignore_status := '0';
 				elsif i_key = "11110000" then 
@@ -55,7 +57,7 @@ begin
 						when others => o_triggeredString <= 0;
 					end case;
 					
-					wait_times := 20;
+					wait_times := 2;
 				end if;
 			end if;
 			

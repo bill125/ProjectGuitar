@@ -472,43 +472,6 @@ KeyboardInput:u0|Keyboard:u0
 
 # end
 # entity
-main
-# storage
-db|main.(0).cnf
-db|main.(0).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-main.vhd
-30edec5e9f5b536c76ab687ff188a695
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# include_file {
-constant_package.vhd
-ebc230662eaef95769e9cbcc0e6b2e4
-}
-# hierarchies {
-|
-}
-# lmf
-..|..|..|..|..|..|altera|90|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
 KeyboardInput
 # storage
 db|main.(2).cnf
@@ -556,6 +519,43 @@ KeyboardInput:u0
 
 # end
 # entity
+main
+# storage
+db|main.(0).cnf
+db|main.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+main.vhd
+e68f2ca72cb3471a5c3063a0e7a2c0
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# include_file {
+constant_package.vhd
+ebc230662eaef95769e9cbcc0e6b2e4
+}
+# hierarchies {
+|
+}
+# lmf
+..|..|..|..|..|..|altera|90|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
 KeyboardAdapter
 # storage
 db|main.(13).cnf
@@ -567,7 +567,7 @@ ON
 # case_insensitive
 # source_file
 KeyboardAdapter.vhd
-7228f17d8ad1f1fcfbb643e015851c8
+8e636e9ca74067749b4a87e33886913
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT

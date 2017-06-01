@@ -1,5 +1,5 @@
 Flow report for main
-Thu Jun 01 17:50:20 2017
+Thu Jun 01 18:37:25 2017
 Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
 
 
@@ -38,18 +38,18 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +------------------------------------+------------------------------------------+
-; Flow Status                        ; Successful - Thu Jun 01 17:50:20 2017    ;
+; Flow Status                        ; Successful - Thu Jun 01 18:37:24 2017    ;
 ; Quartus II Version                 ; 9.0 Build 132 02/25/2009 SJ Full Version ;
 ; Revision Name                      ; main                                     ;
 ; Top-level Entity Name              ; main                                     ;
 ; Family                             ; Cyclone II                               ;
 ; Device                             ; EP2C70F672C8                             ;
 ; Timing Models                      ; Final                                    ;
-; Met timing requirements            ; No                                       ;
-; Total logic elements               ; 72 / 68,416 ( < 1 % )                    ;
-;     Total combinational functions  ; 60 / 68,416 ( < 1 % )                    ;
-;     Dedicated logic registers      ; 30 / 68,416 ( < 1 % )                    ;
-; Total registers                    ; 30                                       ;
+; Met timing requirements            ; Yes                                      ;
+; Total logic elements               ; 73 / 68,416 ( < 1 % )                    ;
+;     Total combinational functions  ; 62 / 68,416 ( < 1 % )                    ;
+;     Dedicated logic registers      ; 32 / 68,416 ( < 1 % )                    ;
+; Total registers                    ; 32                                       ;
 ; Total pins                         ; 32 / 422 ( 8 % )                         ;
 ; Total virtual pins                 ; 0                                        ;
 ; Total memory bits                  ; 0 / 1,152,000 ( 0 % )                    ;
@@ -63,7 +63,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/01/2017 17:49:55 ;
+; Start date & time ; 06/01/2017 18:37:09 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; main                ;
 +-------------------+---------------------+
@@ -74,7 +74,7 @@ applicable agreement for further details.
 +------------------------------------+----------------------------------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                    ; Value                                                          ; Default Value ; Entity Name ; Section Id     ;
 +------------------------------------+----------------------------------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID              ; 132155099019303.149631059509080                                ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID              ; 132155099019303.149631342808288                                ; --            ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP             ; 85                                                             ; --            ; --          ; --             ;
 ; MIN_CORE_JUNCTION_TEMP             ; 0                                                              ; --            ; --          ; --             ;
 ; MISC_FILE                          ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/main.dpf ; --            ; --          ; --             ;
@@ -90,10 +90,10 @@ applicable agreement for further details.
 ; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Analysis & Synthesis    ; 00:00:01     ; 1.0                     ; 289 MB              ; 00:00:01                           ;
-; Fitter                  ; 00:00:09     ; 1.4                     ; 430 MB              ; 00:00:09                           ;
+; Fitter                  ; 00:00:08     ; 1.0                     ; 430 MB              ; 00:00:09                           ;
 ; Assembler               ; 00:00:04     ; 1.0                     ; 388 MB              ; 00:00:04                           ;
 ; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 221 MB              ; 00:00:00                           ;
-; Total                   ; 00:00:14     ; --                      ; --                  ; 00:00:14                           ;
+; Total                   ; 00:00:13     ; --                      ; --                  ; 00:00:14                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

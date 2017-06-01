@@ -34,6 +34,8 @@ begin
 				wait_times := wait_times - 1;
 				if wait_times = 1 then
 					o_clk <= '1';
+				else
+					o_clk <= '0';
 				end if;
 			else
 				o_clk <= '0';
