@@ -53,6 +53,7 @@ entity main is
       strings : out GuitarStatus;
       notegen_RX_DV : out std_logic;
       clk_25m_out : out std_logic;
+      note_gen_TX_DV1 : out std_logic;
     
     clk_out : out std_logic
  	);
@@ -217,7 +218,7 @@ begin
  	port map (
       datain => i_KB_data,
       clkin => clk_in,
-      fclk => clk_25m,
+      fclk => clk_100m,
       rst_in => rst_in,
       key_out => t_key,
       seg0 => seg0,
@@ -229,7 +230,7 @@ begin
  	port map (
       i_key => t_key,
       i_clk => raw_kb_TX_DV,
-      hclk => clk_25m,
+      hclk => clk_100m,
       o_triggeredString => gu_triggeredString,
       o_clk => a_kb_TX_DV
       );
@@ -258,11 +259,12 @@ begin
       i_triggeredString => gu_triggeredString,
       i_strings => gu_strings,
       i_RX_DV => a_kb_TX_DV,
-      i_clk => clk_25m, -- TODO: reduce frequency
+      i_clk => clk_100m, -- TODO: reduce frequency
       o_noteLevel => gu_noteLevel,
       o_TX_DV => note_gen_TX_DV
       );
 
+  note_gen_TX_DV1 <= note_gen_TX_DV;
   triggeredString <= gu_triggeredString;
   noteLevel <= gu_noteLevel;
   strings <= gu_strings;

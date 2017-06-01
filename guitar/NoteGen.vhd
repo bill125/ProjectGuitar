@@ -18,15 +18,23 @@ architecture beh of NoteGen is
   signal delay_clk2 : std_logic := i_RX_DV;
   --signal delay_clk3 : std_logic = '0';
 begin
-  process (i_clk) is
+  -- process (i_clk) is
+  -- begin
+  --   if rising_edge(i_clk) then
+  --   delay_clk1 <= i_RX_DV;
+  --   delay_clk2 <= delay_clk1;
+  --   o_TX_DV <= delay_clk2;
+  --   end if;
+  -- end process;
+  o_TX_DV <= i_RX_DV;
+  process (i_RX_DV) is
   begin
-	if rising_edge(i_clk) then
-    delay_clk1 <= i_RX_DV;
-    delay_clk2 <= delay_clk1;
-    o_TX_DV <= delay_clk2;
+    if rising_edge(i_RX_DV) then
+      o_noteLevel <= to_integer(unsigned(i_strings(i_triggeredString)));
     end if;
+      
   end process;
-  o_noteLevel <= to_integer(unsigned(i_strings(i_triggeredString)));
+  
   -- process (i_RX_DV) is
   -- begin
   --   if rising_edge(i_RX_DV) then
