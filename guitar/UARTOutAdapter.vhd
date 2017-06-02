@@ -14,31 +14,36 @@ entity UARTOutAdapter is
 		i_prog : in integer range 0 to 255;
 		o_TX_Byte : out std_logic_vector(7 downto 0);
 		o_TX_DV : out std_logic;
+		o_TX_done : out std_logic;
 		
 		o_cnt : out integer
 	);
 end UARTOutAdapter;
 
 architecture UARTOutAdapter_bhv of UARTOutAdapter is
-	type t_SM_Main is (s_Idle, s_TX_Data_Bytes, s_Cleanup);
+	type t_SM_Main is (s_Idle, s_TX_Data_Bytes, s_Finish, s_Cleanup);
 	signal r_SM_Main : t_SM_Main := s_Idle;
+	signal t_TX_done : std_logic;
 	
 	signal t_Bytes : std_logic_vector(7 downto 0);
 	signal t_TX_DV : std_logic := '0';
 begin
 	o_TX_Byte <= t_Bytes;
 	o_TX_DV <= t_TX_DV;
+	o_TX_done <= t_TX_done;
 	
 	FSM : process (i_Clk)
 		variable cnt : integer range 0 to 4;
 		variable l_TX_DV : std_logic := '0';
 		variable wait_times : integer range 0 to 63;
+		variable done_wait_times : integer range 0 to 63;
 		variable data_ready : std_logic;
 		variable data_sent : std_logic;
 	begin
 		if rising_edge(i_Clk) then
 			case r_SM_Main is
 				when s_Idle =>
+					t_TX_done <= '0';
 					if l_TX_DV = '0' and i_TX_DV = '1' then
 						cnt := 0;
 						data_ready := '1';
@@ -63,7 +68,8 @@ begin
 					if data_ready = '0' or i_Byte_done = '1' then
 						r_SM_Main <= s_TX_Data_Bytes;
 					elsif cnt = 4 then
-						r_SM_Main <= s_Cleanup;
+						done_wait_times := 30;
+						r_SM_Main <= s_Finish;
 					else
 						case cnt is
 							when 0 => 
@@ -87,8 +93,22 @@ begin
 						cnt := cnt + 1;
 						r_SM_Main <= s_TX_Data_Bytes;
 					end if;
+					
+				when s_Finish =>
+					done_wait_times := done_wait_times - 1;
+					if done_wait_times = 0 then
+						t_TX_done <= '0';
+						r_SM_Main <= s_Cleanup;
+					elsif done_wait_times <= 5 then
+						t_TX_done <= '1';
+						r_SM_Main <= s_Finish;
+					else
+						t_TX_done <= '0';
+						r_SM_Main <= s_Finish;
+					end if;
 				
 				when s_Cleanup =>
+					t_TX_done <= '0';
 					cnt := 0;
 					data_ready := '0';
 					data_sent := '1';
