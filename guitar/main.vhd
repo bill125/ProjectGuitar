@@ -272,7 +272,7 @@ begin
   
   programme_inst : Programme
     port map (
-      i_RX_DV => raw_kb_TX_DV,
+      i_RX_DV => a_kb_TX_DV,
       i_key => t_key,
       o_prog => gu_prog
       );

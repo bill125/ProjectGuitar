@@ -58,7 +58,7 @@ begin
 						when "01110010" => o_triggeredString <= 0;
 						when "01110101" => o_triggeredString <= 0;
 						when others => 
-							wait_times := 0;
+							-- wait_times := 0;
 							o_triggeredString <= 0;
 					end case;
 				end if;

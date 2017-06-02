@@ -5,15 +5,9 @@ Timing Analyzer Summary
 Type           : Worst-case tsu
 Slack          : N/A
 Required Time  : None
-<<<<<<< HEAD
-Actual Time    : 6.262 ns
-From           : clk_in
-To             : sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|acq_data_in_reg[11]
-=======
-Actual Time    : 7.017 ns
-From           : clk_in
-To             : sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|acq_trigger_in_reg[11]
->>>>>>> 4ae21b9f8d3450c9de9b2aab690cdb1ebf0fc351
+Actual Time    : 6.741 ns
+From           : r_uart_RX_Serial
+To             : sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|acq_trigger_in_reg[66]
 From Clock     : --
 To Clock       : clk_100m
 Failed Paths   : 0
@@ -21,15 +15,9 @@ Failed Paths   : 0
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-<<<<<<< HEAD
-Actual Time    : 24.689 ns
-From           : KeyboardInput:u0|Keyboard:u0|scancode[3]
-To             : seg0[6]
-=======
-Actual Time    : 20.672 ns
-From           : KeyboardInput:u0|Keyboard:u0|scancode[3]
-To             : seg0[1]
->>>>>>> 4ae21b9f8d3450c9de9b2aab690cdb1ebf0fc351
+Actual Time    : 21.314 ns
+From           : KeyboardInput:u0|Keyboard:u0|scancode[2]
+To             : seg0[5]
 From Clock     : clk_100m
 To Clock       : --
 Failed Paths   : 0
@@ -47,29 +35,19 @@ Failed Paths   : 0
 Type           : Worst-case th
 Slack          : N/A
 Required Time  : None
-<<<<<<< HEAD
-Actual Time    : 1.652 ns
-=======
-Actual Time    : -0.504 ns
->>>>>>> 4ae21b9f8d3450c9de9b2aab690cdb1ebf0fc351
-From           : altera_internal_jtag~TMSUTAP
-To             : sld_hub:sld_hub_inst|sld_shadow_jsm:shadow_jsm|tms_cnt[0]
+Actual Time    : -0.332 ns
+From           : r_uart_RX_Serial
+To             : UARTIn:uart_in|r_RX_Data_R
 From Clock     : --
-To Clock       : altera_internal_jtag~TCKUTAP
+To Clock       : clk_100m
 Failed Paths   : 0
 
 Type           : Clock Setup: 'clk_100m'
 Slack          : N/A
 Required Time  : None
-<<<<<<< HEAD
-Actual Time    : 44.28 MHz ( period = 22.584 ns )
-From           : KeyboardInput:u0|Keyboard:u0|scancode[7]
-To             : sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|acq_data_in_reg[35]
-=======
-Actual Time    : 41.91 MHz ( period = 23.858 ns )
-From           : KeyboardInput:u0|Keyboard:u0|scancode[5]
-To             : KeyboardAdapter:u1|\receive_trigger:wait_times[26]
->>>>>>> 4ae21b9f8d3450c9de9b2aab690cdb1ebf0fc351
+Actual Time    : 43.81 MHz ( period = 22.824 ns )
+From           : KeyboardInput:u0|Keyboard:u0|scancode[6]
+To             : KeyboardAdapter:u1|\receive_trigger:wait_times[7]
 From Clock     : clk_100m
 To Clock       : clk_100m
 Failed Paths   : 0
@@ -77,13 +55,8 @@ Failed Paths   : 0
 Type           : Clock Setup: 'altera_internal_jtag~TCKUTAP'
 Slack          : N/A
 Required Time  : None
-<<<<<<< HEAD
-Actual Time    : 97.22 MHz ( period = 10.286 ns )
-From           : sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_rom_sr:crc_rom_sr|WORD_SR[0]
-=======
-Actual Time    : 97.03 MHz ( period = 10.306 ns )
+Actual Time    : 96.82 MHz ( period = 10.328 ns )
 From           : sld_hub:sld_hub_inst|irf_reg[1][4]
->>>>>>> 4ae21b9f8d3450c9de9b2aab690cdb1ebf0fc351
 To             : sld_hub:sld_hub_inst|tdo
 From Clock     : altera_internal_jtag~TCKUTAP
 To Clock       : altera_internal_jtag~TCKUTAP
@@ -93,19 +66,11 @@ Type           : Clock Hold: 'clk_100m'
 Slack          : Not operational: Clock Skew > Data Delay
 Required Time  : None
 Actual Time    : N/A
-<<<<<<< HEAD
-From           : UARTOutAdapter:uart_out_adapter|t_Bytes[6]
-To             : UARTOut:uart_out|r_TX_Data[6]
+From           : KeyboardInput:u0|Keyboard:u0|code[6]
+To             : KeyboardInput:u0|Keyboard:u0|scancode[6]
 From Clock     : clk_100m
 To Clock       : clk_100m
-Failed Paths   : 68
-=======
-From           : KeyboardInput:u0|Keyboard:u0|code[1]
-To             : KeyboardInput:u0|Keyboard:u0|scancode[1]
-From Clock     : clk_100m
-To Clock       : clk_100m
-Failed Paths   : 42
->>>>>>> 4ae21b9f8d3450c9de9b2aab690cdb1ebf0fc351
+Failed Paths   : 82
 
 Type           : Total number of failed paths
 Slack          : 
@@ -115,11 +80,7 @@ From           :
 To             : 
 From Clock     : 
 To Clock       : 
-<<<<<<< HEAD
-Failed Paths   : 68
-=======
-Failed Paths   : 42
->>>>>>> 4ae21b9f8d3450c9de9b2aab690cdb1ebf0fc351
+Failed Paths   : 82
 
 --------------------------------------------------------------------------------------
 

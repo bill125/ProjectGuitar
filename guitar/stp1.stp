@@ -5,14 +5,14 @@
   <global_info>
     <single attribute="active instance" value="0"/>
     <single attribute="lock mode" value="36110"/>
-    <multi attribute="window position" size="9" value="1707,965,398,126,0,50,124,0,0"/>
+    <multi attribute="window position" size="9" value="1707,965,398,126,356,50,124,0,0"/>
     <multi attribute="column width" size="23" value="34,34,251,74,68,70,88,88,98,98,88,88,110,101,101,101,101,101,101,101,101,107,78"/>
     <single attribute="sof manager hidden" value="1"/>
   </global_info>
   <instance entity_name="sld_signaltap" is_auto_node="yes" name="auto_signaltap_0" source_file="sld_signaltap.vhd">
     <node_ip_info instance_id="0" mfg_id="110" node_id="0" version="6"/>
     <position_info>
-      <single attribute="active tab" value="0"/>
+      <single attribute="active tab" value="1"/>
       <single attribute="setup vertical scroll position" value="0"/>
       <single attribute="setup horizontal scroll position" value="0"/>
       <single attribute="data vertical scroll position" value="0"/>
@@ -433,7 +433,7 @@
         </log>
       </trigger>
     </signal_set>
-    <signal_set global_temp="1" name="signal_set: 2017/06/01 19:32:05  #0">
+    <signal_set global_temp="1" name="signal_set: 2017/06/01 20:17:56  #0">
       <clock name="clk_100m" polarity="posedge" tap_mode="probeonly"/>
       <config ram_type="M4K" reserved_data_nodes="0" reserved_storage_qualifier_nodes="0" reserved_trigger_nodes="0" sample_depth="128" trigger_in_enable="yes" trigger_in_node="notegen_RX_DV" trigger_in_tap_mode="classic" trigger_out_enable="no"/>
       <top_entity/>
@@ -448,6 +448,47 @@
           <wire name="KeyboardInput:u0|Keyboard:u0|code[5]" tap_mode="probeonly" type="register"/>
           <wire name="KeyboardInput:u0|Keyboard:u0|code[6]" tap_mode="probeonly" type="register"/>
           <wire name="KeyboardInput:u0|Keyboard:u0|code[7]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|o_prog[0]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|o_prog[1]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|o_prog[2]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|o_prog[3]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|o_prog[4]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|o_prog[5]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|o_prog[6]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[0]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[10]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[11]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[12]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[13]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[14]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[15]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[16]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[17]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[18]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[19]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[1]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[20]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[21]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[22]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[23]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[24]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[25]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[26]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[27]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[28]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[29]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[2]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[30]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[31]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[3]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[4]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[5]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[6]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[7]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[8]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[9]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|stx[0]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|stx[1]" tap_mode="probeonly" type="register"/>
           <wire name="UARTOutAdapter:uart_out_adapter|t_TX_DV" tap_mode="probeonly" type="register"/>
           <wire name="clk_25m_out" tap_mode="probeonly" type="output pin"/>
           <wire name="clk_in" tap_mode="probeonly" type="input pin"/>
@@ -517,6 +558,47 @@
           <wire name="KeyboardInput:u0|Keyboard:u0|code[5]" tap_mode="probeonly" type="register"/>
           <wire name="KeyboardInput:u0|Keyboard:u0|code[6]" tap_mode="probeonly" type="register"/>
           <wire name="KeyboardInput:u0|Keyboard:u0|code[7]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|o_prog[0]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|o_prog[1]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|o_prog[2]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|o_prog[3]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|o_prog[4]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|o_prog[5]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|o_prog[6]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[0]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[10]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[11]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[12]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[13]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[14]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[15]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[16]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[17]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[18]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[19]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[1]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[20]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[21]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[22]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[23]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[24]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[25]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[26]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[27]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[28]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[29]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[2]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[30]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[31]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[3]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[4]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[5]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[6]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[7]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[8]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[9]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|stx[0]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|stx[1]" tap_mode="probeonly" type="register"/>
           <wire name="UARTOutAdapter:uart_out_adapter|t_TX_DV" tap_mode="probeonly" type="register"/>
           <wire name="clk_25m_out" tap_mode="probeonly" type="output pin"/>
           <wire name="clk_in" tap_mode="probeonly" type="input pin"/>
@@ -586,6 +668,47 @@
           <wire name="KeyboardInput:u0|Keyboard:u0|code[5]" tap_mode="probeonly" type="register"/>
           <wire name="KeyboardInput:u0|Keyboard:u0|code[6]" tap_mode="probeonly" type="register"/>
           <wire name="KeyboardInput:u0|Keyboard:u0|code[7]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|o_prog[0]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|o_prog[1]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|o_prog[2]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|o_prog[3]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|o_prog[4]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|o_prog[5]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|o_prog[6]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[0]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[10]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[11]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[12]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[13]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[14]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[15]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[16]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[17]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[18]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[19]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[1]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[20]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[21]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[22]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[23]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[24]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[25]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[26]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[27]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[28]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[29]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[2]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[30]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[31]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[3]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[4]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[5]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[6]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[7]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[8]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|res[9]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|stx[0]" tap_mode="probeonly" type="register"/>
+          <wire name="Programme:programme_inst|stx[1]" tap_mode="probeonly" type="register"/>
           <wire name="UARTOutAdapter:uart_out_adapter|t_TX_DV" tap_mode="probeonly" type="register"/>
           <wire name="clk_25m_out" tap_mode="probeonly" type="output pin"/>
           <wire name="clk_in" tap_mode="probeonly" type="input pin"/>
@@ -733,6 +856,53 @@
           <net is_signal_inverted="no" name="FreqDiv:f_25|output"/>
           <net is_signal_inverted="no" name="clk_25m_out"/>
           <net is_signal_inverted="no" name="note_gen_TX_DV1"/>
+          <bus is_signal_inverted="no" link="all" name="Programme:programme_inst|stx" order="lsb_to_msb" radix="hex" state="collapse" type="register">
+            <net is_signal_inverted="no" name="Programme:programme_inst|stx[0]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|stx[1]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="Programme:programme_inst|res" order="lsb_to_msb" radix="hex" state="collapse" type="register">
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[0]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[1]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[2]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[3]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[4]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[5]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[6]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[7]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[8]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[9]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[10]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[11]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[12]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[13]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[14]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[15]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[16]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[17]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[18]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[19]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[20]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[21]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[22]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[23]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[24]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[25]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[26]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[27]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[28]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[29]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[30]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[31]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="Programme:programme_inst|o_prog" order="lsb_to_msb" radix="hex" state="collapse" type="register">
+            <net is_signal_inverted="no" name="Programme:programme_inst|o_prog[0]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|o_prog[1]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|o_prog[2]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|o_prog[3]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|o_prog[4]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|o_prog[5]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|o_prog[6]"/>
+          </bus>
         </data_view>
         <setup_view>
           <bus is_signal_inverted="no" link="all" name="seg0" order="lsb_to_msb" radix="hex" state="collapse" type="output pin">
@@ -820,9 +990,56 @@
           <net is_signal_inverted="no" name="FreqDiv:f_25|output"/>
           <net is_signal_inverted="no" name="clk_25m_out"/>
           <net is_signal_inverted="no" name="note_gen_TX_DV1"/>
+          <bus is_signal_inverted="no" link="all" name="Programme:programme_inst|stx" order="lsb_to_msb" radix="hex" state="collapse" type="register">
+            <net is_signal_inverted="no" name="Programme:programme_inst|stx[0]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|stx[1]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="Programme:programme_inst|res" order="lsb_to_msb" radix="hex" state="collapse" type="register">
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[0]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[1]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[2]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[3]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[4]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[5]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[6]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[7]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[8]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[9]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[10]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[11]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[12]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[13]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[14]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[15]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[16]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[17]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[18]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[19]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[20]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[21]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[22]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[23]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[24]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[25]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[26]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[27]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[28]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[29]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[30]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|res[31]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="Programme:programme_inst|o_prog" order="lsb_to_msb" radix="hex" state="collapse" type="register">
+            <net is_signal_inverted="no" name="Programme:programme_inst|o_prog[0]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|o_prog[1]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|o_prog[2]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|o_prog[3]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|o_prog[4]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|o_prog[5]"/>
+            <net is_signal_inverted="no" name="Programme:programme_inst|o_prog[6]"/>
+          </bus>
         </setup_view>
       </presentation>
-      <trigger CRC="FC4E82B" attribute_mem_mode="false" gap_record="true" global_temp="1" name="trigger: 2017/06/01 19:32:05  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="1" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="true" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_in="rising edge" trigger_out="active high" trigger_type="circular">
+      <trigger CRC="3460A870" attribute_mem_mode="false" gap_record="true" global_temp="1" name="trigger: 2017/06/01 20:17:56  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="1" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="true" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_in="rising edge" trigger_out="active high" trigger_type="circular">
         <power_up_trigger position="pre" storage_qualifier_disabled="no" trigger_in="dont_care" trigger_out="active high"/>
         <events use_custom_flow_control="no">
           <level enabled="yes" name="condition1" type="basic">
@@ -832,8 +1049,8 @@
           </level>
         </events>
         <storage_qualifier_events>
-          <transitional>0000000000000000000000000000000000000000000000000000000000000000000
-            <pwr_up_transitional>0000000000000000000000000000000000000000000000000000000000000000000
+          <transitional>000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+            <pwr_up_transitional>000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
             </pwr_up_transitional>
           </transitional>
           <storage_qualifier_level type="basic">
@@ -853,7 +1070,7 @@
           </storage_qualifier_level>
         </storage_qualifier_events>
         <log>
-          <data global_temp="1" name="log: 2017/06/01 19:54:40  #0" power_up_mode="false" sample_depth="127" trigger_position="-1">11101110001101110110000001010111111110011011011000000101101110001010110111000010111011000000101011111111001101101100000010110111000101011011100001011101100000010101111111100110110110000001011011100010111101110001101110110000001010111111110011011011000000101101110001011110111000110111011000000101011111111001101101100000010110111000101011011100001011101100000010101111111100110110110000001011011100010101101110000101110110000001010111111110011011011000000101101110001011110111000110111011000000101011111111001101101100000010110111000101111011100011011101100000010101111111100110110110000001011011100010101101110000101110110000001010111111110011011011000000101101110001010110111000010111011000000101011111111001101101100000010110111000101111011100011011101100000010101111111100110110110000001011011100010111101110001101110110000001010111111110011011011000000101101110001010110111000010111011000000101011111111001101101100000010110111000101011011100001011101100000010101111111100110110110000001011011100010111101110001101110110000001010111111110011011011000000101101110001011110111000110111011000000101011111111001101101100000010110111000101011011100001011101100000010101111111100110110110000001011011100010101101110000101110110000001010111111110011011011000000101101110001011110111000110111011000000101011111111001101101100000010110111000101111011100011011101100000010101111111100110110110000001011011100010101101110000101110110000001010111111110011011011000000101101110001010110111000010111011000000101011111111001101101100000010110111000101111011100011011101100000010101111111100110110110000001011011100010111101110001101110110000001010111111110011011011000000101101110001010110111000010111011000000101011111111001101101100000010110111000101011011100001011101100000010101111111100110110110000001011011100010111101110001101110110000001010111111110011011011000000101101110001011110111000110111011000000101011111111001101101100000010110111000101011011100001011101100000010101111111100110110110000001011011100010101101110000101110110000001010111111110011011011000000101101110001011110111000110111011000000101011111111001101101100000010110111000101111011100011011101100000010101111111100110110110000001011011100010101101110000101110110000001010111111110011011011000000101101110001010110111000010111011000000101011111111001101101100000010110111000101111011100011011101100000010101111111100110110110000001011011100010111101110001101110110000001010111111110011011011000000101101110001010110111000010111011000000101011111111001101101100000010110111000101011011100001011101100000010101111111100110110110000001011011100010111101110001101110110000001010111111110011011011000000101101110001011110111000110111011000000101011111111001101101100000010110111000101011011100001011101100000010101111111100110110110000001011011100010101101110000101110110000001010111111110011011011000000101101110001011110111000110111011000000101011111111001101101100000010110111000101111011100011011101100000010101111111100110110110000001011011100010101101110000101110110000001010111111110011011011000000101101110001010110111000010111011000000101011111111001101101100000010110111000101111011100011011101100000010101111111100110110110000001011011100010111101110001101110110000001010111111110011011011000000101101110001010110111000010111011000000101011111111001101101100000010110111000101011011100001011101100000010101111111100110110110000001011011100010111101110001101110110000001010111111110011011011000000101101110001011110111000110111011000000101011111111001101101100000010110111000101011011100001011101100000010101111111100110110110000001011011100010101101110000101110110000001010111111110011011011000000101101110001011110111000110111011000000101011111111001101101100000010110111000101111011100011011101100000010101111111100110110110000001011011100010101101110000101110110000001010111111110011011011000000101101110001010110111000010111011000000101011111111001101101100000010110111000101111011100011011101100000010101111111100110110110000001011011100010111101110001101110110000001010111111110011011011000000101101110001010110111000010111011000000101011111111001101101100000010110111000101011011100001011101100000010101111111100110110110000001011011100010111101110001101110110000001010111111110011011011000000101101110001011110111000110111011000000101011111111001101101100000010110111000101011011100001011101100000010101111111100110110110000001011011100010101101110000101110110000001010111111110011011011000000101101110001011110111000110111011000000101011111111001101101100000010110111000101111011100011011101100000010101111111100110110110000001011011100010101101110000101110110000001010111111110011011011000000101101110001010110111000010111011000000101011111111001101101100000010110111000101111011100011011101100000010101111111100110110110000001011011100010111101110001101110110000001010111111110011011011000000101101110001010110111000010111011000000101011111111001101101100000010110111000101011011100001011101100000010101111111100110110110000001011011100010111101110001101110110000001010111111110011011011000000101101110001011110111000110111011000000101011111111001101101100000010110111000101011011100001011101100000010101111111100110110110000001011011100010101101110000101110110000001010111111110011011011000000101101110001011110111000110111011000000101011111111001101101100000010110111000101111011100011011101100000010101111111100110110110000001011011100010101101110000101110110000001010111111110011011011000000101101110001010110111000010111011000000101011111111001101101100000010110111000101111011100011011101100000010101111111100110110110000001011011100010111101110001101110110000001010111111110011011011000000101101110001010110111000010111011000000101011111111001101101100000010110111000101011011100001011101100000010101111111100110110110000001011011100010111101110001101110110000001010111111110011011011000000101101110001011110111000110111011000000101011111111001101101100000010110111000101011011100001011101100000010101111111100110110110000001011011100010101101110000101110110000001010111111110011011011000000101101110001011110111000110111011000000101011111111001101101100000010110111000101111011100011011101100000010101111111100110110110000001011011100010101101110000101110110000001010111111110011011011000000101101110001010110111000010111011000000101011111111001101101100000010110111000101111011100011011101100000010101111111100110110110000001011011100010111101110001101110110000001010111111110011011011000000101101110001010110111000010111011000000101011111111001101101100000010110111000101011011100001011101100000010101111111100110110110000001011011100010111101110001101110110000001010111111110011011011000000101101110001011110111000110111011000000101011111111001101101100000010110111000101011011100001011101100000010101111111100110110110000001011011100010101101110000101110110000001010111111110011011011000000101101110001011110111000110111011000000101011111111001101101100000010110111000101111011100011011101100000010101111111100110110110000001011011100010101101110000101110110000001010111111110011011011000000101101110001010110111000010111011000000101011111111001101101100000010110111000101111011100011011101100000010101111111100110110110000001011011100010111101110001101110110000001010111111110011011011000000101101110001010110111000010111011000000101011111111001101101100000010110111000101011011100001011101100000010101111111100110110110000001011011100010111101110001101110110000001010111111110011011011000000101101110001011110111000110111011000000101011111111001101101100000010110111000101011011100001011101100000010101111111100110110110000001011011100010101101110000101110110000001010111111110011011011000000101101110001011110111000110111011000000101011111111001101101100000010110111000101111011100011011101100000010101111111100110110110000001011011100010101101110000101110110000001010111111110011011011000000101101110001010110111000010111011000000101011111111001101101100000010110111000101111011100011011101100000010101111111100110110110000001011011100010111101110001101110110000001010111111110011011011000000101101110001010110111000010111011000000101011111111001101101100000010110111000101011011100001011101100000010101111111100110110110000001011011100010111101110001101110110000001010111111110011011011000000101101110001011110111000110111011000000101011111111001101101100000010110111000101011011100001011101100000010101111111100110110110000001011011100010101101110000101110110000001010111111110011011011000000101101110001010110111000000111011000100101011111111001101101100000010110111000100</data>
+          <data global_temp="1" name="log: 2017/06/01 20:29:10  #0" power_up_mode="false" sample_depth="127" trigger_position="-1">000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001000100010100011110000000000000000000000000110000000010110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001100100010100011110000000000000000000000000110000000110110111000000111001011100101111111000000010110111000001101000010100011110000000000000000000000000110000000100110111000100110110111100101110000000000010110111001000</data>
           <extradata>11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</extradata>
         </log>
       </trigger>

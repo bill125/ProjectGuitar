@@ -13,8 +13,8 @@ architecture beh of Programme is
   signal stx : integer range 0 to 3;--0: init, 1: ready to read the first bit, 2,3...
 begin
   process(i_RX_DV) is
-    variable key_num : integer;
-    variable res : integer;
+    variable key_num : integer range 0 to 127;
+    variable res : integer range 0 to 127;
   begin
     if rising_edge(i_RX_DV) then
       if i_key = x"4D" then
