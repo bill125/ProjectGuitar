@@ -350,46 +350,6 @@ USR
 
 # end
 # entity
-UARTOutAdapter
-# storage
-db|main.(6).cnf
-db|main.(6).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-UARTOutAdapter.vhd
-d741a8b2f2e88ca5276084d821dd8155
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(o_tx_byte)
-7 downto 0
-PARAMETER_STRING
-USR
-}
-# include_file {
-constant_package.vhd
-ebc230662eaef95769e9cbcc0e6b2e4
-}
-# lmf
-..|..|..|..|..|..|altera|90|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
 FreqDiv
 # storage
 db|main.(11).cnf
