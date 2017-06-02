@@ -7,7 +7,7 @@ entity NoteGen is
 	port (
 	i_triggeredString : in integer range 0 to 5;
 	i_strings : in GuitarStatus;
-	i_RX_DV, i_clk, i_TX_DV : in std_logic;
+	i_RX_DV, i_clk, i_TX_Done : in std_logic;
 	o_noteLevel : out integer range 0 to 88;
 	o_TX_DV : out std_logic
 	);
@@ -18,9 +18,8 @@ architecture beh of NoteGen is
   constant HalfMaxWaitTimes : integer := 15;
   signal cnt : integer range -1 to 5 := 0;
   signal l_i_RX_DV : std_logic := i_RX_DV;
-  signal l_i_TX_DV : std_logic := i_TX_DV;  
-  type t_SM_Main is (s_Idle, s_Datas, s_Wait_For_DV,
-                     s_Cleanup);
+  signal l_i_TX_Done : std_logic := i_TX_Done;  
+  type t_SM_Main is (s_Idle, s_Datas, s_Wait_For_DV);
   signal stx : t_SM_Main := s_Idle;
   --signal delay_clk3 : std_logic = '0';
 begin
@@ -39,6 +38,7 @@ begin
               wait_times := MaxWaitTimes;
               o_noteLevel <= to_integer(unsigned(i_strings(i_triggeredString)));
               stx <= s_Idle;
+            end if;
           end if;
         when s_Datas =>
           o_TX_DV <= '1';
@@ -47,7 +47,7 @@ begin
           cnt <= cnt - 1;
           stx <= s_Wait_For_DV;
         when s_Wait_For_DV =>
-          if l_i_TX_DV /= i_TX_DV and i_TX_DV = '1' then
+          if l_i_TX_Done /= i_TX_Done and i_TX_Done = '1' then
             if cnt < 0 then
               stx <= s_Idle;
             else
@@ -56,6 +56,8 @@ begin
           else
             stx <= s_Wait_For_DV;
           end if;
+        when others =>
+          stx <= s_Idle;
       end case;
       if wait_times = 0 then
         o_TX_DV <= '0';
@@ -63,7 +65,7 @@ begin
         wait_times := wait_times - 1;
       end if;
       l_i_RX_DV <= i_RX_DV;
-      l_i_TX_DV <= i_TX_DV;
+      l_i_TX_Done <= i_TX_Done;
     end if;
   end process;
   -- o_TX_DV <= i_RX_DV;

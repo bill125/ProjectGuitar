@@ -7,9 +7,9 @@ entity KeyboardAdapter is
 		string_0 : std_logic_vector(7 downto 0) := "01001011"; -- 'L' : 4B
 		string_1 : std_logic_vector(7 downto 0) := "01000010"; -- 'K' : 42
 		string_2 : std_logic_vector(7 downto 0) := "00111011"; -- 'J' : 3B
-		string_3 : std_logic_vector(7 downto 0) := "00111010"; -- 'M' : 3A
-		string_4 : std_logic_vector(7 downto 0) := "00110001"; -- 'N' : 31
-		string_5 : std_logic_vector(7 downto 0) := "00110010"  -- 'B' : 32
+		string_3 : std_logic_vector(7 downto 0) := "00110001"; -- 'N' : 31
+		string_4 : std_logic_vector(7 downto 0) := "00110010"; -- 'B' : 32
+		string_5 : std_logic_vector(7 downto 0) := x"2A"  -- 'V' : 2A
 	);
 	port (
 		i_key : in std_logic_vector(7 downto 0);

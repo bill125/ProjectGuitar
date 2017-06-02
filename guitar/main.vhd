@@ -54,6 +54,7 @@ entity main is
       notegen_RX_DV : out std_logic;
       clk_25m_out : out std_logic;
       note_gen_TX_DV1 : out std_logic;
+      uart_out_a_TX_Done1 : out std_logic;
     
     clk_out : out std_logic
  	);
@@ -96,7 +97,7 @@ architecture main_bhv of main is
     port (
       i_triggeredString : in integer range 0 to 5;
       i_strings : in GuitarStatus;
-      i_RX_DV, i_clk : in std_logic;
+      i_RX_DV, i_clk, i_TX_Done : in std_logic;
       o_noteLevel : out integer range 0 to 88;
       o_TX_DV : out std_logic
       );
@@ -168,6 +169,7 @@ architecture main_bhv of main is
           i_prog : in integer range 0 to 255;
           o_TX_Byte : out std_logic_vector(7 downto 0);
           o_TX_DV : out std_logic;	
+          o_TX_done : out std_logic;
           o_cnt : out integer
           );
   end component UARTOutAdapter;
@@ -194,14 +196,15 @@ architecture main_bhv of main is
   signal note_gen_TX_DV : std_logic;
   signal uart_out_a_TX_DV : std_logic;
     signal uart_out_TX_Done : std_logic;
+    signal uart_out_a_TX_Done : std_logic;
   -- guitar properties
   signal gu_triggeredString : integer range 0 to 5;
   signal gu_prog : integer range 0 to 127;
   signal gu_strings : GuitarStatus;
-  signal gu_vel : integer; -- TODO: to array
-  signal gu_noteLevel : integer range 0 to 88;
+    signal gu_vel : integer; -- TODO: to array
+    signal note_gen_noteLevel, looper_noteLevel, gu_noteLevel : integer range 0 to 88;
   -- uart
-  signal uart_out_a_byte : std_logic_vector(7 downto 0);
+    signal uart_out_a_byte : std_logic_vector(7 downto 0);
   signal uart_in_byte : std_logic_vector(7 downto 0);
   -- debug
   signal t_cnt : integer range 0 to 4;
@@ -221,8 +224,8 @@ begin
       fclk => clk_100m,
       rst_in => rst_in,
       key_out => t_key,
-      seg0 => seg0,
-      seg1 => seg1,
+      -- seg0 => seg0,
+      -- seg1 => seg1,
       clk_out => raw_kb_TX_DV
       );
   
@@ -260,6 +263,7 @@ begin
       i_strings => gu_strings,
       i_RX_DV => a_kb_TX_DV,
       i_clk => clk_100m, -- TODO: reduce frequency
+      i_TX_Done => uart_out_a_TX_Done,
       o_noteLevel => gu_noteLevel,
       o_TX_DV => note_gen_TX_DV
       );
@@ -269,6 +273,7 @@ begin
   noteLevel <= gu_noteLevel;
   strings <= gu_strings;
   notegen_RX_DV <= a_kb_TX_DV;
+  uart_out_a_TX_Done1 <= uart_out_a_TX_Done;
   
   programme_inst : Programme
     port map (
@@ -295,10 +300,11 @@ begin
               i_TX_DV => note_gen_TX_DV,
               o_TX_Byte => uart_out_a_byte,
               o_TX_DV => uart_out_a_TX_DV,
+              o_TX_done => uart_out_a_TX_Done,
               o_cnt => t_cnt
               );
-  -- u4 : seg7 port map (uart_out_a_byte(3 downto 0), seg0);
-  -- u5 : seg7 port map (uart_out_a_byte(7 downto 4), seg1);
+  u4 : seg7 port map (uart_in_byte(3 downto 0), seg0);
+  u5 : seg7 port map (uart_in_byte(7 downto 4), seg1);
   u2 : seg7 port map (conv_std_logic_vector(gu_triggeredString, 4), seg2);
   o_cnt <= t_cnt;
   clk_out <= uart_out_a_TX_DV;
