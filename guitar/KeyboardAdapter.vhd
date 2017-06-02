@@ -4,12 +4,15 @@ use ieee.numeric_std.all;
  
 entity KeyboardAdapter is
 	generic (
-		string_0 : std_logic_vector(7 downto 0) := "01001011"; -- 'L' : 4B
-		string_1 : std_logic_vector(7 downto 0) := "01000010"; -- 'K' : 42
-		string_2 : std_logic_vector(7 downto 0) := "00111011"; -- 'J' : 3B
-		string_3 : std_logic_vector(7 downto 0) := "00110001"; -- 'N' : 31
-		string_4 : std_logic_vector(7 downto 0) := "00110010"; -- 'B' : 32
-		string_5 : std_logic_vector(7 downto 0) := x"2A"  -- 'V' : 2A
+		string_0 : std_logic_vector(7 downto 0) := x"4B"; -- 'L' : 4B
+		string_1 : std_logic_vector(7 downto 0) := x"42"; -- 'K' : 42
+		string_2 : std_logic_vector(7 downto 0) := x"3B"; -- 'J' : 3B
+		string_3 : std_logic_vector(7 downto 0) := x"31"; -- 'N' : 31
+		string_4 : std_logic_vector(7 downto 0) := x"32"; -- 'B' : 32
+		string_5 : std_logic_vector(7 downto 0) := x"2A"; -- 'V' : 2A
+		string_6 : std_logic_vector(7 downto 0) := x"3C"; -- 'U' : 3C
+		string_7 : std_logic_vector(7 downto 0) := x"43"; -- 'I' : 43
+		string_8 : std_logic_vector(7 downto 0) := x"44"  -- 'O' : 44
 	);
 	port (
 		i_key : in std_logic_vector(7 downto 0);
@@ -55,6 +58,9 @@ begin
 						when string_3 => o_triggeredString <= 3;
 						when string_4 => o_triggeredString <= 4;
 						when string_5 => o_triggeredString <= 5;
+						when string_6 => o_triggeredString <= 6;
+						when string_7 => o_triggeredString <= 7;
+						when string_8 => o_triggeredString <= 8;
 						when "01110010" => o_triggeredString <= 0;
 						when "01110101" => o_triggeredString <= 0;
 						when others => 

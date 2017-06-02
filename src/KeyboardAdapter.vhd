@@ -15,7 +15,7 @@ entity KeyboardAdapter is
 		i_key : in std_logic_vector(7 downto 0);
 		i_clk, hclk : in std_logic;
 		o_key : out std_logic_vector(7 downto 0);
-		o_triggeredString : out integer range 0 to 5;
+		o_triggeredString : out integer range 0 to 15;
 		o_clk : out std_logic
 	);
 end KeyboardAdapter;
@@ -54,6 +54,7 @@ begin
 						when string_3 => o_triggeredString <= 3;
 						when string_4 => o_triggeredString <= 4;
 						when string_5 => o_triggeredString <= 5;
+						when 
 						when others => o_triggeredString <= 0;
 					end case;
 					

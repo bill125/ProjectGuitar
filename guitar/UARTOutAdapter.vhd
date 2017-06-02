@@ -59,16 +59,20 @@ begin
 						data_sent := '1';
 					end if;
 					
-					if wait_times > 0 then
+					if wait_times = 0 then
+						t_TX_DV <= '0';
+					elsif wait_times <= 5 then
+						t_TX_DV <= '1';
 						wait_times := wait_times - 1;
 					else
 						t_TX_DV <= '0';
+						wait_times := wait_times - 1;
 					end if;
 					
 					if data_ready = '0' or i_Byte_done = '1' then
 						r_SM_Main <= s_TX_Data_Bytes;
 					elsif cnt = 4 then
-						done_wait_times := 50;
+						done_wait_times := 30;
 						r_SM_Main <= s_Finish;
 					else
 						case cnt is
@@ -85,7 +89,7 @@ begin
 								t_Bytes <= "00000000";
 						end case;
 						
-						t_TX_DV <= '1';
+						t_TX_DV <= '0';
 						
 						wait_times := 20;
 						data_ready := '0';
