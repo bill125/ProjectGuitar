@@ -39,7 +39,7 @@ begin
 				if wait_times <= 5 then
 					o_all_clk <= '1';
 					if selected_key = '1' then
-						o_clk <= '0';
+						o_clk <= '1';
 					end if;
 				else
 					o_all_clk <= '0';

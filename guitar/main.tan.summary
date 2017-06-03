@@ -5,9 +5,9 @@ Timing Analyzer Summary
 Type           : Worst-case tsu
 Slack          : N/A
 Required Time  : None
-Actual Time    : 7.028 ns
+Actual Time    : 6.645 ns
 From           : clk_in
-To             : sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|acq_trigger_in_reg[64]
+To             : KeyboardInput:u0|Keyboard:u0|clk1
 From Clock     : --
 To Clock       : clk_100m
 Failed Paths   : 0
@@ -15,7 +15,7 @@ Failed Paths   : 0
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 24.706 ns
+Actual Time    : 27.646 ns
 From           : UARTIn:uart_in|r_RX_Byte[2]
 To             : seg0[6]
 From Clock     : clk_100m
@@ -35,7 +35,7 @@ Failed Paths   : 0
 Type           : Worst-case th
 Slack          : N/A
 Required Time  : None
-Actual Time    : 1.993 ns
+Actual Time    : 3.255 ns
 From           : r_uart_RX_Serial
 To             : UARTIn:uart_in|r_RX_Data_R
 From Clock     : --
@@ -45,9 +45,9 @@ Failed Paths   : 0
 Type           : Clock Setup: 'clk_100m'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 50.03 MHz ( period = 19.989 ns )
-From           : looper:looper_inst|index[2]
-To             : looper:looper_inst|intvls[8]
+Actual Time    : 43.53 MHz ( period = 22.974 ns )
+From           : KeyboardInput:u0|Keyboard:u0|scancode[3]
+To             : KeyboardAdapter:u1|\receive_trigger:selected_key
 From Clock     : clk_100m
 To Clock       : clk_100m
 Failed Paths   : 0
@@ -55,8 +55,8 @@ Failed Paths   : 0
 Type           : Clock Setup: 'altera_internal_jtag~TCKUTAP'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 95.18 MHz ( period = 10.506 ns )
-From           : sld_hub:sld_hub_inst|irf_reg[1][4]
+Actual Time    : 96.94 MHz ( period = 10.316 ns )
+From           : sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:info_data_shift_out|dffs[0]
 To             : sld_hub:sld_hub_inst|tdo
 From Clock     : altera_internal_jtag~TCKUTAP
 To Clock       : altera_internal_jtag~TCKUTAP
@@ -66,11 +66,11 @@ Type           : Clock Hold: 'clk_100m'
 Slack          : Not operational: Clock Skew > Data Delay
 Required Time  : None
 Actual Time    : N/A
-From           : KeyboardAdapter:u1|o_all_clk
-To             : looper:looper_inst|l_i_RX_DV
+From           : KeyboardAdapter:u1|o_triggeredString[3]
+To             : NoteGen:note_gen|stx.s_Datas
 From Clock     : clk_100m
 To Clock       : clk_100m
-Failed Paths   : 14
+Failed Paths   : 1137
 
 Type           : Total number of failed paths
 Slack          : 
@@ -80,7 +80,7 @@ From           :
 To             : 
 From Clock     : 
 To Clock       : 
-Failed Paths   : 14
+Failed Paths   : 1137
 
 --------------------------------------------------------------------------------------
 
