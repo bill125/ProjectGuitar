@@ -52,13 +52,16 @@ entity main is
       triggeredString : out integer range 0 to 15;
       strings : out GuitarStatus;
       notegen_RX_DV : out std_logic;
-      clk_25m_out : out std_logic;
+      clk_25m_out,clk_1k : out std_logic;
       note_gen_TX_DV1 : out std_logic;
       uart_out_a_TX_Done1 : out std_logic;
       stx1 : out integer range 0 to 3;
     noteLevel_TX_DV1 : out std_logic;
     clk_out : out std_logic;
-    looper_TX_DV1 : out std_logic
+    looper_TX_DV1 : out std_logic;
+    sstx : out integer range 0 to 3;
+    wait_times_out : out integer range 0 to 31;
+    raw_kb_TX_DV1 : out std_logic
  	);
 end entity main;
 
@@ -71,15 +74,16 @@ architecture main_bhv of main is
       g_CLKS_PER_INTERVAl : integer := 10000000     -- Needs to be set correctly. e.g. interval=0.1s, clks=100mhz, 0.1*100m=10m.
       );
     port (
-      i_RX_DV, i_clk, i_noteGen_RX_DV : in std_logic;
+      i_RX_DV, i_clk, i_noteGen_RX_DV, i_TX_Done : in std_logic;
       i_key : in std_logic_vector(7 downto 0);
       i_noteLevel : in integer range 0 to 88;
       o_noteLevel : out integer range 0 to 88;
-      stx : out integer range 0 to 3;
+      stx, sstx : out integer range 0 to 3;
       --notes1 : out Noise;
       o_TX_DV : out std_logic;
       index1 : out integer range 0 to MaxLength;
       cnt1 : out integer;
+      wait_times_out : out integer range 0 to 31;
       intvls1 : out integer range 0 to MaxIntervals
      --cntId1 : out IntArray
       );
@@ -234,6 +238,7 @@ architecture main_bhv of main is
   signal t_cnt : integer range 0 to 4;
 
 begin
+  raw_kb_TX_DV1 <= raw_kb_TX_DV;
   f_1: FreqDiv
     generic map(100, 50)
     port map(clk_100m, '0', clk);--1m
@@ -241,11 +246,14 @@ begin
     generic map(4, 2)
     port map(clk_100m, '0', clk_25m);--1m
   clk_25m_out <= clk_25m;
+  f_1k: FreqDiv
+    generic map(1000, 500)
+    port map(clk_100m, '0', clk_1k);--1m
   u0 : KeyboardInput 
  	port map (
       datain => i_KB_data,
       clkin => clk_in,
-      fclk => clk_100m,
+      fclk => clk_25m,
       rst_in => rst_in,
       key_out => t_key,
       -- seg0 => seg0,
@@ -257,7 +265,7 @@ begin
  	port map (
       i_key => t_key,
       i_clk => raw_kb_TX_DV,
-      hclk => clk_100m,
+      hclk => clk_25m,
       o_triggeredString => gu_triggeredString,
       o_clk => a_kb_TX_DV,
       o_all_clk => a_kb_all_TX_DV
@@ -299,25 +307,28 @@ begin
       g_looper_index => 1,
       record_key => x"15", --Q
       play_key => x"1C", --A
-      g_CLKS_PER_INTERVAl => 100000
+      g_CLKS_PER_INTERVAl => 1250000 -- 25000000 / 20
       )
     port map (
       i_RX_DV => a_kb_all_TX_DV,
       i_clk => clk_25m,
       i_noteGen_RX_DV => note_gen_TX_DV,
       i_key => t_key,
+      i_TX_Done => uart_out_a_TX_Done,
       i_noteLevel => note_gen_noteLevel,
       o_noteLevel => looper_noteLevel,
       o_TX_DV => looper_TX_DV,
-      stx => stx1);
+      stx => stx1,
+      sstx => sstx,
+      wait_times_out => wait_times_out);
       -- index1 => looper_index1,
       -- cnt1 => looper_cnt1,
       -- intvls1 => 
-  gu_noteLevel_process: process (clk_100m) is
+  gu_noteLevel_process: process (clk_25m) is
     variable l_note_gen_TX_DV : std_logic := note_gen_TX_DV;
     variable l_looper_TX_DV : std_logic := looper_TX_DV;
   begin
-    if rising_edge(clk_100m) then
+    if rising_edge(clk_25m) then
       if l_note_gen_TX_DV /= note_gen_TX_DV and l_note_gen_TX_DV = '1' then
         gu_noteLevel <= note_gen_noteLevel;
       elsif l_looper_TX_DV /= looper_TX_DV and looper_TX_DV = '1' then
@@ -340,7 +351,7 @@ begin
   
   programme_inst : Programme
     port map (
-      i_RX_DV => a_kb_TX_DV,
+      i_RX_DV => a_kb_all_TX_DV,
       i_key => t_key,
       o_prog => gu_prog
       );

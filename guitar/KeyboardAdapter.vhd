@@ -30,7 +30,7 @@ begin
 	receive_trigger : process(hclk)
 		variable ignore_status : std_logic := '0';
 		variable l_clk : std_logic := '0';
-		variable wait_times : integer := 0;
+		variable wait_times : integer range 0 to 63 := 0;
 		variable selected_key : std_logic := '0';
 	begin
 		if (hclk'event and hclk = '1') then 
