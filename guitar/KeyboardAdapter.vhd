@@ -40,6 +40,8 @@ begin
 					o_all_clk <= '1';
 					if selected_key = '1' then
 						o_clk <= '1';
+					else
+						o_clk <= '0';
 					end if;
 				else
 					o_all_clk <= '0';
