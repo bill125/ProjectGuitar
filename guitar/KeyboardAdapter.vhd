@@ -3,22 +3,22 @@ use ieee.std_logic_1164.ALL;
 use ieee.numeric_std.all;
  
 entity KeyboardAdapter is
-	generic (
+  generic (
 		string_0 : std_logic_vector(7 downto 0) := x"4B"; -- 'L' : 4B
 		string_1 : std_logic_vector(7 downto 0) := x"42"; -- 'K' : 42
 		string_2 : std_logic_vector(7 downto 0) := x"3B"; -- 'J' : 3B
 		string_3 : std_logic_vector(7 downto 0) := x"31"; -- 'N' : 31
 		string_4 : std_logic_vector(7 downto 0) := x"32"; -- 'B' : 32
 		string_5 : std_logic_vector(7 downto 0) := x"2A"; -- 'V' : 2A
-		string_6 : std_logic_vector(7 downto 0) := x"3C"; -- 'U' : 3C
+		string_6 : std_logic_vector(7 downto 0) := x"44"; -- 'O' : 44
 		string_7 : std_logic_vector(7 downto 0) := x"43"; -- 'I' : 43
-		string_8 : std_logic_vector(7 downto 0) := x"44"  -- 'O' : 44
+		string_8 : std_logic_vector(7 downto 0) := x"3C"  -- 'U' : 3C
 	);
 	port (
 		i_key : in std_logic_vector(7 downto 0);
 		i_clk, hclk : in std_logic;
 		o_key : out std_logic_vector(7 downto 0);
-		o_triggeredString : out integer range 0 to 5;
+		o_triggeredString : out integer range 0 to 15;
 		o_clk : out std_logic
 	);
 end KeyboardAdapter;

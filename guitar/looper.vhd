@@ -14,7 +14,7 @@ entity looper is
     i_key : in std_logic_vector(7 downto 0);
     i_noteLevel : in integer range 0 to 88;
     o_noteLevel : out integer range 0 to 88;
-    stx : out std_logic_vector(1 downto 0);
+    stx : out integer range 0 to 3;
     --notes1 : out Noise;
     o_TX_DV : out std_logic;
     index1 : out integer range 0 to MaxLength;
@@ -26,6 +26,7 @@ end entity looper;
 architecture beh of looper is
   type t_SM_Main is (s_Idle, s_Record, s_Play,
                      s_Cleanup);
+  constant MaxWaitTimes : integer := 31;
   signal notes : Noise;
   signal cntId : IntArray;
   signal r_SM_Main : t_SM_Main := s_Idle;
@@ -42,14 +43,15 @@ cnt1 <= cnt;
 	process (r_SM_Main) is
 begin
 	case r_SM_Main is
-	when s_Idle => stx <= "00";
-	when s_Record => stx <= "01";
-	when s_Play => stx <= "10";
-	when s_Cleanup => stx <= "11";
+	when s_Idle => stx <= 0;
+	when s_Record => stx <= 1;
+	when s_Play => stx <= 2;
+	when s_Cleanup => stx <= 3;
 	end case;
 end process;
   process (i_clk) is
-  variable intvls : integer range 0 to MaxIntervals;
+    variable intvls : integer range 0 to MaxIntervals;
+    variable pause_times : integer range 0 to MaxWaitTimes := 0;
   begin
 	intvls1 <= intvls;
     if rising_edge(i_clk) then
@@ -84,7 +86,7 @@ end process;
             r_SM_Main <= s_Record;
             intvls := 0;
           end if;       
-          if index > 0 or l_i_noteGen_RX_DV /= i_noteGen_RX_DV then
+          if index > 0 or (l_i_noteGen_RX_DV /= i_noteGen_RX_DV and i_noteGen_RX_DV = '1') then
 			if cnt = g_CLKS_PER_INTERVAl - 1 then
 				intvls := intvls + 1;
 				cnt <= 0;
@@ -100,11 +102,11 @@ end process;
             if index >= end_index then index <= 0;
             else index <= index + 1;
             end if;
+            pause_times := MaxWaitTimes;
             o_TX_DV <= '1';
             r_SM_Main <= s_Play;
             intvls := 0;
           else
-            o_TX_DV <= '0';
             r_SM_Main <= s_Play;
           end if;
 		  if cnt = g_CLKS_PER_INTERVAl - 1 then
@@ -117,6 +119,12 @@ end process;
         when others =>
           r_SM_Main <= s_Idle;
       end case;
+      if pause_times > 0 then
+        pause_times := pause_times - 1;
+        if pause_times = 0 then
+          o_TX_DV <= '0';
+        end if;
+      end if;
       l_i_RX_DV <= i_RX_DV;
       l_i_noteGen_RX_DV <= i_noteGen_RX_DV;
     end if;    

@@ -49,19 +49,42 @@ entity main is
     seg0, seg1, seg2 : out std_logic_vector(6 downto 0);
     o_cnt : out integer range 0 to 4;
     noteLevel : out integer range 0 to 88;
-      triggeredString : out integer range 0 to 5;
+      triggeredString : out integer range 0 to 15;
       strings : out GuitarStatus;
       notegen_RX_DV : out std_logic;
       clk_25m_out : out std_logic;
       note_gen_TX_DV1 : out std_logic;
       uart_out_a_TX_Done1 : out std_logic;
-    
-    clk_out : out std_logic
+      stx1 : out integer range 0 to 3;
+    noteLevel_TX_DV1 : out std_logic;
+    clk_out : out std_logic;
+    looper_TX_DV1 : out std_logic
  	);
 end entity main;
 
 architecture main_bhv of main is
-	component seg7
+  component looper is
+    generic (
+      g_looper_index : integer range 0 to 7:= 1;     -- Needs to be set correctly
+      record_key : std_logic_vector(7 downto 0);
+      play_key : std_logic_vector(7 downto 0);
+      g_CLKS_PER_INTERVAl : integer := 10000000     -- Needs to be set correctly. e.g. interval=0.1s, clks=100mhz, 0.1*100m=10m.
+      );
+    port (
+      i_RX_DV, i_clk, i_noteGen_RX_DV : in std_logic;
+      i_key : in std_logic_vector(7 downto 0);
+      i_noteLevel : in integer range 0 to 88;
+      o_noteLevel : out integer range 0 to 88;
+      stx : out integer range 0 to 3;
+      --notes1 : out Noise;
+      o_TX_DV : out std_logic;
+      index1 : out integer range 0 to MaxLength;
+      cnt1 : out integer;
+      intvls1 : out integer range 0 to MaxIntervals
+     --cntId1 : out IntArray
+      );
+  end component looper;
+  component seg7
 		port(
 			code: in std_logic_vector(3 downto 0);
 			seg_out : out std_logic_vector(6 downto 0)
@@ -95,11 +118,12 @@ architecture main_bhv of main is
 
   component NoteGen is
     port (
-      i_triggeredString : in integer range 0 to 5;
+      i_triggeredString : in integer range 0 to 15;
       i_strings : in GuitarStatus;
       i_RX_DV, i_clk, i_TX_Done : in std_logic;
       o_noteLevel : out integer range 0 to 88;
-      o_TX_DV : out std_logic
+      o_TX_DV : out std_logic;
+      stx1 : out integer range 0 to 2
       );
   end component NoteGen;
 
@@ -133,7 +157,7 @@ architecture main_bhv of main is
       i_key : in std_logic_vector(7 downto 0);
       i_clk, hclk : in std_logic;
       o_key : out std_logic_vector(7 downto 0);
-      o_triggeredString : out integer range 0 to 5;
+      o_triggeredString : out integer range 0 to 15;
       o_clk : out std_logic
       );
   end component KeyboardAdapter;
@@ -193,12 +217,12 @@ architecture main_bhv of main is
   -- data valid clocks
   signal raw_kb_TX_DV, a_kb_TX_DV : std_logic; -- keyboard
   signal uart_in_TX_DV : std_logic;
-  signal note_gen_TX_DV : std_logic;
+  signal note_gen_TX_DV, looper_TX_DV, noteLevel_TX_DV : std_logic;
   signal uart_out_a_TX_DV : std_logic;
     signal uart_out_TX_Done : std_logic;
     signal uart_out_a_TX_Done : std_logic;
   -- guitar properties
-  signal gu_triggeredString : integer range 0 to 5;
+  signal gu_triggeredString : integer range 0 to 15;
   signal gu_prog : integer range 0 to 127;
   signal gu_strings : GuitarStatus;
     signal gu_vel : integer; -- TODO: to array
@@ -262,12 +286,50 @@ begin
       i_triggeredString => gu_triggeredString,
       i_strings => gu_strings,
       i_RX_DV => a_kb_TX_DV,
-      i_clk => clk_100m, -- TODO: reduce frequency
+      i_clk => clk_25m, -- TODO: reduce frequency
       i_TX_Done => uart_out_a_TX_Done,
-      o_noteLevel => gu_noteLevel,
+      o_noteLevel => note_gen_noteLevel,
       o_TX_DV => note_gen_TX_DV
+      -- stx1 => stx1
       );
 
+  looper_inst : looper
+    generic map (
+      g_looper_index => 1,
+      record_key => x"15", --Q
+      play_key => x"1C", --A
+      g_CLKS_PER_INTERVAl => 100000
+      )
+    port map (
+      i_RX_DV => a_kb_TX_DV,
+      i_clk => clk_25m,
+      i_noteGen_RX_DV => note_gen_TX_DV,
+      i_key => t_key,
+      i_noteLevel => note_gen_noteLevel,
+      o_noteLevel => looper_noteLevel,
+      o_TX_DV => looper_TX_DV,
+      stx => stx1);
+      -- index1 => looper_index1,
+      -- cnt1 => looper_cnt1,
+      -- intvls1 => 
+  gu_noteLevel_process: process (clk_100m) is
+    variable l_note_gen_TX_DV : std_logic := note_gen_TX_DV;
+    variable l_looper_TX_DV : std_logic := looper_TX_DV;
+  begin
+    if rising_edge(clk_100m) then
+      if l_note_gen_TX_DV /= note_gen_TX_DV and l_note_gen_TX_DV = '1' then
+        gu_noteLevel <= note_gen_noteLevel;
+      elsif l_looper_TX_DV /= looper_TX_DV and looper_TX_DV = '1' then
+        gu_noteLevel <= looper_noteLevel;
+      end if;
+      l_note_gen_TX_DV := note_gen_TX_DV;
+      l_looper_TX_DV := looper_TX_DV;
+    end if;
+  end process;
+  noteLevel_TX_DV <= note_gen_TX_DV or looper_TX_DV;
+  -- debug
+  noteLevel_TX_DV1 <= noteLevel_TX_DV;
+  looper_TX_DV1 <= looper_TX_DV;
   note_gen_TX_DV1 <= note_gen_TX_DV;
   triggeredString <= gu_triggeredString;
   noteLevel <= gu_noteLevel;
@@ -297,7 +359,7 @@ begin
               i_vel => gu_vel,
               i_prog => gu_prog,
               i_Byte_done => uart_out_TX_Done,
-              i_TX_DV => note_gen_TX_DV,
+              i_TX_DV => noteLevel_TX_DV,
               o_TX_Byte => uart_out_a_byte,
               o_TX_DV => uart_out_a_TX_DV,
               o_TX_done => uart_out_a_TX_Done,
