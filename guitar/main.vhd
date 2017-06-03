@@ -246,14 +246,14 @@ begin
     generic map(4, 2)
     port map(clk_100m, '0', clk_25m);--1m
   clk_25m_out <= clk_25m;
-  f_1k: FreqDiv
-    generic map(1000, 500)
-    port map(clk_100m, '0', clk_1k);--1m
+  -- f_1k: FreqDiv
+  --   generic map(1000, 500)
+  --   port map(clk_100m, '0', clk_1k);--1m
   u0 : KeyboardInput 
  	port map (
       datain => i_KB_data,
       clkin => clk_in,
-      fclk => clk_25m,
+      fclk => clk_100m,
       rst_in => rst_in,
       key_out => t_key,
       -- seg0 => seg0,
@@ -265,7 +265,7 @@ begin
  	port map (
       i_key => t_key,
       i_clk => raw_kb_TX_DV,
-      hclk => clk_25m,
+      hclk => clk_100m,
       o_triggeredString => gu_triggeredString,
       o_clk => a_kb_TX_DV,
       o_all_clk => a_kb_all_TX_DV
@@ -295,7 +295,7 @@ begin
       i_triggeredString => gu_triggeredString,
       i_strings => gu_strings,
       i_RX_DV => a_kb_TX_DV,
-      i_clk => clk_25m, -- TODO: reduce frequency
+      i_clk => clk_100m, -- TODO: reduce frequency
       i_TX_Done => uart_out_a_TX_Done,
       o_noteLevel => note_gen_noteLevel,
       o_TX_DV => note_gen_TX_DV
@@ -307,11 +307,11 @@ begin
       g_looper_index => 1,
       record_key => x"15", --Q
       play_key => x"1C", --A
-      g_CLKS_PER_INTERVAl => 1250000 -- 25000000 / 20
+      g_CLKS_PER_INTERVAl => 1000000 -- 4*25000000 / 100
       )
     port map (
       i_RX_DV => a_kb_all_TX_DV,
-      i_clk => clk_25m,
+      i_clk => clk_100m,
       i_noteGen_RX_DV => note_gen_TX_DV,
       i_key => t_key,
       i_TX_Done => uart_out_a_TX_Done,
@@ -324,11 +324,11 @@ begin
       -- index1 => looper_index1,
       -- cnt1 => looper_cnt1,
       -- intvls1 => 
-  gu_noteLevel_process: process (clk_25m) is
+  gu_noteLevel_process: process (clk_100m) is
     variable l_note_gen_TX_DV : std_logic := note_gen_TX_DV;
     variable l_looper_TX_DV : std_logic := looper_TX_DV;
   begin
-    if rising_edge(clk_25m) then
+    if rising_edge(clk_100m) then
       if l_note_gen_TX_DV /= note_gen_TX_DV and l_note_gen_TX_DV = '1' then
         gu_noteLevel <= note_gen_noteLevel;
       elsif l_looper_TX_DV /= looper_TX_DV and looper_TX_DV = '1' then
@@ -365,7 +365,7 @@ begin
   
   uart_out_adapter : UARTOutAdapter
     port map (
-              i_Clk => clk_25m,
+              i_Clk => clk_100m,
               i_isOn => '1',
               i_noteLevel => gu_noteLevel,
               i_vel => gu_vel,
@@ -380,8 +380,8 @@ begin
   u4 : seg7 port map (uart_in_byte(3 downto 0), seg0);
   u5 : seg7 port map (uart_in_byte(7 downto 4), seg1);
   u2 : seg7 port map (conv_std_logic_vector(gu_triggeredString, 4), seg2);
-  o_cnt <= t_cnt;
-  clk_out <= uart_out_a_TX_DV;
+  -- o_cnt <= t_cnt;
+  -- clk_out <= uart_out_a_TX_DV;
   
   uart_out : UARTOut
     generic map (

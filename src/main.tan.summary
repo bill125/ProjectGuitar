@@ -5,7 +5,7 @@ Timing Analyzer Summary
 Type           : Worst-case tsu
 Slack          : N/A
 Required Time  : None
-Actual Time    : 1.016 ns
+Actual Time    : 1.369 ns
 From           : i_KB_Data
 To             : KeyboardInput:u0|Keyboard:u0|data
 From Clock     : --
@@ -15,8 +15,8 @@ Failed Paths   : 0
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 14.472 ns
-From           : KeyboardAdapter:u1|o_triggeredString[1]
+Actual Time    : 14.837 ns
+From           : KeyboardAdapter:u1|o_triggeredString[0]
 To             : seg2[6]
 From Clock     : clk_100m
 To Clock       : --
@@ -25,7 +25,7 @@ Failed Paths   : 0
 Type           : Worst-case th
 Slack          : N/A
 Required Time  : None
-Actual Time    : -0.745 ns
+Actual Time    : -0.424 ns
 From           : clk_in
 To             : KeyboardInput:u0|Keyboard:u0|clk1
 From Clock     : --
@@ -33,11 +33,11 @@ To Clock       : clk_100m
 Failed Paths   : 0
 
 Type           : Clock Setup: 'clk_100m'
-Slack          : 1.168 ns
+Slack          : 0.775 ns
 Required Time  : 100.00 MHz ( period = 10.000 ns )
-Actual Time    : 130.48 MHz ( period = 7.664 ns )
-From           : KeyboardInput:u0|Keyboard:u0|scancode[1]
-To             : KeyboardAdapter:u1|o_triggeredString[2]
+Actual Time    : 118.34 MHz ( period = 8.450 ns )
+From           : KeyboardInput:u0|Keyboard:u0|scancode[5]
+To             : KeyboardAdapter:u1|o_triggeredString[1]
 From Clock     : clk_100m
 To Clock       : clk_100m
 Failed Paths   : 0

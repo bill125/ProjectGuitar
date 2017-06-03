@@ -35,7 +35,7 @@ signal clk_f: std_logic;
 begin
 	rst<=not rst_in;
 
-	u0: Keyboard port map(datain,clkin,fclk,rst,scancode);
+	u0: Keyboard port map(datain,clkin,fclk,rst,clk_out,scancode);
 	key_out <= scancode;
 	u1: seg7 port map(scancode(3 downto 0),seg0);
 	u2: seg7 port map(scancode(7 downto 4),seg1);

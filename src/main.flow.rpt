@@ -1,6 +1,6 @@
 Flow report for main
-Fri Jun 02 15:55:33 2017
-Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
+Sat Jun 03 18:42:00 2017
+Quartus II 64-Bit Version 9.0 Build 132 02/25/2009 SJ Full Version
 
 
 ---------------------
@@ -38,16 +38,16 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +------------------------------------+------------------------------------------+
-; Flow Status                        ; Successful - Fri Jun 02 15:55:33 2017    ;
-; Quartus II Version                 ; 9.0 Build 132 02/25/2009 SJ Full Version ;
+; Flow Status                        ; Successful - Sat Jun 03 18:42:00 2017    ;
+; Quartus II 64-Bit Version          ; 9.0 Build 132 02/25/2009 SJ Full Version ;
 ; Revision Name                      ; main                                     ;
 ; Top-level Entity Name              ; main                                     ;
 ; Family                             ; Cyclone II                               ;
 ; Device                             ; EP2C70F672C8                             ;
 ; Timing Models                      ; Final                                    ;
 ; Met timing requirements            ; Yes                                      ;
-; Total logic elements               ; 73 / 68,416 ( < 1 % )                    ;
-;     Total combinational functions  ; 62 / 68,416 ( < 1 % )                    ;
+; Total logic elements               ; 80 / 68,416 ( < 1 % )                    ;
+;     Total combinational functions  ; 68 / 68,416 ( < 1 % )                    ;
 ;     Dedicated logic registers      ; 32 / 68,416 ( < 1 % )                    ;
 ; Total registers                    ; 32                                       ;
 ; Total pins                         ; 32 / 422 ( 8 % )                         ;
@@ -63,7 +63,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/02/2017 15:55:12 ;
+; Start date & time ; 06/03/2017 18:41:37 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; main                ;
 +-------------------+---------------------+
@@ -74,7 +74,7 @@ applicable agreement for further details.
 +------------------------------------+----------------------------------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                    ; Value                                                          ; Default Value ; Entity Name ; Section Id     ;
 +------------------------------------+----------------------------------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID              ; 132155099019303.149639011202748                                ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID              ; 121379152345.149648649706608                                   ; --            ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP             ; 85                                                             ; --            ; --          ; --             ;
 ; MIN_CORE_JUNCTION_TEMP             ; 0                                                              ; --            ; --          ; --             ;
 ; MISC_FILE                          ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/main.dpf ; --            ; --          ; --             ;
@@ -90,24 +90,24 @@ applicable agreement for further details.
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis    ; 00:00:01     ; 1.0                     ; 289 MB              ; 00:00:01                           ;
-; Fitter                  ; 00:00:10     ; 1.3                     ; 430 MB              ; 00:00:11                           ;
-; Assembler               ; 00:00:06     ; 1.0                     ; 388 MB              ; 00:00:06                           ;
-; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 221 MB              ; 00:00:00                           ;
-; Total                   ; 00:00:17     ; --                      ; --                  ; 00:00:18                           ;
+; Analysis & Synthesis    ; 00:00:03     ; 1.0                     ; 341 MB              ; 00:00:02                           ;
+; Fitter                  ; 00:00:11     ; 1.2                     ; 504 MB              ; 00:00:12                           ;
+; Assembler               ; 00:00:04     ; 1.0                     ; 432 MB              ; 00:00:04                           ;
+; Classic Timing Analyzer ; 00:00:01     ; 1.0                     ; 241 MB              ; 00:00:00                           ;
+; Total                   ; 00:00:19     ; --                      ; --                  ; 00:00:18                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+---------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                       ;
-+-------------------------+------------------+------------+------------+----------------+
-; Module Name             ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+-------------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis    ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
-; Fitter                  ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
-; Assembler               ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
-; Classic Timing Analyzer ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
-+-------------------------+------------------+------------+------------+----------------+
++------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                          ;
++-------------------------+------------------+---------------+------------+----------------+
+; Module Name             ; Machine Hostname ; OS Name       ; OS Version ; Processor type ;
++-------------------------+------------------+---------------+------------+----------------+
+; Analysis & Synthesis    ; LAZYCAL708C      ; Windows Vista ; 6.2        ; x86_64         ;
+; Fitter                  ; LAZYCAL708C      ; Windows Vista ; 6.2        ; x86_64         ;
+; Assembler               ; LAZYCAL708C      ; Windows Vista ; 6.2        ; x86_64         ;
+; Classic Timing Analyzer ; LAZYCAL708C      ; Windows Vista ; 6.2        ; x86_64         ;
++-------------------------+------------------+---------------+------------+----------------+
 
 
 ------------

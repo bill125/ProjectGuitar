@@ -1,0 +1,66 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 6.878 ns
+From           : rst_in
+To             : KeyboardInput:u0|Keyboard:u0|wait_times[0]
+From Clock     : --
+To Clock       : clk_100m
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 13.760 ns
+From           : KeyboardAdapter:u1|o_triggeredString[2]
+To             : seg2[6]
+From Clock     : clk_100m
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 1.406 ns
+From           : r_uart_RX_Serial
+To             : UARTIn:uart_in|r_RX_Data_R
+From Clock     : --
+To Clock       : clk_100m
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clk_100m'
+Slack          : -11.291 ns
+Required Time  : 100.00 MHz ( period = 10.000 ns )
+Actual Time    : 46.97 MHz ( period = 21.291 ns )
+From           : looper:looper_inst|index[4]
+To             : looper:looper_inst|intvls[7]
+From Clock     : clk_100m
+To Clock       : clk_100m
+Failed Paths   : 125753
+
+Type           : Clock Hold: 'clk_100m'
+Slack          : -2.281 ns
+Required Time  : 100.00 MHz ( period = 10.000 ns )
+Actual Time    : N/A
+From           : UARTIn:uart_in|r_RX_Byte[2]
+To             : UARTInAdapter:uart_in_adapter|t_Guitar[4][2]
+From Clock     : clk_100m
+To Clock       : clk_100m
+Failed Paths   : 51
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 125804
+
+--------------------------------------------------------------------------------------
+

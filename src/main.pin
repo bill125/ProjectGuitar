@@ -67,7 +67,7 @@
  -- Pin directions (input, output or bidir) are based on device operating in user mode.
  ---------------------------------------------------------------------------------
 
-Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
+Quartus II 64-Bit Version 9.0 Build 132 02/25/2009 SJ Full Version
 CHIP  "main"  ASSIGNED TO AN: EP2C70F672C8
 
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
@@ -105,8 +105,8 @@ GND*                         : AA6       :        :                   :         
 GND*                         : AA7       :        :                   :         : 1         :                
 VCCA_PLL1                    : AA8       : power  :                   : 1.2V    :           :                
 GND*                         : AA9       :        :                   :         : 8         :                
-o_cnt[2]                     : AA10      : output : 3.3-V LVTTL       :         : 8         : N              
-o_cnt[1]                     : AA11      : output : 3.3-V LVTTL       :         : 8         : N              
+GND*                         : AA10      :        :                   :         : 8         :                
+GND*                         : AA11      :        :                   :         : 8         :                
 GND*                         : AA12      :        :                   :         : 8         :                
 GND*                         : AA13      :        :                   :         : 7         :                
 GND*                         : AA14      :        :                   :         : 7         :                
@@ -380,9 +380,9 @@ GND*                         : F23       :        :                   :         
 GND*                         : F24       :        :                   :         : 5         :                
 GND*                         : F25       :        :                   :         : 5         :                
 GND*                         : F26       :        :                   :         : 5         :                
-o_cnt[0]                     : G1        : output : 3.3-V LVTTL       :         : 2         : N              
-GND*                         : G2        :        :                   :         : 2         :                
-GND*                         : G3        :        :                   :         : 2         :                
+GND*                         : G1        :        :                   :         : 2         :                
+o_cnt[2]                     : G2        : output : 3.3-V LVTTL       :         : 2         : N              
+o_cnt[1]                     : G3        : output : 3.3-V LVTTL       :         : 2         : N              
 GND*                         : G4        :        :                   :         : 2         :                
 GND*                         : G5        :        :                   :         : 2         :                
 GND*                         : G6        :        :                   :         : 2         :                
@@ -720,7 +720,7 @@ GND*                         : W25       :        :                   :         
 GND*                         : W26       :        :                   :         : 6         :                
 GND*                         : Y1        :        :                   :         : 1         :                
 GND*                         : Y2        :        :                   :         : 1         :                
-GND*                         : Y3        :        :                   :         : 1         :                
+o_cnt[0]                     : Y3        : output : 3.3-V LVTTL       :         : 1         : N              
 GND*                         : Y4        :        :                   :         : 1         :                
 GND*                         : Y5        :        :                   :         : 1         :                
 GND_PLL1                     : Y6        : gnd    :                   :         :           :                

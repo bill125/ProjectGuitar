@@ -1,6 +1,6 @@
 Assembler report for main
-Fri Jun 02 15:55:32 2017
-Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
+Sat Jun 03 18:41:58 2017
+Quartus II 64-Bit Version 9.0 Build 132 02/25/2009 SJ Full Version
 
 
 ---------------------
@@ -10,8 +10,8 @@ Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/main.sof
-  6. Assembler Device Options: C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/main.pof
+  5. Assembler Device Options: Y:/workspace/course/2.2/shushe/ProjectGuitar/src/main.sof
+  6. Assembler Device Options: Y:/workspace/course/2.2/shushe/ProjectGuitar/src/main.pof
   7. Assembler Messages
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Fri Jun 02 15:55:32 2017 ;
+; Assembler Status      ; Successful - Sat Jun 03 18:41:58 2017 ;
 ; Revision Name         ; main                                  ;
 ; Top-level Entity Name ; main                                  ;
 ; Family                ; Cyclone II                            ;
@@ -76,53 +76,53 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+----------------------------------------------------------------+
-; Assembler Generated Files                                      ;
-+----------------------------------------------------------------+
-; File Name                                                      ;
-+----------------------------------------------------------------+
-; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/main.sof ;
-; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/main.pof ;
-+----------------------------------------------------------------+
++-----------------------------------------------------------+
+; Assembler Generated Files                                 ;
++-----------------------------------------------------------+
+; File Name                                                 ;
++-----------------------------------------------------------+
+; Y:/workspace/course/2.2/shushe/ProjectGuitar/src/main.sof ;
+; Y:/workspace/course/2.2/shushe/ProjectGuitar/src/main.pof ;
++-----------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/main.sof ;
-+----------------+-------------------------------------------------------------------------+
-; Option         ; Setting                                                                 ;
-+----------------+-------------------------------------------------------------------------+
-; Device         ; EP2C70F672C8                                                            ;
-; JTAG usercode  ; 0xFFFFFFFF                                                              ;
-; Checksum       ; 0x00612D3E                                                              ;
-+----------------+-------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------+
+; Assembler Device Options: Y:/workspace/course/2.2/shushe/ProjectGuitar/src/main.sof ;
++----------------+--------------------------------------------------------------------+
+; Option         ; Setting                                                            ;
++----------------+--------------------------------------------------------------------+
+; Device         ; EP2C70F672C8                                                       ;
+; JTAG usercode  ; 0xFFFFFFFF                                                         ;
+; Checksum       ; 0x0061412C                                                         ;
++----------------+--------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/main.pof ;
-+--------------------+---------------------------------------------------------------------+
-; Option             ; Setting                                                             ;
-+--------------------+---------------------------------------------------------------------+
-; Device             ; EPCS16                                                              ;
-; JTAG usercode      ; 0x00000000                                                          ;
-; Checksum           ; 0x187F1EB4                                                          ;
-; Compression Ratio  ; 3                                                                   ;
-+--------------------+---------------------------------------------------------------------+
++-------------------------------------------------------------------------------------+
+; Assembler Device Options: Y:/workspace/course/2.2/shushe/ProjectGuitar/src/main.pof ;
++--------------------+----------------------------------------------------------------+
+; Option             ; Setting                                                        ;
++--------------------+----------------------------------------------------------------+
+; Device             ; EPCS16                                                         ;
+; JTAG usercode      ; 0x00000000                                                     ;
+; Checksum           ; 0x187F5F3C                                                     ;
+; Compression Ratio  ; 3                                                              ;
++--------------------+----------------------------------------------------------------+
 
 
 +--------------------+
 ; Assembler Messages ;
 +--------------------+
 Info: *******************************************************************
-Info: Running Quartus II Assembler
+Info: Running Quartus II 64-Bit Assembler
     Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
-    Info: Processing started: Fri Jun 02 15:55:26 2017
+    Info: Processing started: Sat Jun 03 18:41:54 2017
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off ProjectGuitar -c main
 Info: Writing out detailed assembly data for power analysis
 Info: Assembler is generating device programming files
-Info: Quartus II Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 388 megabytes
-    Info: Processing ended: Fri Jun 02 15:55:32 2017
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:06
+Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 432 megabytes
+    Info: Processing ended: Sat Jun 03 18:41:58 2017
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
 
 

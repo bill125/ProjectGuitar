@@ -36,7 +36,7 @@ begin
 		if (hclk'event and hclk = '1') then 
 			if wait_times >= 1 then
 				wait_times := wait_times - 1;
-				if wait_times <= 5 then
+				if wait_times <= 10 then
 					o_all_clk <= '1';
 					if selected_key = '1' then
 						o_clk <= '1';

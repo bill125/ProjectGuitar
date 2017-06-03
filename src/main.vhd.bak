@@ -128,7 +128,7 @@ begin
 	port map (
 		datain => i_KB_data,
 		clkin => clk_in,
-		fclk => clk_100m,
+		fclk => clk_25m,
 		rst_in => rst_in,
 		key_out => t_key,
 		seg0 => seg0,
@@ -140,7 +140,7 @@ begin
 	port map (
 		i_key => t_key,
 		i_clk => raw_kb_clk,
-		hclk => clk_100m,
+		hclk => clk_25m,
 		o_triggeredString => triggeredString,
 		o_clk => a_kb_clk
 	);

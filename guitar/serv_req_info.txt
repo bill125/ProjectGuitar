@@ -51,3 +51,21 @@
 Quartus II 64-Bit Version 9.0 Build 132 02/25/2009 SJ Full Version </full_error>
 </internal_error>
 
+<internal_error>
+	<executable>quartus_cdb.exe</executable>
+	<sub_system>AMERGE</sub_system>
+	<file>/quartus/atm/amerge/amerge_incr_tap.cpp</file>
+	<line>6076</line>
+	<callstack>
+	0x10d9e958:
+	0x0fc2486f:
+	0x134cd20f:
+	0xffffffffffffffff:
+	</callstack>
+	<error>oterm</error>
+	<date>Sat Jun 03 21:46:59 2017</date>
+	<version>Quartus II 64-Bit Version 9.0 Build 132 02/25/2009 SJ Full Version</version>
+	<full_error>oterm
+Quartus II 64-Bit Version 9.0 Build 132 02/25/2009 SJ Full Version </full_error>
+</internal_error>
+

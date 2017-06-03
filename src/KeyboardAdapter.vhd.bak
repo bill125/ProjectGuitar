@@ -54,6 +54,7 @@ begin
 						when string_3 => o_triggeredString <= 3;
 						when string_4 => o_triggeredString <= 4;
 						when string_5 => o_triggeredString <= 5;
+						when 
 						when others => o_triggeredString <= 0;
 					end case;
 					

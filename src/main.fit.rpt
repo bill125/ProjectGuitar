@@ -1,6 +1,6 @@
 Fitter report for main
-Fri Jun 02 15:55:25 2017
-Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
+Sat Jun 03 18:41:52 2017
+Quartus II 64-Bit Version 9.0 Build 132 02/25/2009 SJ Full Version
 
 
 ---------------------
@@ -35,8 +35,12 @@ Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
  27. Fitter Device Options
  28. Operating Settings and Conditions
  29. Estimated Delay Added for Hold Timing
- 30. Fitter Messages
- 31. Fitter Suppressed Messages
+ 30. Advanced Data - General
+ 31. Advanced Data - Placement Preparation
+ 32. Advanced Data - Placement
+ 33. Advanced Data - Routing
+ 34. Fitter Messages
+ 35. Fitter Suppressed Messages
 
 
 
@@ -62,15 +66,15 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +------------------------------------+------------------------------------------+
-; Fitter Status                      ; Successful - Fri Jun 02 15:55:24 2017    ;
-; Quartus II Version                 ; 9.0 Build 132 02/25/2009 SJ Full Version ;
+; Fitter Status                      ; Successful - Sat Jun 03 18:41:52 2017    ;
+; Quartus II 64-Bit Version          ; 9.0 Build 132 02/25/2009 SJ Full Version ;
 ; Revision Name                      ; main                                     ;
 ; Top-level Entity Name              ; main                                     ;
 ; Family                             ; Cyclone II                               ;
 ; Device                             ; EP2C70F672C8                             ;
 ; Timing Models                      ; Final                                    ;
-; Total logic elements               ; 73 / 68,416 ( < 1 % )                    ;
-;     Total combinational functions  ; 62 / 68,416 ( < 1 % )                    ;
+; Total logic elements               ; 80 / 68,416 ( < 1 % )                    ;
+;     Total combinational functions  ; 68 / 68,416 ( < 1 % )                    ;
 ;     Dedicated logic registers      ; 32 / 68,416 ( < 1 % )                    ;
 ; Total registers                    ; 32                                       ;
 ; Total pins                         ; 32 / 422 ( 8 % )                         ;
@@ -140,12 +144,12 @@ applicable agreement for further details.
 ; Number detected on machine ; 2           ;
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.25        ;
+; Average used               ; 1.17        ;
 ; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     1 processor            ; 100.0%      ;
-;     2 processors           ;  14.3%      ;
+;     2 processors           ;   9.1%      ;
 +----------------------------+-------------+
 
 
@@ -155,8 +159,8 @@ applicable agreement for further details.
 ; Type                    ; Value              ;
 +-------------------------+--------------------+
 ; Placement               ;                    ;
-;     -- Requested        ; 0 / 126 ( 0.00 % ) ;
-;     -- Achieved         ; 0 / 126 ( 0.00 % ) ;
+;     -- Requested        ; 0 / 132 ( 0.00 % ) ;
+;     -- Achieved         ; 0 / 132 ( 0.00 % ) ;
 ;                         ;                    ;
 ; Routing (by Connection) ;                    ;
 ;     -- Requested        ; 0 / 0 ( 0.00 % )   ;
@@ -178,14 +182,14 @@ applicable agreement for further details.
 +----------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +----------------+---------+-------------------+-------------------------+-------------------+
-; Top            ; 126     ; 0                 ; N/A                     ; Source File       ;
+; Top            ; 132     ; 0                 ; N/A                     ; Source File       ;
 +----------------+---------+-------------------+-------------------------+-------------------+
 
 
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/main.pin.
+The pin-out file can be found in Y:/workspace/course/2.2/shushe/ProjectGuitar/src/main.pin.
 
 
 +-------------------------------------------------------------------------------+
@@ -193,26 +197,26 @@ The pin-out file can be found in C:/Users/bill125/Desktop/BigProject/ProjectGuit
 +---------------------------------------------+---------------------------------+
 ; Resource                                    ; Usage                           ;
 +---------------------------------------------+---------------------------------+
-; Total logic elements                        ; 73 / 68,416 ( < 1 % )           ;
-;     -- Combinational with no register       ; 41                              ;
-;     -- Register only                        ; 11                              ;
-;     -- Combinational with a register        ; 21                              ;
+; Total logic elements                        ; 80 / 68,416 ( < 1 % )           ;
+;     -- Combinational with no register       ; 48                              ;
+;     -- Register only                        ; 12                              ;
+;     -- Combinational with a register        ; 20                              ;
 ;                                             ;                                 ;
 ; Logic element usage by number of LUT inputs ;                                 ;
-;     -- 4 input functions                    ; 41                              ;
-;     -- 3 input functions                    ; 16                              ;
+;     -- 4 input functions                    ; 45                              ;
+;     -- 3 input functions                    ; 18                              ;
 ;     -- <=2 input functions                  ; 5                               ;
-;     -- Register only                        ; 11                              ;
+;     -- Register only                        ; 12                              ;
 ;                                             ;                                 ;
 ; Logic elements by mode                      ;                                 ;
-;     -- normal mode                          ; 62                              ;
+;     -- normal mode                          ; 68                              ;
 ;     -- arithmetic mode                      ; 0                               ;
 ;                                             ;                                 ;
 ; Total registers*                            ; 32 / 69,634 ( < 1 % )           ;
 ;     -- Dedicated logic registers            ; 32 / 68,416 ( < 1 % )           ;
 ;     -- I/O registers                        ; 0 / 1,218 ( 0 % )               ;
 ;                                             ;                                 ;
-; Total LABs:  partially or completely used   ; 7 / 4,276 ( < 1 % )             ;
+; Total LABs:  partially or completely used   ; 8 / 4,276 ( < 1 % )             ;
 ; User inserted logic elements                ; 0                               ;
 ; Virtual pins                                ; 0                               ;
 ; I/O pins                                    ; 32 / 422 ( 8 % )                ;
@@ -233,8 +237,8 @@ The pin-out file can be found in C:/Users/bill125/Desktop/BigProject/ProjectGuit
 ; Maximum fan-out                             ; 29                              ;
 ; Highest non-global fan-out signal           ; rst_in                          ;
 ; Highest non-global fan-out                  ; 22                              ;
-; Total fan-out                               ; 346                             ;
-; Average fan-out                             ; 2.54                            ;
+; Total fan-out                               ; 370                             ;
+; Average fan-out                             ; 2.57                            ;
 +---------------------------------------------+---------------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -261,9 +265,9 @@ The pin-out file can be found in C:/Users/bill125/Desktop/BigProject/ProjectGuit
 +----------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+
 ; TXD      ; A20   ; 4        ; 80           ; 51           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ;
 ; clk_out  ; AD23  ; 7        ; 91           ; 0            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ;
-; o_cnt[0] ; G1    ; 2        ; 0            ; 40           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ;
-; o_cnt[1] ; AA11  ; 8        ; 20           ; 0            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ;
-; o_cnt[2] ; AA10  ; 8        ; 20           ; 0            ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ;
+; o_cnt[0] ; Y3    ; 1        ; 0            ; 9            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ;
+; o_cnt[1] ; G3    ; 2        ; 0            ; 42           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ;
+; o_cnt[2] ; G2    ; 2        ; 0            ; 40           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ;
 ; seg0[0]  ; AC7   ; 8        ; 13           ; 0            ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ;
 ; seg0[1]  ; AB8   ; 8        ; 15           ; 0            ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ;
 ; seg0[2]  ; AD8   ; 8        ; 15           ; 0            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ;
@@ -293,14 +297,14 @@ The pin-out file can be found in C:/Users/bill125/Desktop/BigProject/ProjectGuit
 +----------+------------------+---------------+--------------+
 ; I/O Bank ; Usage            ; VCCIO Voltage ; VREF Voltage ;
 +----------+------------------+---------------+--------------+
-; 1        ; 0 / 59 ( 0 % )   ; 3.3V          ; --           ;
-; 2        ; 4 / 55 ( 7 % )   ; 3.3V          ; --           ;
+; 1        ; 1 / 59 ( 2 % )   ; 3.3V          ; --           ;
+; 2        ; 5 / 55 ( 9 % )   ; 3.3V          ; --           ;
 ; 3        ; 0 / 46 ( 0 % )   ; 3.3V          ; --           ;
 ; 4        ; 2 / 50 ( 4 % )   ; 3.3V          ; --           ;
 ; 5        ; 0 / 62 ( 0 % )   ; 3.3V          ; --           ;
 ; 6        ; 1 / 54 ( 2 % )   ; 3.3V          ; --           ;
 ; 7        ; 2 / 50 ( 4 % )   ; 3.3V          ; --           ;
-; 8        ; 26 / 46 ( 57 % ) ; 3.3V          ; --           ;
+; 8        ; 24 / 46 ( 52 % ) ; 3.3V          ; --           ;
 +----------+------------------+---------------+--------------+
 
 
@@ -342,8 +346,8 @@ The pin-out file can be found in C:/Users/bill125/Desktop/BigProject/ProjectGuit
 ; AA7      ; 170        ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; AA8      ;            ;          ; VCCA_PLL1                                ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; AA9      ; 200        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AA10     ; 201        ; 8        ; o_cnt[2]                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; AA11     ; 203        ; 8        ; o_cnt[1]                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; AA10     ; 201        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; AA11     ; 203        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AA12     ; 234        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AA13     ; 249        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AA14     ; 251        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -617,9 +621,9 @@ The pin-out file can be found in C:/Users/bill125/Desktop/BigProject/ProjectGuit
 ; F24      ; 459        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; F25      ; 454        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; F26      ; 453        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; G1       ; 37         ; 2        ; o_cnt[0]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
-; G2       ; 38         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; G3       ; 30         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; G1       ; 37         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; G2       ; 38         ; 2        ; o_cnt[2]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; G3       ; 30         ; 2        ; o_cnt[1]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; G4       ; 29         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; G5       ; 8          ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; G6       ; 9          ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -957,7 +961,7 @@ The pin-out file can be found in C:/Users/bill125/Desktop/BigProject/ProjectGuit
 ; W26      ; 355        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; Y1       ; 133        ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; Y2       ; 132        ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; Y3       ; 142        ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; Y3       ; 142        ; 1        ; o_cnt[0]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; Y4       ; 143        ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; Y5       ; 161        ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; Y6       ;            ;          ; GND_PLL1                                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -1027,11 +1031,11 @@ Note: User assignments will override these defaults. The user specified values a
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------------------+--------------+
 ; Compilation Hierarchy Node ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                ; Library Name ;
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------------------+--------------+
-; |main                      ; 73 (0)      ; 32 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 32   ; 0            ; 41 (0)       ; 11 (0)            ; 21 (0)           ; |main                              ; work         ;
+; |main                      ; 80 (0)      ; 32 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 32   ; 0            ; 48 (0)       ; 12 (0)            ; 20 (0)           ; |main                              ; work         ;
 ;    |FreqDiv:fd_inst1|      ; 2 (2)       ; 2 (2)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; |main|FreqDiv:fd_inst1             ; work         ;
-;    |KeyboardAdapter:u1|    ; 12 (12)     ; 5 (5)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 5 (5)            ; |main|KeyboardAdapter:u1           ; work         ;
-;    |KeyboardInput:u0|      ; 52 (0)      ; 25 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 27 (0)       ; 11 (0)            ; 14 (0)           ; |main|KeyboardInput:u0             ; work         ;
-;       |Keyboard:u0|        ; 38 (38)     ; 25 (25)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 13 (13)      ; 11 (11)           ; 14 (14)          ; |main|KeyboardInput:u0|Keyboard:u0 ; work         ;
+;    |KeyboardAdapter:u1|    ; 18 (18)     ; 5 (5)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 13 (13)      ; 0 (0)             ; 5 (5)            ; |main|KeyboardAdapter:u1           ; work         ;
+;    |KeyboardInput:u0|      ; 53 (0)      ; 25 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 28 (0)       ; 12 (0)            ; 13 (0)           ; |main|KeyboardInput:u0             ; work         ;
+;       |Keyboard:u0|        ; 39 (39)     ; 25 (25)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 14 (14)      ; 12 (12)           ; 13 (13)          ; |main|KeyboardInput:u0|Keyboard:u0 ; work         ;
 ;       |seg7:u1|            ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |main|KeyboardInput:u0|seg7:u1     ; work         ;
 ;       |seg7:u2|            ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |main|KeyboardInput:u0|seg7:u2     ; work         ;
 ;    |seg7:u2|               ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |main|seg7:u2                      ; work         ;
@@ -1123,10 +1127,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name                                      ; Location          ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-------------------------------------------+-------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 ; FreqDiv:fd_inst1|output                   ; LCFF_X1_Y25_N17   ; 3       ; Clock        ; no     ; --                   ; --               ; --                        ;
-; FreqDiv:fd_inst1|output                   ; LCFF_X1_Y25_N17   ; 29      ; Clock        ; yes    ; Global Clock         ; GCLK3            ; --                        ;
-; KeyboardAdapter:u1|o_triggeredString[0]~6 ; LCCOMB_X25_Y1_N4  ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; KeyboardInput:u0|Keyboard:u0|clk          ; LCCOMB_X23_Y1_N22 ; 19      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; KeyboardInput:u0|Keyboard:u0|fok          ; LCFF_X1_Y25_N29   ; 8       ; Latch enable ; yes    ; Global Clock         ; GCLK0            ; --                        ;
+; FreqDiv:fd_inst1|output                   ; LCFF_X1_Y25_N17   ; 29      ; Clock        ; yes    ; Global Clock         ; GCLK2            ; --                        ;
+; KeyboardAdapter:u1|o_triggeredString[0]~8 ; LCCOMB_X20_Y1_N26 ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; KeyboardInput:u0|Keyboard:u0|clk          ; LCCOMB_X15_Y1_N14 ; 19      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; KeyboardInput:u0|Keyboard:u0|fok          ; LCFF_X1_Y25_N25   ; 8       ; Latch enable ; yes    ; Global Clock         ; GCLK0            ; --                        ;
 ; clk_100m                                  ; PIN_N2            ; 2       ; Clock        ; no     ; --                   ; --               ; --                        ;
 ; rst_in                                    ; PIN_AF4           ; 22      ; Async. clear ; no     ; --                   ; --               ; --                        ;
 +-------------------------------------------+-------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
@@ -1137,8 +1141,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------+-----------------+---------+----------------------+------------------+---------------------------+
 ; Name                             ; Location        ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +----------------------------------+-----------------+---------+----------------------+------------------+---------------------------+
-; FreqDiv:fd_inst1|output          ; LCFF_X1_Y25_N17 ; 29      ; Global Clock         ; GCLK3            ; --                        ;
-; KeyboardInput:u0|Keyboard:u0|fok ; LCFF_X1_Y25_N29 ; 8       ; Global Clock         ; GCLK0            ; --                        ;
+; FreqDiv:fd_inst1|output          ; LCFF_X1_Y25_N17 ; 29      ; Global Clock         ; GCLK2            ; --                        ;
+; KeyboardInput:u0|Keyboard:u0|fok ; LCFF_X1_Y25_N25 ; 8       ; Global Clock         ; GCLK0            ; --                        ;
 +----------------------------------+-----------------+---------+----------------------+------------------+---------------------------+
 
 
@@ -1149,15 +1153,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------+---------+
 ; rst_in                                            ; 22      ;
 ; KeyboardInput:u0|Keyboard:u0|clk                  ; 19      ;
-; KeyboardInput:u0|Keyboard:u0|data                 ; 13      ;
-; KeyboardInput:u0|Keyboard:u0|scancode[7]          ; 12      ;
-; KeyboardInput:u0|Keyboard:u0|scancode[6]          ; 12      ;
-; KeyboardInput:u0|Keyboard:u0|scancode[3]          ; 12      ;
+; KeyboardInput:u0|Keyboard:u0|scancode[3]          ; 15      ;
+; KeyboardInput:u0|Keyboard:u0|scancode[1]          ; 15      ;
+; KeyboardInput:u0|Keyboard:u0|scancode[6]          ; 14      ;
+; KeyboardInput:u0|Keyboard:u0|scancode[5]          ; 14      ;
+; KeyboardInput:u0|Keyboard:u0|scancode[0]          ; 14      ;
+; KeyboardInput:u0|Keyboard:u0|scancode[4]          ; 13      ;
 ; KeyboardInput:u0|Keyboard:u0|scancode[2]          ; 12      ;
-; KeyboardInput:u0|Keyboard:u0|scancode[1]          ; 12      ;
-; KeyboardInput:u0|Keyboard:u0|scancode[0]          ; 12      ;
-; KeyboardInput:u0|Keyboard:u0|scancode[5]          ; 10      ;
-; KeyboardInput:u0|Keyboard:u0|scancode[4]          ; 10      ;
+; KeyboardInput:u0|Keyboard:u0|data                 ; 12      ;
+; KeyboardInput:u0|Keyboard:u0|scancode[7]          ; 11      ;
 ; KeyboardAdapter:u1|o_triggeredString[2]           ; 7       ;
 ; KeyboardAdapter:u1|o_triggeredString[1]           ; 7       ;
 ; KeyboardAdapter:u1|o_triggeredString[0]           ; 7       ;
@@ -1166,8 +1170,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; KeyboardInput:u0|Keyboard:u0|state.stop           ; 3       ;
 ; KeyboardInput:u0|Keyboard:u0|state.start          ; 3       ;
 ; KeyboardInput:u0|Keyboard:u0|state.d0             ; 3       ;
-; KeyboardAdapter:u1|o_triggeredString[0]~6         ; 3       ;
-; KeyboardAdapter:u1|Equal1~1                       ; 3       ;
+; KeyboardAdapter:u1|o_triggeredString[0]~8         ; 3       ;
+; KeyboardAdapter:u1|Mux3~2                         ; 3       ;
 ; KeyboardInput:u0|Keyboard:u0|code[7]              ; 3       ;
 ; KeyboardInput:u0|Keyboard:u0|code[6]              ; 3       ;
 ; KeyboardInput:u0|Keyboard:u0|code[5]              ; 3       ;
@@ -1189,14 +1193,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; KeyboardInput:u0|Keyboard:u0|state.d2             ; 2       ;
 ; KeyboardInput:u0|Keyboard:u0|state.d1             ; 2       ;
 ; KeyboardInput:u0|Keyboard:u0|state.finish         ; 2       ;
+; KeyboardAdapter:u1|Mux1~1                         ; 2       ;
 ; KeyboardAdapter:u1|\receive_trigger:l_clk         ; 2       ;
 ; KeyboardAdapter:u1|\receive_trigger:ignore_status ; 2       ;
-; KeyboardAdapter:u1|Equal1~3                       ; 2       ;
+; KeyboardAdapter:u1|Equal0~1                       ; 2       ;
 ; FreqDiv:fd_inst1|output                           ; 2       ;
 ; clk_in                                            ; 1       ;
 ; i_KB_Data                                         ; 1       ;
 ; FreqDiv:fd_inst1|counter~1                        ; 1       ;
-; KeyboardInput:u0|Keyboard:u0|Selector0~2          ; 1       ;
 +---------------------------------------------------+---------+
 
 
@@ -1205,30 +1209,30 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------+------------------------+
 ; Interconnect Resource Type ; Usage                  ;
 +----------------------------+------------------------+
-; Block interconnects        ; 80 / 197,592 ( < 1 % ) ;
-; C16 interconnects          ; 4 / 6,270 ( < 1 % )    ;
-; C4 interconnects           ; 32 / 123,120 ( < 1 % ) ;
-; Direct links               ; 30 / 197,592 ( < 1 % ) ;
+; Block interconnects        ; 88 / 197,592 ( < 1 % ) ;
+; C16 interconnects          ; 6 / 6,270 ( < 1 % )    ;
+; C4 interconnects           ; 27 / 123,120 ( < 1 % ) ;
+; Direct links               ; 34 / 197,592 ( < 1 % ) ;
 ; Global clocks              ; 2 / 16 ( 13 % )        ;
-; Local interconnects        ; 40 / 68,416 ( < 1 % )  ;
+; Local interconnects        ; 42 / 68,416 ( < 1 % )  ;
 ; R24 interconnects          ; 4 / 5,926 ( < 1 % )    ;
-; R4 interconnects           ; 62 / 167,484 ( < 1 % ) ;
+; R4 interconnects           ; 66 / 167,484 ( < 1 % ) ;
 +----------------------------+------------------------+
 
 
 +---------------------------------------------------------------------------+
 ; LAB Logic Elements                                                        ;
 +---------------------------------------------+-----------------------------+
-; Number of Logic Elements  (Average = 10.43) ; Number of LABs  (Total = 7) ;
+; Number of Logic Elements  (Average = 10.00) ; Number of LABs  (Total = 8) ;
 +---------------------------------------------+-----------------------------+
-; 1                                           ; 0                           ;
-; 2                                           ; 1                           ;
+; 1                                           ; 1                           ;
+; 2                                           ; 0                           ;
 ; 3                                           ; 1                           ;
 ; 4                                           ; 0                           ;
 ; 5                                           ; 0                           ;
 ; 6                                           ; 0                           ;
 ; 7                                           ; 1                           ;
-; 8                                           ; 0                           ;
+; 8                                           ; 1                           ;
 ; 9                                           ; 0                           ;
 ; 10                                          ; 0                           ;
 ; 11                                          ; 0                           ;
@@ -1243,89 +1247,96 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------+
 ; LAB-wide Signals                                                 ;
 +------------------------------------+-----------------------------+
-; LAB-wide Signals  (Average = 1.14) ; Number of LABs  (Total = 7) ;
+; LAB-wide Signals  (Average = 1.13) ; Number of LABs  (Total = 8) ;
 +------------------------------------+-----------------------------+
 ; 1 Async. clear                     ; 3                           ;
 ; 1 Clock                            ; 5                           ;
+; 1 Clock enable                     ; 1                           ;
 +------------------------------------+-----------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                        ;
 +----------------------------------------------+-----------------------------+
-; Number of Signals Sourced  (Average = 14.14) ; Number of LABs  (Total = 7) ;
+; Number of Signals Sourced  (Average = 13.38) ; Number of LABs  (Total = 8) ;
 +----------------------------------------------+-----------------------------+
 ; 0                                            ; 0                           ;
 ; 1                                            ; 0                           ;
-; 2                                            ; 0                           ;
+; 2                                            ; 1                           ;
 ; 3                                            ; 0                           ;
-; 4                                            ; 1                           ;
-; 5                                            ; 0                           ;
-; 6                                            ; 1                           ;
+; 4                                            ; 0                           ;
+; 5                                            ; 1                           ;
+; 6                                            ; 0                           ;
 ; 7                                            ; 1                           ;
-; 8                                            ; 0                           ;
+; 8                                            ; 1                           ;
 ; 9                                            ; 0                           ;
 ; 10                                           ; 0                           ;
 ; 11                                           ; 0                           ;
 ; 12                                           ; 0                           ;
-; 13                                           ; 1                           ;
+; 13                                           ; 0                           ;
 ; 14                                           ; 0                           ;
 ; 15                                           ; 0                           ;
-; 16                                           ; 0                           ;
+; 16                                           ; 1                           ;
 ; 17                                           ; 0                           ;
 ; 18                                           ; 0                           ;
 ; 19                                           ; 0                           ;
 ; 20                                           ; 0                           ;
-; 21                                           ; 1                           ;
+; 21                                           ; 2                           ;
 ; 22                                           ; 0                           ;
 ; 23                                           ; 0                           ;
-; 24                                           ; 2                           ;
+; 24                                           ; 0                           ;
+; 25                                           ; 0                           ;
+; 26                                           ; 0                           ;
+; 27                                           ; 1                           ;
 +----------------------------------------------+-----------------------------+
 
 
 +-------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                       ;
 +-------------------------------------------------+-----------------------------+
-; Number of Signals Sourced Out  (Average = 8.00) ; Number of LABs  (Total = 7) ;
+; Number of Signals Sourced Out  (Average = 7.25) ; Number of LABs  (Total = 8) ;
 +-------------------------------------------------+-----------------------------+
 ; 0                                               ; 0                           ;
-; 1                                               ; 0                           ;
-; 2                                               ; 2                           ;
+; 1                                               ; 1                           ;
+; 2                                               ; 1                           ;
 ; 3                                               ; 0                           ;
 ; 4                                               ; 0                           ;
-; 5                                               ; 0                           ;
+; 5                                               ; 1                           ;
 ; 6                                               ; 0                           ;
 ; 7                                               ; 1                           ;
 ; 8                                               ; 1                           ;
 ; 9                                               ; 0                           ;
-; 10                                              ; 1                           ;
-; 11                                              ; 0                           ;
+; 10                                              ; 0                           ;
+; 11                                              ; 2                           ;
 ; 12                                              ; 0                           ;
 ; 13                                              ; 1                           ;
-; 14                                              ; 1                           ;
 +-------------------------------------------------+-----------------------------+
 
 
 +---------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                       ;
 +---------------------------------------------+-----------------------------+
-; Number of Distinct Inputs  (Average = 7.29) ; Number of LABs  (Total = 7) ;
+; Number of Distinct Inputs  (Average = 6.38) ; Number of LABs  (Total = 8) ;
 +---------------------------------------------+-----------------------------+
 ; 0                                           ; 0                           ;
 ; 1                                           ; 0                           ;
-; 2                                           ; 0                           ;
-; 3                                           ; 3                           ;
-; 4                                           ; 0                           ;
+; 2                                           ; 1                           ;
+; 3                                           ; 2                           ;
+; 4                                           ; 1                           ;
 ; 5                                           ; 0                           ;
 ; 6                                           ; 1                           ;
-; 7                                           ; 0                           ;
+; 7                                           ; 1                           ;
 ; 8                                           ; 1                           ;
 ; 9                                           ; 0                           ;
 ; 10                                          ; 0                           ;
 ; 11                                          ; 0                           ;
 ; 12                                          ; 0                           ;
 ; 13                                          ; 0                           ;
-; 14                                          ; 2                           ;
+; 14                                          ; 0                           ;
+; 15                                          ; 0                           ;
+; 16                                          ; 0                           ;
+; 17                                          ; 0                           ;
+; 18                                          ; 1                           ;
 +---------------------------------------------+-----------------------------+
 
 
@@ -1369,13 +1380,92 @@ Note: For more information on problematic transfers, consider running the Fitter
 This will disable optimization of problematic paths and expose them for further analysis using either the TimeQuest Timing Analyzer or the Classic Timing Analyzer.
 
 
++----------------------------+
+; Advanced Data - General    ;
++--------------------+-------+
+; Name               ; Value ;
++--------------------+-------+
+; Status Code        ; 0     ;
+; Desired User Slack ; 0     ;
+; Fit Attempts       ; 1     ;
++--------------------+-------+
+
+
++------------------------------------------------------------------------------------+
+; Advanced Data - Placement Preparation                                              ;
++------------------------------------------------------------------+-----------------+
+; Name                                                             ; Value           ;
++------------------------------------------------------------------+-----------------+
+; Mid Wire Use - Fit Attempt 1                                     ; 0               ;
+; Mid Slack - Fit Attempt 1                                        ; -4900           ;
+; Internal Atom Count - Fit Attempt 1                              ; 101             ;
+; LE/ALM Count - Fit Attempt 1                                     ; 78              ;
+; LAB Count - Fit Attempt 1                                        ; 8               ;
+; Outputs per Lab - Fit Attempt 1                                  ; 6.500           ;
+; Inputs per LAB - Fit Attempt 1                                   ; 5.750           ;
+; Global Inputs per LAB - Fit Attempt 1                            ; 0.500           ;
+; LAB Constraint 'non-global clock + sync load' - Fit Attempt 1    ; 0:7;2:1         ;
+; LAB Constraint 'non-global controls' - Fit Attempt 1             ; 0:4;1:1;2:2;3:1 ;
+; LAB Constraint 'non-global + aclr' - Fit Attempt 1               ; 0:4;1:1;2:2;3:1 ;
+; LAB Constraint 'global non-clock non-aclr' - Fit Attempt 1       ; 0:5;1:3         ;
+; LAB Constraint 'global controls' - Fit Attempt 1                 ; 0:3;1:3;2:2     ;
+; LAB Constraint 'deterministic LABSMUXA/LABXMUXB' - Fit Attempt 1 ; 0:4;1:1;2:3     ;
+; LAB Constraint 'deterministic LABSMUXC/LABXMUXD' - Fit Attempt 1 ; 0:4;1:4         ;
+; LAB Constraint 'clock / ce pair constraint' - Fit Attempt 1      ; 0:3;1:2;2:3     ;
+; LAB Constraint 'aclr constraint' - Fit Attempt 1                 ; 0:3;1:3;2:2     ;
+; LAB Constraint 'true sload_sclear pair' - Fit Attempt 1          ; 0:6;1:2         ;
+; LAB Constraint 'constant sload_sclear pair' - Fit Attempt 1      ; 0:8             ;
+; LAB Constraint 'has placement constraint' - Fit Attempt 1        ; 0:8             ;
+; LAB Constraint 'group hierarchy constraint' - Fit Attempt 1      ; 0:1;1:3;2:3;3:1 ;
+; LEs in Chains - Fit Attempt 1                                    ; 0               ;
+; LEs in Long Chains - Fit Attempt 1                               ; 0               ;
+; LABs with Chains - Fit Attempt 1                                 ; 0               ;
+; LABs with Multiple Chains - Fit Attempt 1                        ; 0               ;
+; Time - Fit Attempt 1                                             ; 0               ;
++------------------------------------------------------------------+-----------------+
+
+
++---------------------------------------------+
+; Advanced Data - Placement                   ;
++-------------------------------------+-------+
+; Name                                ; Value ;
++-------------------------------------+-------+
+; Early Wire Use - Fit Attempt 1      ; 0     ;
+; Early Slack - Fit Attempt 1         ; -2506 ;
+; Mid Wire Use - Fit Attempt 1        ; 0     ;
+; Mid Slack - Fit Attempt 1           ; -1720 ;
+; Mid Wire Use - Fit Attempt 1        ; 0     ;
+; Mid Slack - Fit Attempt 1           ; -1108 ;
+; Late Wire Use - Fit Attempt 1       ; 0     ;
+; Late Slack - Fit Attempt 1          ; -1108 ;
+; Peak Regional Wire - Fit Attempt 1  ; 0.000 ;
+; Time - Fit Attempt 1                ; 2     ;
+; Time in tsm_tan.dll - Fit Attempt 1 ; 0.047 ;
++-------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Advanced Data - Routing                          ;
++------------------------------------+-------------+
+; Name                               ; Value       ;
++------------------------------------+-------------+
+; Early Slack - Fit Attempt 1        ; 690         ;
+; Early Wire Use - Fit Attempt 1     ; 0           ;
+; Peak Regional Wire - Fit Attempt 1 ; 0           ;
+; Mid Slack - Fit Attempt 1          ; 553         ;
+; Late Slack - Fit Attempt 1         ; -2147483648 ;
+; Late Wire Use - Fit Attempt 1      ; 0           ;
+; Time - Fit Attempt 1               ; 0           ;
++------------------------------------+-------------+
+
+
 +-----------------+
 ; Fitter Messages ;
 +-----------------+
 Info: *******************************************************************
-Info: Running Quartus II Fitter
+Info: Running Quartus II 64-Bit Fitter
     Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
-    Info: Processing started: Fri Jun 02 15:55:14 2017
+    Info: Processing started: Sat Jun 03 18:41:41 2017
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off ProjectGuitar -c main
 Info: Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info: Selected device EP2C70F672C8 for design "main"
@@ -1407,7 +1497,7 @@ Info: Automatically promoted node KeyboardInput:u0|Keyboard:u0|fok
     Info: Automatically promoted destinations to use location or clock signal Global Clock
     Info: Following destination nodes may be non-global or may not use global or regional clocks
         Info: Destination node KeyboardAdapter:u1|\receive_trigger:l_clk
-        Info: Destination node KeyboardAdapter:u1|o_triggeredString[0]~6
+        Info: Destination node KeyboardAdapter:u1|o_triggeredString[0]~8
         Info: Destination node KeyboardAdapter:u1|\receive_trigger:ignore_status~0
 Info: Starting register packing
 Info: Finished register packing
@@ -1430,8 +1520,8 @@ Info: Fitter placement preparation operations beginning
 Info: Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info: Fitter placement operations beginning
 Info: Fitter placement was successful
-Info: Fitter placement operations ending: elapsed time is 00:00:03
-Info: Slack time is -301 ps between source register "KeyboardInput:u0|Keyboard:u0|scancode[1]" and destination register "KeyboardAdapter:u1|o_triggeredString[0]"
+Info: Fitter placement operations ending: elapsed time is 00:00:02
+Info: Slack time is -301 ps between source register "KeyboardInput:u0|Keyboard:u0|scancode[7]" and destination register "KeyboardAdapter:u1|o_triggeredString[0]"
     Info: + Largest register to register requirement is 3.268 ns
     Info:   Shortest clock path from clock "clk_100m" to destination register is 5.517 ns
         Info: 1: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = Unassigned; Fanout = 2; CLK Node = 'clk_100m'
@@ -1452,7 +1542,7 @@ Info: Slack time is -301 ps between source register "KeyboardInput:u0|Keyboard:u
         Info: 2: + IC(0.590 ns) + CELL(0.970 ns) = 2.414 ns; Loc. = Unassigned; Fanout = 3; REG Node = 'FreqDiv:fd_inst1|output'
         Info: 3: + IC(0.433 ns) + CELL(0.970 ns) = 3.817 ns; Loc. = Unassigned; Fanout = 4; REG Node = 'KeyboardInput:u0|Keyboard:u0|fok'
         Info: 4: + IC(0.989 ns) + CELL(0.000 ns) = 4.806 ns; Loc. = Unassigned; Fanout = 8; COMB Node = 'KeyboardInput:u0|Keyboard:u0|fok~clkctrl'
-        Info: 5: + IC(2.277 ns) + CELL(0.206 ns) = 7.289 ns; Loc. = Unassigned; Fanout = 11; REG Node = 'KeyboardInput:u0|Keyboard:u0|scancode[1]'
+        Info: 5: + IC(2.277 ns) + CELL(0.206 ns) = 7.289 ns; Loc. = Unassigned; Fanout = 10; REG Node = 'KeyboardInput:u0|Keyboard:u0|scancode[7]'
         Info: Total cell delay = 3.000 ns ( 41.16 % )
         Info: Total interconnect delay = 4.289 ns ( 58.84 % )
     Info:   Longest clock path from clock "clk_100m" to source register is 7.289 ns
@@ -1460,25 +1550,25 @@ Info: Slack time is -301 ps between source register "KeyboardInput:u0|Keyboard:u
         Info: 2: + IC(0.590 ns) + CELL(0.970 ns) = 2.414 ns; Loc. = Unassigned; Fanout = 3; REG Node = 'FreqDiv:fd_inst1|output'
         Info: 3: + IC(0.433 ns) + CELL(0.970 ns) = 3.817 ns; Loc. = Unassigned; Fanout = 4; REG Node = 'KeyboardInput:u0|Keyboard:u0|fok'
         Info: 4: + IC(0.989 ns) + CELL(0.000 ns) = 4.806 ns; Loc. = Unassigned; Fanout = 8; COMB Node = 'KeyboardInput:u0|Keyboard:u0|fok~clkctrl'
-        Info: 5: + IC(2.277 ns) + CELL(0.206 ns) = 7.289 ns; Loc. = Unassigned; Fanout = 11; REG Node = 'KeyboardInput:u0|Keyboard:u0|scancode[1]'
+        Info: 5: + IC(2.277 ns) + CELL(0.206 ns) = 7.289 ns; Loc. = Unassigned; Fanout = 10; REG Node = 'KeyboardInput:u0|Keyboard:u0|scancode[7]'
         Info: Total cell delay = 3.000 ns ( 41.16 % )
         Info: Total interconnect delay = 4.289 ns ( 58.84 % )
     Info:   Micro clock to output delay of source is 0.000 ns
     Info:   Micro setup delay of destination is -0.040 ns
     Info: - Longest register to register delay is 3.569 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = Unassigned; Fanout = 11; REG Node = 'KeyboardInput:u0|Keyboard:u0|scancode[1]'
-        Info: 2: + IC(0.442 ns) + CELL(0.370 ns) = 0.812 ns; Loc. = Unassigned; Fanout = 1; COMB Node = 'KeyboardAdapter:u1|Equal1~2'
-        Info: 3: + IC(0.188 ns) + CELL(0.623 ns) = 1.623 ns; Loc. = Unassigned; Fanout = 2; COMB Node = 'KeyboardAdapter:u1|Equal1~3'
-        Info: 4: + IC(0.188 ns) + CELL(0.539 ns) = 2.350 ns; Loc. = Unassigned; Fanout = 3; COMB Node = 'KeyboardAdapter:u1|o_triggeredString[0]~6'
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = Unassigned; Fanout = 10; REG Node = 'KeyboardInput:u0|Keyboard:u0|scancode[7]'
+        Info: 2: + IC(0.442 ns) + CELL(0.370 ns) = 0.812 ns; Loc. = Unassigned; Fanout = 1; COMB Node = 'KeyboardAdapter:u1|Equal0~0'
+        Info: 3: + IC(0.188 ns) + CELL(0.623 ns) = 1.623 ns; Loc. = Unassigned; Fanout = 2; COMB Node = 'KeyboardAdapter:u1|Equal0~1'
+        Info: 4: + IC(0.188 ns) + CELL(0.539 ns) = 2.350 ns; Loc. = Unassigned; Fanout = 3; COMB Node = 'KeyboardAdapter:u1|o_triggeredString[0]~8'
         Info: 5: + IC(0.364 ns) + CELL(0.855 ns) = 3.569 ns; Loc. = Unassigned; Fanout = 7; REG Node = 'KeyboardAdapter:u1|o_triggeredString[0]'
         Info: Total cell delay = 2.387 ns ( 66.88 % )
         Info: Total interconnect delay = 1.182 ns ( 33.12 % )
 Info: Estimated most critical path is register to register delay of 3.569 ns
-    Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LAB_X25_Y1; Fanout = 11; REG Node = 'KeyboardInput:u0|Keyboard:u0|scancode[1]'
-    Info: 2: + IC(0.442 ns) + CELL(0.370 ns) = 0.812 ns; Loc. = LAB_X25_Y1; Fanout = 1; COMB Node = 'KeyboardAdapter:u1|Equal1~2'
-    Info: 3: + IC(0.188 ns) + CELL(0.623 ns) = 1.623 ns; Loc. = LAB_X25_Y1; Fanout = 2; COMB Node = 'KeyboardAdapter:u1|Equal1~3'
-    Info: 4: + IC(0.188 ns) + CELL(0.539 ns) = 2.350 ns; Loc. = LAB_X25_Y1; Fanout = 3; COMB Node = 'KeyboardAdapter:u1|o_triggeredString[0]~6'
-    Info: 5: + IC(0.364 ns) + CELL(0.855 ns) = 3.569 ns; Loc. = LAB_X25_Y1; Fanout = 7; REG Node = 'KeyboardAdapter:u1|o_triggeredString[0]'
+    Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LAB_X20_Y1; Fanout = 10; REG Node = 'KeyboardInput:u0|Keyboard:u0|scancode[7]'
+    Info: 2: + IC(0.442 ns) + CELL(0.370 ns) = 0.812 ns; Loc. = LAB_X20_Y1; Fanout = 1; COMB Node = 'KeyboardAdapter:u1|Equal0~0'
+    Info: 3: + IC(0.188 ns) + CELL(0.623 ns) = 1.623 ns; Loc. = LAB_X20_Y1; Fanout = 2; COMB Node = 'KeyboardAdapter:u1|Equal0~1'
+    Info: 4: + IC(0.188 ns) + CELL(0.539 ns) = 2.350 ns; Loc. = LAB_X20_Y1; Fanout = 3; COMB Node = 'KeyboardAdapter:u1|o_triggeredString[0]~8'
+    Info: 5: + IC(0.364 ns) + CELL(0.855 ns) = 3.569 ns; Loc. = LAB_X20_Y1; Fanout = 7; REG Node = 'KeyboardAdapter:u1|o_triggeredString[0]'
     Info: Total cell delay = 2.387 ns ( 66.88 % )
     Info: Total interconnect delay = 1.182 ns ( 33.12 % )
 Info: Fitter routing operations beginning
@@ -1524,17 +1614,17 @@ Warning: Following 5 pins have nothing, GND, or VCC driving datain port -- chang
     Info: Pin o_cnt[1] has GND driving its datain port
     Info: Pin o_cnt[2] has GND driving its datain port
 Warning: The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
-Info: Generated suppressed messages file C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/main.fit.smsg
-Info: Quartus II Fitter was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 430 megabytes
-    Info: Processing ended: Fri Jun 02 15:55:25 2017
+Info: Generated suppressed messages file Y:/workspace/course/2.2/shushe/ProjectGuitar/src/main.fit.smsg
+Info: Quartus II 64-Bit Fitter was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 504 megabytes
+    Info: Processing ended: Sat Jun 03 18:41:52 2017
     Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:11
+    Info: Total CPU time (on all processors): 00:00:12
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/main.fit.smsg.
+The suppressed messages can be found in Y:/workspace/course/2.2/shushe/ProjectGuitar/src/main.fit.smsg.
 
 
