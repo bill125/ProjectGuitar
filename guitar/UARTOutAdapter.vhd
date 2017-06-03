@@ -72,7 +72,7 @@ begin
 					if data_ready = '0' or i_Byte_done = '1' then
 						r_SM_Main <= s_TX_Data_Bytes;
 					elsif cnt = 4 then
-						done_wait_times := 30;
+						done_wait_times := 20;
 						r_SM_Main <= s_Finish;
 					else
 						case cnt is

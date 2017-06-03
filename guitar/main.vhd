@@ -158,7 +158,7 @@ architecture main_bhv of main is
       i_clk, hclk : in std_logic;
       o_key : out std_logic_vector(7 downto 0);
       o_triggeredString : out integer range 0 to 15;
-      o_clk : out std_logic
+      o_clk, o_all_clk : out std_logic
       );
   end component KeyboardAdapter;
 
@@ -215,7 +215,7 @@ architecture main_bhv of main is
   signal t_key : std_logic_vector(7 downto 0);
   signal clk, clk_25m : std_logic;
   -- data valid clocks
-  signal raw_kb_TX_DV, a_kb_TX_DV : std_logic; -- keyboard
+  signal raw_kb_TX_DV, a_kb_TX_DV, a_kb_all_TX_DV : std_logic; -- keyboard
   signal uart_in_TX_DV : std_logic;
   signal note_gen_TX_DV, looper_TX_DV, noteLevel_TX_DV : std_logic;
   signal uart_out_a_TX_DV : std_logic;
@@ -259,7 +259,8 @@ begin
       i_clk => raw_kb_TX_DV,
       hclk => clk_100m,
       o_triggeredString => gu_triggeredString,
-      o_clk => a_kb_TX_DV
+      o_clk => a_kb_TX_DV,
+      o_all_clk => a_kb_all_TX_DV
       );
 
   uart_in : UARTIn
@@ -301,7 +302,7 @@ begin
       g_CLKS_PER_INTERVAl => 100000
       )
     port map (
-      i_RX_DV => a_kb_TX_DV,
+      i_RX_DV => a_kb_all_TX_DV,
       i_clk => clk_25m,
       i_noteGen_RX_DV => note_gen_TX_DV,
       i_key => t_key,

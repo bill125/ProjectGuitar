@@ -19,7 +19,7 @@ entity KeyboardAdapter is
 		i_clk, hclk : in std_logic;
 		o_key : out std_logic_vector(7 downto 0);
 		o_triggeredString : out integer range 0 to 15;
-		o_clk : out std_logic
+		o_clk, o_all_clk : out std_logic
 	);
 end KeyboardAdapter;
  
@@ -31,17 +31,24 @@ begin
 		variable ignore_status : std_logic := '0';
 		variable l_clk : std_logic := '0';
 		variable wait_times : integer := 0;
+		variable selected_key : std_logic := '0';
 	begin
 		if (hclk'event and hclk = '1') then 
 			if wait_times >= 1 then
 				wait_times := wait_times - 1;
 				if wait_times <= 5 then
-					o_clk <= '1';
+					o_all_clk <= '1';
+					if selected_key = '1' then
+						o_clk <= '0';
+					end if;
 				else
+					o_all_clk <= '0';
 					o_clk <= '0';
 				end if;
 			else
+				selected_key := '0';
 				o_clk <= '0';
+				o_all_clk <= '0';
 			end if;
 			
 			if l_clk = '0' and i_clk = '1' then
@@ -51,6 +58,7 @@ begin
 					ignore_status := '1';
 				else
 					wait_times := 20;
+					selected_key := '1';
 					case i_key is
 						when string_0 => o_triggeredString <= 0;
 						when string_1 => o_triggeredString <= 1;
@@ -64,7 +72,7 @@ begin
 						when "01110010" => o_triggeredString <= 0;
 						when "01110101" => o_triggeredString <= 0;
 						when others => 
-							-- wait_times := 0;
+							selected_key := '0';
 							o_triggeredString <= 0;
 					end case;
 				end if;
