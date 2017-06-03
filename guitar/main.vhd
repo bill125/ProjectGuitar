@@ -133,8 +133,8 @@ architecture main_bhv of main is
       i_key : in std_logic_vector(7 downto 0);
       i_clk, hclk : in std_logic;
       o_key : out std_logic_vector(7 downto 0);
-      o_triggeredString : out integer range 0 to 5;
-      o_clk : out std_logic
+      o_triggeredString : out integer range 0 to 15;
+      o_clk, o_all_clk : out std_logic
       );
   end component KeyboardAdapter;
 
