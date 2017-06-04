@@ -5,8 +5,8 @@ use work.definitions.all;
 entity looper is
   generic (
     g_looper_index : integer range 0 to 7:= 1;     -- Needs to be set correctly
-    record_key : std_logic_vector(7 downto 0);
-    play_key : std_logic_vector(7 downto 0);
+    record_key : std_logic_vector(7 downto 0) :=x"75";
+    play_key : std_logic_vector(7 downto 0):=x"77";
     g_CLKS_PER_INTERVAl : integer := 10000000     -- Needs to be set correctly. e.g. interval=0.1s, clks=100mhz, 0.1*100m=10m.
     );
   port (
@@ -36,7 +36,8 @@ architecture beh of looper is
   signal l_i_noteGen_RX_DV : std_logic := i_noteGen_RX_DV;
   signal l_i_TX_Done : std_logic := i_TX_Done;
   --signal o_RX_DV1 : std_logic;
-  signal index, end_index : integer range 0 to MaxLength;
+  signal index: integer range 0 to MaxLength;
+  signal end_index : integer range -1 to MaxLength;
 begin
 index1 <= index;
 --cntId1 <= cntId;
@@ -59,7 +60,7 @@ begin
 	end case;
 end process;
   process (i_clk) is
-    variable intvls : integer range 0 to MaxIntervals;
+    variable intvls, last_intvls : integer range 0 to MaxIntervals := 0;
     variable pause_times, wait_times : integer range 0 to MaxWaitTimes := 0;
     variable cnt : integer := 0;
   begin
@@ -77,23 +78,38 @@ end process;
               when record_key =>
                 r_SM_Main <= s_Record;
               when play_key =>
-                wait_times := 0;
-                ss <= ss_Send_Done;
-                r_SM_Main <= s_Play;
+                if end_index >= 0 then 
+                  wait_times := 0;
+                  ss <= ss_Send_Done;
+                  r_SM_Main <= s_Play;
+                else
+                  r_SM_Main <= s_Idle;
+                end if;
               when others =>
                 r_SM_Main <= s_Idle;
             end case;
           else r_SM_Main <= s_Idle;
           end if;
         when s_Record =>
+          o_TX_DV <= '0';
           if l_i_RX_DV /= i_RX_DV and i_RX_DV = '1' and i_key = record_key then --stop recording
             r_SM_Main <= s_Idle;
             end_index <= index - 1;
+            if -5 <= intvls - last_intvls and intvls - last_intvls <= 5 then
+              intvls := last_intvls;
+            else
+              last_intvls := intvls;
+            end if;
 			cntId(0) <= intvls;
           elsif l_i_noteGen_RX_DV /= i_noteGen_RX_DV and i_noteGen_RX_DV = '1' then
             notes(index) <= i_noteLevel;
             if index > 0 then
-				cntId(index) <= intvls;
+              if -6 <= intvls - last_intvls and intvls - last_intvls <= 6 then
+                intvls := last_intvls;
+              else
+                last_intvls := intvls;
+              end if;
+              cntId(index) <= intvls;
 			end if;
             index <= index + 1;
             r_SM_Main <= s_Record;

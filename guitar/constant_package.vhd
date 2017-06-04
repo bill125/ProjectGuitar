@@ -5,10 +5,12 @@ use IEEE.numeric_std.all;
 package definitions is
 	subtype StringStatus is std_logic_vector(7 downto 0);
 	type GuitarStatus is array (0 to 5) of StringStatus;
-    constant MaxLength : integer := 255; --TODO
+    constant MaxLength : integer := 155; --TODO
     constant MaxIntervals : integer := 511;
+    constant MaxLoopers : integer := 3;
     type Noise is array (0 to MaxLength) of integer range 0 to 88;
     type IntArray is array (0 to MaxLength) of integer range 0 to MaxIntervals;--TODO: range?
+    type Loopers127Array is array (0 to MaxLoopers) of integer range 0 to 127;
     function convert_key(i_key: in std_logic_vector(7 downto 0)) return integer;
 end package	definitions;
 package body definitions is
