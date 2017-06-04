@@ -8,15 +8,16 @@ entity VGAController is
 	 port(
 			i_kb_clk    :         in std_logic;
 			i_note_clk  :         in std_logic;
-			i_triggeredString :  in integer range 0 to 15;
-			address		:		  out	STD_LOGIC_VECTOR(14 DOWNTO 0);
-			reset       :         in  STD_LOGIC;
+			i_note_pos  :         in integer range 0 to 5;
+			i_triggeredString :   in integer range 0 to 15;
+			address		:		  out STD_LOGIC_VECTOR(14 DOWNTO 0);
+			reset       :         in STD_LOGIC;
 			q		    :		  in STD_LOGIC;
-			clk         :         in  STD_LOGIC; --25M
+			clk         :         in STD_LOGIC; --25M
 			clk_100m    :         in std_logic;
 			hs,vs       :         out STD_LOGIC; 
-			o_clicked : out std_logic;
-			r, g, b       :         out STD_LOGIC_vector(2 downto 0)
+			o_clicked   :         out std_logic;
+			r, g, b     :         out STD_LOGIC_vector(2 downto 0)
 	  );
 end VGAController;
 
@@ -107,9 +108,11 @@ begin
 	  	end if;
 	 end process;
 	 
-	process (clk, reset)
+	process (clk_100m, reset)
 		variable i : integer range 0 to 100;
+		variable j : integer range 0 to 63 := 0;
 		variable cnt : integer range 0 to 250000 := 0;
+		variable l_note_clk : std_logic := '0';
 	begin
 		if reset = '0' then
 			i := 0;
@@ -119,16 +122,27 @@ begin
 				i := i + 1;
 			end loop;
 			cnt := 0;
-		elsif clk'event and clk = '1' then
+		elsif clk_100m'event and clk_100m = '1' then
+			if l_note_clk = '0' and i_note_clk = '1' then
+				t_x(j) := 401 + i_note_pos * 30;
+				t_y(j) := 0;
+				if j = 63 then
+					j := 0;
+				else
+					j := j + 1;
+				end if;
+			end if;
+			
+			l_note_clk := i_note_clk;
+			
 			if cnt = 200000 then
 				cnt := 0;
 				i := 0;
 				while (i < 64) loop
-					if t_x(i) /= 700 then
-						if t_y(i) = 479 then
-							t_x(i) := 700;
-						end if;
+					if t_y(i) < 480 then
 						t_y(i) := t_y(i) + 1;
+					else
+						t_y(i) := 480;
 					end if;
 					i := i + 1;
 				end loop;
@@ -186,7 +200,7 @@ begin
 	process(reset,clk,x,y) -- XY坐标定位控制
 		variable cnt : integer range 0 to 32767 := 0;
 		variable tmp_c : integer range 0 to 8;
-		variable i : integer range 0 to 15;
+		variable i : integer range 0 to 127;
 	begin  
 		if reset='0' then
 			r1 <= "000";
@@ -238,11 +252,16 @@ begin
 					end if;
 					i := i + 1;
 				end loop;
-		
---				elsif t_x <= x and x <= t_x + 27 and t_y <= y and y <= t_y + 7 then
---					r1 <= "110";
---					g1 <= "110";
---					b1 <= "110";
+				
+				i := 0;
+				while i < 63 loop
+					if y < 386 and t_x(i) <= x and x <= t_x(i) + 27 and t_y(i) <= y and y <= t_y(i) + 7 then
+						r1 <= "110";
+						g1 <= "110";
+						b1 <= "110";
+					end if;
+					i := i + 1;
+				end loop;
 			else 
 				r1 <= "000";
 				g1 <= "000";

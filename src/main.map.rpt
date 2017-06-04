@@ -1,5 +1,5 @@
 Analysis & Synthesis report for main
-Sun Jun 04 16:15:23 2017
+Sun Jun 04 16:45:38 2017
 Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
 
 
@@ -16,43 +16,39 @@ Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
   8. User-Specified and Inferred Latches
   9. Registers Removed During Synthesis
  10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Parameter Settings for Inferred Entity Instance: VGAController:u3|lpm_divide:Div5
- 12. Parameter Settings for Inferred Entity Instance: VGAController:u3|lpm_divide:Div4
- 13. Parameter Settings for Inferred Entity Instance: VGAController:u3|lpm_divide:Div3
- 14. Parameter Settings for Inferred Entity Instance: VGAController:u3|lpm_divide:Div2
- 15. Parameter Settings for Inferred Entity Instance: VGAController:u3|lpm_divide:Div1
+ 11. Parameter Settings for User Entity Instance: KeyboardAdapter:u1
+ 12. Parameter Settings for User Entity Instance: FreqDiv:fd_inst1
+ 13. Parameter Settings for User Entity Instance: FreqDiv:fd_inst3
+ 14. Parameter Settings for Inferred Entity Instance: VGAController:u3|lpm_divide:Div5
+ 15. Parameter Settings for Inferred Entity Instance: VGAController:u3|lpm_divide:Div4
  16. Parameter Settings for Inferred Entity Instance: VGAController:u3|lpm_divide:Div0
- 17. Parameter Settings for User Entity Instance: KeyboardInput:u0
- 18. Parameter Settings for User Entity Instance: KeyboardInput:u0|Keyboard:u0
- 19. Parameter Settings for User Entity Instance: KeyboardInput:u0|seg7:u1
- 20. Parameter Settings for User Entity Instance: KeyboardInput:u0|seg7:u2
- 21. Parameter Settings for User Entity Instance: KeyboardAdapter:u1
- 22. Parameter Settings for User Entity Instance: seg7:u2
- 23. Parameter Settings for User Entity Instance: VGAController:u3
- 24. Parameter Settings for User Entity Instance: FreqDiv:fd_inst1
- 25. Partition Dependent Files
- 26. Partition "sld_hub:sld_hub_inst" Resource Utilization by Entity
- 27. Multiplexer Restructuring Statistics (Restructuring Performed)
- 28. Source assignments for sld_hub:sld_hub_inst
- 29. Source assignments for sld_hub:sld_hub_inst|sld_rom_sr:hub_info_reg
- 30. Parameter Settings for Inferred Entity Instance: sld_hub:sld_hub_inst
- 31. Partition "sld_signaltap:auto_signaltap_0" Resource Utilization by Entity
- 32. Registers Removed During Synthesis
- 33. Multiplexer Restructuring Statistics (Restructuring Performed)
- 34. Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body
- 35. Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst
- 36. Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_m1p3:auto_generated
- 37. Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:\adv_point_3_and_more:advance_pointer_counter
- 38. Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:read_pointer_counter
- 39. Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:status_advance_pointer_counter
- 40. Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:status_read_pointer_counter
- 41. Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_rom_sr:crc_rom_sr
- 42. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
- 43. Port Connectivity Checks: "FreqDiv:fd_inst1"
- 44. Port Connectivity Checks: "VGAController:u3"
- 45. Port Connectivity Checks: "KeyboardAdapter:u1"
- 46. SignalTap II Logic Analyzer Settings
- 47. Analysis & Synthesis Messages
+ 17. Parameter Settings for Inferred Entity Instance: VGAController:u3|lpm_divide:Div1
+ 18. Parameter Settings for Inferred Entity Instance: VGAController:u3|lpm_divide:Div2
+ 19. Parameter Settings for Inferred Entity Instance: VGAController:u3|lpm_divide:Div3
+ 20. Partition Dependent Files
+ 21. Partition "sld_hub:sld_hub_inst" Resource Utilization by Entity
+ 22. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 23. Source assignments for sld_hub:sld_hub_inst
+ 24. Source assignments for sld_hub:sld_hub_inst|sld_rom_sr:hub_info_reg
+ 25. Parameter Settings for Inferred Entity Instance: sld_hub:sld_hub_inst
+ 26. Partition "sld_signaltap:auto_signaltap_0" Resource Utilization by Entity
+ 27. Registers Removed During Synthesis
+ 28. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 29. Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body
+ 30. Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst
+ 31. Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_m1p3:auto_generated
+ 32. Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:\adv_point_3_and_more:advance_pointer_counter
+ 33. Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:read_pointer_counter
+ 34. Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:status_advance_pointer_counter
+ 35. Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:status_read_pointer_counter
+ 36. Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_rom_sr:crc_rom_sr
+ 37. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
+ 38. Port Connectivity Checks: "FreqDiv:fd_inst3"
+ 39. Port Connectivity Checks: "FreqDiv:fd_inst1"
+ 40. Port Connectivity Checks: "VGAController:u3"
+ 41. Port Connectivity Checks: "KeyboardAdapter:u1"
+ 42. SignalTap II Logic Analyzer Settings
+ 43. Analysis & Synthesis Messages
 
 
 
@@ -78,7 +74,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Jun 04 16:15:23 2017    ;
+; Analysis & Synthesis Status        ; Successful - Sun Jun 04 16:45:38 2017    ;
 ; Quartus II Version                 ; 9.0 Build 132 02/25/2009 SJ Full Version ;
 ; Revision Name                      ; main                                     ;
 ; Top-level Entity Name              ; main                                     ;
@@ -233,16 +229,26 @@ applicable agreement for further details.
 ; db/cmpr_5cc.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/db/cmpr_5cc.tdf        ;
 ; sld_rom_sr.vhd                   ; yes             ; Encrypted Megafunction       ; c:/altera/90/quartus/libraries/megafunctions/sld_rom_sr.vhd                  ;
 ; sld_hub.vhd                      ; yes             ; Encrypted Megafunction       ; c:/altera/90/quartus/libraries/megafunctions/sld_hub.vhd                     ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/lpm_divide.tdf                  ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/abs_divider.inc                 ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/sign_div_unsign.inc             ;
+; db/lpm_divide_pto.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/db/lpm_divide_pto.tdf  ;
+; db/abs_divider_6dg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/db/abs_divider_6dg.tdf ;
+; db/alt_u_div_o5f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/db/alt_u_div_o5f.tdf   ;
+; db/add_sub_lkc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/db/add_sub_lkc.tdf     ;
+; db/add_sub_mkc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/db/add_sub_mkc.tdf     ;
+; db/lpm_abs_tr9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/db/lpm_abs_tr9.tdf     ;
+; db/lpm_abs_5s9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/db/lpm_abs_5s9.tdf     ;
 +----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------+
-; Partition Status Summary                           ;
-+----------------+-------------+---------------------+
-; Partition Name ; Synthesized ; Reason              ;
-+----------------+-------------+---------------------+
-; Top            ; no          ; No relevant changes ;
-+----------------+-------------+---------------------+
++--------------------------------------------------------+
+; Partition Status Summary                               ;
++----------------+-------------+-------------------------+
+; Partition Name ; Synthesized ; Reason                  ;
++----------------+-------------+-------------------------+
+; Top            ; yes         ; Dependent files changed ;
++----------------+-------------+-------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -250,22 +256,23 @@ applicable agreement for further details.
 +------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node               ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                 ; Library Name ;
 +------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------+--------------+
-; |main                                    ; 2937 (1)          ; 189 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main                                                                                                               ; work         ;
+; |main                                    ; 7196 (1)          ; 970 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main                                                                                                               ; work         ;
 ;    |FreqDiv:fd_inst1|                    ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FreqDiv:fd_inst1                                                                                              ; work         ;
-;    |KeyboardAdapter:u1|                  ; 118 (118)         ; 40 (40)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|KeyboardAdapter:u1                                                                                            ; work         ;
+;    |FreqDiv:fd_inst3|                    ; 46 (46)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FreqDiv:fd_inst3                                                                                              ; work         ;
+;    |KeyboardAdapter:u1|                  ; 44 (44)           ; 14 (14)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|KeyboardAdapter:u1                                                                                            ; work         ;
 ;    |KeyboardInput:u0|                    ; 60 (0)            ; 28 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|KeyboardInput:u0                                                                                              ; work         ;
 ;       |Keyboard:u0|                      ; 34 (34)           ; 28 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|KeyboardInput:u0|Keyboard:u0                                                                                  ; work         ;
 ;       |seg7:u1|                          ; 13 (13)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|KeyboardInput:u0|seg7:u1                                                                                      ; work         ;
 ;       |seg7:u2|                          ; 13 (13)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|KeyboardInput:u0|seg7:u2                                                                                      ; work         ;
-;    |VGAController:u3|                    ; 2743 (573)        ; 119 (119)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|VGAController:u3                                                                                              ; work         ;
-;       |lpm_divide:Div0|                  ; 359 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|VGAController:u3|lpm_divide:Div0                                                                              ; work         ;
-;          |lpm_divide_pto:auto_generated| ; 359 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|VGAController:u3|lpm_divide:Div0|lpm_divide_pto:auto_generated                                                ; work         ;
-;             |abs_divider_6dg:divider|    ; 359 (3)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|VGAController:u3|lpm_divide:Div0|lpm_divide_pto:auto_generated|abs_divider_6dg:divider                        ; work         ;
+;    |VGAController:u3|                    ; 7030 (4859)       ; 900 (900)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|VGAController:u3                                                                                              ; work         ;
+;       |lpm_divide:Div0|                  ; 362 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|VGAController:u3|lpm_divide:Div0                                                                              ; work         ;
+;          |lpm_divide_pto:auto_generated| ; 362 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|VGAController:u3|lpm_divide:Div0|lpm_divide_pto:auto_generated                                                ; work         ;
+;             |abs_divider_6dg:divider|    ; 362 (6)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|VGAController:u3|lpm_divide:Div0|lpm_divide_pto:auto_generated|abs_divider_6dg:divider                        ; work         ;
 ;                |alt_u_div_o5f:divider|   ; 339 (339)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|VGAController:u3|lpm_divide:Div0|lpm_divide_pto:auto_generated|abs_divider_6dg:divider|alt_u_div_o5f:divider  ; work         ;
 ;                |lpm_abs_5s9:my_abs_num|  ; 17 (17)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|VGAController:u3|lpm_divide:Div0|lpm_divide_pto:auto_generated|abs_divider_6dg:divider|lpm_abs_5s9:my_abs_num ; work         ;
-;       |lpm_divide:Div1|                  ; 362 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|VGAController:u3|lpm_divide:Div1                                                                              ; work         ;
-;          |lpm_divide_pto:auto_generated| ; 362 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|VGAController:u3|lpm_divide:Div1|lpm_divide_pto:auto_generated                                                ; work         ;
-;             |abs_divider_6dg:divider|    ; 362 (6)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|VGAController:u3|lpm_divide:Div1|lpm_divide_pto:auto_generated|abs_divider_6dg:divider                        ; work         ;
+;       |lpm_divide:Div1|                  ; 361 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|VGAController:u3|lpm_divide:Div1                                                                              ; work         ;
+;          |lpm_divide_pto:auto_generated| ; 361 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|VGAController:u3|lpm_divide:Div1|lpm_divide_pto:auto_generated                                                ; work         ;
+;             |abs_divider_6dg:divider|    ; 361 (5)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|VGAController:u3|lpm_divide:Div1|lpm_divide_pto:auto_generated|abs_divider_6dg:divider                        ; work         ;
 ;                |alt_u_div_o5f:divider|   ; 339 (339)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|VGAController:u3|lpm_divide:Div1|lpm_divide_pto:auto_generated|abs_divider_6dg:divider|alt_u_div_o5f:divider  ; work         ;
 ;                |lpm_abs_5s9:my_abs_num|  ; 17 (17)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|VGAController:u3|lpm_divide:Div1|lpm_divide_pto:auto_generated|abs_divider_6dg:divider|lpm_abs_5s9:my_abs_num ; work         ;
 ;       |lpm_divide:Div2|                  ; 361 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|VGAController:u3|lpm_divide:Div2                                                                              ; work         ;
@@ -273,9 +280,9 @@ applicable agreement for further details.
 ;             |abs_divider_6dg:divider|    ; 361 (5)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|VGAController:u3|lpm_divide:Div2|lpm_divide_pto:auto_generated|abs_divider_6dg:divider                        ; work         ;
 ;                |alt_u_div_o5f:divider|   ; 339 (339)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|VGAController:u3|lpm_divide:Div2|lpm_divide_pto:auto_generated|abs_divider_6dg:divider|alt_u_div_o5f:divider  ; work         ;
 ;                |lpm_abs_5s9:my_abs_num|  ; 17 (17)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|VGAController:u3|lpm_divide:Div2|lpm_divide_pto:auto_generated|abs_divider_6dg:divider|lpm_abs_5s9:my_abs_num ; work         ;
-;       |lpm_divide:Div3|                  ; 361 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|VGAController:u3|lpm_divide:Div3                                                                              ; work         ;
-;          |lpm_divide_pto:auto_generated| ; 361 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|VGAController:u3|lpm_divide:Div3|lpm_divide_pto:auto_generated                                                ; work         ;
-;             |abs_divider_6dg:divider|    ; 361 (5)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|VGAController:u3|lpm_divide:Div3|lpm_divide_pto:auto_generated|abs_divider_6dg:divider                        ; work         ;
+;       |lpm_divide:Div3|                  ; 360 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|VGAController:u3|lpm_divide:Div3                                                                              ; work         ;
+;          |lpm_divide_pto:auto_generated| ; 360 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|VGAController:u3|lpm_divide:Div3|lpm_divide_pto:auto_generated                                                ; work         ;
+;             |abs_divider_6dg:divider|    ; 360 (4)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|VGAController:u3|lpm_divide:Div3|lpm_divide_pto:auto_generated|abs_divider_6dg:divider                        ; work         ;
 ;                |alt_u_div_o5f:divider|   ; 339 (339)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|VGAController:u3|lpm_divide:Div3|lpm_divide_pto:auto_generated|abs_divider_6dg:divider|alt_u_div_o5f:divider  ; work         ;
 ;                |lpm_abs_5s9:my_abs_num|  ; 17 (17)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|VGAController:u3|lpm_divide:Div3|lpm_divide_pto:auto_generated|abs_divider_6dg:divider|lpm_abs_5s9:my_abs_num ; work         ;
 ;       |lpm_divide:Div4|                  ; 362 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|VGAController:u3|lpm_divide:Div4                                                                              ; work         ;
@@ -333,14 +340,114 @@ Encoding Type:  One-Hot
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+----------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                         ;
-+---------------------------------------+------------------------------------+
-; Register name                         ; Reason for Removal                 ;
-+---------------------------------------+------------------------------------+
-; VGAController:u3|b1[1]                ; Merged with VGAController:u3|r1[1] ;
-; Total Number of Removed Registers = 1 ;                                    ;
-+---------------------------------------+------------------------------------+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++-----------------------------------------+----------------------------------------+
+; Register name                           ; Reason for Removal                     ;
++-----------------------------------------+----------------------------------------+
+; VGAController:u3|t_x[0][1]              ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[1][1]              ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[2][1]              ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[3][1]              ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[4][1]              ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[5][1]              ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[6][1]              ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[7][1]              ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[8][1]              ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[9][1]              ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[10][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[11][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[12][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[13][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[14][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[15][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[16][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[17][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[18][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[19][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[20][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[21][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[22][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[23][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[24][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[25][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[26][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[27][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[28][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[29][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[30][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[31][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[32][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[33][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[34][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[35][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[36][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[37][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[38][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[39][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[40][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[41][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[42][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[43][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[44][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[45][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[46][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[47][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[48][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[49][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[50][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[51][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[52][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[53][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[54][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[55][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[56][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[57][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[58][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[59][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[60][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[61][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[62][1]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[0][6]              ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[1][6]              ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[2][6]              ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[3][6]              ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[4][6]              ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[5][6]              ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[6][6]              ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[7][6]              ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[8][6]              ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[9][6]              ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[10][6]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[11][6]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[12][6]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[13][6]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[14][6]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[15][6]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[16][6]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[17][6]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[18][6]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[19][6]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[20][6]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[21][6]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[22][6]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[23][6]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[24][6]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[25][6]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[26][6]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[27][6]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[28][6]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[29][6]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[30][6]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[31][6]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[32][6]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[33][6]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[34][6]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[35][6]             ; Stuck at GND due to stuck port data_in ;
+; VGAController:u3|t_x[36][6]             ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 506 ;                                        ;
++-----------------------------------------+----------------------------------------+
+* Table truncated at 100 items. To change the number of removed registers reported, set the "Number of Removed Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -348,25 +455,191 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_len[5][1]                      ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_len[4][4]                      ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_len[0][9]                      ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_len[1][1]                      ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_len[2][7]                      ;
 ; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_len[3][6]                      ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_len[2][0]                      ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_len[1][4]                      ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_len[0][2]                      ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |main|KeyboardAdapter:u1|\receive_trigger:wait_times[7] ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 3 LEs                ; 9 LEs                  ; Yes        ; |main|KeyboardInput:u0|Keyboard:u0|wait_times[2]        ;
-; 16:1               ; 2 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; Yes        ; |main|VGAController:u3|g1[2]                            ;
-; 19:1               ; 2 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|g1[0]                            ;
-; 27:1               ; 2 bits    ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|g1[1]                            ;
-; 27:1               ; 2 bits    ; 36 LEs        ; 28 LEs               ; 8 LEs                  ; Yes        ; |main|VGAController:u3|r1[1]                            ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_len~55                         ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_len~40                         ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_len~37                         ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_len~29                         ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_len~12                         ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_len[4][8]                      ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_len[5][3]                      ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[0][0]                        ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[1][9]                        ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[2][0]                        ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[3][0]                        ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[4][9]                        ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[5][9]                        ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[6][0]                        ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[7][4]                        ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[8][4]                        ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[9][5]                        ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[10][5]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[11][0]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[12][8]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[13][0]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[14][7]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[15][9]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[16][0]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[17][0]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[18][3]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[19][8]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[20][0]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[21][3]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[22][9]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[23][9]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[24][9]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[25][9]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[26][5]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[27][1]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[28][4]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[29][9]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[30][5]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[31][0]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[32][8]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[33][0]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[34][7]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[35][8]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[36][6]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[37][9]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[38][9]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[39][9]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[40][0]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[41][5]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[42][0]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[43][0]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[44][9]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[45][1]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[46][3]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[47][9]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[48][9]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[49][0]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[50][9]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[51][9]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[52][4]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[53][0]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[54][0]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[55][7]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[56][6]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[57][7]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[58][7]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[59][4]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[60][7]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[61][5]                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |main|VGAController:u3|t_y[62][3]                       ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main|KeyboardAdapter:u1|\receive_trigger:wait_times[0] ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 3 LEs                ; 9 LEs                  ; Yes        ; |main|KeyboardInput:u0|Keyboard:u0|wait_times[0]        ;
+; 79:1               ; 2 bits    ; 104 LEs       ; 12 LEs               ; 92 LEs                 ; Yes        ; |main|VGAController:u3|b1[2]                            ;
+; 82:1               ; 2 bits    ; 108 LEs       ; 100 LEs              ; 8 LEs                  ; Yes        ; |main|VGAController:u3|g1[0]                            ;
+; 90:1               ; 2 bits    ; 120 LEs       ; 28 LEs               ; 92 LEs                 ; Yes        ; |main|VGAController:u3|g1[1]                            ;
+; 90:1               ; 2 bits    ; 120 LEs       ; 102 LEs              ; 18 LEs                 ; Yes        ; |main|VGAController:u3|r1[1]                            ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~1259                         ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~1244                         ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~1239                         ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~1221                         ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~1217                         ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~1202                         ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~1191                         ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~1189                         ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~1171                         ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~1169                         ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~1151                         ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~1146                         ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~1130                         ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~1120                         ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~1119                         ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~1100                         ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~1094                         ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~1080                         ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~1070                         ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~1066                         ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~1059                         ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~1040                         ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~1035                         ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~1026                         ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~1018                         ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~1006                         ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~999                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~984                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~973                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~969                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~952                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~943                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~939                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~924                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~914                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~906                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~894                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~889                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~875                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~863                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~853                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~849                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~832                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~824                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~819                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~806                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~797                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~780                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~770                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~769                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~750                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~746                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~730                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~720                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~719                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~700                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~699                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~683                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~676                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~660                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~650                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~641                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_y~639                          ;
 ; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_len~9                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_len~15                         ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_len~23                         ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_len~39                         ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_len~48                         ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|VGAController:u3|t_len~57                         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: KeyboardAdapter:u1 ;
++----------------+----------+-------------------------------------+
+; Parameter Name ; Value    ; Type                                ;
++----------------+----------+-------------------------------------+
+; string_0       ; 01001011 ; Unsigned Binary                     ;
+; string_1       ; 01000010 ; Unsigned Binary                     ;
+; string_2       ; 00111011 ; Unsigned Binary                     ;
+; string_3       ; 00110001 ; Unsigned Binary                     ;
+; string_4       ; 00110010 ; Unsigned Binary                     ;
+; string_5       ; 00101010 ; Unsigned Binary                     ;
+; string_6       ; 01000100 ; Unsigned Binary                     ;
+; string_7       ; 01000011 ; Unsigned Binary                     ;
+; string_8       ; 00111100 ; Unsigned Binary                     ;
++----------------+----------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: FreqDiv:fd_inst1 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; div            ; 4     ; Signed Integer                       ;
+; half           ; 2     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: FreqDiv:fd_inst3 ;
++----------------+-----------+----------------------------------+
+; Parameter Name ; Value     ; Type                             ;
++----------------+-----------+----------------------------------+
+; div            ; 100000000 ; Signed Integer                   ;
+; half           ; 50000000  ; Signed Integer                   ;
++----------------+-----------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------------------------------------+
@@ -416,30 +689,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-----------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: VGAController:u3|lpm_divide:Div3 ;
-+------------------------+----------------+-----------------------------------------+
-; Parameter Name         ; Value          ; Type                                    ;
-+------------------------+----------------+-----------------------------------------+
-; LPM_WIDTHN             ; 19             ; Untyped                                 ;
-; LPM_WIDTHD             ; 11             ; Untyped                                 ;
-; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                 ;
-; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                 ;
-; LPM_PIPELINE           ; 0              ; Untyped                                 ;
-; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                 ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                                 ;
-; CBXI_PARAMETER         ; lpm_divide_pto ; Untyped                                 ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                                 ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                 ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                              ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                            ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                            ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                          ;
-+------------------------+----------------+-----------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: VGAController:u3|lpm_divide:Div2 ;
+; Parameter Settings for Inferred Entity Instance: VGAController:u3|lpm_divide:Div0 ;
 +------------------------+----------------+-----------------------------------------+
 ; Parameter Name         ; Value          ; Type                                    ;
 +------------------------+----------------+-----------------------------------------+
@@ -485,7 +735,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-----------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: VGAController:u3|lpm_divide:Div0 ;
+; Parameter Settings for Inferred Entity Instance: VGAController:u3|lpm_divide:Div2 ;
 +------------------------+----------------+-----------------------------------------+
 ; Parameter Name         ; Value          ; Type                                    ;
 +------------------------+----------------+-----------------------------------------+
@@ -507,98 +757,44 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: KeyboardInput:u0 ;
-+----------------+-------+--------------------------------------+
-; Parameter Name ; Value ; Type                                 ;
-+----------------+-------+--------------------------------------+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: VGAController:u3|lpm_divide:Div3 ;
++------------------------+----------------+-----------------------------------------+
+; Parameter Name         ; Value          ; Type                                    ;
++------------------------+----------------+-----------------------------------------+
+; LPM_WIDTHN             ; 19             ; Untyped                                 ;
+; LPM_WIDTHD             ; 11             ; Untyped                                 ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                 ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                                 ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                 ;
+; CBXI_PARAMETER         ; lpm_divide_pto ; Untyped                                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                          ;
++------------------------+----------------+-----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: KeyboardInput:u0|Keyboard:u0 ;
-+----------------+-------+--------------------------------------------------+
-; Parameter Name ; Value ; Type                                             ;
-+----------------+-------+--------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: KeyboardInput:u0|seg7:u1 ;
-+----------------+-------+----------------------------------------------+
-; Parameter Name ; Value ; Type                                         ;
-+----------------+-------+----------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: KeyboardInput:u0|seg7:u2 ;
-+----------------+-------+----------------------------------------------+
-; Parameter Name ; Value ; Type                                         ;
-+----------------+-------+----------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: KeyboardAdapter:u1 ;
-+----------------+----------+-------------------------------------+
-; Parameter Name ; Value    ; Type                                ;
-+----------------+----------+-------------------------------------+
-; string_0       ; 01001011 ; Unsigned Binary                     ;
-; string_1       ; 01000010 ; Unsigned Binary                     ;
-; string_2       ; 00111011 ; Unsigned Binary                     ;
-; string_3       ; 00110001 ; Unsigned Binary                     ;
-; string_4       ; 00110010 ; Unsigned Binary                     ;
-; string_5       ; 00101010 ; Unsigned Binary                     ;
-; string_6       ; 00111100 ; Unsigned Binary                     ;
-; string_7       ; 01000011 ; Unsigned Binary                     ;
-; string_8       ; 01000100 ; Unsigned Binary                     ;
-+----------------+----------+-------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------+
-; Parameter Settings for User Entity Instance: seg7:u2 ;
-+----------------+-------+-----------------------------+
-; Parameter Name ; Value ; Type                        ;
-+----------------+-------+-----------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: VGAController:u3 ;
-+----------------+-------+--------------------------------------+
-; Parameter Name ; Value ; Type                                 ;
-+----------------+-------+--------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: FreqDiv:fd_inst1 ;
-+----------------+-------+--------------------------------------+
-; Parameter Name ; Value ; Type                                 ;
-+----------------+-------+--------------------------------------+
-; div            ; 4     ; Signed Integer                       ;
-; half           ; 2     ; Signed Integer                       ;
-+----------------+-------+--------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------------+
-; Partition Dependent Files                                                              ;
-+----------------------+--------------------+---------+----------------------------------+
-; File                 ; Location           ; Library ; Checksum                         ;
-+----------------------+--------------------+---------+----------------------------------+
-; lmf/maxplus2.lmf     ; Quartus II Install ; work    ; a36c8ec425c8a2589af98b2d4daabc3  ;
-; constant_package.vhd ; Project Directory  ; work    ; 5f574639e8adf843f2cbf2fe13fe9e1  ;
-; FreqDiv.vhd          ; Project Directory  ; work    ; 75db2ce4372230bb359cf3368cf5c71  ;
-; Keyboard.vhd         ; Project Directory  ; work    ; 4c8e3ec5e83c0a0e0f7c9ea152eaf5   ;
-; KeyboardAdapter.vhd  ; Project Directory  ; work    ; 696fc96a7fcfa24dfb2d1d882bc683d0 ;
-; KeyboardInput.vhd    ; Project Directory  ; work    ; 1397baed75e5c0a0b3ff7b8a845852   ;
-; main.vhd             ; Project Directory  ; work    ; 7d362b2e26026e31d1316e757fc11d4  ;
-; seg7.vhd             ; Project Directory  ; work    ; 6112e7d9528c793d17375d2fa6f1fa8  ;
-; VGAController.vhd    ; Project Directory  ; work    ; 5b44e6f8efc4d7def1d918bdd11b3b72 ;
-+----------------------+--------------------+---------+----------------------------------+
++---------------------------------------------------------------------------------------+
+; Partition Dependent Files                                                             ;
++----------------------+--------------------+---------+---------------------------------+
+; File                 ; Location           ; Library ; Checksum                        ;
++----------------------+--------------------+---------+---------------------------------+
+; lmf/maxplus2.lmf     ; Quartus II Install ; work    ; a36c8ec425c8a2589af98b2d4daabc3 ;
+; constant_package.vhd ; Project Directory  ; work    ; 5f574639e8adf843f2cbf2fe13fe9e1 ;
+; FreqDiv.vhd          ; Project Directory  ; work    ; 75db2ce4372230bb359cf3368cf5c71 ;
+; Keyboard.vhd         ; Project Directory  ; work    ; 4c8e3ec5e83c0a0e0f7c9ea152eaf5  ;
+; KeyboardAdapter.vhd  ; Project Directory  ; work    ; ad799fd89234fcc526904b02d7a759e ;
+; KeyboardInput.vhd    ; Project Directory  ; work    ; 1397baed75e5c0a0b3ff7b8a845852  ;
+; main.vhd             ; Project Directory  ; work    ; 1365e3e3636d3d91da3832bf48e7f9  ;
+; seg7.vhd             ; Project Directory  ; work    ; 6112e7d9528c793d17375d2fa6f1fa8 ;
+; VGAController.vhd    ; Project Directory  ; work    ; f18c8a160a3d8abb8b8624e6f9a43   ;
++----------------------+--------------------+---------+---------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -900,6 +1096,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------+
+; Port Connectivity Checks: "FreqDiv:fd_inst3" ;
++------+-------+----------+--------------------+
+; Port ; Type  ; Severity ; Details            ;
++------+-------+----------+--------------------+
+; rst  ; Input ; Info     ; Stuck at GND       ;
++------+-------+----------+--------------------+
+
+
++----------------------------------------------+
 ; Port Connectivity Checks: "FreqDiv:fd_inst1" ;
 +------+-------+----------+--------------------+
 ; Port ; Type  ; Severity ; Details            ;
@@ -908,13 +1113,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+-------+----------+--------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "VGAController:u3"                                                                      ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-; Port    ; Type   ; Severity ; Details                                                                             ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-; address ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "VGAController:u3"                                                                         ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; i_note_pos ; Input  ; Info     ; Stuck at GND                                                                        ;
+; address    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------+
@@ -942,7 +1148,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
-    Info: Processing started: Sun Jun 04 16:15:18 2017
+    Info: Processing started: Sun Jun 04 16:44:59 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ProjectGuitar -c main
 Info: Found 2 design units, including 1 entities, in source file KeyboardAdapter.vhd
     Info: Found design unit 1: KeyboardAdapter-KeyboardAdapter_bhv
@@ -994,8 +1200,8 @@ Info: Found 2 design units, including 1 entities, in source file UARTOutAdapter.
 Info: Elaborating entity "main" for the top level hierarchy
 Warning (10541): VHDL Signal Declaration warning at main.vhd(10): used implicit default value for signal "TXD" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Warning (10541): VHDL Signal Declaration warning at main.vhd(12): used implicit default value for signal "o_cnt" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at main.vhd(140): used implicit default value for signal "t_TX_BV" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at main.vhd(145): used implicit default value for signal "t_q" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at main.vhd(144): used implicit default value for signal "t_TX_BV" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at main.vhd(149): used implicit default value for signal "t_q" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Info: Elaborating entity "KeyboardInput" for hierarchy "KeyboardInput:u0"
 Info: Elaborating entity "Keyboard" for hierarchy "KeyboardInput:u0|Keyboard:u0"
 Info (10041): Inferred latch for "scancode[0]" at Keyboard.vhd(30)
@@ -1009,8 +1215,9 @@ Info (10041): Inferred latch for "scancode[7]" at Keyboard.vhd(30)
 Info: Elaborating entity "seg7" for hierarchy "KeyboardInput:u0|seg7:u1"
 Info: Elaborating entity "KeyboardAdapter" for hierarchy "KeyboardAdapter:u1"
 Info: Elaborating entity "VGAController" for hierarchy "VGAController:u3"
-Warning (10541): VHDL Signal Declaration warning at VGAController.vhd(11): used implicit default value for signal "address" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at VGAController.vhd(13): used implicit default value for signal "address" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Info: Elaborating entity "FreqDiv" for hierarchy "FreqDiv:fd_inst1"
+Info: Elaborating entity "FreqDiv" for hierarchy "FreqDiv:fd_inst3"
 Info: Found 1 design units, including 1 entities, in source file db/altsyncram_m1p3.tdf
     Info: Found entity 1: altsyncram_m1p3
 Info: Found 1 design units, including 1 entities, in source file db/mux_aoc.tdf
@@ -1032,9 +1239,179 @@ Info: Found 1 design units, including 1 entities, in source file db/cntr_gui.tdf
 Info: Found 1 design units, including 1 entities, in source file db/cmpr_5cc.tdf
     Info: Found entity 1: cmpr_5cc
 Info: Analysis and Synthesis generated SignalTap II or debug node instance "auto_signaltap_0"
-Info: 0 design partitions require synthesis
-Info: 1 design partition does not require synthesis
-    Info: Partition "Top" does not require synthesis because there were no relevant design changes
+Info: 1 design partition requires Analysis and Synthesis
+    Info: Partition "Top" requires synthesis because there were changes to its dependent source files
+Info: No design partitions will skip synthesis in the current incremental compilation
+Info: Inferred 6 megafunctions from design logic
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "VGAController:u3|Div5"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "VGAController:u3|Div4"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "VGAController:u3|Div0"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "VGAController:u3|Div1"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "VGAController:u3|Div2"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "VGAController:u3|Div3"
+Info: Elaborated megafunction instantiation "VGAController:u3|lpm_divide:Div5"
+Info: Instantiated megafunction "VGAController:u3|lpm_divide:Div5" with the following parameter:
+    Info: Parameter "LPM_WIDTHN" = "19"
+    Info: Parameter "LPM_WIDTHD" = "11"
+    Info: Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info: Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info: Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info: Found 1 design units, including 1 entities, in source file db/lpm_divide_pto.tdf
+    Info: Found entity 1: lpm_divide_pto
+Info: Found 1 design units, including 1 entities, in source file db/abs_divider_6dg.tdf
+    Info: Found entity 1: abs_divider_6dg
+Info: Found 1 design units, including 1 entities, in source file db/alt_u_div_o5f.tdf
+    Info: Found entity 1: alt_u_div_o5f
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_lkc.tdf
+    Info: Found entity 1: add_sub_lkc
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_mkc.tdf
+    Info: Found entity 1: add_sub_mkc
+Info: Found 1 design units, including 1 entities, in source file db/lpm_abs_tr9.tdf
+    Info: Found entity 1: lpm_abs_tr9
+Info: Found 1 design units, including 1 entities, in source file db/lpm_abs_5s9.tdf
+    Info: Found entity 1: lpm_abs_5s9
+Info: Starting Logic Optimization and Technology Mapping for Top Partition
+Info: Ignored 2 buffer(s)
+    Info: Ignored 2 CARRY_SUM buffer(s)
+Info: Registers with preset signals will power-up high
+Info: DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "TXD" is stuck at GND
+    Warning (13410): Pin "clk_out" is stuck at GND
+    Warning (13410): Pin "o_cnt[0]" is stuck at GND
+    Warning (13410): Pin "o_cnt[1]" is stuck at GND
+    Warning (13410): Pin "o_cnt[2]" is stuck at GND
+Critical Warning: Ignored Power-Up Level option on the following registers
+    Critical Warning: Register VGAController:u3|t_x[0][9] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[0][7] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[21][2] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[21][4] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[42][9] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[42][7] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[18][9] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[18][4] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[40][9] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[40][7] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[15][3] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[15][4] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[39][5] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[39][7] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[28][9] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[28][7] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[29][2] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[29][4] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[11][9] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[11][4] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[37][3] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[37][7] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[8][9] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[8][4] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[9][3] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[9][4] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[14][2] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[14][7] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[60][9] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[60][7] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[10][9] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[10][7] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[36][3] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[36][7] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[32][5] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[32][7] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[48][2] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[48][7] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[3][9] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[3][4] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[33][3] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[33][4] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[13][2] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[13][4] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[38][9] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[38][7] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[4][9] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[4][4] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[5][3] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[5][7] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[55][9] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[55][7] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[59][5] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[59][7] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[31][2] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[31][4] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[47][9] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[47][4] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[25][2] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[25][7] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[44][2] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[44][7] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[43][3] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[43][4] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[53][9] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[53][7] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[19][3] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[19][7] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[41][2] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[41][7] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[16][2] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[16][4] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[17][9] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[17][7] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[1][2] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[1][7] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[2][9] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[2][4] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[46][5] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[46][7] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[30][2] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[30][7] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[26][2] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[26][4] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[27][2] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[27][7] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[45][9] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[45][7] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[54][5] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[54][4] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[20][5] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[20][7] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[52][9] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[52][4] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[51][9] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[51][4] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[57][3] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[57][4] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[24][2] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[24][4] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[58][5] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[58][4] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[22][9] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[22][7] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[23][5] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[23][4] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[35][5] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[35][7] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[49][9] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[49][4] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[6][9] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[6][4] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[34][3] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[34][4] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[56][2] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[56][7] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[7][3] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[7][7] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[12][2] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[12][4] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[50][3] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[50][4] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[62][9] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[62][4] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[61][9] will power up to High
+    Critical Warning: Register VGAController:u3|t_x[61][7] will power up to High
+Info: Implemented 7383 device resources after synthesis - the final resource count might be different
+    Info: Implemented 6 input pins
+    Info: Implemented 39 output pins
+    Info: Implemented 7338 logic cells
 Info: Starting Logic Optimization and Technology Mapping for Partition sld_signaltap:auto_signaltap_0
 Info: Registers with preset signals will power-up high
 Info: DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
@@ -1050,10 +1427,10 @@ Info: Implemented 170 device resources after synthesis - the final resource coun
     Info: Implemented 18 input pins
     Info: Implemented 36 output pins
     Info: Implemented 116 logic cells
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 321 megabytes
-    Info: Processing ended: Sun Jun 04 16:15:23 2017
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:05
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 140 warnings
+    Info: Peak virtual memory: 334 megabytes
+    Info: Processing ended: Sun Jun 04 16:45:41 2017
+    Info: Elapsed time: 00:00:42
+    Info: Total CPU time (on all processors): 00:00:42
 
 

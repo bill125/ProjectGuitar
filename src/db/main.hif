@@ -161,7 +161,7 @@ ON
 # case_insensitive
 # source_file
 KeyboardAdapter.vhd
-deb1202dd776cf7ebfcd69d5e3d403d
+3fa2d4cc77bda7a777f2cf0ef24883
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -199,7 +199,7 @@ string_5
 PARAMETER_UNSIGNED_BIN
 DEF
 string_6
-00111100
+01000100
 PARAMETER_UNSIGNED_BIN
 DEF
 string_7
@@ -207,7 +207,7 @@ string_7
 PARAMETER_UNSIGNED_BIN
 DEF
 string_8
-01000100
+00111100
 PARAMETER_UNSIGNED_BIN
 DEF
  constraint(i_key)
@@ -221,6 +221,61 @@ USR
 }
 # hierarchies {
 KeyboardAdapter:u1
+}
+# lmf
+..|..|..|..|..|..|altera|90|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+VGAController
+# storage
+db|main.(5).cnf
+db|main.(5).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+VGAController.vhd
+1465b89196ca8307a75dfcc0bd57b4
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(address)
+14 downto 0
+PARAMETER_STRING
+USR
+ constraint(r)
+2 downto 0
+PARAMETER_STRING
+USR
+ constraint(g)
+2 downto 0
+PARAMETER_STRING
+USR
+ constraint(b)
+2 downto 0
+PARAMETER_STRING
+USR
+}
+# include_file {
+constant_package.vhd
+e9f843b85faeca28634bc4a269654
+}
+# hierarchies {
+VGAController:u3
 }
 # lmf
 ..|..|..|..|..|..|altera|90|quartus|lmf|maxplus2.lmf
@@ -319,11 +374,11 @@ SLD_COMMON_IP_VERSION
 PARAMETER_SIGNED_DEC
 DEF
 sld_data_bits
-5
+6
 PARAMETER_UNKNOWN
 USR
 sld_trigger_bits
-5
+6
 PARAMETER_UNKNOWN
 USR
 SLD_NODE_CRC_BITS
@@ -331,11 +386,11 @@ SLD_NODE_CRC_BITS
 PARAMETER_SIGNED_DEC
 DEF
 sld_node_crc_hiword
-46736
+29910
 PARAMETER_UNKNOWN
 USR
 sld_node_crc_loword
-32234
+9150
 PARAMETER_UNKNOWN
 USR
 SLD_INCREMENTAL_ROUTING
@@ -431,11 +486,11 @@ NONE
 PARAMETER_STRING
 DEF
 sld_inversion_mask_length
-36
+39
 PARAMETER_UNKNOWN
 USR
 sld_inversion_mask
-000000000000000000000000000000000000
+000000000000000000000000000000000000000
 PARAMETER_UNKNOWN
 USR
 sld_power_up_trigger
@@ -533,11 +588,11 @@ sld_common_ip_version
 PARAMETER_SIGNED_DEC
 USR
 sld_data_bits
-5
+6
 PARAMETER_SIGNED_DEC
 USR
 sld_trigger_bits
-5
+6
 PARAMETER_SIGNED_DEC
 USR
 sld_node_crc_bits
@@ -545,11 +600,11 @@ sld_node_crc_bits
 PARAMETER_SIGNED_DEC
 USR
 sld_node_crc_hiword
-46736
+29910
 PARAMETER_SIGNED_DEC
 USR
 sld_node_crc_loword
-32234
+9150
 PARAMETER_SIGNED_DEC
 USR
 sld_incremental_routing
@@ -637,11 +692,11 @@ NONE
 PARAMETER_STRING
 USR
 sld_inversion_mask_length
-36
+39
 PARAMETER_SIGNED_DEC
 USR
 sld_inversion_mask
-000000000000000000000000000000000000
+000000000000000000000000000000000000000
 PARAMETER_UNSIGNED_BIN
 USR
 sld_power_up_trigger
@@ -741,7 +796,7 @@ USR
 PARAMETER_STRING
 USR
  constraint(sld_inversion_mask)
-0 to 35
+0 to 38
 PARAMETER_STRING
 USR
  constraint(sld_state_flow_mgr_entity)
@@ -761,11 +816,11 @@ USR
 PARAMETER_STRING
 USR
  constraint(acq_data_in)
-4 downto 0
+5 downto 0
 PARAMETER_STRING
 USR
  constraint(acq_trigger_in)
-4 downto 0
+5 downto 0
 PARAMETER_STRING
 USR
  constraint(acq_storage_qualifier_in)
@@ -785,11 +840,11 @@ USR
 PARAMETER_STRING
 USR
  constraint(acq_data_out)
-4 downto 0
+5 downto 0
 PARAMETER_STRING
 USR
  constraint(acq_trigger_out)
-4 downto 0
+5 downto 0
 PARAMETER_STRING
 USR
 }
@@ -839,7 +894,7 @@ common_ip_version
 PARAMETER_SIGNED_DEC
 USR
 trigger_input_width
-5
+6
 PARAMETER_SIGNED_DEC
 USR
 trigger_level
@@ -935,7 +990,7 @@ USR
 PARAMETER_STRING
 USR
  constraint(inversion_mask)
-35 downto 35
+38 downto 38
 PARAMETER_STRING
 USR
  constraint(state_flow_mgr_entity)
@@ -951,7 +1006,7 @@ USR
 PARAMETER_STRING
 USR
  constraint(acq_trigger_in)
-4 downto 0
+5 downto 0
 PARAMETER_STRING
 USR
  constraint(storage_qualifier_in)
@@ -1063,12 +1118,12 @@ ACLR
 3
 }
 # include_file {
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
-99832fdf63412df51d7531202d74e75
 ..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_constant.inc
 dcde44eee59335c1e2fe75d574f9646
 ..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|dffeea.inc
 55d29d20f7e852c37746bec4e2495ec
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
+99832fdf63412df51d7531202d74e75
 }
 # macro_sequence
 
@@ -1117,7 +1172,7 @@ trigger_level
 PARAMETER_SIGNED_DEC
 USR
 data_bits
-5
+6
 PARAMETER_SIGNED_DEC
 USR
 pipeline
@@ -1141,7 +1196,7 @@ USR
 PARAMETER_STRING
 USR
  constraint(data_in)
-4 downto 0
+5 downto 0
 PARAMETER_STRING
 USR
  constraint(trigger_level_match_out)
@@ -1171,7 +1226,7 @@ db|main.(12).cnf
 7
 # user_parameter {
 LPM_WIDTH
-15
+18
 PARAMETER_SIGNED_DEC
 USR
 LPM_DIRECTION
@@ -1238,6 +1293,15 @@ Q3
 Q2
 -1
 3
+Q17
+-1
+3
+Q16
+-1
+3
+Q15
+-1
+3
 Q14
 -1
 3
@@ -1270,12 +1334,12 @@ ACLR
 3
 }
 # include_file {
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
-99832fdf63412df51d7531202d74e75
 ..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_constant.inc
 dcde44eee59335c1e2fe75d574f9646
 ..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|dffeea.inc
 55d29d20f7e852c37746bec4e2495ec
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
+99832fdf63412df51d7531202d74e75
 }
 # macro_sequence
 
@@ -1320,7 +1384,7 @@ common_ip_version
 PARAMETER_SIGNED_DEC
 USR
 data_bits
-5
+6
 PARAMETER_SIGNED_DEC
 USR
 pattern_bits
@@ -1340,11 +1404,11 @@ pipeline
 PARAMETER_SIGNED_DEC
 USR
  constraint(data_in)
-4 downto 0
+5 downto 0
 PARAMETER_STRING
 USR
  constraint(pattern_in)
-14 downto 0
+17 downto 0
 PARAMETER_STRING
 USR
 }
@@ -1637,12 +1701,12 @@ ACLR
 3
 }
 # include_file {
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
-99832fdf63412df51d7531202d74e75
 ..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_constant.inc
 dcde44eee59335c1e2fe75d574f9646
 ..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|dffeea.inc
 55d29d20f7e852c37746bec4e2495ec
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
+99832fdf63412df51d7531202d74e75
 }
 # macro_sequence
 
@@ -1828,12 +1892,12 @@ ACLR
 3
 }
 # include_file {
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
-99832fdf63412df51d7531202d74e75
 ..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_constant.inc
 dcde44eee59335c1e2fe75d574f9646
 ..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|dffeea.inc
 55d29d20f7e852c37746bec4e2495ec
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
+99832fdf63412df51d7531202d74e75
 }
 # macro_sequence
 
@@ -1878,7 +1942,7 @@ DUAL_PORT
 PARAMETER_UNKNOWN
 USR
 WIDTH_A
-5
+6
 PARAMETER_SIGNED_DEC
 USR
 WIDTHAD_A
@@ -1914,7 +1978,7 @@ NONE
 PARAMETER_UNKNOWN
 USR
 WIDTH_B
-5
+6
 PARAMETER_SIGNED_DEC
 USR
 WIDTHAD_B
@@ -2046,12 +2110,15 @@ Cyclone II
 PARAMETER_UNKNOWN
 USR
 CBXI_PARAMETER
-altsyncram_k1p3
+altsyncram_m1p3
 PARAMETER_UNKNOWN
 USR
 }
 # used_port {
 wren_a
+-1
+3
+q_b5
 -1
 3
 q_b4
@@ -2067,6 +2134,9 @@ q_b1
 -1
 3
 q_b0
+-1
+3
+data_a5
 -1
 3
 data_a4
@@ -2137,40 +2207,43 @@ address_a0
 3
 }
 # include_file {
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|altram.inc
-e66a83eccf6717bed97c99d891ad085
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_decode.inc
-bd0e2f5e01c1bd360461dceb53d48
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_mux.inc
-c22bfd353214c01495b560fc34e47d79
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
-99832fdf63412df51d7531202d74e75
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|stratix_ram_block.inc
-2263a3bdfffeb150af977ee13902f70
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|altdpram.inc
-99d442b5b66c88db4daf94d99c6e4e77
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|a_rdenreg.inc
-60d229340bc3c24acb0a137b4849830
 ..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|altqpram.inc
 74e08939f96a7ea8e7a4d59a5b01fe7
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|altram.inc
+e66a83eccf6717bed97c99d891ad085
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|a_rdenreg.inc
+60d229340bc3c24acb0a137b4849830
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_mux.inc
+c22bfd353214c01495b560fc34e47d79
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|altdpram.inc
+99d442b5b66c88db4daf94d99c6e4e77
 ..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|altrom.inc
 d4e3a69a331d3a99d3281790d99a1ebd
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|stratix_ram_block.inc
+2263a3bdfffeb150af977ee13902f70
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_decode.inc
+bd0e2f5e01c1bd360461dceb53d48
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
+99832fdf63412df51d7531202d74e75
 }
 # macro_sequence
 
 # end
 # entity
-altsyncram_k1p3
+altsyncram_m1p3
 # storage
 db|main.(21).cnf
 db|main.(21).cnf
 # case_insensitive
 # source_file
-db|altsyncram_k1p3.tdf
-67ac71937bba7646335cfe7b46888ae4
+db|altsyncram_m1p3.tdf
+97a9a244f23f2c11282d97165d9bb2da
 7
 # used_port {
 wren_a
+-1
+3
+q_b5
 -1
 3
 q_b4
@@ -2186,6 +2259,9 @@ q_b1
 -1
 3
 q_b0
+-1
+3
+data_a5
 -1
 3
 data_a4
@@ -2524,24 +2600,24 @@ data0
 3
 }
 # include_file {
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_decode.inc
-bd0e2f5e01c1bd360461dceb53d48
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|alt_le_rden_reg.inc
-7591066e9fa6e1ee16e5ba18b60506f
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_mux.inc
-c22bfd353214c01495b560fc34e47d79
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
-99832fdf63412df51d7531202d74e75
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|a_hdffe.inc
-6e1dd1dda0dcf1122cd2b84d66c10b3
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|altsyncram.inc
-1b5760dd55919ddb45bfb2c0e896218b
-..|..|..|..|..|..|altera|90|quartus|libraries|others|maxplus2|memmodes.inc
-44d4551a35f349f0dbacaf799d39950
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|a_rdenreg.inc
-60d229340bc3c24acb0a137b4849830
 ..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|altqpram.inc
 74e08939f96a7ea8e7a4d59a5b01fe7
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|altsyncram.inc
+1b5760dd55919ddb45bfb2c0e896218b
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|a_rdenreg.inc
+60d229340bc3c24acb0a137b4849830
+..|..|..|..|..|..|altera|90|quartus|libraries|others|maxplus2|memmodes.inc
+44d4551a35f349f0dbacaf799d39950
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|a_hdffe.inc
+6e1dd1dda0dcf1122cd2b84d66c10b3
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_mux.inc
+c22bfd353214c01495b560fc34e47d79
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|alt_le_rden_reg.inc
+7591066e9fa6e1ee16e5ba18b60506f
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_decode.inc
+bd0e2f5e01c1bd360461dceb53d48
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
+99832fdf63412df51d7531202d74e75
 }
 # macro_sequence
 
@@ -2739,14 +2815,14 @@ data0_0
 3
 }
 # include_file {
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
-99832fdf63412df51d7531202d74e75
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|bypassff.inc
-8e8df160d449a63ec15dc86ecf2b373f
 ..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|muxlut.inc
 f172666ca13e5e31e17e3f6cb35af52
 ..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|altshift.inc
 70fa13aee7d6d160ef20b2de32813a
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|bypassff.inc
+8e8df160d449a63ec15dc86ecf2b373f
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
+99832fdf63412df51d7531202d74e75
 }
 # macro_sequence
 
@@ -2971,16 +3047,16 @@ data0
 3
 }
 # include_file {
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
-99832fdf63412df51d7531202d74e75
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|declut.inc
-b1d5939399e5c04dfe1d209af8cc490
 ..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_compare.inc
 aec4ea1b78f4cda1c3effe18f1abbf63
 ..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|altshift.inc
 70fa13aee7d6d160ef20b2de32813a
 ..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_constant.inc
 dcde44eee59335c1e2fe75d574f9646
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|declut.inc
+b1d5939399e5c04dfe1d209af8cc490
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
+99832fdf63412df51d7531202d74e75
 }
 # macro_sequence
 
@@ -3068,7 +3144,7 @@ status_address_bits
 PARAMETER_SIGNED_DEC
 USR
 data_bits
-5
+6
 PARAMETER_SIGNED_DEC
 USR
 status_bits
@@ -3088,7 +3164,7 @@ ela_status_bits
 PARAMETER_SIGNED_DEC
 USR
  constraint(buffer_read_data_out)
-4 downto 0
+5 downto 0
 PARAMETER_STRING
 USR
  constraint(status_read_data_out)
@@ -3154,7 +3230,7 @@ DEFAULT
 PARAMETER_UNKNOWN
 DEF
 LPM_MODULUS
-5
+6
 PARAMETER_SIGNED_DEC
 USR
 LPM_AVALUE
@@ -3198,7 +3274,7 @@ TRUE
 PARAMETER_UNKNOWN
 DEF
 CBXI_PARAMETER
-cntr_aai
+cntr_bai
 PARAMETER_UNKNOWN
 USR
 }
@@ -3220,43 +3296,43 @@ CLOCK
 3
 }
 # include_file {
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_compare.inc
+aec4ea1b78f4cda1c3effe18f1abbf63
 ..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|cmpconst.inc
 e61874547688138e6fc0b49ff8760
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_constant.inc
+dcde44eee59335c1e2fe75d574f9646
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_counter.inc
+7f888b135ddf66f0653c44cb18ac5
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|dffeea.inc
+55d29d20f7e852c37746bec4e2495ec
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_add_sub.inc
+7d9a33dd39f13aa690c3d0edd88351
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|alt_counter_f10ke.inc
+536f8da8218b4a93689416f9baea1880
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|alt_synch_counter_f.inc
+93a5aae1d8bd19c9e8e8eef93ab2177d
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|alt_counter_stratix.inc
+2251b94d26afaa53635df1aff6b6e7be
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|alt_synch_counter.inc
+09966d10c3e95c888bf8e443df34d8
 ..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_decode.inc
 bd0e2f5e01c1bd360461dceb53d48
 ..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
 99832fdf63412df51d7531202d74e75
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_compare.inc
-aec4ea1b78f4cda1c3effe18f1abbf63
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_counter.inc
-7f888b135ddf66f0653c44cb18ac5
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_add_sub.inc
-7d9a33dd39f13aa690c3d0edd88351
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|alt_synch_counter.inc
-09966d10c3e95c888bf8e443df34d8
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|alt_synch_counter_f.inc
-93a5aae1d8bd19c9e8e8eef93ab2177d
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_constant.inc
-dcde44eee59335c1e2fe75d574f9646
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|alt_counter_stratix.inc
-2251b94d26afaa53635df1aff6b6e7be
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|dffeea.inc
-55d29d20f7e852c37746bec4e2495ec
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|alt_counter_f10ke.inc
-536f8da8218b4a93689416f9baea1880
 }
 # macro_sequence
 
 # end
 # entity
-cntr_aai
+cntr_bai
 # storage
 db|main.(29).cnf
 db|main.(29).cnf
 # case_insensitive
 # source_file
-db|cntr_aai.tdf
-bca8de7a7e7b814361f987d9c5e421e
+db|cntr_bai.tdf
+44c237ce278a8a2844a3d06d8dc4b665
 7
 # used_port {
 sclr
@@ -3292,9 +3368,6 @@ db|cmpr_7cc.tdf
 datab1
 -1
 3
-datab0
--1
-3
 dataa2
 -1
 3
@@ -3308,6 +3381,9 @@ aeb
 -1
 3
 datab2
+-1
+2
+datab0
 -1
 2
 }
@@ -3431,30 +3507,30 @@ CLK_EN
 3
 }
 # include_file {
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_compare.inc
+aec4ea1b78f4cda1c3effe18f1abbf63
 ..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|cmpconst.inc
 e61874547688138e6fc0b49ff8760
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_constant.inc
+dcde44eee59335c1e2fe75d574f9646
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_counter.inc
+7f888b135ddf66f0653c44cb18ac5
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|dffeea.inc
+55d29d20f7e852c37746bec4e2495ec
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_add_sub.inc
+7d9a33dd39f13aa690c3d0edd88351
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|alt_counter_f10ke.inc
+536f8da8218b4a93689416f9baea1880
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|alt_synch_counter_f.inc
+93a5aae1d8bd19c9e8e8eef93ab2177d
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|alt_counter_stratix.inc
+2251b94d26afaa53635df1aff6b6e7be
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|alt_synch_counter.inc
+09966d10c3e95c888bf8e443df34d8
 ..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_decode.inc
 bd0e2f5e01c1bd360461dceb53d48
 ..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
 99832fdf63412df51d7531202d74e75
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_compare.inc
-aec4ea1b78f4cda1c3effe18f1abbf63
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_counter.inc
-7f888b135ddf66f0653c44cb18ac5
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_add_sub.inc
-7d9a33dd39f13aa690c3d0edd88351
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|alt_synch_counter.inc
-09966d10c3e95c888bf8e443df34d8
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|alt_synch_counter_f.inc
-93a5aae1d8bd19c9e8e8eef93ab2177d
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_constant.inc
-dcde44eee59335c1e2fe75d574f9646
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|alt_counter_stratix.inc
-2251b94d26afaa53635df1aff6b6e7be
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|dffeea.inc
-55d29d20f7e852c37746bec4e2495ec
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|alt_counter_f10ke.inc
-536f8da8218b4a93689416f9baea1880
 }
 # macro_sequence
 
@@ -3516,7 +3592,7 @@ db|main.(33).cnf
 7
 # user_parameter {
 LPM_WIDTH
-5
+6
 PARAMETER_SIGNED_DEC
 USR
 LPM_DIRECTION
@@ -3559,6 +3635,9 @@ SHIFTOUT
 LOAD
 -1
 3
+DATA5
+-1
+3
 DATA4
 -1
 3
@@ -3588,12 +3667,12 @@ ENABLE
 2
 }
 # include_file {
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
-99832fdf63412df51d7531202d74e75
 ..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_constant.inc
 dcde44eee59335c1e2fe75d574f9646
 ..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|dffeea.inc
 55d29d20f7e852c37746bec4e2495ec
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
+99832fdf63412df51d7531202d74e75
 }
 # macro_sequence
 
@@ -3712,12 +3791,12 @@ ENABLE
 2
 }
 # include_file {
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
-99832fdf63412df51d7531202d74e75
 ..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_constant.inc
 dcde44eee59335c1e2fe75d574f9646
 ..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|dffeea.inc
 55d29d20f7e852c37746bec4e2495ec
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
+99832fdf63412df51d7531202d74e75
 }
 # macro_sequence
 
@@ -3827,30 +3906,30 @@ CLOCK
 3
 }
 # include_file {
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_compare.inc
+aec4ea1b78f4cda1c3effe18f1abbf63
 ..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|cmpconst.inc
 e61874547688138e6fc0b49ff8760
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_constant.inc
+dcde44eee59335c1e2fe75d574f9646
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_counter.inc
+7f888b135ddf66f0653c44cb18ac5
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|dffeea.inc
+55d29d20f7e852c37746bec4e2495ec
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_add_sub.inc
+7d9a33dd39f13aa690c3d0edd88351
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|alt_counter_f10ke.inc
+536f8da8218b4a93689416f9baea1880
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|alt_synch_counter_f.inc
+93a5aae1d8bd19c9e8e8eef93ab2177d
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|alt_counter_stratix.inc
+2251b94d26afaa53635df1aff6b6e7be
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|alt_synch_counter.inc
+09966d10c3e95c888bf8e443df34d8
 ..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_decode.inc
 bd0e2f5e01c1bd360461dceb53d48
 ..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
 99832fdf63412df51d7531202d74e75
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_compare.inc
-aec4ea1b78f4cda1c3effe18f1abbf63
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_counter.inc
-7f888b135ddf66f0653c44cb18ac5
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_add_sub.inc
-7d9a33dd39f13aa690c3d0edd88351
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|alt_synch_counter.inc
-09966d10c3e95c888bf8e443df34d8
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|alt_synch_counter_f.inc
-93a5aae1d8bd19c9e8e8eef93ab2177d
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_constant.inc
-dcde44eee59335c1e2fe75d574f9646
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|alt_counter_stratix.inc
-2251b94d26afaa53635df1aff6b6e7be
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|dffeea.inc
-55d29d20f7e852c37746bec4e2495ec
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|alt_counter_f10ke.inc
-536f8da8218b4a93689416f9baea1880
 }
 # macro_sequence
 
@@ -4029,30 +4108,30 @@ CLK_EN
 3
 }
 # include_file {
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_compare.inc
+aec4ea1b78f4cda1c3effe18f1abbf63
 ..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|cmpconst.inc
 e61874547688138e6fc0b49ff8760
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_constant.inc
+dcde44eee59335c1e2fe75d574f9646
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_counter.inc
+7f888b135ddf66f0653c44cb18ac5
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|dffeea.inc
+55d29d20f7e852c37746bec4e2495ec
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_add_sub.inc
+7d9a33dd39f13aa690c3d0edd88351
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|alt_counter_f10ke.inc
+536f8da8218b4a93689416f9baea1880
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|alt_synch_counter_f.inc
+93a5aae1d8bd19c9e8e8eef93ab2177d
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|alt_counter_stratix.inc
+2251b94d26afaa53635df1aff6b6e7be
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|alt_synch_counter.inc
+09966d10c3e95c888bf8e443df34d8
 ..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_decode.inc
 bd0e2f5e01c1bd360461dceb53d48
 ..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
 99832fdf63412df51d7531202d74e75
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_compare.inc
-aec4ea1b78f4cda1c3effe18f1abbf63
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_counter.inc
-7f888b135ddf66f0653c44cb18ac5
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_add_sub.inc
-7d9a33dd39f13aa690c3d0edd88351
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|alt_synch_counter.inc
-09966d10c3e95c888bf8e443df34d8
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|alt_synch_counter_f.inc
-93a5aae1d8bd19c9e8e8eef93ab2177d
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_constant.inc
-dcde44eee59335c1e2fe75d574f9646
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|alt_counter_stratix.inc
-2251b94d26afaa53635df1aff6b6e7be
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|dffeea.inc
-55d29d20f7e852c37746bec4e2495ec
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|alt_counter_f10ke.inc
-536f8da8218b4a93689416f9baea1880
 }
 # macro_sequence
 
@@ -4222,12 +4301,12 @@ ENABLE
 2
 }
 # include_file {
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
-99832fdf63412df51d7531202d74e75
 ..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_constant.inc
 dcde44eee59335c1e2fe75d574f9646
 ..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|dffeea.inc
 55d29d20f7e852c37746bec4e2495ec
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
+99832fdf63412df51d7531202d74e75
 }
 # macro_sequence
 
@@ -4399,12 +4478,12 @@ DATA3
 1
 }
 # include_file {
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
-99832fdf63412df51d7531202d74e75
 ..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_constant.inc
 dcde44eee59335c1e2fe75d574f9646
 ..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|dffeea.inc
 55d29d20f7e852c37746bec4e2495ec
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
+99832fdf63412df51d7531202d74e75
 }
 # macro_sequence
 
@@ -4757,12 +4836,12 @@ denom10
 1
 }
 # include_file {
+..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|abs_divider.inc
+cdfefd53e136b3a8e541899b82db37d
 ..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|sign_div_unsign.inc
 c1e17922387cb5d0c88d7fb673544bb4
 ..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
 99832fdf63412df51d7531202d74e75
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|abs_divider.inc
-cdfefd53e136b3a8e541899b82db37d
 }
 # macro_sequence
 
@@ -5593,1841 +5672,6 @@ data0
 
 # end
 # entity
-sld_signaltap
-# storage
-db|main.(55).cnf
-db|main.(55).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|sld_signaltap.vhd
-369ede82843cc078e9421f3797b3be7b
-5
-# internal_option {
-IP_SHOW_ELABORATION_MESSAGES
-OFF
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-lpm_type
-sld_signaltap
-PARAMETER_STRING
-DEF
-sld_node_info
-805334528
-PARAMETER_UNKNOWN
-USR
-SLD_IP_VERSION
-6
-PARAMETER_SIGNED_DEC
-DEF
-SLD_IP_MINOR_VERSION
-0
-PARAMETER_SIGNED_DEC
-DEF
-SLD_COMMON_IP_VERSION
-0
-PARAMETER_SIGNED_DEC
-DEF
-sld_data_bits
-6
-PARAMETER_UNKNOWN
-USR
-sld_trigger_bits
-6
-PARAMETER_UNKNOWN
-USR
-SLD_NODE_CRC_BITS
-32
-PARAMETER_SIGNED_DEC
-DEF
-sld_node_crc_hiword
-29910
-PARAMETER_UNKNOWN
-USR
-sld_node_crc_loword
-9150
-PARAMETER_UNKNOWN
-USR
-SLD_INCREMENTAL_ROUTING
-0
-PARAMETER_SIGNED_DEC
-DEF
-sld_sample_depth
-128
-PARAMETER_UNKNOWN
-USR
-sld_segment_size
-128
-PARAMETER_UNKNOWN
-USR
-SLD_RAM_BLOCK_TYPE
-AUTO
-PARAMETER_STRING
-DEF
-sld_state_bits
-11
-PARAMETER_UNKNOWN
-USR
-sld_buffer_full_stop
-1
-PARAMETER_UNKNOWN
-USR
-SLD_MEM_ADDRESS_BITS
-7
-PARAMETER_SIGNED_DEC
-DEF
-SLD_DATA_BIT_CNTR_BITS
-4
-PARAMETER_SIGNED_DEC
-DEF
-sld_trigger_level
-1
-PARAMETER_UNKNOWN
-USR
-sld_trigger_in_enabled
-1
-PARAMETER_UNKNOWN
-USR
-sld_advanced_trigger_entity
-basic,1,
-PARAMETER_UNKNOWN
-USR
-sld_trigger_level_pipeline
-1
-PARAMETER_UNKNOWN
-USR
-sld_enable_advanced_trigger
-0
-PARAMETER_UNKNOWN
-USR
-SLD_ADVANCED_TRIGGER_1
-NONE
-PARAMETER_STRING
-DEF
-SLD_ADVANCED_TRIGGER_2
-NONE
-PARAMETER_STRING
-DEF
-SLD_ADVANCED_TRIGGER_3
-NONE
-PARAMETER_STRING
-DEF
-SLD_ADVANCED_TRIGGER_4
-NONE
-PARAMETER_STRING
-DEF
-SLD_ADVANCED_TRIGGER_5
-NONE
-PARAMETER_STRING
-DEF
-SLD_ADVANCED_TRIGGER_6
-NONE
-PARAMETER_STRING
-DEF
-SLD_ADVANCED_TRIGGER_7
-NONE
-PARAMETER_STRING
-DEF
-SLD_ADVANCED_TRIGGER_8
-NONE
-PARAMETER_STRING
-DEF
-SLD_ADVANCED_TRIGGER_9
-NONE
-PARAMETER_STRING
-DEF
-SLD_ADVANCED_TRIGGER_10
-NONE
-PARAMETER_STRING
-DEF
-sld_inversion_mask_length
-39
-PARAMETER_UNKNOWN
-USR
-sld_inversion_mask
-000000000000000000000000000000000000000
-PARAMETER_UNKNOWN
-USR
-sld_power_up_trigger
-0
-PARAMETER_UNKNOWN
-USR
-SLD_STATE_FLOW_MGR_ENTITY
-state_flow_mgr_entity.vhd
-PARAMETER_STRING
-DEF
-sld_state_flow_use_generated
-0
-PARAMETER_UNKNOWN
-USR
-sld_current_resource_width
-1
-PARAMETER_UNKNOWN
-USR
-sld_attribute_mem_mode
-OFF
-PARAMETER_UNKNOWN
-USR
-SLD_STORAGE_QUALIFIER_BITS
-1
-PARAMETER_SIGNED_DEC
-DEF
-SLD_STORAGE_QUALIFIER_GAP_RECORD
-0
-PARAMETER_SIGNED_DEC
-DEF
-SLD_STORAGE_QUALIFIER_MODE
-OFF
-PARAMETER_STRING
-DEF
-SLD_STORAGE_QUALIFIER_ENABLE_ADVANCED_CONDITION
-0
-PARAMETER_SIGNED_DEC
-DEF
-sld_storage_qualifier_inversion_mask_length
-0
-PARAMETER_UNKNOWN
-USR
-SLD_STORAGE_QUALIFIER_ADVANCED_CONDITION_ENTITY
-basic
-PARAMETER_STRING
-DEF
-SLD_STORAGE_QUALIFIER_PIPELINE
-0
-PARAMETER_SIGNED_DEC
-DEF
-}
-# lmf
-..|..|..|..|..|..|altera|90|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-sld_signaltap_impl
-# storage
-db|main.(56).cnf
-db|main.(56).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|sld_signaltap.vhd
-369ede82843cc078e9421f3797b3be7b
-5
-# internal_option {
-IP_SHOW_ELABORATION_MESSAGES
-OFF
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-sld_ip_version
-6
-PARAMETER_SIGNED_DEC
-USR
-sld_ip_minor_version
-0
-PARAMETER_SIGNED_DEC
-USR
-sld_common_ip_version
-0
-PARAMETER_SIGNED_DEC
-USR
-sld_data_bits
-6
-PARAMETER_SIGNED_DEC
-USR
-sld_trigger_bits
-6
-PARAMETER_SIGNED_DEC
-USR
-sld_node_crc_bits
-32
-PARAMETER_SIGNED_DEC
-USR
-sld_node_crc_hiword
-29910
-PARAMETER_SIGNED_DEC
-USR
-sld_node_crc_loword
-9150
-PARAMETER_SIGNED_DEC
-USR
-sld_incremental_routing
-0
-PARAMETER_SIGNED_DEC
-USR
-sld_sample_depth
-128
-PARAMETER_SIGNED_DEC
-USR
-sld_segment_size
-128
-PARAMETER_SIGNED_DEC
-USR
-sld_ram_block_type
-AUTO
-PARAMETER_STRING
-USR
-sld_state_bits
-11
-PARAMETER_SIGNED_DEC
-USR
-sld_buffer_full_stop
-1
-PARAMETER_SIGNED_DEC
-USR
-sld_trigger_level
-1
-PARAMETER_SIGNED_DEC
-USR
-sld_trigger_in_enabled
-1
-PARAMETER_SIGNED_DEC
-USR
-sld_advanced_trigger_entity
-basic,1,
-PARAMETER_STRING
-USR
-sld_trigger_level_pipeline
-1
-PARAMETER_SIGNED_DEC
-USR
-sld_enable_advanced_trigger
-0
-PARAMETER_SIGNED_DEC
-USR
-sld_advanced_trigger_1
-NONE
-PARAMETER_STRING
-USR
-sld_advanced_trigger_2
-NONE
-PARAMETER_STRING
-USR
-sld_advanced_trigger_3
-NONE
-PARAMETER_STRING
-USR
-sld_advanced_trigger_4
-NONE
-PARAMETER_STRING
-USR
-sld_advanced_trigger_5
-NONE
-PARAMETER_STRING
-USR
-sld_advanced_trigger_6
-NONE
-PARAMETER_STRING
-USR
-sld_advanced_trigger_7
-NONE
-PARAMETER_STRING
-USR
-sld_advanced_trigger_8
-NONE
-PARAMETER_STRING
-USR
-sld_advanced_trigger_9
-NONE
-PARAMETER_STRING
-USR
-sld_advanced_trigger_10
-NONE
-PARAMETER_STRING
-USR
-sld_inversion_mask_length
-39
-PARAMETER_SIGNED_DEC
-USR
-sld_inversion_mask
-000000000000000000000000000000000000000
-PARAMETER_UNSIGNED_BIN
-USR
-sld_power_up_trigger
-0
-PARAMETER_SIGNED_DEC
-USR
-sld_state_flow_mgr_entity
-state_flow_mgr_entity.vhd
-PARAMETER_STRING
-USR
-sld_state_flow_use_generated
-0
-PARAMETER_SIGNED_DEC
-USR
-sld_current_resource_width
-1
-PARAMETER_SIGNED_DEC
-USR
-sld_attribute_mem_mode
-OFF
-PARAMETER_STRING
-USR
-sld_storage_qualifier_bits
-1
-PARAMETER_SIGNED_DEC
-USR
-sld_storage_qualifier_gap_record
-0
-PARAMETER_SIGNED_DEC
-USR
-sld_storage_qualifier_mode
-OFF
-PARAMETER_STRING
-USR
-sld_storage_qualifier_enable_advanced_condition
-0
-PARAMETER_SIGNED_DEC
-USR
-sld_storage_qualifier_inversion_mask_length
-0
-PARAMETER_SIGNED_DEC
-USR
-sld_storage_qualifier_advanced_condition_entity
-basic
-PARAMETER_STRING
-USR
-sld_storage_qualifier_pipeline
-0
-PARAMETER_SIGNED_DEC
-USR
- constraint(sld_ram_block_type)
-1 to 4
-PARAMETER_STRING
-USR
- constraint(sld_advanced_trigger_entity)
-1 to 8
-PARAMETER_STRING
-USR
- constraint(sld_advanced_trigger_1)
-1 to 4
-PARAMETER_STRING
-USR
- constraint(sld_advanced_trigger_2)
-1 to 4
-PARAMETER_STRING
-USR
- constraint(sld_advanced_trigger_3)
-1 to 4
-PARAMETER_STRING
-USR
- constraint(sld_advanced_trigger_4)
-1 to 4
-PARAMETER_STRING
-USR
- constraint(sld_advanced_trigger_5)
-1 to 4
-PARAMETER_STRING
-USR
- constraint(sld_advanced_trigger_6)
-1 to 4
-PARAMETER_STRING
-USR
- constraint(sld_advanced_trigger_7)
-1 to 4
-PARAMETER_STRING
-USR
- constraint(sld_advanced_trigger_8)
-1 to 4
-PARAMETER_STRING
-USR
- constraint(sld_advanced_trigger_9)
-1 to 4
-PARAMETER_STRING
-USR
- constraint(sld_advanced_trigger_10)
-1 to 4
-PARAMETER_STRING
-USR
- constraint(sld_inversion_mask)
-0 to 38
-PARAMETER_STRING
-USR
- constraint(sld_state_flow_mgr_entity)
-1 to 25
-PARAMETER_STRING
-USR
- constraint(sld_attribute_mem_mode)
-1 to 3
-PARAMETER_STRING
-USR
- constraint(sld_storage_qualifier_mode)
-1 to 3
-PARAMETER_STRING
-USR
- constraint(sld_storage_qualifier_advanced_condition_entity)
-1 to 5
-PARAMETER_STRING
-USR
- constraint(acq_data_in)
-5 downto 0
-PARAMETER_STRING
-USR
- constraint(acq_trigger_in)
-5 downto 0
-PARAMETER_STRING
-USR
- constraint(acq_storage_qualifier_in)
-0 downto 0
-PARAMETER_STRING
-USR
- constraint(crc)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(ir_in)
-7 downto 0
-PARAMETER_STRING
-USR
- constraint(ir_out)
-7 downto 0
-PARAMETER_STRING
-USR
- constraint(acq_data_out)
-5 downto 0
-PARAMETER_STRING
-USR
- constraint(acq_trigger_out)
-5 downto 0
-PARAMETER_STRING
-USR
-}
-# lmf
-..|..|..|..|..|..|altera|90|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-sld_ela_control
-# storage
-db|main.(57).cnf
-db|main.(57).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|sld_ela_control.vhd
-179d46179b31f97b4b2ea5431e9ccb43
-5
-# internal_option {
-IP_SHOW_ELABORATION_MESSAGES
-OFF
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-ip_major_version
-6
-PARAMETER_SIGNED_DEC
-USR
-ip_minor_version
-0
-PARAMETER_SIGNED_DEC
-USR
-common_ip_version
-0
-PARAMETER_SIGNED_DEC
-USR
-trigger_input_width
-6
-PARAMETER_SIGNED_DEC
-USR
-trigger_level
-1
-PARAMETER_SIGNED_DEC
-USR
-trigger_in_enabled
-1
-PARAMETER_SIGNED_DEC
-USR
-advanced_trigger_entity
-basic,1,
-PARAMETER_STRING
-USR
-enable_advanced_trigger
-0
-PARAMETER_SIGNED_DEC
-USR
-trigger_level_pipeline
-1
-PARAMETER_SIGNED_DEC
-USR
-ela_status_bits
-4
-PARAMETER_SIGNED_DEC
-USR
-mem_address_bits
-7
-PARAMETER_SIGNED_DEC
-USR
-sample_depth
-128
-PARAMETER_SIGNED_DEC
-USR
-inversion_mask_length
-1
-PARAMETER_SIGNED_DEC
-USR
-inversion_mask
-0
-PARAMETER_UNSIGNED_BIN
-USR
-power_up_trigger
-0
-PARAMETER_SIGNED_DEC
-USR
-state_bits
-11
-PARAMETER_SIGNED_DEC
-USR
-segment_size_bits
-7
-PARAMETER_SIGNED_DEC
-USR
-state_flow_mgr_entity
-state_flow_mgr_entity.vhd
-PARAMETER_STRING
-USR
-state_flow_use_generated
-0
-PARAMETER_SIGNED_DEC
-USR
-current_resource_width
-1
-PARAMETER_SIGNED_DEC
-USR
-storage_qualifier_width
-1
-PARAMETER_SIGNED_DEC
-USR
-storage_qualifier_mode
-OFF
-PARAMETER_STRING
-USR
-storage_qualifier_enable_advanced_condition
-0
-PARAMETER_SIGNED_DEC
-USR
-storage_qualifier_inversion_mask_length
-0
-PARAMETER_SIGNED_DEC
-USR
-storage_qualifier_advanced_condition_entity
-basic
-PARAMETER_STRING
-USR
-storage_qualifier_pipeline
-0
-PARAMETER_SIGNED_DEC
-USR
- constraint(advanced_trigger_entity)
-1 to 8
-PARAMETER_STRING
-USR
- constraint(inversion_mask)
-38 downto 38
-PARAMETER_STRING
-USR
- constraint(state_flow_mgr_entity)
-1 to 25
-PARAMETER_STRING
-USR
- constraint(storage_qualifier_mode)
-1 to 3
-PARAMETER_STRING
-USR
- constraint(storage_qualifier_advanced_condition_entity)
-1 to 5
-PARAMETER_STRING
-USR
- constraint(acq_trigger_in)
-5 downto 0
-PARAMETER_STRING
-USR
- constraint(storage_qualifier_in)
-0 downto 0
-PARAMETER_STRING
-USR
- constraint(post_fill_count)
-6 downto 0
-PARAMETER_STRING
-USR
- constraint(current_state)
-10 downto 0
-PARAMETER_STRING
-USR
- constraint(trigger_out_mode)
-0 downto 0
-PARAMETER_STRING
-USR
- constraint(current_resource_value)
-0 downto 0
-PARAMETER_STRING
-USR
-}
-# include_file {
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|sld_signaltap.vhd
-369ede82843cc078e9421f3797b3be7b
-}
-# lmf
-..|..|..|..|..|..|altera|90|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-sld_ela_basic_multi_level_trigger
-# storage
-db|main.(58).cnf
-db|main.(58).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|sld_ela_control.vhd
-179d46179b31f97b4b2ea5431e9ccb43
-5
-# internal_option {
-IP_SHOW_ELABORATION_MESSAGES
-OFF
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-ip_major_version
-6
-PARAMETER_SIGNED_DEC
-USR
-ip_minor_version
-0
-PARAMETER_SIGNED_DEC
-USR
-common_ip_version
-0
-PARAMETER_SIGNED_DEC
-USR
-trigger_level
-1
-PARAMETER_SIGNED_DEC
-USR
-data_bits
-6
-PARAMETER_SIGNED_DEC
-USR
-pipeline
-1
-PARAMETER_SIGNED_DEC
-USR
-inversion_mask_length
-1
-PARAMETER_SIGNED_DEC
-USR
-inversion_mask
-0
-PARAMETER_UNSIGNED_BIN
-USR
-power_up_trigger
-0
-PARAMETER_SIGNED_DEC
-USR
- constraint(inversion_mask)
-0 downto 0
-PARAMETER_STRING
-USR
- constraint(data_in)
-5 downto 0
-PARAMETER_STRING
-USR
- constraint(trigger_level_match_out)
-0 downto 0
-PARAMETER_STRING
-USR
-}
-# include_file {
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|sld_signaltap.vhd
-369ede82843cc078e9421f3797b3be7b
-}
-# lmf
-..|..|..|..|..|..|altera|90|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-LPM_SHIFTREG
-# storage
-db|main.(59).cnf
-db|main.(59).cnf
-# case_insensitive
-# source_file
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|LPM_SHIFTREG.tdf
-9d96accaf3e63787e483832f2441140
-7
-# user_parameter {
-LPM_WIDTH
-18
-PARAMETER_SIGNED_DEC
-USR
-LPM_DIRECTION
-RIGHT
-PARAMETER_UNKNOWN
-USR
-LPM_AVALUE
-UNUSED
-PARAMETER_UNKNOWN
-DEF
-LPM_SVALUE
-UNUSED
-PARAMETER_UNKNOWN
-DEF
-DEVICE_FAMILY
-Cyclone II
-PARAMETER_UNKNOWN
-USR
-AUTO_CARRY_CHAINS
-ON
-AUTO_CARRY
-USR
-IGNORE_CARRY_BUFFERS
-OFF
-IGNORE_CARRY
-USR
-AUTO_CASCADE_CHAINS
-ON
-AUTO_CASCADE
-USR
-IGNORE_CASCADE_BUFFERS
-OFF
-IGNORE_CASCADE
-USR
-}
-# used_port {
-SHIFTOUT
--1
-3
-SHIFTIN
--1
-3
-Q9
--1
-3
-Q8
--1
-3
-Q7
--1
-3
-Q6
--1
-3
-Q5
--1
-3
-Q4
--1
-3
-Q3
--1
-3
-Q2
--1
-3
-Q17
--1
-3
-Q16
--1
-3
-Q15
--1
-3
-Q14
--1
-3
-Q13
--1
-3
-Q12
--1
-3
-Q11
--1
-3
-Q10
--1
-3
-Q1
--1
-3
-Q0
--1
-3
-ENABLE
--1
-3
-CLOCK
--1
-3
-ACLR
--1
-3
-}
-# include_file {
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
-99832fdf63412df51d7531202d74e75
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_constant.inc
-dcde44eee59335c1e2fe75d574f9646
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|dffeea.inc
-55d29d20f7e852c37746bec4e2495ec
-}
-# macro_sequence
-
-# end
-# entity
-sld_mbpmg
-# storage
-db|main.(60).cnf
-db|main.(60).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|sld_mbpmg.vhd
-4aaa65a82f3c9465f7c3c59ab8282f7
-5
-# internal_option {
-IP_SHOW_ELABORATION_MESSAGES
-OFF
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-ip_major_version
-6
-PARAMETER_SIGNED_DEC
-USR
-ip_minor_version
-0
-PARAMETER_SIGNED_DEC
-USR
-common_ip_version
-0
-PARAMETER_SIGNED_DEC
-USR
-data_bits
-6
-PARAMETER_SIGNED_DEC
-USR
-pattern_bits
-3
-PARAMETER_SIGNED_DEC
-USR
-async_enabled
-0
-PARAMETER_SIGNED_DEC
-USR
-sync_enabled
-1
-PARAMETER_SIGNED_DEC
-USR
-pipeline
-1
-PARAMETER_SIGNED_DEC
-USR
- constraint(data_in)
-5 downto 0
-PARAMETER_STRING
-USR
- constraint(pattern_in)
-17 downto 0
-PARAMETER_STRING
-USR
-}
-# lmf
-..|..|..|..|..|..|altera|90|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-altsyncram
-# storage
-db|main.(61).cnf
-db|main.(61).cnf
-# case_insensitive
-# source_file
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|altsyncram.tdf
-3514e215aa7b20abd3414f7dd9c98ab7
-7
-# user_parameter {
-BYTE_SIZE_BLOCK
-8
-PARAMETER_UNKNOWN
-DEF
-AUTO_CARRY_CHAINS
-ON
-AUTO_CARRY
-USR
-IGNORE_CARRY_BUFFERS
-OFF
-IGNORE_CARRY
-USR
-AUTO_CASCADE_CHAINS
-ON
-AUTO_CASCADE
-USR
-IGNORE_CASCADE_BUFFERS
-OFF
-IGNORE_CASCADE
-USR
-WIDTH_BYTEENA
-1
-PARAMETER_UNKNOWN
-DEF
-OPERATION_MODE
-DUAL_PORT
-PARAMETER_UNKNOWN
-USR
-WIDTH_A
-6
-PARAMETER_SIGNED_DEC
-USR
-WIDTHAD_A
-7
-PARAMETER_SIGNED_DEC
-USR
-NUMWORDS_A
-0
-PARAMETER_SIGNED_DEC
-USR
-OUTDATA_REG_A
-UNREGISTERED
-PARAMETER_UNKNOWN
-USR
-ADDRESS_ACLR_A
-NONE
-PARAMETER_UNKNOWN
-USR
-OUTDATA_ACLR_A
-NONE
-PARAMETER_UNKNOWN
-USR
-WRCONTROL_ACLR_A
-NONE
-PARAMETER_UNKNOWN
-USR
-INDATA_ACLR_A
-NONE
-PARAMETER_UNKNOWN
-USR
-BYTEENA_ACLR_A
-NONE
-PARAMETER_UNKNOWN
-USR
-WIDTH_B
-6
-PARAMETER_SIGNED_DEC
-USR
-WIDTHAD_B
-7
-PARAMETER_SIGNED_DEC
-USR
-NUMWORDS_B
-0
-PARAMETER_SIGNED_DEC
-USR
-INDATA_REG_B
-CLOCK1
-PARAMETER_UNKNOWN
-USR
-WRCONTROL_WRADDRESS_REG_B
-CLOCK1
-PARAMETER_UNKNOWN
-USR
-RDCONTROL_REG_B
-CLOCK1
-PARAMETER_UNKNOWN
-USR
-ADDRESS_REG_B
-CLOCK1
-PARAMETER_UNKNOWN
-USR
-OUTDATA_REG_B
-UNREGISTERED
-PARAMETER_UNKNOWN
-USR
-BYTEENA_REG_B
-CLOCK1
-PARAMETER_UNKNOWN
-USR
-INDATA_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-USR
-WRCONTROL_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-USR
-ADDRESS_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-USR
-OUTDATA_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-USR
-RDCONTROL_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-USR
-BYTEENA_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-USR
-WIDTH_BYTEENA_A
-1
-PARAMETER_SIGNED_DEC
-USR
-WIDTH_BYTEENA_B
-1
-PARAMETER_SIGNED_DEC
-USR
-RAM_BLOCK_TYPE
-AUTO
-PARAMETER_UNKNOWN
-USR
-BYTE_SIZE
-8
-PARAMETER_SIGNED_DEC
-USR
-READ_DURING_WRITE_MODE_MIXED_PORTS
-DONT_CARE
-PARAMETER_UNKNOWN
-USR
-READ_DURING_WRITE_MODE_PORT_A
-NEW_DATA_NO_NBE_READ
-PARAMETER_UNKNOWN
-USR
-READ_DURING_WRITE_MODE_PORT_B
-NEW_DATA_NO_NBE_READ
-PARAMETER_UNKNOWN
-USR
-INIT_FILE
-UNUSED
-PARAMETER_UNKNOWN
-DEF
-INIT_FILE_LAYOUT
-PORT_A
-PARAMETER_UNKNOWN
-USR
-MAXIMUM_DEPTH
-0
-PARAMETER_SIGNED_DEC
-USR
-CLOCK_ENABLE_INPUT_A
-NORMAL
-PARAMETER_UNKNOWN
-USR
-CLOCK_ENABLE_INPUT_B
-NORMAL
-PARAMETER_UNKNOWN
-USR
-CLOCK_ENABLE_OUTPUT_A
-NORMAL
-PARAMETER_UNKNOWN
-USR
-CLOCK_ENABLE_OUTPUT_B
-NORMAL
-PARAMETER_UNKNOWN
-USR
-CLOCK_ENABLE_CORE_A
-USE_INPUT_CLKEN
-PARAMETER_UNKNOWN
-USR
-CLOCK_ENABLE_CORE_B
-USE_INPUT_CLKEN
-PARAMETER_UNKNOWN
-USR
-ENABLE_ECC
-FALSE
-PARAMETER_UNKNOWN
-USR
-DEVICE_FAMILY
-Cyclone II
-PARAMETER_UNKNOWN
-USR
-CBXI_PARAMETER
-altsyncram_m1p3
-PARAMETER_UNKNOWN
-USR
-}
-# used_port {
-wren_a
--1
-3
-q_b5
--1
-3
-q_b4
--1
-3
-q_b3
--1
-3
-q_b2
--1
-3
-q_b1
--1
-3
-q_b0
--1
-3
-data_a5
--1
-3
-data_a4
--1
-3
-data_a3
--1
-3
-data_a2
--1
-3
-data_a1
--1
-3
-data_a0
--1
-3
-clocken1
--1
-3
-clock1
--1
-3
-clock0
--1
-3
-address_b6
--1
-3
-address_b5
--1
-3
-address_b4
--1
-3
-address_b3
--1
-3
-address_b2
--1
-3
-address_b1
--1
-3
-address_b0
--1
-3
-address_a6
--1
-3
-address_a5
--1
-3
-address_a4
--1
-3
-address_a3
--1
-3
-address_a2
--1
-3
-address_a1
--1
-3
-address_a0
--1
-3
-}
-# include_file {
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_decode.inc
-bd0e2f5e01c1bd360461dceb53d48
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_mux.inc
-c22bfd353214c01495b560fc34e47d79
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|altram.inc
-e66a83eccf6717bed97c99d891ad085
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|stratix_ram_block.inc
-2263a3bdfffeb150af977ee13902f70
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|altdpram.inc
-99d442b5b66c88db4daf94d99c6e4e77
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|a_rdenreg.inc
-60d229340bc3c24acb0a137b4849830
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|altqpram.inc
-74e08939f96a7ea8e7a4d59a5b01fe7
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
-99832fdf63412df51d7531202d74e75
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|altrom.inc
-d4e3a69a331d3a99d3281790d99a1ebd
-}
-# macro_sequence
-
-# end
-# entity
-altsyncram_m1p3
-# storage
-db|main.(62).cnf
-db|main.(62).cnf
-# case_insensitive
-# source_file
-db|altsyncram_m1p3.tdf
-97a9a244f23f2c11282d97165d9bb2da
-7
-# used_port {
-wren_a
--1
-3
-q_b5
--1
-3
-q_b4
--1
-3
-q_b3
--1
-3
-q_b2
--1
-3
-q_b1
--1
-3
-q_b0
--1
-3
-data_a5
--1
-3
-data_a4
--1
-3
-data_a3
--1
-3
-data_a2
--1
-3
-data_a1
--1
-3
-data_a0
--1
-3
-clocken1
--1
-3
-clock1
--1
-3
-clock0
--1
-3
-address_b6
--1
-3
-address_b5
--1
-3
-address_b4
--1
-3
-address_b3
--1
-3
-address_b2
--1
-3
-address_b1
--1
-3
-address_b0
--1
-3
-address_a6
--1
-3
-address_a5
--1
-3
-address_a4
--1
-3
-address_a3
--1
-3
-address_a2
--1
-3
-address_a1
--1
-3
-address_a0
--1
-3
-}
-# macro_sequence
-
-# end
-# entity
-sld_offload_buffer_mgr
-# storage
-db|main.(63).cnf
-db|main.(63).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|sld_buffer_manager.vhd
-fc38fc4d5b27139eff18e2ef5134429
-5
-# internal_option {
-IP_SHOW_ELABORATION_MESSAGES
-OFF
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-ip_major_version
-6
-PARAMETER_SIGNED_DEC
-USR
-ip_minor_version
-0
-PARAMETER_SIGNED_DEC
-USR
-common_ip_version
-0
-PARAMETER_SIGNED_DEC
-USR
-buffer_depth
-128
-PARAMETER_SIGNED_DEC
-USR
-segment_count
-1
-PARAMETER_SIGNED_DEC
-USR
-mem_address_bits
-7
-PARAMETER_SIGNED_DEC
-USR
-status_address_bits
-1
-PARAMETER_SIGNED_DEC
-USR
-data_bits
-6
-PARAMETER_SIGNED_DEC
-USR
-status_bits
-15
-PARAMETER_SIGNED_DEC
-USR
-data_bit_cntr_bits
-3
-PARAMETER_SIGNED_DEC
-USR
-status_bit_cntr_bits
-4
-PARAMETER_SIGNED_DEC
-USR
-ela_status_bits
-4
-PARAMETER_SIGNED_DEC
-USR
- constraint(buffer_read_data_out)
-5 downto 0
-PARAMETER_STRING
-USR
- constraint(status_read_data_out)
-14 downto 0
-PARAMETER_STRING
-USR
- constraint(trigger_write_address)
-6 downto 0
-PARAMETER_STRING
-USR
- constraint(last_buffer_write_address)
-6 downto 0
-PARAMETER_STRING
-USR
- constraint(buffer_read_address)
-6 downto 0
-PARAMETER_STRING
-USR
- constraint(status_read_address)
-0 downto 0
-PARAMETER_STRING
-USR
-}
-# lmf
-..|..|..|..|..|..|altera|90|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-LPM_COUNTER
-# storage
-db|main.(64).cnf
-db|main.(64).cnf
-# case_insensitive
-# source_file
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|LPM_COUNTER.tdf
-775da77f476c58b7ddeb65edee82b5
-7
-# user_parameter {
-AUTO_CARRY_CHAINS
-ON
-AUTO_CARRY
-USR
-IGNORE_CARRY_BUFFERS
-OFF
-IGNORE_CARRY
-USR
-AUTO_CASCADE_CHAINS
-ON
-AUTO_CASCADE
-USR
-IGNORE_CASCADE_BUFFERS
-OFF
-IGNORE_CASCADE
-USR
-LPM_WIDTH
-3
-PARAMETER_SIGNED_DEC
-USR
-LPM_DIRECTION
-DEFAULT
-PARAMETER_UNKNOWN
-DEF
-LPM_MODULUS
-6
-PARAMETER_SIGNED_DEC
-USR
-LPM_AVALUE
-UNUSED
-PARAMETER_UNKNOWN
-DEF
-LPM_SVALUE
-UNUSED
-PARAMETER_UNKNOWN
-DEF
-LPM_PORT_UPDOWN
-PORT_CONNECTIVITY
-PARAMETER_UNKNOWN
-USR
-DEVICE_FAMILY
-Cyclone II
-PARAMETER_UNKNOWN
-USR
-CARRY_CHAIN
-MANUAL
-PARAMETER_UNKNOWN
-USR
-CARRY_CHAIN_LENGTH
-48
-CARRY_CHAIN_LENGTH
-USR
-NOT_GATE_PUSH_BACK
-OFF
-NOT_GATE_PUSH_BACK
-USR
-CARRY_CNT_EN
-SMART
-PARAMETER_UNKNOWN
-DEF
-LABWIDE_SCLR
-ON
-PARAMETER_UNKNOWN
-DEF
-USE_NEW_VERSION
-TRUE
-PARAMETER_UNKNOWN
-DEF
-CBXI_PARAMETER
-cntr_bai
-PARAMETER_UNKNOWN
-USR
-}
-# used_port {
-SCLR
--1
-3
-Q2
--1
-3
-Q1
--1
-3
-Q0
--1
-3
-CLOCK
--1
-3
-}
-# include_file {
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|alt_counter_stratix.inc
-2251b94d26afaa53635df1aff6b6e7be
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_decode.inc
-bd0e2f5e01c1bd360461dceb53d48
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_counter.inc
-7f888b135ddf66f0653c44cb18ac5
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_add_sub.inc
-7d9a33dd39f13aa690c3d0edd88351
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|alt_synch_counter.inc
-09966d10c3e95c888bf8e443df34d8
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|alt_counter_f10ke.inc
-536f8da8218b4a93689416f9baea1880
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|alt_synch_counter_f.inc
-93a5aae1d8bd19c9e8e8eef93ab2177d
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|cmpconst.inc
-e61874547688138e6fc0b49ff8760
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_compare.inc
-aec4ea1b78f4cda1c3effe18f1abbf63
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
-99832fdf63412df51d7531202d74e75
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_constant.inc
-dcde44eee59335c1e2fe75d574f9646
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|dffeea.inc
-55d29d20f7e852c37746bec4e2495ec
-}
-# macro_sequence
-
-# end
-# entity
-cntr_bai
-# storage
-db|main.(65).cnf
-db|main.(65).cnf
-# case_insensitive
-# source_file
-db|cntr_bai.tdf
-44c237ce278a8a2844a3d06d8dc4b665
-7
-# used_port {
-sclr
--1
-3
-q2
--1
-3
-q1
--1
-3
-q0
--1
-3
-clock
--1
-3
-}
-# macro_sequence
-
-# end
-# entity
-cmpr_7cc
-# storage
-db|main.(66).cnf
-db|main.(66).cnf
-# case_insensitive
-# source_file
-db|cmpr_7cc.tdf
-6bb821b9b4a29fd4356fd31061741c80
-7
-# used_port {
-datab1
--1
-3
-dataa2
--1
-3
-dataa1
--1
-3
-dataa0
--1
-3
-aeb
--1
-3
-datab2
--1
-2
-datab0
--1
-2
-}
-# macro_sequence
-
-# end
-# entity
-LPM_SHIFTREG
-# storage
-db|main.(67).cnf
-db|main.(67).cnf
-# case_insensitive
-# source_file
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|LPM_SHIFTREG.tdf
-9d96accaf3e63787e483832f2441140
-7
-# user_parameter {
-LPM_WIDTH
-6
-PARAMETER_SIGNED_DEC
-USR
-LPM_DIRECTION
-RIGHT
-PARAMETER_UNKNOWN
-USR
-LPM_AVALUE
-UNUSED
-PARAMETER_UNKNOWN
-DEF
-LPM_SVALUE
-UNUSED
-PARAMETER_UNKNOWN
-DEF
-DEVICE_FAMILY
-Cyclone II
-PARAMETER_UNKNOWN
-USR
-AUTO_CARRY_CHAINS
-ON
-AUTO_CARRY
-USR
-IGNORE_CARRY_BUFFERS
-OFF
-IGNORE_CARRY
-USR
-AUTO_CASCADE_CHAINS
-ON
-AUTO_CASCADE
-USR
-IGNORE_CASCADE_BUFFERS
-OFF
-IGNORE_CASCADE
-USR
-}
-# used_port {
-SHIFTOUT
--1
-3
-LOAD
--1
-3
-DATA5
--1
-3
-DATA4
--1
-3
-DATA3
--1
-3
-DATA2
--1
-3
-DATA1
--1
-3
-DATA0
--1
-3
-CLOCK
--1
-3
-ACLR
--1
-3
-SHIFTIN
--1
-2
-ENABLE
--1
-2
-}
-# include_file {
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
-99832fdf63412df51d7531202d74e75
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_constant.inc
-dcde44eee59335c1e2fe75d574f9646
-..|..|..|..|..|..|altera|90|quartus|libraries|megafunctions|dffeea.inc
-55d29d20f7e852c37746bec4e2495ec
-}
-# macro_sequence
-
-# end
-# entity
 main
 # storage
 db|main.(0).cnf
@@ -7439,7 +5683,7 @@ ON
 # case_insensitive
 # source_file
 main.vhd
-dbab3bc03f535925ba54b7f8fb9a6524
+d5b939df946aa69c224321a3b1555
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -7465,18 +5709,18 @@ e9f843b85faeca28634bc4a269654
 
 # end
 # entity
-VGAController
+FreqDiv
 # storage
-db|main.(5).cnf
-db|main.(5).cnf
+db|main.(55).cnf
+db|main.(55).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
 }
 # case_insensitive
 # source_file
-VGAController.vhd
-2994f0539994468767272ac7c9816a9f
+FreqDiv.vhd
+5c81ae5a2b12a348e15cb796408aff
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -7489,29 +5733,17 @@ AUTO_ROM_RECOGNITION
 ON
 }
 # user_parameter {
- constraint(address)
-14 downto 0
-PARAMETER_STRING
+div
+100000000
+PARAMETER_SIGNED_DEC
 USR
- constraint(r)
-2 downto 0
-PARAMETER_STRING
+half
+50000000
+PARAMETER_SIGNED_DEC
 USR
- constraint(g)
-2 downto 0
-PARAMETER_STRING
-USR
- constraint(b)
-2 downto 0
-PARAMETER_STRING
-USR
-}
-# include_file {
-constant_package.vhd
-e9f843b85faeca28634bc4a269654
 }
 # hierarchies {
-VGAController:u3
+FreqDiv:fd_inst3
 }
 # lmf
 ..|..|..|..|..|..|altera|90|quartus|lmf|maxplus2.lmf

@@ -101,19 +101,23 @@ architecture main_bhv of main is
 	end component KeyboardInput;
 			
 	component KeyboardAdapter
-		port (
-			i_key : in std_logic_vector(7 downto 0);
-			i_clk, hclk : in std_logic;
-			o_key : out std_logic_vector(7 downto 0);
-			o_triggeredString : out integer range 0 to 15;
-			o_clk, o_all_clk : out std_logic
-		);
+
+    port (
+      i_key : in std_logic_vector(7 downto 0);
+      i_clk, hclk : in std_logic;
+      o_key : out std_logic_vector(7 downto 0);
+      o_triggeredString : out integer range 0 to 15;
+      o_clk, o_all_clk : out std_logic
+      );
+
 	end component KeyboardAdapter;
 	
 	
 	component VGAController is
 		port(
 			i_kb_clk    :         in std_logic;
+			i_note_clk  :         in std_logic;
+			i_note_pos  :         in integer range 0 to 5;
 			i_triggeredString :  in integer range 0 to 15; 
 			o_clicked : out std_logic;
 			address		:		  out	STD_LOGIC_VECTOR(14 DOWNTO 0);
@@ -173,6 +177,8 @@ begin
 	u3 : VGAController
 	port map ( 
 		i_kb_clk => a_kb_clk,
+		i_note_clk => clk_1,
+		i_note_pos => 0,
 		i_triggeredString => triggeredString,
 		o_clicked => o_clicked,
 		reset => rst_in,  
@@ -212,18 +218,18 @@ begin
 --		O => clk_1000
 --	);
 --	
---	fd_inst3 : FreqDiv
---    generic map
---    (
---		div => 100000000,
---		half => 50000000
---	)
---	port map
---	(
---		CLK => clk_100m,
---		RST => '0',
---		O => clk_1
---	);
+	fd_inst3 : FreqDiv
+    generic map
+    (
+		div => 100000000,
+		half => 50000000
+	)
+	port map
+	(
+		CLK => clk_100m,
+		RST => '0',
+		O => clk_1
+	);
 --	
 --	u2 : UARTIn
 --	generic map (
