@@ -5,9 +5,9 @@ Timing Analyzer Summary
 Type           : Worst-case tsu
 Slack          : N/A
 Required Time  : None
-Actual Time    : 1.016 ns
-From           : i_KB_Data
-To             : KeyboardInput:u0|Keyboard:u0|data
+Actual Time    : 8.023 ns
+From           : rst_in
+To             : KeyboardInput:u0|Keyboard:u0|wait_times[0]
 From Clock     : --
 To Clock       : clk_100m
 Failed Paths   : 0
@@ -15,42 +15,62 @@ Failed Paths   : 0
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 14.472 ns
-From           : KeyboardAdapter:u1|o_triggeredString[1]
-To             : seg2[6]
+Actual Time    : 21.890 ns
+From           : VGAController:u3|hs1
+To             : o_RED[0]
 From Clock     : clk_100m
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 3.046 ns
+From           : altera_internal_jtag~TDO
+To             : altera_reserved_tdo
+From Clock     : --
 To Clock       : --
 Failed Paths   : 0
 
 Type           : Worst-case th
 Slack          : N/A
 Required Time  : None
-Actual Time    : -0.745 ns
-From           : clk_in
-To             : KeyboardInput:u0|Keyboard:u0|clk1
+Actual Time    : 2.099 ns
+From           : altera_internal_jtag~TMSUTAP
+To             : sld_hub:sld_hub_inst|sld_shadow_jsm:shadow_jsm|tms_cnt[0]
 From Clock     : --
-To Clock       : clk_100m
+To Clock       : altera_internal_jtag~TCKUTAP
 Failed Paths   : 0
 
 Type           : Clock Setup: 'clk_100m'
-Slack          : 1.168 ns
+Slack          : -72.891 ns
 Required Time  : 100.00 MHz ( period = 10.000 ns )
-Actual Time    : 130.48 MHz ( period = 7.664 ns )
-From           : KeyboardInput:u0|Keyboard:u0|scancode[1]
-To             : KeyboardAdapter:u1|o_triggeredString[2]
+Actual Time    : 12.06 MHz ( period = 82.891 ns )
+From           : VGAController:u3|y[0]
+To             : VGAController:u3|g1[0]
 From Clock     : clk_100m
 To Clock       : clk_100m
+Failed Paths   : 1193
+
+Type           : Clock Setup: 'altera_internal_jtag~TCKUTAP'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 52.66 MHz ( period = 18.990 ns )
+From           : sld_hub:sld_hub_inst|sld_shadow_jsm:shadow_jsm|state[4]
+To             : sld_hub:sld_hub_inst|tdo
+From Clock     : altera_internal_jtag~TCKUTAP
+To Clock       : altera_internal_jtag~TCKUTAP
 Failed Paths   : 0
 
 Type           : Clock Hold: 'clk_100m'
-Slack          : 0.499 ns
+Slack          : -1.389 ns
 Required Time  : 100.00 MHz ( period = 10.000 ns )
 Actual Time    : N/A
-From           : KeyboardAdapter:u1|\receive_trigger:ignore_status
-To             : KeyboardAdapter:u1|\receive_trigger:ignore_status
+From           : FreqDiv:fd_inst1|counter
+To             : FreqDiv:fd_inst1|output
 From Clock     : clk_100m
 To Clock       : clk_100m
-Failed Paths   : 0
+Failed Paths   : 1
 
 Type           : Total number of failed paths
 Slack          : 
@@ -60,7 +80,7 @@ From           :
 To             : 
 From Clock     : 
 To Clock       : 
-Failed Paths   : 0
+Failed Paths   : 1194
 
 --------------------------------------------------------------------------------------
 

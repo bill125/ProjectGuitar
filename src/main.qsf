@@ -47,7 +47,7 @@ set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name MISC_FILE "C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/main.dpf"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_NETLIST_TYPE POST_FIT -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
 set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
@@ -69,14 +69,6 @@ set_location_assignment PIN_AF8 -to seg1[2]
 set_location_assignment PIN_AF7 -to seg1[1]
 set_location_assignment PIN_AE7 -to seg1[0]
 set_location_assignment PIN_C19 -to RXD
-set_global_assignment -name VHDL_FILE UARTIn.vhd
-set_global_assignment -name VHDL_FILE divEven.vhd
-set_global_assignment -name VHDL_FILE Keyboard.vhd
-set_global_assignment -name VHDL_FILE seg7.vhd
-set_global_assignment -name VHDL_FILE main.vhd
-set_global_assignment -name VHDL_FILE uart.vhd
-set_global_assignment -name VHDL_FILE constant_package.vhd
-set_global_assignment -name VHDL_FILE UARTInAdapter.vhd
 set_location_assignment PIN_N2 -to clk_100m
 set_location_assignment PIN_AD6 -to clk_in
 set_location_assignment PIN_AD15 -to seg2[6]
@@ -86,13 +78,81 @@ set_location_assignment PIN_AB12 -to seg2[3]
 set_location_assignment PIN_AC11 -to seg2[2]
 set_location_assignment PIN_AD10 -to seg2[1]
 set_location_assignment PIN_AF9 -to seg2[0]
-set_global_assignment -name VHDL_FILE FreqDiv.vhd
-set_global_assignment -name VECTOR_WAVEFORM_FILE converter.vwf
 set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE converter.vwf
-set_global_assignment -name VHDL_FILE UARTOutAdapter.vhd
 set_location_assignment PIN_AD4 -to click
 set_location_assignment PIN_A20 -to TXD
-set_location_assignment PIN_AD23 -to clk_out
+set_location_assignment PIN_AD17 -to clk_out
 set_global_assignment -name FMAX_REQUIREMENT "100 MHz" -section_id clk_100m
 set_instance_assignment -name CLOCK_SETTINGS clk_100m -to clk_100m
 set_global_assignment -name MISC_FILE "Y:/workspace/course/2.2/shushe/ProjectGuitar/src/main.dpf"
+set_location_assignment PIN_U2 -to o_BLUE[2]
+set_location_assignment PIN_U1 -to o_BLUE[1]
+set_location_assignment PIN_T4 -to o_BLUE[0]
+set_location_assignment PIN_T3 -to o_GREEN[2]
+set_location_assignment PIN_T2 -to o_GREEN[1]
+set_location_assignment PIN_R5 -to o_GREEN[0]
+set_location_assignment PIN_R4 -to o_RED[2]
+set_location_assignment PIN_R3 -to o_RED[1]
+set_location_assignment PIN_R2 -to o_RED[0]
+set_location_assignment PIN_U3 -to o_hs
+set_location_assignment PIN_U4 -to o_vs
+set_location_assignment PIN_AE11 -to o_clicked
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT -section_id Top
+set_global_assignment -name ENABLE_SIGNALTAP ON
+set_global_assignment -name USE_SIGNALTAP_FILE stp1.stp
+set_global_assignment -name SLD_NODE_CREATOR_ID 110 -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_ENTITY_NAME sld_signaltap -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_clk -to clk_100m -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_INFO=805334528" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_POWER_UP_TRIGGER=0" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SEGMENT_SIZE=128" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ATTRIBUTE_MEM_MODE=OFF" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_FLOW_USE_GENERATED=0" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_BITS=11" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_BUFFER_FULL_STOP=1" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_CURRENT_RESOURCE_WIDTH=1" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL=1" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SAMPLE_DEPTH=128" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_IN_ENABLED=1" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ADVANCED_TRIGGER_ENTITY=basic,1," -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL_PIPELINE=1" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ENABLE_ADVANCED_TRIGGER=0" -section_id auto_signaltap_0
+set_location_assignment PIN_AD12 -to o_kb_dv
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[0] -to "KeyboardAdapter:u1|o_triggeredString[0]" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[1] -to "KeyboardAdapter:u1|o_triggeredString[1]" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[2] -to "KeyboardAdapter:u1|o_triggeredString[2]" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[3] -to "KeyboardAdapter:u1|o_triggeredString[3]" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[4] -to o_clicked -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[0] -to "KeyboardAdapter:u1|o_triggeredString[0]" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[1] -to "KeyboardAdapter:u1|o_triggeredString[1]" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[2] -to "KeyboardAdapter:u1|o_triggeredString[2]" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[3] -to "KeyboardAdapter:u1|o_triggeredString[3]" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[4] -to o_clicked -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT trigger_in -to o_kb_dv -section_id auto_signaltap_0
+set_global_assignment -name VHDL_FILE KeyboardAdapter.vhd
+set_global_assignment -name VHDL_FILE KeyboardInput.vhd
+set_global_assignment -name VHDL_FILE Programme.vhd
+set_global_assignment -name VHDL_FILE UARTOut.vhd
+set_global_assignment -name VHDL_FILE Velocity.vhd
+set_global_assignment -name VHDL_FILE VGAController.vhd
+set_global_assignment -name VHDL_FILE UARTIn.vhd
+set_global_assignment -name VHDL_FILE divEven.vhd
+set_global_assignment -name VHDL_FILE Keyboard.vhd
+set_global_assignment -name VHDL_FILE seg7.vhd
+set_global_assignment -name VHDL_FILE main.vhd
+set_global_assignment -name VHDL_FILE uart.vhd
+set_global_assignment -name VHDL_FILE constant_package.vhd
+set_global_assignment -name VHDL_FILE UARTInAdapter.vhd
+set_global_assignment -name VHDL_FILE FreqDiv.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE converter.vwf
+set_global_assignment -name VHDL_FILE UARTOutAdapter.vhd
+set_global_assignment -name SIGNALTAP_FILE stp1.stp
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[5] -to o_kb_dv -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[5] -to o_kb_dv -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_DATA_BITS=6" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_BITS=6" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK=000000000000000000000000000000000000000" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK_LENGTH=39" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_CRC_LOWORD=9150" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_CRC_HIWORD=29910" -section_id auto_signaltap_0

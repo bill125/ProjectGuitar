@@ -129,3 +129,213 @@ Current editor: RPW, STED, STED, STED, STED, RPW, SFW, WED, STED
 Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version </full_error>
 </internal_error>
 
+<internal_error>
+	<executable>quartus_cdb.exe</executable>
+	<sub_system>AMERGE</sub_system>
+	<file>/quartus/atm/amerge/amerge_incr_tap.cpp</file>
+	<line>6076</line>
+	<callstack>
+	0x0e759f1c: atm_amerge + 0x19f1c (amerge_mini_merge + 0x16b3c)
+	</callstack>
+	<error>oterm</error>
+	<date>Sat Jun 03 21:16:02 2017</date>
+	<version>Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version</version>
+	<full_error>oterm
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version </full_error>
+</internal_error>
+
+<internal_error>
+	<executable>quartus_cdb.exe</executable>
+	<sub_system>AMERGE</sub_system>
+	<file>/quartus/atm/amerge/amerge_incr_tap.cpp</file>
+	<line>6076</line>
+	<callstack>
+	0x0e9d9f1c: atm_amerge + 0x19f1c (amerge_mini_merge + 0x16b3c)
+	</callstack>
+	<error>oterm</error>
+	<date>Sat Jun 03 21:20:28 2017</date>
+	<version>Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version</version>
+	<full_error>oterm
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version </full_error>
+</internal_error>
+
+<internal_error>
+	<executable>quartus_cdb.exe</executable>
+	<sub_system>AMERGE</sub_system>
+	<file>/quartus/atm/amerge/amerge_incr_tap.cpp</file>
+	<line>6076</line>
+	<callstack>
+	0x0e9e9f1c: atm_amerge + 0x19f1c (amerge_mini_merge + 0x16b3c)
+	</callstack>
+	<error>oterm</error>
+	<date>Sat Jun 03 21:20:48 2017</date>
+	<version>Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version</version>
+	<full_error>oterm
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version </full_error>
+</internal_error>
+
+<internal_error>
+	<executable>quartus_cdb.exe</executable>
+	<sub_system>AMERGE</sub_system>
+	<file>/quartus/atm/amerge/amerge_incr_tap.cpp</file>
+	<line>6076</line>
+	<callstack>
+	0x0e749f1c: atm_amerge + 0x19f1c (amerge_mini_merge + 0x16b3c)
+	</callstack>
+	<error>oterm</error>
+	<date>Sat Jun 03 21:21:44 2017</date>
+	<version>Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version</version>
+	<full_error>oterm
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version </full_error>
+</internal_error>
+
+<internal_error>
+	<executable>quartus_cdb.exe</executable>
+	<sub_system>AMERGE</sub_system>
+	<file>/quartus/atm/amerge/amerge_incr_tap.cpp</file>
+	<line>6076</line>
+	<callstack>
+	0x0eaa9f1c: atm_amerge + 0x19f1c (amerge_mini_merge + 0x16b3c)
+	</callstack>
+	<error>oterm</error>
+	<date>Sat Jun 03 21:23:01 2017</date>
+	<version>Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version</version>
+	<full_error>oterm
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version </full_error>
+</internal_error>
+
+<internal_error>
+	<executable>quartus_cdb.exe</executable>
+	<sub_system>AMERGE</sub_system>
+	<file>/quartus/atm/amerge/amerge_incr_tap.cpp</file>
+	<line>6076</line>
+	<callstack>
+	0x0e729f1c: atm_amerge + 0x19f1c (amerge_mini_merge + 0x16b3c)
+	</callstack>
+	<error>oterm</error>
+	<date>Sat Jun 03 21:24:33 2017</date>
+	<version>Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version</version>
+	<full_error>oterm
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version </full_error>
+</internal_error>
+
+<internal_error>
+	<executable>quartus_cdb.exe</executable>
+	<sub_system>AMERGE</sub_system>
+	<file>/quartus/atm/amerge/amerge_incr_tap.cpp</file>
+	<line>6076</line>
+	<callstack>
+	0x0e9d9f1c: atm_amerge + 0x19f1c (amerge_mini_merge + 0x16b3c)
+	</callstack>
+	<error>oterm</error>
+	<date>Sat Jun 03 21:25:26 2017</date>
+	<version>Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version</version>
+	<full_error>oterm
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version </full_error>
+</internal_error>
+
+<internal_error>
+	<executable>quartus_cdb.exe</executable>
+	<sub_system>AMERGE</sub_system>
+	<file>/quartus/atm/amerge/amerge_incr_tap.cpp</file>
+	<line>6076</line>
+	<callstack>
+	0x0e779f1c: atm_amerge + 0x19f1c (amerge_mini_merge + 0x16b3c)
+	</callstack>
+	<error>oterm</error>
+	<date>Sat Jun 03 21:26:10 2017</date>
+	<version>Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version</version>
+	<full_error>oterm
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version </full_error>
+</internal_error>
+
+<internal_error>
+	<executable>quartus_cdb.exe</executable>
+	<sub_system>AMERGE</sub_system>
+	<file>/quartus/atm/amerge/amerge_incr_tap.cpp</file>
+	<line>6076</line>
+	<callstack>
+	0x0ea89f1c: atm_amerge + 0x19f1c (amerge_mini_merge + 0x16b3c)
+	</callstack>
+	<error>oterm</error>
+	<date>Sat Jun 03 21:32:21 2017</date>
+	<version>Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version</version>
+	<full_error>oterm
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version </full_error>
+</internal_error>
+
+<internal_error>
+	<executable>quartus_cdb.exe</executable>
+	<sub_system>AMERGE</sub_system>
+	<file>/quartus/atm/amerge/amerge_incr_tap.cpp</file>
+	<line>6076</line>
+	<callstack>
+	0x0e759f1c: atm_amerge + 0x19f1c (amerge_mini_merge + 0x16b3c)
+	</callstack>
+	<error>oterm</error>
+	<date>Sat Jun 03 21:34:30 2017</date>
+	<version>Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version</version>
+	<full_error>oterm
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version </full_error>
+</internal_error>
+
+<internal_error>
+	<executable>quartus_cdb.exe</executable>
+	<sub_system>AMERGE</sub_system>
+	<file>/quartus/atm/amerge/amerge_incr_tap.cpp</file>
+	<line>6076</line>
+	<callstack>
+	0x0e759f1c: atm_amerge + 0x19f1c (amerge_mini_merge + 0x16b3c)
+	</callstack>
+	<error>oterm</error>
+	<date>Sat Jun 03 21:35:25 2017</date>
+	<version>Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version</version>
+	<full_error>oterm
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version </full_error>
+</internal_error>
+
+<internal_error>
+	<executable>quartus_cdb.exe</executable>
+	<sub_system>AMERGE</sub_system>
+	<file>/quartus/atm/amerge/amerge_incr_tap.cpp</file>
+	<line>6076</line>
+	<callstack>
+	0x0ea09f1c: atm_amerge + 0x19f1c (amerge_mini_merge + 0x16b3c)
+	</callstack>
+	<error>oterm</error>
+	<date>Sat Jun 03 21:41:53 2017</date>
+	<version>Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version</version>
+	<full_error>oterm
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version </full_error>
+</internal_error>
+
+<internal_error>
+	<executable>quartus_cdb.exe</executable>
+	<sub_system>AMERGE</sub_system>
+	<file>/quartus/atm/amerge/amerge_incr_tap.cpp</file>
+	<line>6076</line>
+	<callstack>
+	0x0e7c9f1c: atm_amerge + 0x19f1c (amerge_mini_merge + 0x16b3c)
+	</callstack>
+	<error>oterm</error>
+	<date>Sat Jun 03 22:04:27 2017</date>
+	<version>Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version</version>
+	<full_error>oterm
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version </full_error>
+</internal_error>
+
+<internal_error>
+	<executable>quartus_cdb.exe</executable>
+	<sub_system>AMERGE</sub_system>
+	<file>/quartus/atm/amerge/amerge_incr_tap.cpp</file>
+	<line>6076</line>
+	<callstack>
+	0x0e729f1c: atm_amerge + 0x19f1c (amerge_mini_merge + 0x16b3c)
+	</callstack>
+	<error>oterm</error>
+	<date>Sat Jun 03 22:05:01 2017</date>
+	<version>Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version</version>
+	<full_error>oterm
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version </full_error>
+</internal_error>
+

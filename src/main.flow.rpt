@@ -1,5 +1,5 @@
 Flow report for main
-Fri Jun 02 15:55:33 2017
+Sun Jun 04 16:15:56 2017
 Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
 
 
@@ -38,21 +38,21 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +------------------------------------+------------------------------------------+
-; Flow Status                        ; Successful - Fri Jun 02 15:55:33 2017    ;
+; Flow Status                        ; Successful - Sun Jun 04 16:15:55 2017    ;
 ; Quartus II Version                 ; 9.0 Build 132 02/25/2009 SJ Full Version ;
 ; Revision Name                      ; main                                     ;
 ; Top-level Entity Name              ; main                                     ;
 ; Family                             ; Cyclone II                               ;
 ; Device                             ; EP2C70F672C8                             ;
 ; Timing Models                      ; Final                                    ;
-; Met timing requirements            ; Yes                                      ;
-; Total logic elements               ; 73 / 68,416 ( < 1 % )                    ;
-;     Total combinational functions  ; 62 / 68,416 ( < 1 % )                    ;
-;     Dedicated logic registers      ; 32 / 68,416 ( < 1 % )                    ;
-; Total registers                    ; 32                                       ;
-; Total pins                         ; 32 / 422 ( 8 % )                         ;
+; Met timing requirements            ; No                                       ;
+; Total logic elements               ; 3,411 / 68,416 ( 5 % )                   ;
+;     Total combinational functions  ; 3,239 / 68,416 ( 5 % )                   ;
+;     Dedicated logic registers      ; 547 / 68,416 ( < 1 % )                   ;
+; Total registers                    ; 547                                      ;
+; Total pins                         ; 45 / 422 ( 11 % )                        ;
 ; Total virtual pins                 ; 0                                        ;
-; Total memory bits                  ; 0 / 1,152,000 ( 0 % )                    ;
+; Total memory bits                  ; 768 / 1,152,000 ( < 1 % )                ;
 ; Embedded Multiplier 9-bit elements ; 0 / 300 ( 0 % )                          ;
 ; Total PLLs                         ; 0 / 4 ( 0 % )                            ;
 +------------------------------------+------------------------------------------+
@@ -63,26 +63,52 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/02/2017 15:55:12 ;
+; Start date & time ; 06/03/2017 22:05:24 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; main                ;
 +-------------------+---------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                                   ;
-+------------------------------------+----------------------------------------------------------------+---------------+-------------+----------------+
-; Assignment Name                    ; Value                                                          ; Default Value ; Entity Name ; Section Id     ;
-+------------------------------------+----------------------------------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID              ; 132155099019303.149639011202748                                ; --            ; --          ; --             ;
-; MAX_CORE_JUNCTION_TEMP             ; 85                                                             ; --            ; --          ; --             ;
-; MIN_CORE_JUNCTION_TEMP             ; 0                                                              ; --            ; --          ; --             ;
-; MISC_FILE                          ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/main.dpf ; --            ; --          ; --             ;
-; MISC_FILE                          ; Y:/workspace/course/2.2/shushe/ProjectGuitar/src/main.dpf      ; --            ; --          ; --             ;
-; PARTITION_COLOR                    ; 16764057                                                       ; --            ; --          ; Top            ;
-; PARTITION_NETLIST_TYPE             ; SOURCE                                                         ; --            ; --          ; Top            ;
-; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                                                            ; --            ; --          ; eda_blast_fpga ;
-+------------------------------------+----------------------------------------------------------------+---------------+-------------+----------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                      ;
++-------------------------------------+----------------------------------------------------------------+---------------+-------------+------------------+
+; Assignment Name                     ; Value                                                          ; Default Value ; Entity Name ; Section Id       ;
++-------------------------------------+----------------------------------------------------------------+---------------+-------------+------------------+
+; COMPILER_SIGNATURE_ID               ; 132155099019303.149649872413596                                ; --            ; --          ; --               ;
+; ENABLE_SIGNALTAP                    ; On                                                             ; --            ; --          ; --               ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                                             ; --            ; --          ; --               ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                                              ; --            ; --          ; --               ;
+; MISC_FILE                           ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/main.dpf ; --            ; --          ; --               ;
+; MISC_FILE                           ; Y:/workspace/course/2.2/shushe/ProjectGuitar/src/main.dpf      ; --            ; --          ; --               ;
+; PARTITION_COLOR                     ; 16764057                                                       ; --            ; --          ; Top              ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT                                                      ; --            ; --          ; Top              ;
+; PARTITION_NETLIST_TYPE              ; POST_FIT                                                       ; --            ; --          ; Top              ;
+; SLD_NODE_CREATOR_ID                 ; 110                                                            ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_ENTITY_NAME                ; sld_signaltap                                                  ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_INFO=805334528                                        ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_POWER_UP_TRIGGER=0                                         ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0                  ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SEGMENT_SIZE=128                                           ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ATTRIBUTE_MEM_MODE=OFF                                     ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_FLOW_USE_GENERATED=0                                 ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_BITS=11                                              ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_BUFFER_FULL_STOP=1                                         ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_CURRENT_RESOURCE_WIDTH=1                                   ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL=1                                            ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SAMPLE_DEPTH=128                                           ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_IN_ENABLED=1                                       ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ADVANCED_TRIGGER_ENTITY=basic,1,                           ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL_PIPELINE=1                                   ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ENABLE_ADVANCED_TRIGGER=0                                  ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_DATA_BITS=5                                                ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_BITS=5                                             ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK=000000000000000000000000000000000000        ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK_LENGTH=36                                   ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_CRC_HIWORD=46736                                      ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_CRC_LOWORD=32234                                      ; --            ; --          ; auto_signaltap_0 ;
+; USE_GENERATED_PHYSICAL_CONSTRAINTS  ; Off                                                            ; --            ; --          ; eda_blast_fpga   ;
+; USE_SIGNALTAP_FILE                  ; stp1.stp                                                       ; --            ; --          ; --               ;
++-------------------------------------+----------------------------------------------------------------+---------------+-------------+------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------+
@@ -90,11 +116,42 @@ applicable agreement for further details.
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis    ; 00:00:01     ; 1.0                     ; 289 MB              ; 00:00:01                           ;
-; Fitter                  ; 00:00:10     ; 1.3                     ; 430 MB              ; 00:00:11                           ;
-; Assembler               ; 00:00:06     ; 1.0                     ; 388 MB              ; 00:00:06                           ;
-; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 221 MB              ; 00:00:00                           ;
-; Total                   ; 00:00:17     ; --                      ; --                  ; 00:00:18                           ;
+; Analysis & Synthesis    ; 00:00:23     ; 1.0                     ; 321 MB              ; 00:00:22                           ;
+; Partition Merge         ; 00:00:03     ; 1.0                     ; 311 MB              ; 00:00:03                           ;
+; Fitter                  ; 00:00:28     ; 1.5                     ; 440 MB              ; 00:00:37                           ;
+; Assembler               ; 00:00:06     ; 1.0                     ; 394 MB              ; 00:00:05                           ;
+; Classic Timing Analyzer ; 00:00:01     ; 1.0                     ; 239 MB              ; 00:00:01                           ;
+; Analysis & Synthesis    ; 00:00:20     ; 1.0                     ; 328 MB              ; 00:00:20                           ;
+; Partition Merge         ; 00:00:03     ; 1.0                     ; 313 MB              ; 00:00:03                           ;
+; Fitter                  ; 00:00:29     ; 1.5                     ; 442 MB              ; 00:00:37                           ;
+; Assembler               ; 00:00:05     ; 1.0                     ; 394 MB              ; 00:00:05                           ;
+; Classic Timing Analyzer ; 00:00:01     ; 1.0                     ; 239 MB              ; 00:00:01                           ;
+; Analysis & Synthesis    ; 00:00:21     ; 1.0                     ; 328 MB              ; 00:00:20                           ;
+; Partition Merge         ; 00:00:03     ; 1.0                     ; 313 MB              ; 00:00:03                           ;
+; Fitter                  ; 00:00:29     ; 1.6                     ; 442 MB              ; 00:00:38                           ;
+; Assembler               ; 00:00:05     ; 1.0                     ; 394 MB              ; 00:00:05                           ;
+; Classic Timing Analyzer ; 00:00:01     ; 1.0                     ; 239 MB              ; 00:00:01                           ;
+; Analysis & Synthesis    ; 00:00:22     ; 1.0                     ; 329 MB              ; 00:00:21                           ;
+; Partition Merge         ; 00:00:03     ; 1.0                     ; 313 MB              ; 00:00:03                           ;
+; Fitter                  ; 00:00:28     ; 1.5                     ; 442 MB              ; 00:00:36                           ;
+; Assembler               ; 00:00:06     ; 1.0                     ; 394 MB              ; 00:00:05                           ;
+; Classic Timing Analyzer ; 00:00:01     ; 1.0                     ; 240 MB              ; 00:00:01                           ;
+; Analysis & Synthesis    ; 00:00:21     ; 1.0                     ; 328 MB              ; 00:00:21                           ;
+; Partition Merge         ; 00:00:02     ; 1.0                     ; 321 MB              ; 00:00:03                           ;
+; Fitter                  ; 00:00:29     ; 1.6                     ; 442 MB              ; 00:00:38                           ;
+; Assembler               ; 00:00:05     ; 1.0                     ; 394 MB              ; 00:00:05                           ;
+; Classic Timing Analyzer ; 00:00:01     ; 1.0                     ; 240 MB              ; 00:00:01                           ;
+; Analysis & Synthesis    ; 00:00:22     ; 1.0                     ; 328 MB              ; 00:00:21                           ;
+; Partition Merge         ; 00:00:03     ; 1.0                     ; 313 MB              ; 00:00:03                           ;
+; Fitter                  ; 00:00:28     ; 1.6                     ; 442 MB              ; 00:00:36                           ;
+; Assembler               ; 00:00:05     ; 1.0                     ; 394 MB              ; 00:00:05                           ;
+; Classic Timing Analyzer ; 00:00:01     ; 1.0                     ; 240 MB              ; 00:00:01                           ;
+; Analysis & Synthesis    ; 00:00:05     ; 1.0                     ; 321 MB              ; 00:00:05                           ;
+; Partition Merge         ; 00:00:03     ; 1.0                     ; 312 MB              ; 00:00:03                           ;
+; Fitter                  ; 00:00:16     ; 1.3                     ; 443 MB              ; 00:00:17                           ;
+; Assembler               ; 00:00:04     ; 1.0                     ; 394 MB              ; 00:00:04                           ;
+; Classic Timing Analyzer ; 00:00:01     ; 1.0                     ; 240 MB              ; 00:00:01                           ;
+; Total                   ; 00:06:24     ; --                      ; --                  ; 00:07:11                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -104,6 +161,37 @@ applicable agreement for further details.
 ; Module Name             ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +-------------------------+------------------+------------+------------+----------------+
 ; Analysis & Synthesis    ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
+; Partition Merge         ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
+; Fitter                  ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
+; Assembler               ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
+; Classic Timing Analyzer ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
+; Analysis & Synthesis    ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
+; Partition Merge         ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
+; Fitter                  ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
+; Assembler               ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
+; Classic Timing Analyzer ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
+; Analysis & Synthesis    ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
+; Partition Merge         ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
+; Fitter                  ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
+; Assembler               ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
+; Classic Timing Analyzer ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
+; Analysis & Synthesis    ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
+; Partition Merge         ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
+; Fitter                  ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
+; Assembler               ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
+; Classic Timing Analyzer ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
+; Analysis & Synthesis    ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
+; Partition Merge         ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
+; Fitter                  ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
+; Assembler               ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
+; Classic Timing Analyzer ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
+; Analysis & Synthesis    ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
+; Partition Merge         ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
+; Fitter                  ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
+; Assembler               ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
+; Classic Timing Analyzer ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
+; Analysis & Synthesis    ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
+; Partition Merge         ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
 ; Fitter                  ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
 ; Assembler               ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
 ; Classic Timing Analyzer ; DESKTOP-HBD5N4M  ; Windows XP ; 5.1        ; x86_64         ;
@@ -114,6 +202,37 @@ applicable agreement for further details.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off ProjectGuitar -c main
+quartus_cdb --read_settings_files=off --write_settings_files=off ProjectGuitar -c main --merge=on
+quartus_fit --read_settings_files=off --write_settings_files=off ProjectGuitar -c main
+quartus_asm --read_settings_files=off --write_settings_files=off ProjectGuitar -c main
+quartus_tan --read_settings_files=off --write_settings_files=off ProjectGuitar -c main --timing_analysis_only
+quartus_map --read_settings_files=on --write_settings_files=off ProjectGuitar -c main
+quartus_cdb --read_settings_files=off --write_settings_files=off ProjectGuitar -c main --merge=on
+quartus_fit --read_settings_files=off --write_settings_files=off ProjectGuitar -c main
+quartus_asm --read_settings_files=off --write_settings_files=off ProjectGuitar -c main
+quartus_tan --read_settings_files=off --write_settings_files=off ProjectGuitar -c main --timing_analysis_only
+quartus_map --read_settings_files=on --write_settings_files=off ProjectGuitar -c main
+quartus_cdb --read_settings_files=off --write_settings_files=off ProjectGuitar -c main --merge=on
+quartus_fit --read_settings_files=off --write_settings_files=off ProjectGuitar -c main
+quartus_asm --read_settings_files=off --write_settings_files=off ProjectGuitar -c main
+quartus_tan --read_settings_files=off --write_settings_files=off ProjectGuitar -c main --timing_analysis_only
+quartus_map --read_settings_files=on --write_settings_files=off ProjectGuitar -c main
+quartus_cdb --read_settings_files=off --write_settings_files=off ProjectGuitar -c main --merge=on
+quartus_fit --read_settings_files=off --write_settings_files=off ProjectGuitar -c main
+quartus_asm --read_settings_files=off --write_settings_files=off ProjectGuitar -c main
+quartus_tan --read_settings_files=off --write_settings_files=off ProjectGuitar -c main --timing_analysis_only
+quartus_map --read_settings_files=on --write_settings_files=off ProjectGuitar -c main
+quartus_cdb --read_settings_files=off --write_settings_files=off ProjectGuitar -c main --merge=on
+quartus_fit --read_settings_files=off --write_settings_files=off ProjectGuitar -c main
+quartus_asm --read_settings_files=off --write_settings_files=off ProjectGuitar -c main
+quartus_tan --read_settings_files=off --write_settings_files=off ProjectGuitar -c main --timing_analysis_only
+quartus_map --read_settings_files=on --write_settings_files=off ProjectGuitar -c main
+quartus_cdb --read_settings_files=off --write_settings_files=off ProjectGuitar -c main --merge=on
+quartus_fit --read_settings_files=off --write_settings_files=off ProjectGuitar -c main
+quartus_asm --read_settings_files=off --write_settings_files=off ProjectGuitar -c main
+quartus_tan --read_settings_files=off --write_settings_files=off ProjectGuitar -c main --timing_analysis_only
+quartus_map --read_settings_files=on --write_settings_files=off ProjectGuitar -c main
+quartus_cdb --read_settings_files=off --write_settings_files=off ProjectGuitar -c main --merge=on
 quartus_fit --read_settings_files=off --write_settings_files=off ProjectGuitar -c main
 quartus_asm --read_settings_files=off --write_settings_files=off ProjectGuitar -c main
 quartus_tan --read_settings_files=off --write_settings_files=off ProjectGuitar -c main --timing_analysis_only

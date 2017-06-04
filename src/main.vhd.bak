@@ -10,7 +10,12 @@ entity main is
 		TXD : out std_logic;
 		clk_out : out std_logic;
 		o_cnt : out integer range 0 to 4;
-		seg0, seg1, seg2 : out std_logic_vector(6 downto 0)
+		seg0, seg1, seg2 : out std_logic_vector(6 downto 0);
+		
+		o_kb_dv : out std_logic;
+		o_clicked : out std_logic;
+		o_hs,o_vs : out std_logic; 
+		o_RED,o_GREEN,o_BLUE : out std_logic_vector(2 downto 0)
 	);
 end entity main;
 
@@ -100,10 +105,26 @@ architecture main_bhv of main is
 			i_key : in std_logic_vector(7 downto 0);
 			i_clk, hclk : in std_logic;
 			o_key : out std_logic_vector(7 downto 0);
-			o_triggeredString : out integer range 0 to 5;
-			o_clk : out std_logic
+			o_triggeredString : out integer range 0 to 15;
+			o_clk, o_all_clk : out std_logic
 		);
 	end component KeyboardAdapter;
+	
+	
+	component VGAController is
+		port(
+			i_kb_clk    :         in std_logic;
+			i_triggeredString :  in integer range 0 to 15; 
+			o_clicked : out std_logic;
+			address		:		  out	STD_LOGIC_VECTOR(14 DOWNTO 0);
+			reset       :         in  STD_LOGIC;
+			q		    :		  in STD_LOGIC;
+			clk         :         in  STD_LOGIC; --25M
+			clk_100m    :         in std_logic;
+			hs,vs       :         out STD_LOGIC; 
+			r, g, b       :         out STD_LOGIC_vector(2 downto 0)
+		);
+	end component VGAController;
 	
 signal clk_1000, clk_25m, clk_1 : std_logic;
 	
@@ -114,16 +135,18 @@ signal t_seg0, t_seg1 : std_logic_vector(6 downto 0);
 
 signal t_key : std_logic_vector(7 downto 0); 
 signal raw_kb_clk, a_kb_clk : std_logic;
-signal triggeredString : integer range 0 to 5;
+signal triggeredString : integer range 0 to 15;
 
 signal t_TX_BV : std_logic;
 signal t_TX_Byte : std_logic_vector(7 downto 0);
 signal t_Byte_done : std_logic;
 
 signal t_cnt : integer range 0 to 4;
+signal t_q : std_logic;
 
 begin
 	clk_out <= t_TX_BV;
+	o_kb_dv <= a_kb_clk;
 	u0 : KeyboardInput 
 	port map (
 		datain => i_KB_data,
@@ -146,6 +169,21 @@ begin
 	);
 	
 	u2 : seg7 port map (conv_std_logic_vector(triggeredString, 4), seg2);
+	
+	u3 : VGAController
+	port map ( 
+		i_kb_clk => a_kb_clk,
+		i_triggeredString => triggeredString,
+		o_clicked => o_clicked,
+		reset => rst_in,  
+		clk => clk_25m, 
+		q => t_q,
+		hs => o_hs, 
+		vs => o_vs, 
+		r => o_RED, 
+		g => o_GREEN, 
+		b => o_BLUE
+	);
 
     fd_inst1 : FreqDiv
     generic map
@@ -160,32 +198,32 @@ begin
         O => clk_25m
     );
     
-    fd_inst2 : FreqDiv
-    generic map
-    (
-		div => 100000000 / 1000,
-		half => 50000000 / 1000
-	)
-	port map
-	(
-		CLK => clk_100m,
-		RST => '0',
-		O => clk_1000
-	);
-	
-	fd_inst3 : FreqDiv
-    generic map
-    (
-		div => 100000000,
-		half => 50000000
-	)
-	port map
-	(
-		CLK => clk_100m,
-		RST => '0',
-		O => clk_1
-	);
-	
+--    fd_inst2 : FreqDiv
+--    generic map
+--    (
+--		div => 100000000 / 1000,
+--		half => 50000000 / 1000
+--	)
+--	port map
+--	(
+--		CLK => clk_100m,
+--		RST => '0',
+--		O => clk_1000
+--	);
+--	
+--	fd_inst3 : FreqDiv
+--    generic map
+--    (
+--		div => 100000000,
+--		half => 50000000
+--	)
+--	port map
+--	(
+--		CLK => clk_100m,
+--		RST => '0',
+--		O => clk_1
+--	);
+--	
 --	u2 : UARTIn
 --	generic map (
 --		g_CLKS_PER_BIT => 868     -- Needs to be set correctly

@@ -32,13 +32,14 @@ begin
 	clk_out <= fok;
 	
 	process(rst, fclk)
+		variable wait_times : integer range 0 to 7 := 0;
 	begin
 		if rst = '1' then
 			state <= delay ;
 			code <= (others => '0') ;
 			fok <= '0' ;
 		elsif rising_edge(fclk) then
-			fok <= '0' ;
+			fok <= '0';
 			case state is 
 				when delay =>
 					state <= start ;
@@ -102,6 +103,7 @@ begin
 				WHEN stop =>
 					IF clk = '1' then
 						if data = '1' then
+							wait_times := 5;
 							state <= finish;
 						else
 							state <= delay;
@@ -109,8 +111,14 @@ begin
 					END IF;
 
 				WHEN finish =>
-					state <= delay ;
-					fok <= '1' ;
+					fok <= '1';
+					if wait_times > 0 then
+						wait_times := wait_times - 1;
+						state <= finish;
+					else
+						state <= delay;
+					end if;
+					
 				when others =>
 					state <= delay ;
 			end case ; 
