@@ -6,6 +6,7 @@ Type           : Worst-case tsu
 Slack          : N/A
 Required Time  : None
 <<<<<<< HEAD
+<<<<<<< HEAD
 Actual Time    : 9.483 ns
 From           : rst_in
 To             : KeyboardInput:u0|Keyboard:u0|wait_times[0]
@@ -14,6 +15,11 @@ Actual Time    : 7.252 ns
 From           : rst_in
 To             : KeyboardInput:u0|Keyboard:u0|wait_times[1]
 >>>>>>> fa8078abdcc0bc5a9cf1c59438b3db1639c9dc9a
+=======
+Actual Time    : 8.631 ns
+From           : rst_in
+To             : KeyboardInput:u0|Keyboard:u0|wait_times[0]
+>>>>>>> bf6028c43e4b9b59ce2facb37bc5e08a1d8ce368
 From Clock     : --
 To Clock       : clk_100m
 Failed Paths   : 0
@@ -21,6 +27,7 @@ Failed Paths   : 0
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
+<<<<<<< HEAD
 <<<<<<< HEAD
 Actual Time    : 21.610 ns
 From           : UARTIn:uart_in|r_RX_Byte[0]
@@ -30,6 +37,11 @@ Actual Time    : 20.974 ns
 From           : UARTIn:uart_in|r_RX_Byte[2]
 To             : seg0[0]
 >>>>>>> fa8078abdcc0bc5a9cf1c59438b3db1639c9dc9a
+=======
+Actual Time    : 19.321 ns
+From           : UARTInAdapter:uart_in_adapter|t_Guitar[1][1]
+To             : strings[1][1]
+>>>>>>> bf6028c43e4b9b59ce2facb37bc5e08a1d8ce368
 From Clock     : clk_100m
 To Clock       : --
 Failed Paths   : 0
@@ -48,6 +60,7 @@ Type           : Worst-case th
 Slack          : N/A
 Required Time  : None
 <<<<<<< HEAD
+<<<<<<< HEAD
 Actual Time    : 1.960 ns
 From           : altera_internal_jtag~TMSUTAP
 To             : sld_hub:sld_hub_inst|sld_shadow_jsm:shadow_jsm|tms_cnt[0]
@@ -56,6 +69,11 @@ Actual Time    : 1.703 ns
 From           : altera_internal_jtag~TMSUTAP
 To             : sld_hub:sld_hub_inst|sld_shadow_jsm:shadow_jsm|state[1]
 >>>>>>> fa8078abdcc0bc5a9cf1c59438b3db1639c9dc9a
+=======
+Actual Time    : 1.705 ns
+From           : altera_internal_jtag~TDIUTAP
+To             : sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|bypass_reg_out
+>>>>>>> bf6028c43e4b9b59ce2facb37bc5e08a1d8ce368
 From Clock     : --
 To Clock       : altera_internal_jtag~TCKUTAP
 Failed Paths   : 0
@@ -63,6 +81,7 @@ Failed Paths   : 0
 Type           : Clock Setup: 'clk_100m'
 Slack          : N/A
 Required Time  : None
+<<<<<<< HEAD
 <<<<<<< HEAD
 Actual Time    : 44.86 MHz ( period = 22.290 ns )
 From           : KeyboardInput:u0|Keyboard:u0|scancode[2]
@@ -72,6 +91,11 @@ Actual Time    : 30.84 MHz ( period = 32.430 ns )
 From           : KeyboardInput:u0|Keyboard:u0|scancode[7]
 To             : looper:looper_inst|cnt[31]
 >>>>>>> fa8078abdcc0bc5a9cf1c59438b3db1639c9dc9a
+=======
+Actual Time    : 26.49 MHz ( period = 37.746 ns )
+From           : KeyboardInput:u0|Keyboard:u0|scancode[5]
+To             : looper:looper_inst2|cnt[30]
+>>>>>>> bf6028c43e4b9b59ce2facb37bc5e08a1d8ce368
 From Clock     : clk_100m
 To Clock       : clk_100m
 Failed Paths   : 0
@@ -80,12 +104,17 @@ Type           : Clock Setup: 'altera_internal_jtag~TCKUTAP'
 Slack          : N/A
 Required Time  : None
 <<<<<<< HEAD
+<<<<<<< HEAD
 Actual Time    : 93.58 MHz ( period = 10.686 ns )
 From           : sld_hub:sld_hub_inst|irf_reg[1][5]
 =======
 Actual Time    : 96.79 MHz ( period = 10.332 ns )
 From           : sld_hub:sld_hub_inst|irf_reg[1][4]
 >>>>>>> fa8078abdcc0bc5a9cf1c59438b3db1639c9dc9a
+=======
+Actual Time    : 97.41 MHz ( period = 10.266 ns )
+From           : sld_hub:sld_hub_inst|irf_reg[1][5]
+>>>>>>> bf6028c43e4b9b59ce2facb37bc5e08a1d8ce368
 To             : sld_hub:sld_hub_inst|tdo
 From Clock     : altera_internal_jtag~TCKUTAP
 To Clock       : altera_internal_jtag~TCKUTAP
@@ -95,6 +124,7 @@ Type           : Clock Hold: 'clk_100m'
 Slack          : Not operational: Clock Skew > Data Delay
 Required Time  : None
 Actual Time    : N/A
+<<<<<<< HEAD
 <<<<<<< HEAD
 From           : NoteGen:note_gen|o_TX_DV
 To             : UARTOutAdapter:uart_out_adapter|\FSM:l_TX_DV
@@ -108,6 +138,13 @@ From Clock     : clk_100m
 To Clock       : clk_100m
 Failed Paths   : 29
 >>>>>>> fa8078abdcc0bc5a9cf1c59438b3db1639c9dc9a
+=======
+From           : KeyboardInput:u0|Keyboard:u0|code[5]
+To             : KeyboardInput:u0|Keyboard:u0|scancode[5]
+From Clock     : clk_100m
+To Clock       : clk_100m
+Failed Paths   : 73
+>>>>>>> bf6028c43e4b9b59ce2facb37bc5e08a1d8ce368
 
 Type           : Total number of failed paths
 Slack          : 
@@ -118,10 +155,14 @@ To             :
 From Clock     : 
 To Clock       : 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Failed Paths   : 44
 =======
 Failed Paths   : 29
 >>>>>>> fa8078abdcc0bc5a9cf1c59438b3db1639c9dc9a
+=======
+Failed Paths   : 73
+>>>>>>> bf6028c43e4b9b59ce2facb37bc5e08a1d8ce368
 
 --------------------------------------------------------------------------------------
 

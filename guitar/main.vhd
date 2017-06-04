@@ -1,7 +1,7 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-use ieee.std_logic_arith.all;
-use work.definitions.all;
+-- library IEEE;
+-- use IEEE.STD_LOGIC_1164.ALL;
+-- use ieee.std_logic_arith.all;
+-- use work.definitions.all;
 
 --entity main is
 --  port (
@@ -46,7 +46,7 @@ entity main is
   port (
     i_KB_Data, clk_100m, clk_in, rst_in, r_uart_RX_Serial : in std_logic;
     w_uart_TX_Serial : out std_logic;
-    seg0, seg1, seg2 : out std_logic_vector(6 downto 0);
+    seg0, seg1, seg2, seg_base : out std_logic_vector(6 downto 0);
     o_cnt : out integer range 0 to 4;
     noteLevel : out integer range 0 to 88;
       triggeredString : out integer range 0 to 15;
@@ -58,7 +58,7 @@ entity main is
       stx1 : out integer range 0 to 3;
     noteLevel_TX_DV1 : out std_logic;
     clk_out : out std_logic;
-    looper_TX_DV1 : out std_logic;
+    looper_TX_DV1 : out std_logic_vector(0 to MaxLoopers);
     sstx : out integer range 0 to 3;
     wait_times_out : out integer range 0 to 31;
     raw_kb_TX_DV1 : out std_logic
@@ -135,11 +135,16 @@ architecture main_bhv of main is
     port (
       i_RX_DV : in std_logic;
       i_key : in std_logic_vector(7 downto 0);
-      o_prog : out integer range 0 to 127
+      o_prog : out Loopers127Array
       );
   end component Programme;
 
   component Velocity is
+    generic (
+      up_key : std_logic_vector(7 downto 0) := x"75";
+      down_key : std_logic_vector(7 downto 0) := x"72";
+      default : integer range 0 to 127 := 64
+      );
     port (
       i_RX_DV : in std_logic;
       i_key : in std_logic_vector(7 downto 0);
@@ -191,7 +196,7 @@ architecture main_bhv of main is
           i_Clk : in std_logic;
           i_TX_DV : in std_logic;
           i_Byte_done : in std_logic;
-          i_isOn : in std_logic;
+          i_isOn : in integer range 0 to 15; --channel in fact
           i_noteLevel : in integer range 0 to 88;
           i_vel  : in integer range 0 to 255;
           i_prog : in integer range 0 to 255;
@@ -221,18 +226,23 @@ architecture main_bhv of main is
   -- data valid clocks
   signal raw_kb_TX_DV, a_kb_TX_DV, a_kb_all_TX_DV : std_logic; -- keyboard
   signal uart_in_TX_DV : std_logic;
-  signal note_gen_TX_DV, looper_TX_DV, noteLevel_TX_DV : std_logic;
+  signal looper_TX_DV : std_logic_vector(0 to MaxLoopers);
+  signal note_gen_TX_DV, noteLevel_TX_DV : std_logic;
   signal uart_out_a_TX_DV : std_logic;
-    signal uart_out_TX_Done : std_logic;
-    signal uart_out_a_TX_Done : std_logic;
+  signal uart_out_TX_Done : std_logic;
+  signal uart_out_a_TX_Done : std_logic;
   -- guitar properties
-  signal gu_triggeredString : integer range 0 to 15;
+  signal gu_triggeredString, gu_chn : integer range 0 to 15;
   signal gu_prog : integer range 0 to 127;
+  signal gu_progs : Loopers127Array;
   signal gu_strings : GuitarStatus;
-    signal gu_vel : integer; -- TODO: to array
-    signal note_gen_noteLevel, looper_noteLevel, gu_noteLevel : integer range 0 to 88;
+  signal gu_vel : integer range 0 to 127;
+  signal gu_base_note : integer range 0 to 127 := 24;
+  signal gu_vels : Loopers127Array;
+  signal note_gen_noteLevel, gu_noteLevel : integer range 0 to 88;
+  signal looper_noteLevel : Loopers127Array;
   -- uart
-    signal uart_out_a_byte : std_logic_vector(7 downto 0);
+  signal uart_out_a_byte : std_logic_vector(7 downto 0);
   signal uart_in_byte : std_logic_vector(7 downto 0);
   -- debug
   signal t_cnt : integer range 0 to 4;
@@ -302,43 +312,98 @@ begin
       -- stx1 => stx1
       );
 
-  looper_inst : looper
+  looper_inst0 : looper
     generic map (
       g_looper_index => 1,
-      record_key => x"15", --Q
+      record_key => x"3A", --M
       play_key => x"1C", --A
       g_CLKS_PER_INTERVAl => 1000000 -- 4*25000000 / 100
       )
     port map (
       i_RX_DV => a_kb_all_TX_DV,
       i_clk => clk_100m,
-      i_noteGen_RX_DV => note_gen_TX_DV,
+      i_noteGen_RX_DV => noteLevel_TX_DV,
       i_key => t_key,
       i_TX_Done => uart_out_a_TX_Done,
-      i_noteLevel => note_gen_noteLevel,
-      o_noteLevel => looper_noteLevel,
-      o_TX_DV => looper_TX_DV,
+      i_noteLevel => gu_noteLevel,
+      o_noteLevel => looper_noteLevel(0),
+      o_TX_DV => looper_TX_DV(0)
+      -- stx => stx1,
+      -- sstx => sstx,
+      -- wait_times_out => wait_times_out
+      );
+  looper_inst1 : looper
+    generic map (
+      g_looper_index => 1,
+      record_key => x"41", --,
+      play_key => x"1B", --S
+      g_CLKS_PER_INTERVAl => 1000000 -- 4*25000000 / 100
+      )
+    port map (
+      i_RX_DV => a_kb_all_TX_DV,
+      i_clk => clk_100m,
+      i_noteGen_RX_DV => noteLevel_TX_DV,
+      i_key => t_key,
+      i_TX_Done => uart_out_a_TX_Done,
+      i_noteLevel => gu_noteLevel,
+      o_noteLevel => looper_noteLevel(1),
+      o_TX_DV => looper_TX_DV(1),
       stx => stx1,
       sstx => sstx,
-      wait_times_out => wait_times_out);
-      -- index1 => looper_index1,
-      -- cnt1 => looper_cnt1,
-      -- intvls1 => 
+      wait_times_out => wait_times_out
+      );
+  looper_inst2 : looper
+    generic map (
+      g_looper_index => 1,
+      record_key => x"49", --.
+      play_key => x"23", --D
+      g_CLKS_PER_INTERVAl => 1000000 -- 4*25000000 / 100
+      )
+    port map (
+      i_RX_DV => a_kb_all_TX_DV,
+      i_clk => clk_100m,
+      i_noteGen_RX_DV => noteLevel_TX_DV,
+      i_key => t_key,
+      i_TX_Done => uart_out_a_TX_Done,
+      i_noteLevel => gu_noteLevel,
+      o_noteLevel => looper_noteLevel(2),
+      o_TX_DV => looper_TX_DV(2)
+      -- stx => stx1,
+      -- sstx => sstx,
+      -- wait_times_out => wait_times_out
+      );
+  
   gu_noteLevel_process: process (clk_100m) is
     variable l_note_gen_TX_DV : std_logic := note_gen_TX_DV;
-    variable l_looper_TX_DV : std_logic := looper_TX_DV;
+    variable l_looper_TX_DV : std_logic_vector(0 to MaxLoopers) := looper_TX_DV;
   begin
     if rising_edge(clk_100m) then
-      if l_note_gen_TX_DV /= note_gen_TX_DV and l_note_gen_TX_DV = '1' then
-        gu_noteLevel <= note_gen_noteLevel;
-      elsif l_looper_TX_DV /= looper_TX_DV and looper_TX_DV = '1' then
-        gu_noteLevel <= looper_noteLevel;
+      if l_note_gen_TX_DV /= note_gen_TX_DV and note_gen_TX_DV = '1' then
+        gu_noteLevel <= note_gen_noteLevel + gu_base_note;
+        gu_vel <= gu_vels(0);
+        gu_prog <= gu_progs(0);
+        gu_chn <= 0;
+      elsif l_looper_TX_DV(0) /= looper_TX_DV(0) and looper_TX_DV(0) = '1' then
+        gu_noteLevel <= looper_noteLevel(0);
+        gu_vel <= gu_vels(1);
+        gu_prog <= gu_progs(1);
+        gu_chn <= 1;
+      elsif l_looper_TX_DV(1) /= looper_TX_DV(1) and looper_TX_DV(1) = '1' then
+        gu_noteLevel <= looper_noteLevel(1);
+        gu_vel <= gu_vels(2);
+        gu_prog <= gu_progs(2);
+        gu_chn <= 2;
+      elsif l_looper_TX_DV(2) /= looper_TX_DV(2) and looper_TX_DV(2) = '1' then
+        gu_noteLevel <= looper_noteLevel(2);
+        gu_vel <= gu_vels(3);
+        gu_prog <= gu_progs(3);
+        gu_chn <= 3;
       end if;
       l_note_gen_TX_DV := note_gen_TX_DV;
       l_looper_TX_DV := looper_TX_DV;
+      noteLevel_TX_DV <= note_gen_TX_DV or looper_TX_DV(0) or looper_TX_DV(1) or looper_TX_DV(2);
     end if;
   end process;
-  noteLevel_TX_DV <= note_gen_TX_DV or looper_TX_DV;
   -- debug
   noteLevel_TX_DV1 <= noteLevel_TX_DV;
   looper_TX_DV1 <= looper_TX_DV;
@@ -353,20 +418,65 @@ begin
     port map (
       i_RX_DV => a_kb_all_TX_DV,
       i_key => t_key,
-      o_prog => gu_prog
+      o_prog => gu_progs
       );
 
-  velocity_inst : Velocity
+  velocity_inst0 : Velocity
+    generic map (
+      up_key => x"74", --6 on pad
+      down_key => x"6B" --4 on pad
+      )
     port map (
       i_RX_DV => raw_kb_TX_DV,
       i_key => t_key,
-      o_vel => gu_vel
+      o_vel => gu_vels(0)
+      );
+  velocity_inst1 : Velocity
+    generic map (
+      up_key => x"6C", --7 on pad
+      down_key => x"69" --1 on pad
+      )
+    port map (
+      i_RX_DV => raw_kb_TX_DV,
+      i_key => t_key,
+      o_vel => gu_vels(1)
+      );
+  velocity_inst2 : Velocity
+    generic map (
+      up_key => x"75", --8 on pad
+      down_key => x"72" --2 on pad
+      )
+    port map (
+      i_RX_DV => raw_kb_TX_DV,
+      i_key => t_key,
+      o_vel => gu_vels(2)
+      );
+  velocity_inst3 : Velocity
+    generic map (
+      up_key => x"7D", --9 on pad
+      down_key => x"7A" --3 on pad
+      )
+    port map (
+      i_RX_DV => raw_kb_TX_DV,
+      i_key => t_key,
+      o_vel => gu_vels(3)
+      );
+  capo_inst3 : Velocity
+    generic map (
+      up_key => x"1A", --9 on pad
+      down_key => x"22", --3 on pad
+      default => 24
+      )
+    port map (
+      i_RX_DV => a_kb_all_TX_DV,
+      i_key => t_key,
+      o_vel => gu_base_note
       );
   
   uart_out_adapter : UARTOutAdapter
     port map (
               i_Clk => clk_25m,
-              i_isOn => '1',
+              i_isOn => gu_chn,
               i_noteLevel => gu_noteLevel,
               i_vel => gu_vel,
               i_prog => gu_prog,

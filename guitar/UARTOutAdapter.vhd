@@ -8,7 +8,7 @@ entity UARTOutAdapter is
 		i_Clk : in std_logic;
 		i_TX_DV : in std_logic;
 		i_Byte_done : in std_logic;
-		i_isOn : in std_logic;
+		i_isOn : in integer range 0 to 15;
 		i_noteLevel : in integer range 0 to 88;
 		i_vel  : in integer range 0 to 255;
 		i_prog : in integer range 0 to 255;
@@ -76,9 +76,10 @@ begin
 						r_SM_Main <= s_Finish;
 					else
 						case cnt is
-							when 0 => 
-								t_Bytes(7 downto 1) <= "0000000";
-								t_Bytes(0) <= i_isOn;
+                          when 0 =>
+                            t_Bytes <= conv_std_logic_vector(i_isOn, 8);
+                              -- t_Bytes(7 downto 1) <= "0000000";
+							  --   t_Bytes(0) <= i_isOn;
 							when 1 =>
 								t_Bytes <= conv_std_logic_vector(i_noteLevel, 8);
 							when 2 =>

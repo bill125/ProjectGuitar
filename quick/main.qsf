@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone II"
 set_global_assignment -name DEVICE EP2C70F672C8
-set_global_assignment -name TOP_LEVEL_ENTITY main
+set_global_assignment -name TOP_LEVEL_ENTITY looper
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 9.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "00:49:53  MAY 26, 2017"
 set_global_assignment -name LAST_QUARTUS_VERSION 9.0
@@ -46,11 +46,6 @@ set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id e
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name MISC_FILE "C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/main.dpf"
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
-set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
 set_location_assignment PIN_AD7 -to i_KB_Data
 set_location_assignment PIN_AF4 -to rst_in
@@ -83,7 +78,6 @@ set_location_assignment PIN_AD4 -to click
 set_location_assignment PIN_A20 -to TXD
 set_location_assignment PIN_AD23 -to clk_out
 set_global_assignment -name FMAX_REQUIREMENT "100 MHz" -section_id clk_100m
-set_instance_assignment -name CLOCK_SETTINGS clk_100m -to clk_100m
 set_global_assignment -name MISC_FILE "Y:/workspace/course/2.2/shushe/ProjectGuitar/src/main.dpf"
 set_global_assignment -name VHDL_FILE ../guitar/constant_package.vhd
 set_global_assignment -name VHDL_FILE ../guitar/divEven.vhd
@@ -102,3 +96,9 @@ set_global_assignment -name VHDL_FILE ../guitar/UARTInAdapter.vhd
 set_global_assignment -name VHDL_FILE ../guitar/UARTOut.vhd
 set_global_assignment -name VHDL_FILE ../guitar/UARTOutAdapter.vhd
 set_global_assignment -name VHDL_FILE ../guitar/Velocity.vhd
+set_instance_assignment -name CLOCK_SETTINGS clk_100m -to clk_100m
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
