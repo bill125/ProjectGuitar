@@ -365,7 +365,7 @@ begin
   
   uart_out_adapter : UARTOutAdapter
     port map (
-              i_Clk => clk_100m,
+              i_Clk => clk_25m,
               i_isOn => '1',
               i_noteLevel => gu_noteLevel,
               i_vel => gu_vel,

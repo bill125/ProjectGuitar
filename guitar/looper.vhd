@@ -36,11 +36,9 @@ architecture beh of looper is
   signal l_i_noteGen_RX_DV : std_logic := i_noteGen_RX_DV;
   signal l_i_TX_Done : std_logic := i_TX_Done;
   --signal o_RX_DV1 : std_logic;
-  signal cnt : integer; --TODO: range?
   signal index, end_index : integer range 0 to MaxLength;
 begin
 index1 <= index;
-cnt1 <= cnt;
 --cntId1 <= cntId;
 	-- notes1 <= notes;
 	process (ss) is
@@ -63,13 +61,15 @@ end process;
   process (i_clk) is
     variable intvls : integer range 0 to MaxIntervals;
     variable pause_times, wait_times : integer range 0 to MaxWaitTimes := 0;
+    variable cnt : integer := 0;
   begin
+    cnt1 <= cnt;
 	intvls1 <= intvls;
     if rising_edge(i_clk) then
       case r_SM_Main is
         when s_Idle =>
 		  intvls := 0;
-          cnt <= 0;
+          cnt := 0;
           o_TX_DV <= '0';
           index <= 0;
           if l_i_RX_DV /= i_RX_DV and i_RX_DV = '1' then
@@ -98,13 +98,14 @@ end process;
             index <= index + 1;
             r_SM_Main <= s_Record;
             intvls := 0;
+            cnt := 0;
           end if;       
           if index > 0 or (l_i_noteGen_RX_DV /= i_noteGen_RX_DV and i_noteGen_RX_DV = '1') then
 			if cnt = g_CLKS_PER_INTERVAl - 1 then
 				intvls := intvls + 1;
-				cnt <= 0;
+				cnt := 0;
 			else
-				cnt <= cnt + 1;
+				cnt := cnt + 1;
 			end if;
           end if;
         when s_Play =>
@@ -121,6 +122,7 @@ end process;
                 pause_times := MaxWaitTimes;
                 o_TX_DV <= '1';
                 intvls := 0;
+                cnt := 0;
                 ss <= ss_Sending;
               when ss_Sending =>
                 if l_i_TX_Done /= i_TX_Done and i_TX_Done = '0' then
@@ -147,9 +149,9 @@ end process;
           end if;
 		  if cnt = g_CLKS_PER_INTERVAl - 1 then
 			intvls := intvls + 1;
-			cnt <= 0;
+			cnt := 0;
 		  else
-			cnt <= cnt + 1;
+			cnt := cnt + 1;
 		  end if;
         --when s_Cleanup =>;
         when others =>

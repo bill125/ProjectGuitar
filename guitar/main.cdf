@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP2C70F672) Path("C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/") File("main.sof") MfrSpec(OpMask(1));
+		Device PartName(EP2C70F672) Path("Y:/workspace/course/2.2/shushe/ProjectGuitar/guitar/") File("main.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
