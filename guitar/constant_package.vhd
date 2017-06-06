@@ -7,6 +7,7 @@ package definitions is
 	type GuitarStatus is array (0 to 5) of StringStatus;
     type NoteBlocks is array (0 to 63) of integer range 0 to 1023;
 	type ShiningStripes is array (0 to 5) of integer range 0 to 1023;
+	type BytesBuffer is array (0 to 255) of std_logic_vector(7 downto 0);
 
     constant MaxLength : integer := 155; --TODO
     constant MaxIntervals : integer := 511;

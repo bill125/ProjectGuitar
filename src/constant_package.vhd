@@ -5,16 +5,21 @@ use IEEE.numeric_std.all;
 package definitions is
 	subtype StringStatus is std_logic_vector(7 downto 0);
 	type GuitarStatus is array (0 to 5) of StringStatus;
-	
-	type NoteBlocks is array (0 to 63) of integer range 0 to 1023;
+    type NoteBlocks is array (0 to 63) of integer range 0 to 1023;
 	type ShiningStripes is array (0 to 5) of integer range 0 to 1023;
-    constant MaxLength : integer := 25; --TODO
+	type BytesBuffer is array (0 to 255) of std_logic_vector(7 downto 0);
+
+    constant MaxLength : integer := 155; --TODO
     constant MaxIntervals : integer := 511;
+    constant MaxLoopers : integer := 3;
+    constant AddressBits : integer := 10;
+    constant DataBits : integer := 24;
+    constant CLKS_PER_INTERVAL : integer := 125000;
     type Noise is array (0 to MaxLength) of integer range 0 to 88;
     type IntArray is array (0 to MaxLength) of integer range 0 to MaxIntervals;--TODO: range?
+    type Loopers127Array is array (0 to MaxLoopers) of integer range 0 to 127;
     function convert_key(i_key: in std_logic_vector(7 downto 0)) return integer;
 end package	definitions;
-
 package body definitions is
   function convert_key(i_key: in std_logic_vector(7 downto 0)) return integer is
   begin

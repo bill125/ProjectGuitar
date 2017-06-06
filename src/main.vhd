@@ -73,14 +73,12 @@ architecture main_bhv of main is
 		i_Clk : in std_logic;
 		i_TX_DV : in std_logic;
 		i_Byte_done : in std_logic;
-		i_isOn : in std_logic;
+		i_isOn : in integer range 0 to 15;
 		i_noteLevel : in integer range 0 to 88;
 		i_vel  : in integer range 0 to 255;
 		i_prog : in integer range 0 to 255;
 		o_TX_Byte : out std_logic_vector(7 downto 0);
-		o_TX_DV : out std_logic;
-		
-		o_cnt : out integer
+		o_TX_DV : out std_logic
 	);
 	end component UARTOutAdapter;
 	
@@ -130,7 +128,7 @@ architecture main_bhv of main is
 		);
 	end component VGAController;
 	
-signal clk_1000, clk_25m, clk_1 : std_logic;
+signal clk_1000, clk_25m, clk_1, clk_user : std_logic;
 	
 signal t_Byte : std_logic_vector(7 downto 0); 
 signal t_Guitar : GuitarStatus;
@@ -149,6 +147,28 @@ signal t_cnt : integer range 0 to 4;
 signal t_q : std_logic;
 
 begin
+	
+	process (clk_25m)
+		variable cnt : integer range 0 to 100 := 0;
+		variable all_cnt : integer range 0 to 100000000;
+	begin
+		if clk_25m'event and clk_25m = '1' then
+			if all_cnt < 124 then
+				if cnt = 30 then
+					cnt := 0;
+					clk_user <= '0';
+				elsif cnt >= 20 then
+					cnt := cnt + 1;
+					clk_user <= '1';
+				else
+					clk_user <= '0';
+					cnt := cnt + 1;
+				end if;
+			end if;
+			all_cnt := all_cnt + 1;
+		end if;
+	end process;
+	
 	clk_out <= t_TX_BV;
 	o_kb_dv <= a_kb_clk;
 	u0 : KeyboardInput 
@@ -158,8 +178,8 @@ begin
 		fclk => clk_100m,
 		rst_in => rst_in,
 		key_out => t_key,
-		seg0 => seg0,
-		seg1 => seg1,
+		--seg0 => seg0,
+		--seg1 => seg1,
 		clk_out => raw_kb_clk
 	);
 	
@@ -174,23 +194,23 @@ begin
 	
 	u2 : seg7 port map (conv_std_logic_vector(triggeredString, 4), seg2);
 	
-	u3 : VGAController
-	port map ( 
-		i_kb_clk => a_kb_clk,
-		i_note_clk => clk_1,
-		i_note_pos => 0,
-		i_triggeredString => triggeredString,
-		o_clicked => o_clicked,
-		reset => rst_in,  
-		clk => clk_25m, 
-		clk_100m => clk_100m,
-		q => t_q,
-		hs => o_hs, 
-		vs => o_vs, 
-		r => o_RED, 
-		g => o_GREEN, 
-		b => o_BLUE
-	);
+--	u3 : VGAController
+--	port map ( 
+--		i_kb_clk => a_kb_clk,
+--		i_note_clk => clk_1,
+--		i_note_pos => 0,
+--		i_triggeredString => triggeredString,
+--		o_clicked => o_clicked,
+--		reset => rst_in,  
+--		clk => clk_25m, 
+--		clk_100m => clk_100m,
+--		q => t_q,
+--		hs => o_hs, 
+--		vs => o_vs, 
+--		r => o_RED, 
+--		g => o_GREEN, 
+--		b => o_BLUE
+--	);
 
     fd_inst1 : FreqDiv
     generic map
@@ -252,35 +272,33 @@ begin
 --	);
 --	
 --
---	u6 : UARTOutAdapter
---	port map (
---		i_Clk => clk_100m,
---		i_TX_DV => clk_1,
---		i_Byte_done => t_Byte_done,
---		i_isOn => '1',
---		i_noteLevel => 50,
---		i_vel => 127,
---		i_prog => 25,
---		o_TX_Byte => t_TX_Byte,
---		o_TX_DV => t_TX_BV,
---		
---		o_cnt => t_cnt
---	);
---	
---	u4 : seg7 port map (t_TX_Byte(3 downto 0), seg0);
---	u5 : seg7 port map (t_TX_Byte(7 downto 4), seg1);
---	o_cnt <= t_cnt;
---	
---	u7 : UARTOut
---	generic map (
---		g_CLKS_PER_BIT => 217
---	)
---	port map (
---	    i_Clk => clk_25m,
---		i_TX_DV => t_TX_BV,
---		i_TX_Byte => t_TX_Byte,
---		o_TX_Serial => TXD,
---		o_TX_done => t_Byte_done
---	);
+	u6 : UARTOutAdapter
+	port map (
+		i_Clk => clk_100m,
+		i_TX_DV => clk_user,
+		i_Byte_done => t_Byte_done,
+		i_isOn => 1,
+		i_noteLevel => 50,
+		i_vel => 127,
+		i_prog => 25,
+		o_TX_Byte => t_TX_Byte,
+		o_TX_DV => t_TX_BV
+	);
+	
+	u4 : seg7 port map (t_TX_Byte(3 downto 0), seg0);
+	u5 : seg7 port map (t_TX_Byte(7 downto 4), seg1);
+	o_cnt <= t_cnt;
+	
+	u7 : UARTOut
+	generic map (
+		g_CLKS_PER_BIT => 217
+	)
+	port map (
+	    i_Clk => clk_25m,
+		i_TX_DV => t_TX_BV,
+		i_TX_Byte => t_TX_Byte,
+		o_TX_Serial => TXD,
+		o_TX_done => t_Byte_done
+	);
 	
 end architecture main_bhv;
