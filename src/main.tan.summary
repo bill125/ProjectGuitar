@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 --------------------------------------------------------------------------------------
 Timing Analyzer Summary
 --------------------------------------------------------------------------------------
@@ -84,3 +85,91 @@ Failed Paths   : 13494
 
 --------------------------------------------------------------------------------------
 
+=======
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 7.503 ns
+From           : rst_in
+To             : VGAController:u3|l_kb_clk
+From Clock     : --
+To Clock       : clk_100m
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 19.461 ns
+From           : VGAController:u3|b1[2]
+To             : o_BLUE[2]
+From Clock     : clk_100m
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 3.046 ns
+From           : altera_internal_jtag~TDO
+To             : altera_reserved_tdo
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 0.839 ns
+From           : altera_internal_jtag~TMSUTAP
+To             : sld_hub:sld_hub_inst|sld_shadow_jsm:shadow_jsm|state[3]
+From Clock     : --
+To Clock       : altera_internal_jtag~TCKUTAP
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clk_100m'
+Slack          : -72.891 ns
+Required Time  : 100.00 MHz ( period = 10.000 ns )
+Actual Time    : 12.06 MHz ( period = 82.891 ns )
+From           : VGAController:u3|y[0]
+To             : VGAController:u3|b1[2]
+From Clock     : clk_100m
+To Clock       : clk_100m
+Failed Paths   : 13492
+
+Type           : Clock Setup: 'altera_internal_jtag~TCKUTAP'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 55.95 MHz ( period = 17.872 ns )
+From           : sld_hub:sld_hub_inst|sld_shadow_jsm:shadow_jsm|state[3]
+To             : sld_hub:sld_hub_inst|tdo
+From Clock     : altera_internal_jtag~TCKUTAP
+To Clock       : altera_internal_jtag~TCKUTAP
+Failed Paths   : 0
+
+Type           : Clock Hold: 'clk_100m'
+Slack          : -1.282 ns
+Required Time  : 100.00 MHz ( period = 10.000 ns )
+Actual Time    : N/A
+From           : VGAController:u3|t_x[61][8]
+To             : VGAController:u3|r1[1]
+From Clock     : clk_100m
+To Clock       : clk_100m
+Failed Paths   : 2
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 13494
+
+--------------------------------------------------------------------------------------
+
+>>>>>>> 8222bb2fe83bf524f1c642557d7b01e3c1685103
