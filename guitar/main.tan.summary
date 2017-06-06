@@ -5,9 +5,9 @@ Timing Analyzer Summary
 Type           : Worst-case tsu
 Slack          : N/A
 Required Time  : None
-Actual Time    : 7.096 ns
-From           : rst_in
-To             : KeyboardInput:u0|Keyboard:u0|wait_times[1]
+Actual Time    : 6.458 ns
+From           : r_uart_RX_Serial
+To             : UARTIn:uart_in|r_RX_Data_R
 From Clock     : --
 To Clock       : clk_100m
 Failed Paths   : 0
@@ -15,9 +15,9 @@ Failed Paths   : 0
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 21.189 ns
-From           : VGAController:vga1|hs1
-To             : o_RED[1]
+Actual Time    : 20.357 ns
+From           : VGAController:vga1|vs1
+To             : o_GREEN[1]
 From Clock     : clk_100m
 To Clock       : --
 Failed Paths   : 0
@@ -35,42 +35,42 @@ Failed Paths   : 0
 Type           : Worst-case th
 Slack          : N/A
 Required Time  : None
-Actual Time    : 2.151 ns
-From           : altera_internal_jtag~TMSUTAP
-To             : sld_hub:sld_hub_inst|sld_shadow_jsm:shadow_jsm|state[12]
+Actual Time    : 2.230 ns
+From           : altera_internal_jtag~TDIUTAP
+To             : sld_hub:sld_hub_inst|jtag_ir_reg[9]
 From Clock     : --
 To Clock       : altera_internal_jtag~TCKUTAP
 Failed Paths   : 0
 
 Type           : Clock Setup: 'clk_100m'
-Slack          : -73.958 ns
+Slack          : -58.097 ns
 Required Time  : 100.00 MHz ( period = 10.000 ns )
-Actual Time    : 11.91 MHz ( period = 83.958 ns )
+Actual Time    : 14.68 MHz ( period = 68.097 ns )
 From           : VGAController:vga1|y[0]
 To             : VGAController:vga1|b1[2]
 From Clock     : clk_100m
 To Clock       : clk_100m
-Failed Paths   : 14327
+Failed Paths   : 6996
 
 Type           : Clock Setup: 'altera_internal_jtag~TCKUTAP'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 62.37 MHz ( period = 16.034 ns )
-From           : sld_hub:sld_hub_inst|virtual_ir_scan_reg
+Actual Time    : 67.07 MHz ( period = 14.910 ns )
+From           : sld_hub:sld_hub_inst|sld_shadow_jsm:shadow_jsm|state[4]
 To             : sld_hub:sld_hub_inst|tdo
 From Clock     : altera_internal_jtag~TCKUTAP
 To Clock       : altera_internal_jtag~TCKUTAP
 Failed Paths   : 0
 
 Type           : Clock Hold: 'clk_100m'
-Slack          : -4.404 ns
+Slack          : -5.166 ns
 Required Time  : 100.00 MHz ( period = 10.000 ns )
 Actual Time    : N/A
-From           : rom_show:rom_show_ss_inst|altsyncram:altsyncram_component|altsyncram_3h71:auto_generated|q_a[15]
-To             : game:game_show_set_strings|o_noteLevel[1]
+From           : UARTIn:uart_in|r_RX_Byte[0]
+To             : UARTInAdapter:uart_in_adapter|o_strings[3][0]
 From Clock     : clk_100m
 To Clock       : clk_100m
-Failed Paths   : 290
+Failed Paths   : 715
 
 Type           : Total number of failed paths
 Slack          : 
@@ -80,7 +80,7 @@ From           :
 To             : 
 From Clock     : 
 To Clock       : 
-Failed Paths   : 14617
+Failed Paths   : 7711
 
 --------------------------------------------------------------------------------------
 

@@ -111,7 +111,7 @@ begin
 	process (clk_100m, reset)
 		variable i : integer range 0 to 100;
 		variable j : integer range 0 to 63 := 0;
-		variable cnt : integer range 0 to 250000 := 0;
+		variable cnt : integer range 0 to 300000 := 0;
 		variable l_note_clk : std_logic := '0';
 	begin
 		if reset = '0' then
