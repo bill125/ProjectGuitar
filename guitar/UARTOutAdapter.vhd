@@ -78,8 +78,6 @@ begin
 						case cnt is
                           when 0 =>
                             t_Bytes <= conv_std_logic_vector(i_isOn, 8);
-                              -- t_Bytes(7 downto 1) <= "0000000";
-							  --   t_Bytes(0) <= i_isOn;
 							when 1 =>
 								t_Bytes <= conv_std_logic_vector(i_noteLevel, 8);
 							when 2 =>
