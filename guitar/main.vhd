@@ -463,7 +463,7 @@ begin
       should_send_to_uart => '0',
       play_key => x"21", --C
       identifier => '1',
-      delay_intvls => 80,
+      delay_intvls => 160,
       g_CLKS_PER_INTERVAl => CLKS_PER_INTERVAL -- 4*25000000 / 100 i.e. 10ms/intvl
       )
     port map (
