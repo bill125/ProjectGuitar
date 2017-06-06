@@ -25,8 +25,8 @@ architecture behavior of VGAController is
 	signal t_clicked : std_logic := '0';
 	signal r1,g1,b1   : std_logic_vector(2 downto 0);					
 	signal hs1,vs1    : std_logic;				
-	signal x : integer range 0 to 8191;		
-	signal y : integer range 0 to 8191;		
+	signal x : integer range 0 to 1023;		
+	signal y : integer range 0 to 1023;		
 	shared variable t_x, t_y : NoteBlocks;
 	shared variable t_len : ShiningStripes;
 begin
@@ -135,7 +135,7 @@ begin
 			
 			l_note_clk := i_note_clk;
 			
-			if cnt = 200000 then
+			if cnt = 263852 then
 				cnt := 0;
 				i := 0;
 				while (i < 64) loop
@@ -262,7 +262,7 @@ begin
 					end if;
 					i := i + 1;
 				end loop;
-			else 
+			else
 				r1 <= "000";
 				g1 <= "000";
 				b1 <= "000";
