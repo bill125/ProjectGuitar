@@ -69,3 +69,39 @@ Quartus II 64-Bit Version 9.0 Build 132 02/25/2009 SJ Full Version </full_error>
 Quartus II 64-Bit Version 9.0 Build 132 02/25/2009 SJ Full Version </full_error>
 </internal_error>
 
+<internal_error>
+	<executable>quartus_cdb.exe</executable>
+	<sub_system>AMERGE</sub_system>
+	<file>/quartus/atm/amerge/amerge_incr_tap.cpp</file>
+	<line>6076</line>
+	<callstack>
+	0x11d7e958:
+	0x0ed2c18f:
+	0x14c8203f:
+	0xffffffffffffffff:
+	</callstack>
+	<error>oterm</error>
+	<date>Mon Jun 05 14:44:13 2017</date>
+	<version>Quartus II 64-Bit Version 9.0 Build 132 02/25/2009 SJ Full Version</version>
+	<full_error>oterm
+Quartus II 64-Bit Version 9.0 Build 132 02/25/2009 SJ Full Version </full_error>
+</internal_error>
+
+<internal_error>
+	<executable>quartus_cdb.exe</executable>
+	<sub_system>AMERGE</sub_system>
+	<file>/quartus/atm/amerge/amerge_incr_tap.cpp</file>
+	<line>6076</line>
+	<callstack>
+	0x10e4e958:
+	0x0de8970f:
+	0x13d70eef:
+	0xffffffffffffffff:
+	</callstack>
+	<error>oterm</error>
+	<date>Mon Jun 05 14:49:41 2017</date>
+	<version>Quartus II 64-Bit Version 9.0 Build 132 02/25/2009 SJ Full Version</version>
+	<full_error>oterm
+Quartus II 64-Bit Version 9.0 Build 132 02/25/2009 SJ Full Version </full_error>
+</internal_error>
+

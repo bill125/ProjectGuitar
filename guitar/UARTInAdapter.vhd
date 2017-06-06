@@ -13,12 +13,12 @@ end UARTInAdapter;
 architecture UARTInAdapter_bhv of UARTInAdapter is
 signal t_Guitar : GuitarStatus;
 begin
-	o_strings <= t_Guitar;
+  --o_strings <= t_Guitar;
 	FSM : process (i_RX_DV)
 		variable cnt : integer range 0 to 5 := 5;
 	begin
 		if rising_edge(i_RX_DV) then
-			t_Guitar(cnt) <= i_Byte;
+			o_strings(cnt) <= i_Byte;
 			if cnt = 0 then
 				cnt := 5;
 			else

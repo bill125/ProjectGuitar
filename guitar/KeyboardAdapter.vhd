@@ -36,7 +36,7 @@ begin
 		if (hclk'event and hclk = '1') then 
 			if wait_times >= 1 then
 				wait_times := wait_times - 1;
-				if wait_times <= 2 then
+				if wait_times <= 30 then
 					o_all_clk <= '1';
 					if selected_key = '1' then
 						o_clk <= '1';
@@ -59,7 +59,7 @@ begin
 				elsif i_key = "11110000" then 
 					ignore_status := '1';
 				else
-					wait_times := 5;
+					wait_times := 60;
 					selected_key := '1';
 					case i_key is
 						when string_0 => o_triggeredString <= 0;
