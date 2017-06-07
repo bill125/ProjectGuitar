@@ -1,5 +1,5 @@
 Analysis & Synthesis report for main
-Tue Jun 06 12:54:29 2017
+Wed Jun 07 18:12:57 2017
 Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
 
 
@@ -11,46 +11,40 @@ Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
   3. Analysis & Synthesis Settings
   4. Analysis & Synthesis Source Files Read
   5. Partition Status Summary
-  6. Dependent File Changes for Partition Top
-  7. Partition for Top-Level Resource Utilization by Entity
-  8. State Machine - |main|UARTOut:u7|r_SM_Main
-  9. State Machine - |main|UARTOutAdapter:u6|r_SM_Main
- 10. State Machine - |main|UARTOutAdapter:u6|r_TX_Main
- 11. State Machine - |main|KeyboardInput:u0|Keyboard:u0|state
- 12. User-Specified and Inferred Latches
- 13. Registers Removed During Synthesis
- 14. Removed Registers Triggering Further Register Optimizations
- 15. Multiplexer Restructuring Statistics (Restructuring Performed)
- 16. Parameter Settings for User Entity Instance: KeyboardAdapter:u1
- 17. Parameter Settings for User Entity Instance: FreqDiv:fd_inst1
- 18. Parameter Settings for User Entity Instance: FreqDiv:fd_inst3
- 19. Parameter Settings for User Entity Instance: UARTOut:u7
- 20. Partition Dependent Files
- 21. Partition "sld_hub:sld_hub_inst" Resource Utilization by Entity
- 22. Multiplexer Restructuring Statistics (Restructuring Performed)
- 23. Source assignments for sld_hub:sld_hub_inst
- 24. Source assignments for sld_hub:sld_hub_inst|sld_rom_sr:hub_info_reg
- 25. Parameter Settings for Inferred Entity Instance: sld_hub:sld_hub_inst
- 26. Partition "sld_signaltap:auto_signaltap_0" Resource Utilization by Entity
- 27. Registers Removed During Synthesis
- 28. Multiplexer Restructuring Statistics (Restructuring Performed)
- 29. Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body
- 30. Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst
- 31. Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_m1p3:auto_generated
- 32. Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:\adv_point_3_and_more:advance_pointer_counter
- 33. Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:read_pointer_counter
- 34. Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:status_advance_pointer_counter
- 35. Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:status_read_pointer_counter
- 36. Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_rom_sr:crc_rom_sr
- 37. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
- 38. Port Connectivity Checks: "UARTOut:u7"
- 39. Port Connectivity Checks: "UARTOutAdapter:u6"
- 40. Port Connectivity Checks: "FreqDiv:fd_inst3"
- 41. Port Connectivity Checks: "FreqDiv:fd_inst1"
- 42. Port Connectivity Checks: "KeyboardAdapter:u1"
- 43. Port Connectivity Checks: "KeyboardInput:u0"
- 44. SignalTap II Logic Analyzer Settings
- 45. Analysis & Synthesis Messages
+  6. Partition for Top-Level Resource Utilization by Entity
+  7. State Machine - |main|UARTOut:u7|r_SM_Main
+  8. State Machine - |main|UARTOutAdapter:u6|r_SM_Main
+  9. State Machine - |main|UARTOutAdapter:u6|r_TX_Main
+ 10. State Machine - |main|KeyboardInput:u0|Keyboard:u0|state
+ 11. User-Specified and Inferred Latches
+ 12. Registers Removed During Synthesis
+ 13. Removed Registers Triggering Further Register Optimizations
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Parameter Settings for User Entity Instance: KeyboardInput:u0
+ 16. Parameter Settings for User Entity Instance: KeyboardInput:u0|Keyboard:u0
+ 17. Parameter Settings for User Entity Instance: KeyboardInput:u0|seg7:u1
+ 18. Parameter Settings for User Entity Instance: KeyboardInput:u0|seg7:u2
+ 19. Parameter Settings for User Entity Instance: KeyboardAdapter:u1
+ 20. Parameter Settings for User Entity Instance: seg7:u2
+ 21. Parameter Settings for User Entity Instance: FreqDiv:fd_inst1
+ 22. Parameter Settings for User Entity Instance: FreqDiv:fd_inst3
+ 23. Parameter Settings for User Entity Instance: UARTOutAdapter:u6
+ 24. Parameter Settings for User Entity Instance: seg7:u4
+ 25. Parameter Settings for User Entity Instance: seg7:u5
+ 26. Parameter Settings for User Entity Instance: UARTOut:u7
+ 27. Partition Dependent Files
+ 28. Partition "sld_hub:sld_hub_inst" Resource Utilization by Entity
+ 29. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 30. Partition "sld_signaltap:auto_signaltap_0" Resource Utilization by Entity
+ 31. Registers Removed During Synthesis
+ 32. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 33. Port Connectivity Checks: "UARTOut:u7"
+ 34. Port Connectivity Checks: "UARTOutAdapter:u6"
+ 35. Port Connectivity Checks: "FreqDiv:fd_inst3"
+ 36. Port Connectivity Checks: "FreqDiv:fd_inst1"
+ 37. Port Connectivity Checks: "KeyboardAdapter:u1"
+ 38. Port Connectivity Checks: "KeyboardInput:u0"
+ 39. Analysis & Synthesis Messages
 
 
 
@@ -76,7 +70,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jun 06 12:54:29 2017    ;
+; Analysis & Synthesis Status        ; Successful - Wed Jun 07 18:12:57 2017    ;
 ; Quartus II Version                 ; 9.0 Build 132 02/25/2009 SJ Full Version ;
 ; Revision Name                      ; main                                     ;
 ; Top-level Entity Name              ; main                                     ;
@@ -168,89 +162,30 @@ applicable agreement for further details.
 +----------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                           ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                 ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+
-; KeyboardAdapter.vhd              ; yes             ; User VHDL File               ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/KeyboardAdapter.vhd    ;
-; KeyboardInput.vhd                ; yes             ; User VHDL File               ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/KeyboardInput.vhd      ;
-; UARTOut.vhd                      ; yes             ; User VHDL File               ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/UARTOut.vhd            ;
-; Keyboard.vhd                     ; yes             ; User VHDL File               ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/Keyboard.vhd           ;
-; seg7.vhd                         ; yes             ; User VHDL File               ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/seg7.vhd               ;
-; main.vhd                         ; yes             ; User VHDL File               ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/main.vhd               ;
-; constant_package.vhd             ; yes             ; User VHDL File               ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/constant_package.vhd   ;
-; FreqDiv.vhd                      ; yes             ; User VHDL File               ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/FreqDiv.vhd            ;
-; UARTOutAdapter.vhd               ; yes             ; User VHDL File               ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/UARTOutAdapter.vhd     ;
-; sld_signaltap.vhd                ; yes             ; Encrypted Megafunction       ; c:/altera/90/quartus/libraries/megafunctions/sld_signaltap.vhd               ;
-; sld_ela_control.vhd              ; yes             ; Encrypted Megafunction       ; c:/altera/90/quartus/libraries/megafunctions/sld_ela_control.vhd             ;
-; LPM_SHIFTREG.tdf                 ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/LPM_SHIFTREG.tdf                ;
-; lpm_constant.inc                 ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/lpm_constant.inc                ;
-; dffeea.inc                       ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/dffeea.inc                      ;
-; aglobal90.inc                    ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/aglobal90.inc                   ;
-; sld_mbpmg.vhd                    ; yes             ; Encrypted Megafunction       ; c:/altera/90/quartus/libraries/megafunctions/sld_mbpmg.vhd                   ;
-; sld_ela_trigger_flow_mgr.vhd     ; yes             ; Encrypted Megafunction       ; c:/altera/90/quartus/libraries/megafunctions/sld_ela_trigger_flow_mgr.vhd    ;
-; sld_buffer_manager.vhd           ; yes             ; Encrypted Megafunction       ; c:/altera/90/quartus/libraries/megafunctions/sld_buffer_manager.vhd          ;
-; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/altsyncram.tdf                  ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/stratix_ram_block.inc           ;
-; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/lpm_mux.inc                     ;
-; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/lpm_decode.inc                  ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/a_rdenreg.inc                   ;
-; altrom.inc                       ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/altrom.inc                      ;
-; altram.inc                       ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/altram.inc                      ;
-; altdpram.inc                     ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/altdpram.inc                    ;
-; altqpram.inc                     ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/altqpram.inc                    ;
-; db/altsyncram_m1p3.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/db/altsyncram_m1p3.tdf ;
-; altdpram.tdf                     ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/altdpram.tdf                    ;
-; memmodes.inc                     ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/others/maxplus2/memmodes.inc                  ;
-; a_hdffe.inc                      ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/a_hdffe.inc                     ;
-; alt_le_rden_reg.inc              ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/alt_le_rden_reg.inc             ;
-; altsyncram.inc                   ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/altsyncram.inc                  ;
-; lpm_mux.tdf                      ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/lpm_mux.tdf                     ;
-; muxlut.inc                       ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/muxlut.inc                      ;
-; bypassff.inc                     ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/bypassff.inc                    ;
-; altshift.inc                     ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/altshift.inc                    ;
-; db/mux_aoc.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/db/mux_aoc.tdf         ;
-; lpm_decode.tdf                   ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/lpm_decode.tdf                  ;
-; declut.inc                       ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/declut.inc                      ;
-; lpm_compare.inc                  ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/lpm_compare.inc                 ;
-; db/decode_rqf.tdf                ; yes             ; Auto-Generated Megafunction  ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/db/decode_rqf.tdf      ;
-; LPM_COUNTER.tdf                  ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/LPM_COUNTER.tdf                 ;
-; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/lpm_add_sub.inc                 ;
-; cmpconst.inc                     ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/cmpconst.inc                    ;
-; lpm_counter.inc                  ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/lpm_counter.inc                 ;
-; alt_synch_counter.inc            ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/alt_synch_counter.inc           ;
-; alt_synch_counter_f.inc          ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/alt_synch_counter_f.inc         ;
-; alt_counter_f10ke.inc            ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/alt_counter_f10ke.inc           ;
-; alt_counter_stratix.inc          ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/alt_counter_stratix.inc         ;
-; db/cntr_bai.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/db/cntr_bai.tdf        ;
-; db/cmpr_7cc.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/db/cmpr_7cc.tdf        ;
-; db/cntr_02j.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/db/cntr_02j.tdf        ;
-; db/cntr_sbi.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/db/cntr_sbi.tdf        ;
-; db/cmpr_8cc.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/db/cmpr_8cc.tdf        ;
-; db/cntr_gui.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/db/cntr_gui.tdf        ;
-; db/cmpr_5cc.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/db/cmpr_5cc.tdf        ;
-; sld_rom_sr.vhd                   ; yes             ; Encrypted Megafunction       ; c:/altera/90/quartus/libraries/megafunctions/sld_rom_sr.vhd                  ;
-; sld_hub.vhd                      ; yes             ; Encrypted Megafunction       ; c:/altera/90/quartus/libraries/megafunctions/sld_hub.vhd                     ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                            ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                               ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+
+; KeyboardAdapter.vhd              ; yes             ; User VHDL File  ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/KeyboardAdapter.vhd  ;
+; KeyboardInput.vhd                ; yes             ; User VHDL File  ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/KeyboardInput.vhd    ;
+; UARTOut.vhd                      ; yes             ; User VHDL File  ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/UARTOut.vhd          ;
+; Keyboard.vhd                     ; yes             ; User VHDL File  ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/Keyboard.vhd         ;
+; seg7.vhd                         ; yes             ; User VHDL File  ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/seg7.vhd             ;
+; main.vhd                         ; yes             ; User VHDL File  ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/main.vhd             ;
+; constant_package.vhd             ; yes             ; User VHDL File  ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/constant_package.vhd ;
+; FreqDiv.vhd                      ; yes             ; User VHDL File  ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/FreqDiv.vhd          ;
+; UARTOutAdapter.vhd               ; yes             ; User VHDL File  ; C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/UARTOutAdapter.vhd   ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------+
-; Partition Status Summary                               ;
-+----------------+-------------+-------------------------+
-; Partition Name ; Synthesized ; Reason                  ;
-+----------------+-------------+-------------------------+
-; Top            ; yes         ; Dependent files changed ;
-+----------------+-------------+-------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------+
-; Dependent File Changes for Partition Top                                                                                ;
-+-----------+-----------+-------------------+----------+---------------------------------+--------------------------------+
-; Hierarchy ; File Name ; Relative Location ; Change   ; Old                             ; New                            ;
-+-----------+-----------+-------------------+----------+---------------------------------+--------------------------------+
-; |         ; main.vhd  ; Project Directory ; Checksum ; 6b9763432bc5f4944ed873883d4ef2d ; 859c5be5bf9ac5672346e69c13e917 ;
-+-----------+-----------+-------------------+----------+---------------------------------+--------------------------------+
++----------------------------------------------------+
+; Partition Status Summary                           ;
++----------------+-------------+---------------------+
+; Partition Name ; Synthesized ; Reason              ;
++----------------+-------------+---------------------+
+; Top            ; no          ; No relevant changes ;
++----------------+-------------+---------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -488,6 +423,38 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
 
 
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: KeyboardInput:u0 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: KeyboardInput:u0|Keyboard:u0 ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: KeyboardInput:u0|seg7:u1 ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: KeyboardInput:u0|seg7:u2 ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-----------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: KeyboardAdapter:u1 ;
 +----------------+----------+-------------------------------------+
@@ -503,6 +470,14 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; string_7       ; 01000011 ; Unsigned Binary                     ;
 ; string_8       ; 00111100 ; Unsigned Binary                     ;
 +----------------+----------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------+
+; Parameter Settings for User Entity Instance: seg7:u2 ;
++----------------+-------+-----------------------------+
+; Parameter Name ; Value ; Type                        ;
++----------------+-------+-----------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -525,6 +500,30 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; div            ; 100000000 ; Signed Integer                   ;
 ; half           ; 50000000  ; Signed Integer                   ;
 +----------------+-----------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: UARTOutAdapter:u6 ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------+
+; Parameter Settings for User Entity Instance: seg7:u4 ;
++----------------+-------+-----------------------------+
+; Parameter Name ; Value ; Type                        ;
++----------------+-------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------+
+; Parameter Settings for User Entity Instance: seg7:u5 ;
++----------------+-------+-----------------------------+
+; Parameter Name ; Value ; Type                        ;
++----------------+-------+-----------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -580,47 +579,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 6:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |main|sld_hub:sld_hub_inst|shadow_irf_reg[1][3]                    ;
 ; 20:1               ; 4 bits    ; 52 LEs        ; 36 LEs               ; 16 LEs                 ; Yes        ; |main|sld_hub:sld_hub_inst|sld_rom_sr:hub_info_reg|WORD_SR[0]      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
-
-
-+-------------------------------------------------------+
-; Source assignments for sld_hub:sld_hub_inst           ;
-+------------------------------+-------+------+---------+
-; Assignment                   ; Value ; From ; To      ;
-+------------------------------+-------+------+---------+
-; IGNORE_LCELL_BUFFERS         ; OFF   ; -    ; -       ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; OFF   ; -    ; -       ;
-; NOT_GATE_PUSH_BACK           ; OFF   ; -    ; clr_reg ;
-; POWER_UP_LEVEL               ; LOW   ; -    ; clr_reg ;
-+------------------------------+-------+------+---------+
-
-
-+---------------------------------------------------------------------+
-; Source assignments for sld_hub:sld_hub_inst|sld_rom_sr:hub_info_reg ;
-+----------------------+-------+------+-------------------------------+
-; Assignment           ; Value ; From ; To                            ;
-+----------------------+-------+------+-------------------------------+
-; AUTO_ROM_RECOGNITION ; OFF   ; -    ; -                             ;
-+----------------------+-------+------+-------------------------------+
-
-
-+-------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: sld_hub:sld_hub_inst         ;
-+--------------------------+----------------------------------+-----------------+
-; Parameter Name           ; Value                            ; Type            ;
-+--------------------------+----------------------------------+-----------------+
-; sld_hub_ip_version       ; 1                                ; Untyped         ;
-; sld_hub_ip_minor_version ; 4                                ; Untyped         ;
-; sld_common_ip_version    ; 0                                ; Untyped         ;
-; device_family            ; Cyclone II                       ; Untyped         ;
-; n_nodes                  ; 1                                ; Untyped         ;
-; n_sel_bits               ; 1                                ; Untyped         ;
-; n_node_ir_bits           ; 8                                ; Untyped         ;
-; node_info                ; 00110000000000000110111000000000 ; Unsigned Binary ;
-; compilation_mode         ; 1                                ; Untyped         ;
-; BROADCAST_FEATURE        ; 1                                ; Signed Integer  ;
-; FORCE_IR_CAPTURE_FEATURE ; 1                                ; Signed Integer  ;
-+--------------------------+----------------------------------+-----------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -709,151 +667,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------+
-; Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body ;
-+---------------------------------+-------+------+--------------------------------------------+
-; Assignment                      ; Value ; From ; To                                         ;
-+---------------------------------+-------+------+--------------------------------------------+
-; NOT_GATE_PUSH_BACK              ; OFF   ; -    ; -                                          ;
-; POWER_UP_LEVEL                  ; LOW   ; -    ; -                                          ;
-; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                          ;
-+---------------------------------+-------+------+--------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst ;
-+--------------------+-------+------+----------------------------------------------------------------------------------------------------+
-; Assignment         ; Value ; From ; To                                                                                                 ;
-+--------------------+-------+------+----------------------------------------------------------------------------------------------------+
-; NOT_GATE_PUSH_BACK ; ON    ; -    ; modified_post_count[4]                                                                             ;
-; NOT_GATE_PUSH_BACK ; ON    ; -    ; modified_post_count[3]                                                                             ;
-; NOT_GATE_PUSH_BACK ; ON    ; -    ; modified_post_count[2]                                                                             ;
-; NOT_GATE_PUSH_BACK ; ON    ; -    ; modified_post_count[1]                                                                             ;
-; NOT_GATE_PUSH_BACK ; ON    ; -    ; modified_post_count[0]                                                                             ;
-; NOT_GATE_PUSH_BACK ; ON    ; -    ; modified_post_count[5]                                                                             ;
-; NOT_GATE_PUSH_BACK ; ON    ; -    ; modified_post_count[6]                                                                             ;
-; NOT_GATE_PUSH_BACK ; ON    ; -    ; modified_post_count[7]                                                                             ;
-+--------------------+-------+------+----------------------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_m1p3:auto_generated ;
-+---------------------------------+--------------------+------+--------------------------------------------------------------------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                                                                           ;
-+---------------------------------+--------------------+------+--------------------------------------------------------------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                            ;
-+---------------------------------+--------------------+------+--------------------------------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:\adv_point_3_and_more:advance_pointer_counter ;
-+---------------------------+-------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Assignment                ; Value ; From ; To                                                                                                                                                                                          ;
-+---------------------------+-------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; SUPPRESS_DA_RULE_INTERNAL ; a101  ; -    ; -                                                                                                                                                                                           ;
-; SUPPRESS_DA_RULE_INTERNAL ; s102  ; -    ; -                                                                                                                                                                                           ;
-; SUPPRESS_DA_RULE_INTERNAL ; s103  ; -    ; -                                                                                                                                                                                           ;
-+---------------------------+-------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:read_pointer_counter ;
-+---------------------------+-------+------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Assignment                ; Value ; From ; To                                                                                                                                                                 ;
-+---------------------------+-------+------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; SUPPRESS_DA_RULE_INTERNAL ; a101  ; -    ; -                                                                                                                                                                  ;
-; SUPPRESS_DA_RULE_INTERNAL ; s102  ; -    ; -                                                                                                                                                                  ;
-; SUPPRESS_DA_RULE_INTERNAL ; s103  ; -    ; -                                                                                                                                                                  ;
-+---------------------------+-------+------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:status_advance_pointer_counter ;
-+---------------------------+-------+------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Assignment                ; Value ; From ; To                                                                                                                                                                           ;
-+---------------------------+-------+------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; SUPPRESS_DA_RULE_INTERNAL ; a101  ; -    ; -                                                                                                                                                                            ;
-; SUPPRESS_DA_RULE_INTERNAL ; s102  ; -    ; -                                                                                                                                                                            ;
-; SUPPRESS_DA_RULE_INTERNAL ; s103  ; -    ; -                                                                                                                                                                            ;
-+---------------------------+-------+------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:status_read_pointer_counter ;
-+---------------------------+-------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Assignment                ; Value ; From ; To                                                                                                                                                                        ;
-+---------------------------+-------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; SUPPRESS_DA_RULE_INTERNAL ; a101  ; -    ; -                                                                                                                                                                         ;
-; SUPPRESS_DA_RULE_INTERNAL ; s102  ; -    ; -                                                                                                                                                                         ;
-; SUPPRESS_DA_RULE_INTERNAL ; s103  ; -    ; -                                                                                                                                                                         ;
-+---------------------------+-------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------+
-; Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_rom_sr:crc_rom_sr ;
-+----------------------+-------+------+-----------------------------------------------------------------------------+
-; Assignment           ; Value ; From ; To                                                                          ;
-+----------------------+-------+------+-----------------------------------------------------------------------------+
-; AUTO_ROM_RECOGNITION ; OFF   ; -    ; -                                                                           ;
-+----------------------+-------+------+-----------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0                            ;
-+-------------------------------------------------+-----------------------------------------+----------------+
-; Parameter Name                                  ; Value                                   ; Type           ;
-+-------------------------------------------------+-----------------------------------------+----------------+
-; lpm_type                                        ; sld_signaltap                           ; String         ;
-; sld_node_info                                   ; 805334528                               ; Untyped        ;
-; SLD_IP_VERSION                                  ; 6                                       ; Signed Integer ;
-; SLD_IP_MINOR_VERSION                            ; 0                                       ; Signed Integer ;
-; SLD_COMMON_IP_VERSION                           ; 0                                       ; Signed Integer ;
-; sld_data_bits                                   ; 6                                       ; Untyped        ;
-; sld_trigger_bits                                ; 6                                       ; Untyped        ;
-; SLD_NODE_CRC_BITS                               ; 32                                      ; Signed Integer ;
-; sld_node_crc_hiword                             ; 29910                                   ; Untyped        ;
-; sld_node_crc_loword                             ; 9150                                    ; Untyped        ;
-; SLD_INCREMENTAL_ROUTING                         ; 0                                       ; Signed Integer ;
-; sld_sample_depth                                ; 128                                     ; Untyped        ;
-; sld_segment_size                                ; 128                                     ; Untyped        ;
-; SLD_RAM_BLOCK_TYPE                              ; AUTO                                    ; String         ;
-; sld_state_bits                                  ; 11                                      ; Untyped        ;
-; sld_buffer_full_stop                            ; 1                                       ; Untyped        ;
-; SLD_MEM_ADDRESS_BITS                            ; 7                                       ; Signed Integer ;
-; SLD_DATA_BIT_CNTR_BITS                          ; 4                                       ; Signed Integer ;
-; sld_trigger_level                               ; 1                                       ; Untyped        ;
-; sld_trigger_in_enabled                          ; 1                                       ; Untyped        ;
-; sld_advanced_trigger_entity                     ; basic,1,                                ; Untyped        ;
-; sld_trigger_level_pipeline                      ; 1                                       ; Untyped        ;
-; sld_enable_advanced_trigger                     ; 0                                       ; Untyped        ;
-; SLD_ADVANCED_TRIGGER_1                          ; NONE                                    ; String         ;
-; SLD_ADVANCED_TRIGGER_2                          ; NONE                                    ; String         ;
-; SLD_ADVANCED_TRIGGER_3                          ; NONE                                    ; String         ;
-; SLD_ADVANCED_TRIGGER_4                          ; NONE                                    ; String         ;
-; SLD_ADVANCED_TRIGGER_5                          ; NONE                                    ; String         ;
-; SLD_ADVANCED_TRIGGER_6                          ; NONE                                    ; String         ;
-; SLD_ADVANCED_TRIGGER_7                          ; NONE                                    ; String         ;
-; SLD_ADVANCED_TRIGGER_8                          ; NONE                                    ; String         ;
-; SLD_ADVANCED_TRIGGER_9                          ; NONE                                    ; String         ;
-; SLD_ADVANCED_TRIGGER_10                         ; NONE                                    ; String         ;
-; sld_inversion_mask_length                       ; 39                                      ; Untyped        ;
-; sld_inversion_mask                              ; 000000000000000000000000000000000000000 ; Untyped        ;
-; sld_power_up_trigger                            ; 0                                       ; Untyped        ;
-; SLD_STATE_FLOW_MGR_ENTITY                       ; state_flow_mgr_entity.vhd               ; String         ;
-; sld_state_flow_use_generated                    ; 0                                       ; Untyped        ;
-; sld_current_resource_width                      ; 1                                       ; Untyped        ;
-; sld_attribute_mem_mode                          ; OFF                                     ; Untyped        ;
-; SLD_STORAGE_QUALIFIER_BITS                      ; 1                                       ; Signed Integer ;
-; SLD_STORAGE_QUALIFIER_GAP_RECORD                ; 0                                       ; Signed Integer ;
-; SLD_STORAGE_QUALIFIER_MODE                      ; OFF                                     ; String         ;
-; SLD_STORAGE_QUALIFIER_ENABLE_ADVANCED_CONDITION ; 0                                       ; Signed Integer ;
-; sld_storage_qualifier_inversion_mask_length     ; 0                                       ; Untyped        ;
-; SLD_STORAGE_QUALIFIER_ADVANCED_CONDITION_ENTITY ; basic                                   ; String         ;
-; SLD_STORAGE_QUALIFIER_PIPELINE                  ; 0                                       ; Signed Integer ;
-+-------------------------------------------------+-----------------------------------------+----------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
 +-----------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "UARTOut:u7"                                                                                ;
 +-------------+--------+----------+-------------------------------------------------------------------------------------+
@@ -923,23 +736,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; SignalTap II Logic Analyzer Settings                                                                                                                                                                                                           ;
-+----------------+------------------+---------------------+------------------+--------------+----------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
-; Instance Index ; Instance Name    ; Trigger Input Width ; Data Input Width ; Sample Depth ; Segments ; Trigger Flow Control ; Trigger Conditions ; Advanced Trigger Conditions ; Trigger In Used ; Trigger Out Used ; Power-Up Trigger Enabled ;
-+----------------+------------------+---------------------+------------------+--------------+----------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
-; 0              ; auto_signaltap_0 ; 6                   ; 6                ; 128          ; 1        ; sequential           ; 1                  ; 0                           ; no              ; no               ; no                       ;
-+----------------+------------------+---------------------+------------------+--------------+----------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
-
-
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
-    Info: Processing started: Tue Jun 06 12:54:17 2017
+    Info: Processing started: Wed Jun 07 18:12:56 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ProjectGuitar -c main
+Info: Found 2 design units, including 1 entities, in source file ../guitar/VGAController.vhd
+    Info: Found design unit 1: VGAController-behavior
+    Info: Found entity 1: VGAController
+Warning: Can't analyze file -- file C:/Users/bill125/Desktop/BigProject/ProjectGuitar/src/abc.vhd is missing
+Info: Found 2 design units, including 1 entities, in source file ImpulseGen.vhd
+    Info: Found design unit 1: ImpulseGen-beh
+    Info: Found entity 1: ImpulseGen
 Info: Found 2 design units, including 1 entities, in source file KeyboardAdapter.vhd
     Info: Found design unit 1: KeyboardAdapter-KeyboardAdapter_bhv
     Info: Found entity 1: KeyboardAdapter
@@ -955,9 +766,6 @@ Info: Found 2 design units, including 1 entities, in source file UARTOut.vhd
 Info: Found 2 design units, including 1 entities, in source file Velocity.vhd
     Info: Found design unit 1: Velocity-Velocity_bhv
     Info: Found entity 1: Velocity
-Info: Found 2 design units, including 1 entities, in source file VGAController.vhd
-    Info: Found design unit 1: VGAController-behavior
-    Info: Found entity 1: VGAController
 Info: Found 2 design units, including 1 entities, in source file UARTIn.vhd
     Info: Found design unit 1: UARTIn-UARTIn_bhv
     Info: Found entity 1: UARTIn
@@ -1012,74 +820,13 @@ Info: Elaborating entity "FreqDiv" for hierarchy "FreqDiv:fd_inst1"
 Info: Elaborating entity "FreqDiv" for hierarchy "FreqDiv:fd_inst3"
 Info: Elaborating entity "UARTOutAdapter" for hierarchy "UARTOutAdapter:u6"
 Info: Elaborating entity "UARTOut" for hierarchy "UARTOut:u7"
-Info: Found 1 design units, including 1 entities, in source file db/altsyncram_m1p3.tdf
-    Info: Found entity 1: altsyncram_m1p3
-Info: Found 1 design units, including 1 entities, in source file db/mux_aoc.tdf
-    Info: Found entity 1: mux_aoc
-Info: Found 1 design units, including 1 entities, in source file db/decode_rqf.tdf
-    Info: Found entity 1: decode_rqf
-Info: Found 1 design units, including 1 entities, in source file db/cntr_bai.tdf
-    Info: Found entity 1: cntr_bai
-Info: Found 1 design units, including 1 entities, in source file db/cmpr_7cc.tdf
-    Info: Found entity 1: cmpr_7cc
-Info: Found 1 design units, including 1 entities, in source file db/cntr_02j.tdf
-    Info: Found entity 1: cntr_02j
-Info: Found 1 design units, including 1 entities, in source file db/cntr_sbi.tdf
-    Info: Found entity 1: cntr_sbi
-Info: Found 1 design units, including 1 entities, in source file db/cmpr_8cc.tdf
-    Info: Found entity 1: cmpr_8cc
-Info: Found 1 design units, including 1 entities, in source file db/cntr_gui.tdf
-    Info: Found entity 1: cntr_gui
-Info: Found 1 design units, including 1 entities, in source file db/cmpr_5cc.tdf
-    Info: Found entity 1: cmpr_5cc
-Info: Analysis and Synthesis generated SignalTap II or debug node instance "auto_signaltap_0"
-Info: 1 design partition requires Analysis and Synthesis
-    Info: Partition "Top" requires synthesis because there were changes to its dependent source files
-Info: No design partitions will skip synthesis in the current incremental compilation
-Info: Found 1 instances of uninferred RAM logic
-    Info: RAM logic "UARTOutAdapter:u6|\FSM:t_Bytes" is uninferred due to asynchronous read logic
-Info: Starting Logic Optimization and Technology Mapping for Top Partition
-Warning: Output pins are stuck at VCC or GND
-    Warning (13410): Pin "o_cnt[0]" is stuck at GND
-    Warning (13410): Pin "o_cnt[1]" is stuck at GND
-    Warning (13410): Pin "o_cnt[2]" is stuck at GND
-    Warning (13410): Pin "o_clicked" is stuck at GND
-    Warning (13410): Pin "o_hs" is stuck at GND
-    Warning (13410): Pin "o_vs" is stuck at GND
-    Warning (13410): Pin "o_RED[0]" is stuck at GND
-    Warning (13410): Pin "o_RED[1]" is stuck at GND
-    Warning (13410): Pin "o_RED[2]" is stuck at GND
-    Warning (13410): Pin "o_GREEN[0]" is stuck at GND
-    Warning (13410): Pin "o_GREEN[1]" is stuck at GND
-    Warning (13410): Pin "o_GREEN[2]" is stuck at GND
-    Warning (13410): Pin "o_BLUE[0]" is stuck at GND
-    Warning (13410): Pin "o_BLUE[1]" is stuck at GND
-    Warning (13410): Pin "o_BLUE[2]" is stuck at GND
-Info: 1 registers lost all their fanouts during netlist optimizations. The first 1 are displayed below.
-    Info: Register "UARTOutAdapter:u6|r_SM_Main.s_Loading" lost all its fanouts during netlist optimizations.
-Info: Implemented 3093 device resources after synthesis - the final resource count might be different
-    Info: Implemented 6 input pins
-    Info: Implemented 39 output pins
-    Info: Implemented 3048 logic cells
-Info: Starting Logic Optimization and Technology Mapping for Partition sld_signaltap:auto_signaltap_0
-Info: Registers with preset signals will power-up high
-Info: DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
-Info: Implemented 473 device resources after synthesis - the final resource count might be different
-    Info: Implemented 69 input pins
-    Info: Implemented 22 output pins
-    Info: Implemented 376 logic cells
-    Info: Implemented 6 RAM segments
-Info: Starting Logic Optimization and Technology Mapping for Partition sld_hub:sld_hub_inst
-Info: Registers with preset signals will power-up high
-Info: DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
-Info: Implemented 170 device resources after synthesis - the final resource count might be different
-    Info: Implemented 18 input pins
-    Info: Implemented 36 output pins
-    Info: Implemented 116 logic cells
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 26 warnings
-    Info: Peak virtual memory: 323 megabytes
-    Info: Processing ended: Tue Jun 06 12:54:31 2017
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:14
+Info: 0 design partitions require synthesis
+Info: 1 design partition does not require synthesis
+    Info: Partition "Top" does not require synthesis because there were no relevant design changes
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 286 megabytes
+    Info: Processing ended: Wed Jun 07 18:12:57 2017
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
 
 
