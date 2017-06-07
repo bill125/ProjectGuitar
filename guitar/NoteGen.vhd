@@ -39,12 +39,14 @@ begin
       end case;
       case stx is
         when s_Idle =>
-          if l_i_RX_DV /= i_RX_DV and i_RX_DV = '1' then
+          if wait_times > 0 then
+            stx <= s_Idle;
+          elsif l_i_RX_DV /= i_RX_DV and i_RX_DV = '1' then
             if i_triggeredString >= 6 then
               cnt <= i_triggeredString - 3;
               stx <= s_Datas;
             else
-              o_TX_DV <= '1';
+              o_TX_DV <= '0';
               wait_times := MaxWaitTimes;
               o_noteLevel <= to_integer(unsigned(i_strings(i_triggeredString)));
               stx <= s_Idle;
@@ -52,12 +54,6 @@ begin
           end if;
         when s_Datas =>
           if wait_times > 0 then
-            if wait_times = HalfMaxWaitTimes then
-              o_TX_DV <= '1';
-            elsif wait_times = 1 then
-              o_TX_DV <= '0';
-            end if;
-            wait_times := wait_times - 1;
             stx <= s_Datas;
           elsif cnt < 0 then
             stx <= s_Idle;
@@ -70,6 +66,14 @@ begin
         when others =>
           stx <= s_Idle;
       end case;
+      if wait_times > 0 then
+        if wait_times = HalfMaxWaitTimes then
+          o_TX_DV <= '1';
+        elsif wait_times = 1 then
+          o_TX_DV <= '0';
+        end if;
+        wait_times := wait_times - 1;
+      end if;
       l_i_RX_DV <= i_RX_DV;
       l_i_TX_Done <= i_TX_Done;
   end if;

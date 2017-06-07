@@ -1,0 +1,1075 @@
+Analysis & Synthesis report for main
+Wed Jun 07 16:48:15 2017
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Partition Status Summary
+  6. Partition for Top-Level Resource Utilization by Entity
+  7. State Machine - |main|UARTOut:u7|r_SM_Main
+  8. State Machine - |main|UARTOutAdapter:u6|r_SM_Main
+  9. State Machine - |main|UARTOutAdapter:u6|r_TX_Main
+ 10. State Machine - |main|KeyboardInput:u0|Keyboard:u0|state
+ 11. User-Specified and Inferred Latches
+ 12. Registers Removed During Synthesis
+ 13. Removed Registers Triggering Further Register Optimizations
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Parameter Settings for User Entity Instance: KeyboardAdapter:u1
+ 16. Parameter Settings for User Entity Instance: FreqDiv:fd_inst1
+ 17. Parameter Settings for User Entity Instance: FreqDiv:fd_inst3
+ 18. Parameter Settings for User Entity Instance: UARTOut:u7
+ 19. Partition Dependent Files
+ 20. Partition "sld_hub:sld_hub_inst" Resource Utilization by Entity
+ 21. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 22. Source assignments for sld_hub:sld_hub_inst
+ 23. Source assignments for sld_hub:sld_hub_inst|sld_rom_sr:hub_info_reg
+ 24. Parameter Settings for Inferred Entity Instance: sld_hub:sld_hub_inst
+ 25. Partition "sld_signaltap:auto_signaltap_0" Resource Utilization by Entity
+ 26. Registers Removed During Synthesis
+ 27. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 28. Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body
+ 29. Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst
+ 30. Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_m1p3:auto_generated
+ 31. Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:\adv_point_3_and_more:advance_pointer_counter
+ 32. Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:read_pointer_counter
+ 33. Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:status_advance_pointer_counter
+ 34. Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:status_read_pointer_counter
+ 35. Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_rom_sr:crc_rom_sr
+ 36. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
+ 37. Port Connectivity Checks: "UARTOut:u7"
+ 38. Port Connectivity Checks: "UARTOutAdapter:u6"
+ 39. Port Connectivity Checks: "FreqDiv:fd_inst3"
+ 40. Port Connectivity Checks: "FreqDiv:fd_inst1"
+ 41. Port Connectivity Checks: "KeyboardAdapter:u1"
+ 42. Port Connectivity Checks: "KeyboardInput:u0"
+ 43. SignalTap II Logic Analyzer Settings
+ 44. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++------------------------------------+------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Jun 07 16:48:15 2017    ;
+; Quartus II Version                 ; 9.0 Build 132 02/25/2009 SJ Full Version ;
+; Revision Name                      ; main                                     ;
+; Top-level Entity Name              ; main                                     ;
+; Family                             ; Cyclone II                               ;
+; Total logic elements               ; N/A until Partition Merge                ;
+;     Total combinational functions  ; N/A until Partition Merge                ;
+;     Dedicated logic registers      ; N/A until Partition Merge                ;
+; Total registers                    ; N/A until Partition Merge                ;
+; Total pins                         ; N/A until Partition Merge                ;
+; Total virtual pins                 ; N/A until Partition Merge                ;
+; Total memory bits                  ; N/A until Partition Merge                ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                ;
+; Total PLLs                         ; N/A until Partition Merge                ;
++------------------------------------+------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                            ;
++----------------------------------------------------------------+--------------------+--------------------+
+; Option                                                         ; Setting            ; Default Value      ;
++----------------------------------------------------------------+--------------------+--------------------+
+; Device                                                         ; EP2C70F672C8       ;                    ;
+; Top-level entity name                                          ; main               ; main               ;
+; Family name                                                    ; Cyclone II         ; Stratix II         ;
+; Use Generated Physical Constraints File                        ; Off                ;                    ;
+; Use smart compilation                                          ; Off                ; Off                ;
+; Restructure Multiplexers                                       ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                            ; Off                ; Off                ;
+; Preserve fewer node names                                      ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                      ; Off                ; Off                ;
+; Verilog Version                                                ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                   ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                       ; Auto               ; Auto               ;
+; Safe State Machine                                             ; Off                ; Off                ;
+; Extract Verilog State Machines                                 ; On                 ; On                 ;
+; Extract VHDL State Machines                                    ; On                 ; On                 ;
+; Ignore Verilog initial constructs                              ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                     ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                 ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                        ; On                 ; On                 ;
+; Parallel Synthesis                                             ; Off                ; Off                ;
+; DSP Block Balancing                                            ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                             ; On                 ; On                 ;
+; Power-Up Don't Care                                            ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                   ; Off                ; Off                ;
+; Remove Duplicate Registers                                     ; On                 ; On                 ;
+; Ignore CARRY Buffers                                           ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                         ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                          ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                      ; Off                ; Off                ;
+; Ignore LCELL Buffers                                           ; Off                ; Off                ;
+; Ignore SOFT Buffers                                            ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                 ; Off                ; Off                ;
+; Optimization Technique                                         ; Balanced           ; Balanced           ;
+; Carry Chain Length                                             ; 70                 ; 70                 ;
+; Auto Carry Chains                                              ; On                 ; On                 ;
+; Auto Open-Drain Pins                                           ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                          ; Off                ; Off                ;
+; Auto ROM Replacement                                           ; On                 ; On                 ;
+; Auto RAM Replacement                                           ; On                 ; On                 ;
+; Auto Shift Register Replacement                                ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                  ; On                 ; On                 ;
+; Strict RAM Replacement                                         ; Off                ; Off                ;
+; Allow Synchronous Control Signals                              ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                         ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                              ; Off                ; Off                ;
+; Auto Resource Sharing                                          ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                             ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                             ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                  ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing            ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives              ; Off                ; Off                ;
+; Timing-Driven Synthesis                                        ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report             ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                             ; Off                ; Off                ;
+; Synchronization Register Chain Length                          ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                              ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report       ; 100                ; 100                ;
+; Number of Inverted Registers Reported in Synthesis Report      ; 100                ; 100                ;
+; Clock MUX Protection                                           ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                    ; Off                ; Off                ;
+; Block Design Naming                                            ; Auto               ; Auto               ;
+; SDC constraint protection                                      ; Off                ; Off                ;
+; Synthesis Effort                                               ; Auto               ; Auto               ;
+; Allows Asynchronous Clear Usage For Shift Register Replacement ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                             ; Medium             ; Medium             ;
++----------------------------------------------------------------+--------------------+--------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                        ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                              ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+
+; KeyboardAdapter.vhd              ; yes             ; User VHDL File               ; Y:/workspace/course/2.2/shushe/ProjectGuitar/src/KeyboardAdapter.vhd      ;
+; KeyboardInput.vhd                ; yes             ; User VHDL File               ; Y:/workspace/course/2.2/shushe/ProjectGuitar/src/KeyboardInput.vhd        ;
+; UARTOut.vhd                      ; yes             ; User VHDL File               ; Y:/workspace/course/2.2/shushe/ProjectGuitar/src/UARTOut.vhd              ;
+; Keyboard.vhd                     ; yes             ; User VHDL File               ; Y:/workspace/course/2.2/shushe/ProjectGuitar/src/Keyboard.vhd             ;
+; seg7.vhd                         ; yes             ; User VHDL File               ; Y:/workspace/course/2.2/shushe/ProjectGuitar/src/seg7.vhd                 ;
+; main.vhd                         ; yes             ; User VHDL File               ; Y:/workspace/course/2.2/shushe/ProjectGuitar/src/main.vhd                 ;
+; constant_package.vhd             ; yes             ; User VHDL File               ; Y:/workspace/course/2.2/shushe/ProjectGuitar/src/constant_package.vhd     ;
+; FreqDiv.vhd                      ; yes             ; User VHDL File               ; Y:/workspace/course/2.2/shushe/ProjectGuitar/src/FreqDiv.vhd              ;
+; UARTOutAdapter.vhd               ; yes             ; User VHDL File               ; Y:/workspace/course/2.2/shushe/ProjectGuitar/src/UARTOutAdapter.vhd       ;
+; sld_signaltap.vhd                ; yes             ; Encrypted Megafunction       ; c:/altera/90/quartus/libraries/megafunctions/sld_signaltap.vhd            ;
+; sld_ela_control.vhd              ; yes             ; Encrypted Megafunction       ; c:/altera/90/quartus/libraries/megafunctions/sld_ela_control.vhd          ;
+; LPM_SHIFTREG.tdf                 ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/LPM_SHIFTREG.tdf             ;
+; lpm_constant.inc                 ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/lpm_constant.inc             ;
+; dffeea.inc                       ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/dffeea.inc                   ;
+; aglobal90.inc                    ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/aglobal90.inc                ;
+; sld_mbpmg.vhd                    ; yes             ; Encrypted Megafunction       ; c:/altera/90/quartus/libraries/megafunctions/sld_mbpmg.vhd                ;
+; sld_ela_trigger_flow_mgr.vhd     ; yes             ; Encrypted Megafunction       ; c:/altera/90/quartus/libraries/megafunctions/sld_ela_trigger_flow_mgr.vhd ;
+; sld_buffer_manager.vhd           ; yes             ; Encrypted Megafunction       ; c:/altera/90/quartus/libraries/megafunctions/sld_buffer_manager.vhd       ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/altsyncram.tdf               ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/stratix_ram_block.inc        ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/lpm_mux.inc                  ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/lpm_decode.inc               ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/a_rdenreg.inc                ;
+; altrom.inc                       ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/altrom.inc                   ;
+; altram.inc                       ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/altram.inc                   ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/altdpram.inc                 ;
+; altqpram.inc                     ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/altqpram.inc                 ;
+; db/altsyncram_m1p3.tdf           ; yes             ; Auto-Generated Megafunction  ; Y:/workspace/course/2.2/shushe/ProjectGuitar/src/db/altsyncram_m1p3.tdf   ;
+; altdpram.tdf                     ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/altdpram.tdf                 ;
+; memmodes.inc                     ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/others/maxplus2/memmodes.inc               ;
+; a_hdffe.inc                      ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/a_hdffe.inc                  ;
+; alt_le_rden_reg.inc              ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/alt_le_rden_reg.inc          ;
+; altsyncram.inc                   ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/altsyncram.inc               ;
+; lpm_mux.tdf                      ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/lpm_mux.tdf                  ;
+; muxlut.inc                       ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/muxlut.inc                   ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/bypassff.inc                 ;
+; altshift.inc                     ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/altshift.inc                 ;
+; db/mux_aoc.tdf                   ; yes             ; Auto-Generated Megafunction  ; Y:/workspace/course/2.2/shushe/ProjectGuitar/src/db/mux_aoc.tdf           ;
+; lpm_decode.tdf                   ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/lpm_decode.tdf               ;
+; declut.inc                       ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/declut.inc                   ;
+; lpm_compare.inc                  ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/lpm_compare.inc              ;
+; db/decode_rqf.tdf                ; yes             ; Auto-Generated Megafunction  ; Y:/workspace/course/2.2/shushe/ProjectGuitar/src/db/decode_rqf.tdf        ;
+; LPM_COUNTER.tdf                  ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/LPM_COUNTER.tdf              ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/lpm_add_sub.inc              ;
+; cmpconst.inc                     ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/cmpconst.inc                 ;
+; lpm_counter.inc                  ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/lpm_counter.inc              ;
+; alt_synch_counter.inc            ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/alt_synch_counter.inc        ;
+; alt_synch_counter_f.inc          ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/alt_synch_counter_f.inc      ;
+; alt_counter_f10ke.inc            ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/alt_counter_f10ke.inc        ;
+; alt_counter_stratix.inc          ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/alt_counter_stratix.inc      ;
+; db/cntr_bai.tdf                  ; yes             ; Auto-Generated Megafunction  ; Y:/workspace/course/2.2/shushe/ProjectGuitar/src/db/cntr_bai.tdf          ;
+; db/cmpr_7cc.tdf                  ; yes             ; Auto-Generated Megafunction  ; Y:/workspace/course/2.2/shushe/ProjectGuitar/src/db/cmpr_7cc.tdf          ;
+; db/cntr_02j.tdf                  ; yes             ; Auto-Generated Megafunction  ; Y:/workspace/course/2.2/shushe/ProjectGuitar/src/db/cntr_02j.tdf          ;
+; db/cntr_sbi.tdf                  ; yes             ; Auto-Generated Megafunction  ; Y:/workspace/course/2.2/shushe/ProjectGuitar/src/db/cntr_sbi.tdf          ;
+; db/cmpr_8cc.tdf                  ; yes             ; Auto-Generated Megafunction  ; Y:/workspace/course/2.2/shushe/ProjectGuitar/src/db/cmpr_8cc.tdf          ;
+; db/cntr_gui.tdf                  ; yes             ; Auto-Generated Megafunction  ; Y:/workspace/course/2.2/shushe/ProjectGuitar/src/db/cntr_gui.tdf          ;
+; db/cmpr_5cc.tdf                  ; yes             ; Auto-Generated Megafunction  ; Y:/workspace/course/2.2/shushe/ProjectGuitar/src/db/cmpr_5cc.tdf          ;
+; sld_rom_sr.vhd                   ; yes             ; Encrypted Megafunction       ; c:/altera/90/quartus/libraries/megafunctions/sld_rom_sr.vhd               ;
+; sld_hub.vhd                      ; yes             ; Encrypted Megafunction       ; c:/altera/90/quartus/libraries/megafunctions/sld_hub.vhd                  ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+
+
+
++--------------------------------------------------------+
+; Partition Status Summary                               ;
++----------------+-------------+-------------------------+
+; Partition Name ; Synthesized ; Reason                  ;
++----------------+-------------+-------------------------+
+; Top            ; yes         ; Dependent files changed ;
++----------------+-------------+-------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition for Top-Level Resource Utilization by Entity                                                                                                                                     ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+--------------+
+; |main                      ; 1743 (52)         ; 1427 (35)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main                              ; work         ;
+;    |FreqDiv:fd_inst1|      ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FreqDiv:fd_inst1             ; work         ;
+;    |KeyboardAdapter:u1|    ; 40 (40)           ; 14 (14)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|KeyboardAdapter:u1           ; work         ;
+;    |KeyboardInput:u0|      ; 34 (0)            ; 28 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|KeyboardInput:u0             ; work         ;
+;       |Keyboard:u0|        ; 34 (34)           ; 28 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|KeyboardInput:u0|Keyboard:u0 ; work         ;
+;    |UARTOut:u7|            ; 35 (35)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|UARTOut:u7                   ; work         ;
+;    |UARTOutAdapter:u6|     ; 1543 (1543)       ; 1323 (1323)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|UARTOutAdapter:u6            ; work         ;
+;    |seg7:u2|               ; 13 (13)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|seg7:u2                      ; work         ;
+;    |seg7:u4|               ; 13 (13)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|seg7:u4                      ; work         ;
+;    |seg7:u5|               ; 11 (11)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|seg7:u5                      ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |main|UARTOut:u7|r_SM_Main                                                                                                        ;
++--------------------------+---------------------+-------------------------+--------------------------+--------------------------+------------------+
+; Name                     ; r_SM_Main.s_Cleanup ; r_SM_Main.s_TX_Stop_Bit ; r_SM_Main.s_TX_Data_Bits ; r_SM_Main.s_TX_Start_Bit ; r_SM_Main.s_Idle ;
++--------------------------+---------------------+-------------------------+--------------------------+--------------------------+------------------+
+; r_SM_Main.s_Idle         ; 0                   ; 0                       ; 0                        ; 0                        ; 0                ;
+; r_SM_Main.s_TX_Start_Bit ; 0                   ; 0                       ; 0                        ; 1                        ; 1                ;
+; r_SM_Main.s_TX_Data_Bits ; 0                   ; 0                       ; 1                        ; 0                        ; 1                ;
+; r_SM_Main.s_TX_Stop_Bit  ; 0                   ; 1                       ; 0                        ; 0                        ; 1                ;
+; r_SM_Main.s_Cleanup      ; 1                   ; 0                       ; 0                        ; 0                        ; 1                ;
++--------------------------+---------------------+-------------------------+--------------------------+--------------------------+------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |main|UARTOutAdapter:u6|r_SM_Main                                                                                         ;
++---------------------------+---------------------+--------------------+---------------------------+---------------------+------------------+
+; Name                      ; r_SM_Main.s_Cleanup ; r_SM_Main.s_Finish ; r_SM_Main.s_TX_Data_Bytes ; r_SM_Main.s_Loading ; r_SM_Main.s_Idle ;
++---------------------------+---------------------+--------------------+---------------------------+---------------------+------------------+
+; r_SM_Main.s_Idle          ; 0                   ; 0                  ; 0                         ; 0                   ; 0                ;
+; r_SM_Main.s_Loading       ; 0                   ; 0                  ; 0                         ; 1                   ; 1                ;
+; r_SM_Main.s_TX_Data_Bytes ; 0                   ; 0                  ; 1                         ; 0                   ; 1                ;
+; r_SM_Main.s_Finish        ; 0                   ; 1                  ; 0                         ; 0                   ; 1                ;
+; r_SM_Main.s_Cleanup       ; 1                   ; 0                  ; 0                         ; 0                   ; 1                ;
++---------------------------+---------------------+--------------------+---------------------------+---------------------+------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |main|UARTOutAdapter:u6|r_TX_Main                                                                                         ;
++---------------------------+---------------------+--------------------+---------------------------+---------------------+------------------+
+; Name                      ; r_TX_Main.s_Cleanup ; r_TX_Main.s_Finish ; r_TX_Main.s_TX_Data_Bytes ; r_TX_Main.s_Loading ; r_TX_Main.s_Idle ;
++---------------------------+---------------------+--------------------+---------------------------+---------------------+------------------+
+; r_TX_Main.s_Idle          ; 0                   ; 0                  ; 0                         ; 0                   ; 0                ;
+; r_TX_Main.s_Loading       ; 0                   ; 0                  ; 0                         ; 1                   ; 1                ;
+; r_TX_Main.s_TX_Data_Bytes ; 0                   ; 0                  ; 1                         ; 0                   ; 1                ;
+; r_TX_Main.s_Finish        ; 0                   ; 1                  ; 0                         ; 0                   ; 1                ;
+; r_TX_Main.s_Cleanup       ; 1                   ; 0                  ; 0                         ; 0                   ; 1                ;
++---------------------------+---------------------+--------------------+---------------------------+---------------------+------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |main|KeyboardInput:u0|Keyboard:u0|state                                                                                                                    ;
++--------------+--------------+------------+--------------+----------+----------+----------+----------+----------+----------+----------+----------+-------------+-------------+
+; Name         ; state.finish ; state.stop ; state.parity ; state.d7 ; state.d6 ; state.d5 ; state.d4 ; state.d3 ; state.d2 ; state.d1 ; state.d0 ; state.start ; state.delay ;
++--------------+--------------+------------+--------------+----------+----------+----------+----------+----------+----------+----------+----------+-------------+-------------+
+; state.delay  ; 0            ; 0          ; 0            ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0           ; 0           ;
+; state.start  ; 0            ; 0          ; 0            ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1           ; 1           ;
+; state.d0     ; 0            ; 0          ; 0            ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0           ; 1           ;
+; state.d1     ; 0            ; 0          ; 0            ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0           ; 1           ;
+; state.d2     ; 0            ; 0          ; 0            ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0           ; 1           ;
+; state.d3     ; 0            ; 0          ; 0            ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0           ; 1           ;
+; state.d4     ; 0            ; 0          ; 0            ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0           ; 1           ;
+; state.d5     ; 0            ; 0          ; 0            ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0           ; 1           ;
+; state.d6     ; 0            ; 0          ; 0            ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0           ; 1           ;
+; state.d7     ; 0            ; 0          ; 0            ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0           ; 1           ;
+; state.parity ; 0            ; 0          ; 1            ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0           ; 1           ;
+; state.stop   ; 0            ; 1          ; 0            ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0           ; 1           ;
+; state.finish ; 1            ; 0          ; 0            ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0           ; 1           ;
++--------------+--------------+------------+--------------+----------+----------+----------+----------+----------+----------+----------+----------+-------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                            ;
++----------------------------------------------------+----------------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal              ; Free of Timing Hazards ;
++----------------------------------------------------+----------------------------------+------------------------+
+; KeyboardInput:u0|Keyboard:u0|scancode[7]           ; KeyboardInput:u0|Keyboard:u0|fok ; yes                    ;
+; KeyboardInput:u0|Keyboard:u0|scancode[2]           ; KeyboardInput:u0|Keyboard:u0|fok ; yes                    ;
+; KeyboardInput:u0|Keyboard:u0|scancode[6]           ; KeyboardInput:u0|Keyboard:u0|fok ; yes                    ;
+; KeyboardInput:u0|Keyboard:u0|scancode[5]           ; KeyboardInput:u0|Keyboard:u0|fok ; yes                    ;
+; KeyboardInput:u0|Keyboard:u0|scancode[4]           ; KeyboardInput:u0|Keyboard:u0|fok ; yes                    ;
+; KeyboardInput:u0|Keyboard:u0|scancode[3]           ; KeyboardInput:u0|Keyboard:u0|fok ; yes                    ;
+; KeyboardInput:u0|Keyboard:u0|scancode[1]           ; KeyboardInput:u0|Keyboard:u0|fok ; yes                    ;
+; KeyboardInput:u0|Keyboard:u0|scancode[0]           ; KeyboardInput:u0|Keyboard:u0|fok ; yes                    ;
+; Number of user-specified and inferred latches = 8  ;                                  ;                        ;
++----------------------------------------------------+----------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                        ;
++-----------------------------------------+-------------------------------------------------+
+; Register name                           ; Reason for Removal                              ;
++-----------------------------------------+-------------------------------------------------+
+; UARTOutAdapter:u6|o_TX_Byte[7]          ; Stuck at GND due to stuck port data_in          ;
+; UARTOut:u7|r_TX_Data[7]                 ; Stuck at GND due to stuck port data_in          ;
+; UARTOutAdapter:u6|r_SM_Main.s_Loading   ; Lost fanout                                     ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~13       ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~9    ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~69       ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~65   ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~125      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~121  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~153      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~149  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~181      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~177  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~209      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~205  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~237      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~233  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~265      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~261  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~293      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~289  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~321      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~317  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~349      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~345  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~377      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~373  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~405      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~401  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~433      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~429  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~461      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~457  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~489      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~485  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~517      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~513  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~545      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~541  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~573      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~569  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~587      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~583  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~601      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~597  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~615      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~611  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~629      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~625  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~643      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~639  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~657      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~653  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~671      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~667  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~685      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~681  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~699      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~695  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~713      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~709  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~727      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~723  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~741      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~737  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~755      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~751  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~769      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~765  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~783      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~779  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~797      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~793  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~811      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~807  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~818      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~814  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~825      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~821  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~832      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~828  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~839      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~835  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~846      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~842  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~853      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~849  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~860      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~856  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~867      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~863  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~874      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~870  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~881      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~877  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~888      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~884  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~895      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~891  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~902      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~898  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~909      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~905  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~916      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~912  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~923      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~919  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~930      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~926  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~937      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~933  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~944      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~940  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~951      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~947  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~958      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~954  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~965      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~961  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~972      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~968  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~979      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~975  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~986      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~982  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~993      ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~989  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~1000     ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~996  ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~1007     ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~1003 ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~1014     ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~1010 ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~1021     ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~1017 ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~1028     ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~1024 ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~1035     ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~1031 ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~1042     ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~1038 ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~1049     ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~1045 ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~1056     ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~1052 ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~1063     ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~1059 ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~1070     ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~1066 ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~1077     ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~1073 ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~1084     ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~1080 ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~1091     ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~1087 ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~1098     ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~1094 ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~1105     ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~1101 ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~1112     ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~1108 ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~1119     ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~1115 ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~1126     ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~1122 ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~1133     ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~1129 ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~1140     ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~1136 ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~1147     ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~1143 ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~1154     ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~1150 ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~1161     ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~1157 ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~1168     ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~1164 ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~1175     ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~1171 ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~1182     ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~1178 ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~1189     ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~1185 ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~1196     ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~1192 ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~1203     ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~1199 ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~1210     ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~1206 ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~1217     ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~1213 ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~1231     ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~1227 ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~1357     ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~1353 ;
+; UARTOutAdapter:u6|\FSM:t_Bytes~1413     ; Merged with UARTOutAdapter:u6|\FSM:t_Bytes~1409 ;
+; Total Number of Removed Registers = 515 ;                                                 ;
++-----------------------------------------+-------------------------------------------------+
+* Table truncated at 100 items. To change the number of removed registers reported, set the "Number of Removed Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
+
+
++-----------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                         ;
++--------------------------------+---------------------------+----------------------------------------+
+; Register name                  ; Reason for Removal        ; Registers Removed due to This Register ;
++--------------------------------+---------------------------+----------------------------------------+
+; UARTOutAdapter:u6|o_TX_Byte[7] ; Stuck at GND              ; UARTOut:u7|r_TX_Data[7]                ;
+;                                ; due to stuck port data_in ;                                        ;
++--------------------------------+---------------------------+----------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main|KeyboardAdapter:u1|\receive_trigger:wait_times[0] ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |main|UARTOutAdapter:u6|\FSM:cnt[2]                     ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |main|UARTOut:u7|r_Clk_Count[1]                         ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 3 LEs                ; 9 LEs                  ; Yes        ; |main|KeyboardInput:u0|Keyboard:u0|wait_times[1]        ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 12 LEs               ; 24 LEs                 ; Yes        ; |main|UARTOutAdapter:u6|\FSM:wait_times[5]              ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |main|UARTOut:u7|r_Bit_Index~3                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: KeyboardAdapter:u1 ;
++----------------+----------+-------------------------------------+
+; Parameter Name ; Value    ; Type                                ;
++----------------+----------+-------------------------------------+
+; string_0       ; 01001011 ; Unsigned Binary                     ;
+; string_1       ; 01000010 ; Unsigned Binary                     ;
+; string_2       ; 00111011 ; Unsigned Binary                     ;
+; string_3       ; 00110001 ; Unsigned Binary                     ;
+; string_4       ; 00110010 ; Unsigned Binary                     ;
+; string_5       ; 00101010 ; Unsigned Binary                     ;
+; string_6       ; 01000100 ; Unsigned Binary                     ;
+; string_7       ; 01000011 ; Unsigned Binary                     ;
+; string_8       ; 00111100 ; Unsigned Binary                     ;
++----------------+----------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: FreqDiv:fd_inst1 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; div            ; 4     ; Signed Integer                       ;
+; half           ; 2     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: FreqDiv:fd_inst3 ;
++----------------+-----------+----------------------------------+
+; Parameter Name ; Value     ; Type                             ;
++----------------+-----------+----------------------------------+
+; div            ; 100000000 ; Signed Integer                   ;
+; half           ; 50000000  ; Signed Integer                   ;
++----------------+-----------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: UARTOut:u7 ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; g_clks_per_bit ; 217   ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Partition Dependent Files                                                             ;
++----------------------+--------------------+---------+---------------------------------+
+; File                 ; Location           ; Library ; Checksum                        ;
++----------------------+--------------------+---------+---------------------------------+
+; lmf/maxplus2.lmf     ; Quartus II Install ; work    ; a36c8ec425c8a2589af98b2d4daabc3 ;
+; constant_package.vhd ; Project Directory  ; work    ; 9bf819ccc476284cfea3350fef6afa8 ;
+; FreqDiv.vhd          ; Project Directory  ; work    ; 5c81ae5a2b12a348e15cb796408aff  ;
+; Keyboard.vhd         ; Project Directory  ; work    ; 29a78bc1b3b483c6142abe058eb8319 ;
+; KeyboardAdapter.vhd  ; Project Directory  ; work    ; 3fa2d4cc77bda7a777f2cf0ef24883  ;
+; KeyboardInput.vhd    ; Project Directory  ; work    ; 1397baed75e5c0a0b3ff7b8a845852  ;
+; main.vhd             ; Project Directory  ; work    ; 47be92734ebb2e2fc09ec5a3e79d    ;
+; seg7.vhd             ; Project Directory  ; work    ; e3e3f373dda01e9444328103b491a84 ;
+; UARTOut.vhd          ; Project Directory  ; work    ; 967648283f3e485b3784c09ed59d4f  ;
+; UARTOutAdapter.vhd   ; Project Directory  ; work    ; b68c0dc42564f8dccc6632115ccd084 ;
++----------------------+--------------------+---------+---------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition "sld_hub:sld_hub_inst" Resource Utilization by Entity                                                                                                                                                     ;
++-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------+--------------+
+; Compilation Hierarchy Node        ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                  ; Library Name ;
++-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------+--------------+
+; |main                             ; 102 (0)           ; 73 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main                                                ; work         ;
+;    |sld_hub:sld_hub_inst|         ; 102 (64)          ; 73 (45)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_hub:sld_hub_inst                           ; work         ;
+;       |sld_rom_sr:hub_info_reg|   ; 21 (21)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_hub:sld_hub_inst|sld_rom_sr:hub_info_reg   ; work         ;
+;       |sld_shadow_jsm:shadow_jsm| ; 17 (17)           ; 19 (19)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_hub:sld_hub_inst|sld_shadow_jsm:shadow_jsm ; work         ;
++-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |main|sld_hub:sld_hub_inst|irf_reg[1][0]                           ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |main|sld_hub:sld_hub_inst|sld_rom_sr:hub_info_reg|word_counter[3] ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 7 LEs                ; 21 LEs                 ; Yes        ; |main|sld_hub:sld_hub_inst|irsr_reg[4]                             ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |main|sld_hub:sld_hub_inst|shadow_irf_reg[1][3]                    ;
+; 20:1               ; 4 bits    ; 52 LEs        ; 36 LEs               ; 16 LEs                 ; Yes        ; |main|sld_hub:sld_hub_inst|sld_rom_sr:hub_info_reg|WORD_SR[0]      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
+
+
++-------------------------------------------------------+
+; Source assignments for sld_hub:sld_hub_inst           ;
++------------------------------+-------+------+---------+
+; Assignment                   ; Value ; From ; To      ;
++------------------------------+-------+------+---------+
+; IGNORE_LCELL_BUFFERS         ; OFF   ; -    ; -       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; OFF   ; -    ; -       ;
+; NOT_GATE_PUSH_BACK           ; OFF   ; -    ; clr_reg ;
+; POWER_UP_LEVEL               ; LOW   ; -    ; clr_reg ;
++------------------------------+-------+------+---------+
+
+
++---------------------------------------------------------------------+
+; Source assignments for sld_hub:sld_hub_inst|sld_rom_sr:hub_info_reg ;
++----------------------+-------+------+-------------------------------+
+; Assignment           ; Value ; From ; To                            ;
++----------------------+-------+------+-------------------------------+
+; AUTO_ROM_RECOGNITION ; OFF   ; -    ; -                             ;
++----------------------+-------+------+-------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sld_hub:sld_hub_inst         ;
++--------------------------+----------------------------------+-----------------+
+; Parameter Name           ; Value                            ; Type            ;
++--------------------------+----------------------------------+-----------------+
+; sld_hub_ip_version       ; 1                                ; Untyped         ;
+; sld_hub_ip_minor_version ; 4                                ; Untyped         ;
+; sld_common_ip_version    ; 0                                ; Untyped         ;
+; device_family            ; Cyclone II                       ; Untyped         ;
+; n_nodes                  ; 1                                ; Untyped         ;
+; n_sel_bits               ; 1                                ; Untyped         ;
+; n_node_ir_bits           ; 8                                ; Untyped         ;
+; node_info                ; 00110000000000000110111000000000 ; Unsigned Binary ;
+; compilation_mode         ; 1                                ; Untyped         ;
+; BROADCAST_FEATURE        ; 1                                ; Signed Integer  ;
+; FORCE_IR_CAPTURE_FEATURE ; 1                                ; Signed Integer  ;
++--------------------------+----------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition "sld_signaltap:auto_signaltap_0" Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                                                                           ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                ; Library Name ;
++------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |main                                                                                                ; 216 (0)           ; 285 (0)      ; 768         ; 0            ; 0       ; 0         ; 0    ; 0            ; |main                                                                                                                                                                                                                                                                                              ; work         ;
+;    |sld_signaltap:auto_signaltap_0|                                                                  ; 216 (1)           ; 285 (0)      ; 768         ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0                                                                                                                                                                                                                                                               ; work         ;
+;       |sld_signaltap_impl:sld_signaltap_body|                                                        ; 215 (19)          ; 285 (63)     ; 768         ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body                                                                                                                                                                                                                         ; work         ;
+;          |altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|                            ; 17 (0)            ; 46 (46)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem                                                                                                                                                          ; work         ;
+;             |lpm_decode:wdecoder|                                                                    ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_decode:wdecoder                                                                                                                                      ; work         ;
+;                |decode_rqf:auto_generated|                                                           ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_decode:wdecoder|decode_rqf:auto_generated                                                                                                            ; work         ;
+;             |lpm_mux:mux|                                                                            ; 15 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_mux:mux                                                                                                                                              ; work         ;
+;                |mux_aoc:auto_generated|                                                              ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_mux:mux|mux_aoc:auto_generated                                                                                                                       ; work         ;
+;          |altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|                                           ; 0 (0)             ; 0 (0)        ; 768         ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram                                                                                                                                                                         ; work         ;
+;             |altsyncram_m1p3:auto_generated|                                                         ; 0 (0)             ; 0 (0)        ; 768         ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_m1p3:auto_generated                                                                                                                                          ; work         ;
+;          |lpm_shiftreg:segment_offset_config_deserialize|                                            ; 0 (0)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|lpm_shiftreg:segment_offset_config_deserialize                                                                                                                                                                          ; work         ;
+;          |lpm_shiftreg:status_register|                                                              ; 17 (17)           ; 17 (17)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|lpm_shiftreg:status_register                                                                                                                                                                                            ; work         ;
+;          |sld_buffer_manager:sld_buffer_manager_inst|                                                ; 59 (59)           ; 44 (44)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst                                                                                                                                                                              ; work         ;
+;          |sld_ela_control:ela_control|                                                               ; 20 (3)            ; 49 (2)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control                                                                                                                                                                                             ; work         ;
+;             |lpm_shiftreg:trigger_config_deserialize|                                                ; 0 (0)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|lpm_shiftreg:trigger_config_deserialize                                                                                                                                                     ; work         ;
+;             |sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm| ; 12 (0)            ; 30 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm                                                                                                      ; work         ;
+;                |lpm_shiftreg:trigger_condition_deserialize|                                          ; 0 (0)             ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|lpm_shiftreg:trigger_condition_deserialize                                                           ; work         ;
+;                |sld_mbpmg:\trigger_modules_gen:0:trigger_match|                                      ; 12 (0)            ; 12 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match                                                       ; work         ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:0:sm1|                            ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:0:sm1 ; work         ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:1:sm1|                            ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:1:sm1 ; work         ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:2:sm1|                            ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:2:sm1 ; work         ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:3:sm1|                            ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:3:sm1 ; work         ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:4:sm1|                            ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:4:sm1 ; work         ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:5:sm1|                            ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:5:sm1 ; work         ;
+;             |sld_ela_trigger_flow_mgr:\builtin:ela_trigger_flow_mgr_entity|                          ; 3 (3)             ; 11 (1)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_trigger_flow_mgr:\builtin:ela_trigger_flow_mgr_entity                                                                                                                               ; work         ;
+;                |lpm_shiftreg:trigger_config_deserialize|                                             ; 0 (0)             ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_trigger_flow_mgr:\builtin:ela_trigger_flow_mgr_entity|lpm_shiftreg:trigger_config_deserialize                                                                                       ; work         ;
+;             |sld_mbpmg:\trigger_in_trigger_module_enabled_gen:trigger_in_match|                      ; 2 (0)             ; 2 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_mbpmg:\trigger_in_trigger_module_enabled_gen:trigger_in_match                                                                                                                           ; work         ;
+;                |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:0:sm1|                               ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_mbpmg:\trigger_in_trigger_module_enabled_gen:trigger_in_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:0:sm1                                                                     ; work         ;
+;          |sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|          ; 65 (8)            ; 51 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst                                                                                                                                        ; work         ;
+;             |lpm_counter:\adv_point_3_and_more:advance_pointer_counter|                              ; 5 (0)             ; 3 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:\adv_point_3_and_more:advance_pointer_counter                                                                              ; work         ;
+;                |cntr_bai:auto_generated|                                                             ; 5 (5)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:\adv_point_3_and_more:advance_pointer_counter|cntr_bai:auto_generated                                                      ; work         ;
+;             |lpm_counter:read_pointer_counter|                                                       ; 7 (0)             ; 7 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:read_pointer_counter                                                                                                       ; work         ;
+;                |cntr_02j:auto_generated|                                                             ; 7 (7)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:read_pointer_counter|cntr_02j:auto_generated                                                                               ; work         ;
+;             |lpm_counter:status_advance_pointer_counter|                                             ; 6 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:status_advance_pointer_counter                                                                                             ; work         ;
+;                |cntr_sbi:auto_generated|                                                             ; 6 (6)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:status_advance_pointer_counter|cntr_sbi:auto_generated                                                                     ; work         ;
+;             |lpm_counter:status_read_pointer_counter|                                                ; 3 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:status_read_pointer_counter                                                                                                ; work         ;
+;                |cntr_gui:auto_generated|                                                             ; 3 (3)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:status_read_pointer_counter|cntr_gui:auto_generated                                                                        ; work         ;
+;             |lpm_shiftreg:info_data_shift_out|                                                       ; 15 (15)           ; 15 (15)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:info_data_shift_out                                                                                                       ; work         ;
+;             |lpm_shiftreg:ram_data_shift_out|                                                        ; 6 (6)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:ram_data_shift_out                                                                                                        ; work         ;
+;             |lpm_shiftreg:status_data_shift_out|                                                     ; 15 (15)           ; 15 (15)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:status_data_shift_out                                                                                                     ; work         ;
+;          |sld_rom_sr:crc_rom_sr|                                                                     ; 18 (18)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_rom_sr:crc_rom_sr                                                                                                                                                                                                   ; work         ;
++------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                                                                                                                            ;
++-------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Register name                                                                                                                                   ; Reason for Removal                                                                                                                                          ;
++-------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|segment_shift_clk_ena                                                      ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|buffer_write_enable_delayed                                                ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[0] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[0] ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[1] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[1] ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[2] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[2] ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[3] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[3] ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[4] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[4] ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[5] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[5] ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[6] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[6] ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|current_offset_delayed[6]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|buffer_write_address_delayed[6]                                            ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|current_offset_delayed[5]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|buffer_write_address_delayed[5]                                            ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|current_offset_delayed[4]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|buffer_write_address_delayed[4]                                            ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|current_offset_delayed[3]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|buffer_write_address_delayed[3]                                            ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|current_offset_delayed[2]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|buffer_write_address_delayed[2]                                            ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|current_offset_delayed[1]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|buffer_write_address_delayed[1]                                            ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|current_offset_delayed[0]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|buffer_write_address_delayed[0]                                            ;
+; Total Number of Removed Registers = 15                                                                                                          ;                                                                                                                                                             ;
++-------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------+
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|counter[6]      ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_rom_sr:crc_rom_sr|word_counter[3]                      ;
+; 12:1               ; 4 bits    ; 32 LEs        ; 28 LEs               ; 4 LEs                  ; Yes        ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_rom_sr:crc_rom_sr|WORD_SR[2]                           ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; No         ; |main|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|offset_count~11 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------+
+; Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body ;
++---------------------------------+-------+------+--------------------------------------------+
+; Assignment                      ; Value ; From ; To                                         ;
++---------------------------------+-------+------+--------------------------------------------+
+; NOT_GATE_PUSH_BACK              ; OFF   ; -    ; -                                          ;
+; POWER_UP_LEVEL                  ; LOW   ; -    ; -                                          ;
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                          ;
++---------------------------------+-------+------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst ;
++--------------------+-------+------+----------------------------------------------------------------------------------------------------+
+; Assignment         ; Value ; From ; To                                                                                                 ;
++--------------------+-------+------+----------------------------------------------------------------------------------------------------+
+; NOT_GATE_PUSH_BACK ; ON    ; -    ; modified_post_count[4]                                                                             ;
+; NOT_GATE_PUSH_BACK ; ON    ; -    ; modified_post_count[3]                                                                             ;
+; NOT_GATE_PUSH_BACK ; ON    ; -    ; modified_post_count[2]                                                                             ;
+; NOT_GATE_PUSH_BACK ; ON    ; -    ; modified_post_count[1]                                                                             ;
+; NOT_GATE_PUSH_BACK ; ON    ; -    ; modified_post_count[0]                                                                             ;
+; NOT_GATE_PUSH_BACK ; ON    ; -    ; modified_post_count[5]                                                                             ;
+; NOT_GATE_PUSH_BACK ; ON    ; -    ; modified_post_count[6]                                                                             ;
+; NOT_GATE_PUSH_BACK ; ON    ; -    ; modified_post_count[7]                                                                             ;
++--------------------+-------+------+----------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_m1p3:auto_generated ;
++---------------------------------+--------------------+------+--------------------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                                           ;
++---------------------------------+--------------------+------+--------------------------------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                            ;
++---------------------------------+--------------------+------+--------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:\adv_point_3_and_more:advance_pointer_counter ;
++---------------------------+-------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assignment                ; Value ; From ; To                                                                                                                                                                                          ;
++---------------------------+-------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; SUPPRESS_DA_RULE_INTERNAL ; a101  ; -    ; -                                                                                                                                                                                           ;
+; SUPPRESS_DA_RULE_INTERNAL ; s102  ; -    ; -                                                                                                                                                                                           ;
+; SUPPRESS_DA_RULE_INTERNAL ; s103  ; -    ; -                                                                                                                                                                                           ;
++---------------------------+-------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:read_pointer_counter ;
++---------------------------+-------+------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assignment                ; Value ; From ; To                                                                                                                                                                 ;
++---------------------------+-------+------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; SUPPRESS_DA_RULE_INTERNAL ; a101  ; -    ; -                                                                                                                                                                  ;
+; SUPPRESS_DA_RULE_INTERNAL ; s102  ; -    ; -                                                                                                                                                                  ;
+; SUPPRESS_DA_RULE_INTERNAL ; s103  ; -    ; -                                                                                                                                                                  ;
++---------------------------+-------+------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:status_advance_pointer_counter ;
++---------------------------+-------+------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assignment                ; Value ; From ; To                                                                                                                                                                           ;
++---------------------------+-------+------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; SUPPRESS_DA_RULE_INTERNAL ; a101  ; -    ; -                                                                                                                                                                            ;
+; SUPPRESS_DA_RULE_INTERNAL ; s102  ; -    ; -                                                                                                                                                                            ;
+; SUPPRESS_DA_RULE_INTERNAL ; s103  ; -    ; -                                                                                                                                                                            ;
++---------------------------+-------+------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:status_read_pointer_counter ;
++---------------------------+-------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assignment                ; Value ; From ; To                                                                                                                                                                        ;
++---------------------------+-------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; SUPPRESS_DA_RULE_INTERNAL ; a101  ; -    ; -                                                                                                                                                                         ;
+; SUPPRESS_DA_RULE_INTERNAL ; s102  ; -    ; -                                                                                                                                                                         ;
+; SUPPRESS_DA_RULE_INTERNAL ; s103  ; -    ; -                                                                                                                                                                         ;
++---------------------------+-------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Source assignments for sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_rom_sr:crc_rom_sr ;
++----------------------+-------+------+-----------------------------------------------------------------------------+
+; Assignment           ; Value ; From ; To                                                                          ;
++----------------------+-------+------+-----------------------------------------------------------------------------+
+; AUTO_ROM_RECOGNITION ; OFF   ; -    ; -                                                                           ;
++----------------------+-------+------+-----------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0                            ;
++-------------------------------------------------+-----------------------------------------+----------------+
+; Parameter Name                                  ; Value                                   ; Type           ;
++-------------------------------------------------+-----------------------------------------+----------------+
+; lpm_type                                        ; sld_signaltap                           ; String         ;
+; sld_node_info                                   ; 805334528                               ; Untyped        ;
+; SLD_IP_VERSION                                  ; 6                                       ; Signed Integer ;
+; SLD_IP_MINOR_VERSION                            ; 0                                       ; Signed Integer ;
+; SLD_COMMON_IP_VERSION                           ; 0                                       ; Signed Integer ;
+; sld_data_bits                                   ; 6                                       ; Untyped        ;
+; sld_trigger_bits                                ; 6                                       ; Untyped        ;
+; SLD_NODE_CRC_BITS                               ; 32                                      ; Signed Integer ;
+; sld_node_crc_hiword                             ; 29910                                   ; Untyped        ;
+; sld_node_crc_loword                             ; 9150                                    ; Untyped        ;
+; SLD_INCREMENTAL_ROUTING                         ; 0                                       ; Signed Integer ;
+; sld_sample_depth                                ; 128                                     ; Untyped        ;
+; sld_segment_size                                ; 128                                     ; Untyped        ;
+; SLD_RAM_BLOCK_TYPE                              ; AUTO                                    ; String         ;
+; sld_state_bits                                  ; 11                                      ; Untyped        ;
+; sld_buffer_full_stop                            ; 1                                       ; Untyped        ;
+; SLD_MEM_ADDRESS_BITS                            ; 7                                       ; Signed Integer ;
+; SLD_DATA_BIT_CNTR_BITS                          ; 4                                       ; Signed Integer ;
+; sld_trigger_level                               ; 1                                       ; Untyped        ;
+; sld_trigger_in_enabled                          ; 1                                       ; Untyped        ;
+; sld_advanced_trigger_entity                     ; basic,1,                                ; Untyped        ;
+; sld_trigger_level_pipeline                      ; 1                                       ; Untyped        ;
+; sld_enable_advanced_trigger                     ; 0                                       ; Untyped        ;
+; SLD_ADVANCED_TRIGGER_1                          ; NONE                                    ; String         ;
+; SLD_ADVANCED_TRIGGER_2                          ; NONE                                    ; String         ;
+; SLD_ADVANCED_TRIGGER_3                          ; NONE                                    ; String         ;
+; SLD_ADVANCED_TRIGGER_4                          ; NONE                                    ; String         ;
+; SLD_ADVANCED_TRIGGER_5                          ; NONE                                    ; String         ;
+; SLD_ADVANCED_TRIGGER_6                          ; NONE                                    ; String         ;
+; SLD_ADVANCED_TRIGGER_7                          ; NONE                                    ; String         ;
+; SLD_ADVANCED_TRIGGER_8                          ; NONE                                    ; String         ;
+; SLD_ADVANCED_TRIGGER_9                          ; NONE                                    ; String         ;
+; SLD_ADVANCED_TRIGGER_10                         ; NONE                                    ; String         ;
+; sld_inversion_mask_length                       ; 39                                      ; Untyped        ;
+; sld_inversion_mask                              ; 000000000000000000000000000000000000000 ; Untyped        ;
+; sld_power_up_trigger                            ; 0                                       ; Untyped        ;
+; SLD_STATE_FLOW_MGR_ENTITY                       ; state_flow_mgr_entity.vhd               ; String         ;
+; sld_state_flow_use_generated                    ; 0                                       ; Untyped        ;
+; sld_current_resource_width                      ; 1                                       ; Untyped        ;
+; sld_attribute_mem_mode                          ; OFF                                     ; Untyped        ;
+; SLD_STORAGE_QUALIFIER_BITS                      ; 1                                       ; Signed Integer ;
+; SLD_STORAGE_QUALIFIER_GAP_RECORD                ; 0                                       ; Signed Integer ;
+; SLD_STORAGE_QUALIFIER_MODE                      ; OFF                                     ; String         ;
+; SLD_STORAGE_QUALIFIER_ENABLE_ADVANCED_CONDITION ; 0                                       ; Signed Integer ;
+; sld_storage_qualifier_inversion_mask_length     ; 0                                       ; Untyped        ;
+; SLD_STORAGE_QUALIFIER_ADVANCED_CONDITION_ENTITY ; basic                                   ; String         ;
+; SLD_STORAGE_QUALIFIER_PIPELINE                  ; 0                                       ; Signed Integer ;
++-------------------------------------------------+-----------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "UARTOut:u7"                                                                                ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; o_tx_active ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Port Connectivity Checks: "UARTOutAdapter:u6"       ;
++-------------------+-------+----------+--------------+
+; Port              ; Type  ; Severity ; Details      ;
++-------------------+-------+----------+--------------+
+; i_ison[3..1]      ; Input ; Info     ; Stuck at GND ;
+; i_ison[0]         ; Input ; Info     ; Stuck at VCC ;
+; i_notelevel[5..4] ; Input ; Info     ; Stuck at VCC ;
+; i_notelevel[3..2] ; Input ; Info     ; Stuck at GND ;
+; i_notelevel[6]    ; Input ; Info     ; Stuck at GND ;
+; i_notelevel[1]    ; Input ; Info     ; Stuck at VCC ;
+; i_notelevel[0]    ; Input ; Info     ; Stuck at GND ;
+; i_vel[6..0]       ; Input ; Info     ; Stuck at VCC ;
+; i_vel[7]          ; Input ; Info     ; Stuck at GND ;
+; i_prog[4..3]      ; Input ; Info     ; Stuck at VCC ;
+; i_prog[7..5]      ; Input ; Info     ; Stuck at GND ;
+; i_prog[2..1]      ; Input ; Info     ; Stuck at GND ;
+; i_prog[0]         ; Input ; Info     ; Stuck at VCC ;
++-------------------+-------+----------+--------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FreqDiv:fd_inst3"                                                                   ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; rst  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; o    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "FreqDiv:fd_inst1" ;
++------+-------+----------+--------------------+
+; Port ; Type  ; Severity ; Details            ;
++------+-------+----------+--------------------+
+; rst  ; Input ; Info     ; Stuck at GND       ;
++------+-------+----------+--------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "KeyboardAdapter:u1"                                                                      ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; o_key     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; o_all_clk ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "KeyboardInput:u0"                                                                   ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; seg0 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; seg1 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; SignalTap II Logic Analyzer Settings                                                                                                                                                                                                           ;
++----------------+------------------+---------------------+------------------+--------------+----------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
+; Instance Index ; Instance Name    ; Trigger Input Width ; Data Input Width ; Sample Depth ; Segments ; Trigger Flow Control ; Trigger Conditions ; Advanced Trigger Conditions ; Trigger In Used ; Trigger Out Used ; Power-Up Trigger Enabled ;
++----------------+------------------+---------------------+------------------+--------------+----------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
+; 0              ; auto_signaltap_0 ; 6                   ; 6                ; 128          ; 1        ; sequential           ; 1                  ; 0                           ; no              ; no               ; no                       ;
++----------------+------------------+---------------------+------------------+--------------+----------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
+    Info: Processing started: Wed Jun 07 16:48:00 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ProjectGuitar -c main
+Info: Found 2 design units, including 1 entities, in source file KeyboardAdapter.vhd
+    Info: Found design unit 1: KeyboardAdapter-KeyboardAdapter_bhv
+    Info: Found entity 1: KeyboardAdapter
+Info: Found 2 design units, including 1 entities, in source file KeyboardInput.vhd
+    Info: Found design unit 1: KeyboardInput-behave
+    Info: Found entity 1: KeyboardInput
+Info: Found 2 design units, including 1 entities, in source file Programme.vhd
+    Info: Found design unit 1: Programme-beh
+    Info: Found entity 1: Programme
+Info: Found 2 design units, including 1 entities, in source file UARTOut.vhd
+    Info: Found design unit 1: UARTOut-RTL
+    Info: Found entity 1: UARTOut
+Info: Found 2 design units, including 1 entities, in source file Velocity.vhd
+    Info: Found design unit 1: Velocity-Velocity_bhv
+    Info: Found entity 1: Velocity
+Info: Found 2 design units, including 1 entities, in source file VGAController.vhd
+    Info: Found design unit 1: VGAController-behavior
+    Info: Found entity 1: VGAController
+Info: Found 2 design units, including 1 entities, in source file UARTIn.vhd
+    Info: Found design unit 1: UARTIn-UARTIn_bhv
+    Info: Found entity 1: UARTIn
+Info: Found 2 design units, including 1 entities, in source file divEven.vhd
+    Info: Found design unit 1: divEven-behav
+    Info: Found entity 1: divEven
+Info: Found 2 design units, including 1 entities, in source file Keyboard.vhd
+    Info: Found design unit 1: Keyboard-rtl
+    Info: Found entity 1: Keyboard
+Info: Found 2 design units, including 1 entities, in source file seg7.vhd
+    Info: Found design unit 1: seg7-behave
+    Info: Found entity 1: seg7
+Info: Found 2 design units, including 1 entities, in source file main.vhd
+    Info: Found design unit 1: main-main_bhv
+    Info: Found entity 1: main
+Warning: Can't analyze file -- file Y:/workspace/course/2.2/shushe/ProjectGuitar/src/uart.vhd is missing
+Info: Found 2 design units, including 0 entities, in source file constant_package.vhd
+    Info: Found design unit 1: definitions
+    Info: Found design unit 2: definitions-body
+Info: Found 2 design units, including 1 entities, in source file UARTInAdapter.vhd
+    Info: Found design unit 1: UARTInAdapter-UARTInAdapter_bhv
+    Info: Found entity 1: UARTInAdapter
+Warning: Entity "FreqDiv" obtained from "Y:/workspace/course/2.2/shushe/ProjectGuitar/src/FreqDiv.vhd" instead of from Quartus II megafunction library
+Info: Found 2 design units, including 1 entities, in source file FreqDiv.vhd
+    Info: Found design unit 1: FreqDiv-FreqDiv_bhv
+    Info: Found entity 1: FreqDiv
+Info: Found 2 design units, including 1 entities, in source file UARTOutAdapter.vhd
+    Info: Found design unit 1: UARTOutAdapter-UARTOutAdapter_bhv
+    Info: Found entity 1: UARTOutAdapter
+Info: Elaborating entity "main" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at main.vhd(16): used implicit default value for signal "o_clicked" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at main.vhd(17): used implicit default value for signal "o_hs" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at main.vhd(17): used implicit default value for signal "o_vs" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at main.vhd(18): used implicit default value for signal "o_RED" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at main.vhd(18): used implicit default value for signal "o_GREEN" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at main.vhd(18): used implicit default value for signal "o_BLUE" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10036): Verilog HDL or VHDL warning at main.vhd(131): object "clk_1" assigned a value but never read
+Warning (10541): VHDL Signal Declaration warning at main.vhd(146): used implicit default value for signal "t_cnt" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Info: Elaborating entity "KeyboardInput" for hierarchy "KeyboardInput:u0"
+Info: Elaborating entity "Keyboard" for hierarchy "KeyboardInput:u0|Keyboard:u0"
+Info (10041): Inferred latch for "scancode[0]" at Keyboard.vhd(30)
+Info (10041): Inferred latch for "scancode[1]" at Keyboard.vhd(30)
+Info (10041): Inferred latch for "scancode[2]" at Keyboard.vhd(30)
+Info (10041): Inferred latch for "scancode[3]" at Keyboard.vhd(30)
+Info (10041): Inferred latch for "scancode[4]" at Keyboard.vhd(30)
+Info (10041): Inferred latch for "scancode[5]" at Keyboard.vhd(30)
+Info (10041): Inferred latch for "scancode[6]" at Keyboard.vhd(30)
+Info (10041): Inferred latch for "scancode[7]" at Keyboard.vhd(30)
+Info: Elaborating entity "seg7" for hierarchy "KeyboardInput:u0|seg7:u1"
+Info: Elaborating entity "KeyboardAdapter" for hierarchy "KeyboardAdapter:u1"
+Info: Elaborating entity "FreqDiv" for hierarchy "FreqDiv:fd_inst1"
+Info: Elaborating entity "FreqDiv" for hierarchy "FreqDiv:fd_inst3"
+Info: Elaborating entity "UARTOutAdapter" for hierarchy "UARTOutAdapter:u6"
+Info: Elaborating entity "UARTOut" for hierarchy "UARTOut:u7"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_m1p3.tdf
+    Info: Found entity 1: altsyncram_m1p3
+Info: Found 1 design units, including 1 entities, in source file db/mux_aoc.tdf
+    Info: Found entity 1: mux_aoc
+Info: Found 1 design units, including 1 entities, in source file db/decode_rqf.tdf
+    Info: Found entity 1: decode_rqf
+Info: Found 1 design units, including 1 entities, in source file db/cntr_bai.tdf
+    Info: Found entity 1: cntr_bai
+Info: Found 1 design units, including 1 entities, in source file db/cmpr_7cc.tdf
+    Info: Found entity 1: cmpr_7cc
+Info: Found 1 design units, including 1 entities, in source file db/cntr_02j.tdf
+    Info: Found entity 1: cntr_02j
+Info: Found 1 design units, including 1 entities, in source file db/cntr_sbi.tdf
+    Info: Found entity 1: cntr_sbi
+Info: Found 1 design units, including 1 entities, in source file db/cmpr_8cc.tdf
+    Info: Found entity 1: cmpr_8cc
+Info: Found 1 design units, including 1 entities, in source file db/cntr_gui.tdf
+    Info: Found entity 1: cntr_gui
+Info: Found 1 design units, including 1 entities, in source file db/cmpr_5cc.tdf
+    Info: Found entity 1: cmpr_5cc
+Info: Analysis and Synthesis generated SignalTap II or debug node instance "auto_signaltap_0"
+Info: 1 design partition requires Analysis and Synthesis
+    Info: Partition "Top" requires synthesis because there were changes to its dependent source files
+Info: No design partitions will skip synthesis in the current incremental compilation
+Info: Found 1 instances of uninferred RAM logic
+    Info: RAM logic "UARTOutAdapter:u6|\FSM:t_Bytes" is uninferred due to asynchronous read logic
+Info: Starting Logic Optimization and Technology Mapping for Top Partition
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "o_cnt[0]" is stuck at GND
+    Warning (13410): Pin "o_cnt[1]" is stuck at GND
+    Warning (13410): Pin "o_cnt[2]" is stuck at GND
+    Warning (13410): Pin "o_clicked" is stuck at GND
+    Warning (13410): Pin "o_hs" is stuck at GND
+    Warning (13410): Pin "o_vs" is stuck at GND
+    Warning (13410): Pin "o_RED[0]" is stuck at GND
+    Warning (13410): Pin "o_RED[1]" is stuck at GND
+    Warning (13410): Pin "o_RED[2]" is stuck at GND
+    Warning (13410): Pin "o_GREEN[0]" is stuck at GND
+    Warning (13410): Pin "o_GREEN[1]" is stuck at GND
+    Warning (13410): Pin "o_GREEN[2]" is stuck at GND
+    Warning (13410): Pin "o_BLUE[0]" is stuck at GND
+    Warning (13410): Pin "o_BLUE[1]" is stuck at GND
+    Warning (13410): Pin "o_BLUE[2]" is stuck at GND
+Info: 1 registers lost all their fanouts during netlist optimizations. The first 1 are displayed below.
+    Info: Register "UARTOutAdapter:u6|r_SM_Main.s_Loading" lost all its fanouts during netlist optimizations.
+Info: Implemented 3093 device resources after synthesis - the final resource count might be different
+    Info: Implemented 6 input pins
+    Info: Implemented 39 output pins
+    Info: Implemented 3048 logic cells
+Info: Starting Logic Optimization and Technology Mapping for Partition sld_signaltap:auto_signaltap_0
+Info: Registers with preset signals will power-up high
+Info: DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info: Implemented 473 device resources after synthesis - the final resource count might be different
+    Info: Implemented 69 input pins
+    Info: Implemented 22 output pins
+    Info: Implemented 376 logic cells
+    Info: Implemented 6 RAM segments
+Info: Starting Logic Optimization and Technology Mapping for Partition sld_hub:sld_hub_inst
+Info: Registers with preset signals will power-up high
+Info: DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info: Implemented 170 device resources after synthesis - the final resource count might be different
+    Info: Implemented 18 input pins
+    Info: Implemented 36 output pins
+    Info: Implemented 116 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 26 warnings
+    Info: Peak virtual memory: 290 megabytes
+    Info: Processing ended: Wed Jun 07 16:48:17 2017
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:15
+
+

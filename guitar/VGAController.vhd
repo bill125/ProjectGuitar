@@ -126,6 +126,7 @@ begin
 			if l_note_clk = '0' and i_note_clk = '1' then
 				t_x(j) := 401 + i_note_pos * 30;
 				t_y(j) := 0;
+			elsif l_note_clk = '1' and i_note_clk = '0' then
 				if j = 63 then
 					j := 0;
 				else
@@ -201,6 +202,7 @@ begin
 		variable cnt : integer range 0 to 32767 := 0;
 		variable tmp_c : integer range 0 to 8;
 		variable i : integer range 0 to 127;
+		variable i_30 : integer range 0 to 512;
 	begin  
 		if reset='0' then
 			r1 <= "000";
@@ -214,7 +216,8 @@ begin
 				
 				i := 0;
 				while (i < 6) loop
-					if 400 + i * 30 < x and x < 429 + i * 30 then
+					i_30 := i * 30;
+					if 400 + i_30 < x and x < 429 + i_30 then
 						if y > 386 then
 							if i /= 1 and i /= 4 then
 								r1 <= "111";
@@ -244,8 +247,9 @@ begin
 				end loop;
 				
 				i := 0;
-				while i < 7 loop		
-					if 399 + i * 30 <= x and x <= 400 + i * 30 then
+				while i < 7 loop	
+					i_30 := i * 30;
+					if 399 + i_30 <= x and x <= 400 + i_30 then
 						r1 <= "111";
 						g1 <= "111";
 						b1 <= "111";
