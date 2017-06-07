@@ -41,7 +41,7 @@ begin
 				when s_Idle =>
 					if L /= R then
 						wait_times := 10;
-						r_TX_Main <= s_Loading
+						r_TX_Main <= s_Loading;
 					else
 						r_TX_Main <= s_Idle; 
 					end if;
@@ -51,7 +51,7 @@ begin
 						wait_times := wait_times - 1;
 						r_TX_Main <= s_Loading;
 					else
-						o_TX_Bytes <= t_TX_Bytes(L);
+						o_TX_Byte <= t_Bytes(L);
 						wait_times := 10;
 						r_TX_Main <= s_TX_Data_Bytes;
 					end if;
@@ -61,7 +61,7 @@ begin
 						wait_times := wait_times - 1;
 						r_TX_Main <= s_TX_Data_Bytes;
 					else
-						o_TX_DV <= '1';
+						t_TX_DV <= '1';
 						wait_times := 10;
 						r_TX_Main <= s_Finish;
 					end if;
@@ -74,17 +74,18 @@ begin
 						wait_times := 20;
 						r_TX_Main <= s_Cleanup;
 					else
-						o_TX_DV <= '0';
+						t_TX_DV <= '0';
 						r_TX_Main <= s_Finish;
 					end if;
 				
-				when s_Cleanup;
+				when s_Cleanup =>
 					if wait_times > 0 then
 						wait_times := wait_times - 1;
 						r_TX_Main <= s_Cleanup;
 					else
-						o_TX_DV <= '0';
-						r_TX_Main <= Idle;
+						T_TX_DV <= '0';
+						L := L + 1;
+						r_TX_Main <= s_Idle;
 					end if;
 					
 			end case;
@@ -92,7 +93,6 @@ begin
 			-- Writing into Buffer
 			case r_SM_Main is
 				when s_Idle =>
-					t_TX_done <= '0';
 					if l_TX_DV = '0' and i_TX_DV = '1' then
 						cnt := 0;
 						r_SM_Main <= s_TX_Data_Bytes;
@@ -106,15 +106,15 @@ begin
 					else
 						case cnt is
 							when 0 =>
-								t_Bytes(R) <= conv_std_logic_vector(i_isOn, 8);
+								t_Bytes(R) := conv_std_logic_vector(i_isOn, 8);
 							when 1 =>
-								t_Bytes(R) <= conv_std_logic_vector(i_noteLevel, 8);
+								t_Bytes(R) := conv_std_logic_vector(i_noteLevel, 8);
 							when 2 =>
-								t_Bytes(R) <= conv_std_logic_vector(i_vel, 8);
+								t_Bytes(R) := conv_std_logic_vector(i_vel, 8);
 							when 3 =>
-								t_Bytes(R) <= conv_std_logic_vector(i_prog, 8);
+								t_Bytes(R) := conv_std_logic_vector(i_prog, 8);
 							when others =>
-								t_Bytes(R) <= "00000000";
+								t_Bytes(R) := "00000000";
 						end case;
 						
 						R := R + 1;
@@ -128,10 +128,12 @@ begin
 				when s_Cleanup =>
 					cnt := 0;
 					r_SM_Main <= s_Idle;
+					
+				when others =>
+					r_SM_Main <= s_Idle;
 			end case;
 			l_TX_DV := i_TX_DV;
 		end if;
-		o_cnt <= cnt;
 	end process;
 	
 end UARTOutAdapter_bhv;

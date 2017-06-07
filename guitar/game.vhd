@@ -46,7 +46,7 @@ entity game is
 end entity game;
 architecture beh of game is
   type t_SM_Main is (s_Idle, s_Record, s_Play, s_Cleanup);
-  type ss_Status is (ss_Send_Done, ss_Sending, ss_Waiting);
+  type ss_Status is (ss_Send_Done, ss_Waiting);
   constant MaxWaitTimes : integer := 31;
   -- signal notes : Noise;
   -- signal cntId : IntArray;
@@ -67,7 +67,6 @@ begin
 	case ss is
 	when ss_Send_Done => sstx <= 0;
 	when ss_Waiting => sstx <= 1;
-	when ss_Sending => sstx <= 2;
 	end case;
 end process;
 process (r_SM_Main) is
@@ -134,19 +133,8 @@ o_address <= address;
                 pause_times := MaxWaitTimes;
                 intvls := 0;
                 cnt := 0;
-                if should_send_to_uart = '1' then --play
-                  ss <= ss_Sending;
-                else
-                  ss <= ss_Waiting;
-                  wait_times := 0;
-                end if;
-              when ss_Sending =>
-                if l_i_TX_Done /= i_TX_Done and i_TX_Done = '0' then
-                  ss <= ss_Waiting;
-                  wait_times := 0;
-                else
-                  ss <= ss_Sending;
-                end if;
+                ss <= ss_Waiting;
+                wait_times := 0;
               when ss_Waiting =>
                 if wait_times = MaxWaitTimes then
                   ss <= ss_Send_Done;

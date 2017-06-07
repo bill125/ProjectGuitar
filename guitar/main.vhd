@@ -220,9 +220,7 @@ architecture main_bhv of main is
           i_vel  : in integer range 0 to 255;
           i_prog : in integer range 0 to 255;
           o_TX_Byte : out std_logic_vector(7 downto 0);
-          o_TX_DV : out std_logic;	
-          o_TX_done : out std_logic;
-          o_cnt : out integer
+          o_TX_DV : out std_logic
           );
   end component UARTOutAdapter;
 
@@ -680,9 +678,7 @@ begin
               i_Byte_done => uart_out_TX_Done,
               i_TX_DV => noteLevel_TX_DV,
               o_TX_Byte => uart_out_a_byte,
-              o_TX_DV => uart_out_a_TX_DV,
-              o_TX_done => uart_out_a_TX_Done,
-              o_cnt => t_cnt
+              o_TX_DV => uart_out_a_TX_DV
               );
   u4 : seg7 port map (gu_strings(0)(3 downto 0), seg0);
   u5 : seg7 port map (gu_strings(0)(7 downto 4), seg1);

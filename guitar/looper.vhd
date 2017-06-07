@@ -26,7 +26,7 @@ entity looper is
 end entity looper;
 architecture beh of looper is
   type t_SM_Main is (s_Idle, s_Record, s_Play, s_Cleanup);
-  type ss_Status is (ss_Send_Done, ss_Sending, ss_Waiting);
+  type ss_Status is (ss_Send_Done, ss_Waiting);
   constant MaxWaitTimes : integer := 31;
   signal notes : Noise;
   signal cntId : IntArray;
@@ -47,7 +47,6 @@ begin
 	case ss is
 	when ss_Send_Done => sstx <= 0;
 	when ss_Waiting => sstx <= 1;
-	when ss_Sending => sstx <= 2;
 	end case;
 end process;
 process (r_SM_Main) is
@@ -139,14 +138,8 @@ end process;
                 o_TX_DV <= '1';
                 intvls := 0;
                 cnt := 0;
-                ss <= ss_Sending;
-              when ss_Sending =>
-                if l_i_TX_Done /= i_TX_Done and i_TX_Done = '0' then
-                  ss <= ss_Waiting;
-                  wait_times := 0;
-                else
-                  ss <= ss_Sending;
-                end if;
+                ss <= ss_Waiting;
+                wait_times := 0;
               when ss_Waiting =>
                 if wait_times = MaxWaitTimes then
                   ss <= ss_Send_Done;

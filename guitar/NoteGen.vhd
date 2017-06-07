@@ -29,17 +29,14 @@ begin
     variable pause_times : integer range 0 to MaxWaitTimes := 0;
   begin
     if rising_edge(i_clk) then
-  case stx is
-when s_Idle=>
-  stx1 <= 0;
-  when s_Datas=>
-  stx1 <= 1;
-  when s_Wait_For_DV=>
-  stx1 <= 2;
-  end case;
-  if pause_times > 0 then
-    pause_times := pause_times - 1;
-  else
+      case stx is
+        when s_Idle=>
+          stx1 <= 0;
+        when s_Datas=>
+          stx1 <= 1;
+        when s_Wait_For_DV=>
+          stx1 <= 2;
+      end case;
       case stx is
         when s_Idle =>
           if l_i_RX_DV /= i_RX_DV and i_RX_DV = '1' then
@@ -54,35 +51,29 @@ when s_Idle=>
             end if;
           end if;
         when s_Datas =>
-          o_TX_DV <= '1';
-          wait_times := MaxWaitTimes;
-          o_noteLevel <= to_integer(unsigned(i_strings(cnt)));
-          cnt <= cnt - 1;
-          stx <= s_Wait_For_DV;
-        when s_Wait_For_DV =>
-          if l_i_TX_Done /= i_TX_Done and i_TX_Done = '0' then
-            if cnt < 0 then
-              stx <= s_Idle;
-            else
-              stx <= s_Datas;
-              pause_times := MaxWaitTimes;
+          if wait_times > 0 then
+            if wait_times = HalfMaxWaitTimes then
+              o_TX_DV <= '1';
+            elsif wait_times = 1 then
+              o_TX_DV <= '0';
             end if;
+            wait_times := wait_times - 1;
+            stx <= s_Datas;
+          elsif cnt < 0 then
+            stx <= s_Idle;
           else
-            stx <= s_Wait_For_DV;
+            wait_times := MaxWaitTimes;
+            o_noteLevel <= to_integer(unsigned(i_strings(cnt)));
+            cnt <= cnt - 1;
+            stx <= s_Datas;
           end if;
         when others =>
           stx <= s_Idle;
       end case;
-      if wait_times = 0 then
-        o_TX_DV <= '0';
-      else
-        wait_times := wait_times - 1;
-      end if;
       l_i_RX_DV <= i_RX_DV;
       l_i_TX_Done <= i_TX_Done;
   end if;
-    end if;
-  end process;
+end process;
   -- o_TX_DV <= i_RX_DV;
   -- process (i_RX_DV) is
   -- begin
