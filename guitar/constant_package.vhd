@@ -15,7 +15,7 @@ package definitions is
     constant AddressBits : integer := 10;
     constant DataBits : integer := 24;
     constant CLKS_PER_INTERVAL : integer := 125000;
-    type Noise is array (0 to MaxLength) of integer range 0 to 88;
+    type Noise is array (0 to MaxLength) of integer range 0 to 127;
     type IntArray is array (0 to MaxLength) of integer range 0 to MaxIntervals;--TODO: range?
     type Loopers127Array is array (0 to MaxLoopers) of integer range 0 to 127;
     function convert_key(i_key: in std_logic_vector(7 downto 0)) return integer;

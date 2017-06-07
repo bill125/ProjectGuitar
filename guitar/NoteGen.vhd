@@ -8,7 +8,7 @@ entity NoteGen is
 	i_triggeredString : in integer range 0 to 15;
 	i_strings : in GuitarStatus;
 	i_RX_DV, i_clk, i_TX_Done : in std_logic;
-	o_noteLevel : out integer range 0 to 88;
+	o_noteLevel : out integer range 0 to 127;
 	o_TX_DV : out std_logic;
     stx1 : out integer range 0 to 2
 	);

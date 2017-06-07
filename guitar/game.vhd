@@ -90,7 +90,7 @@ notePos <= to_integer(unsigned(i_data(3 downto 1)));
 o_address <= address;
   process (i_clk) is
     variable intvls: integer range -MaxIntervals * 2 to MaxIntervals := 0;
-    variable pause_times, wait_times : integer range 0 to MaxWaitTimes := 0;
+    variable pause_times, wait_times, state_change_wait_times : integer range 0 to MaxWaitTimes := 0;
     variable cnt : integer := 0;
   begin
     cnt1 <= cnt;
@@ -103,19 +103,25 @@ o_address <= address;
           o_TX_DV <= '0';
           -- index <= 0;
           address <= (others => '0');
-          if l_i_RX_DV /= i_RX_DV and i_RX_DV = '1' then
+          if state_change_wait_times > 0 then
+            state_change_wait_times := state_change_wait_times - 1;
+          elsif l_i_RX_DV = '0' and i_RX_DV = '1' then
             case i_key is
               when play_key =>
                 wait_times := 0;
                 ss <= ss_Send_Done;
                 r_SM_Main <= s_Play;
+                state_change_wait_times := MaxWaitTimes;
               when others =>
                 r_SM_Main <= s_Idle;
             end case;
           else r_SM_Main <= s_Idle;
           end if;
         when s_Play =>
-          if l_i_RX_DV /= i_RX_DV and i_RX_DV = '1' and i_key = play_key then --stop playing
+          if state_change_wait_times > 0 then
+            state_change_wait_times := state_change_wait_times - 1;
+          elsif l_i_RX_DV = '0' and i_RX_DV = '1' and i_key = play_key then --stop playing
+            state_change_wait_times := MaxWaitTimes;
             r_SM_Main <= s_Idle;
           elsif intvls = cntId then
             r_SM_Main <= s_Play;

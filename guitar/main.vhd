@@ -300,9 +300,9 @@ architecture main_bhv of main is
   signal gu_progs : Loopers127Array;
   signal gu_strings, uart_in_a_strings : GuitarStatus;
   signal gu_vel : integer range 0 to 127;
-  signal gu_base_note : integer range 0 to 127 := 24;
+  signal gu_base_note : integer range 0 to 127 := 0;
   signal gu_vels : Loopers127Array;
-  signal note_gen_noteLevel, gu_noteLevel, game_bgm_noteLevel, game_show_ss_noteLevel : integer range 0 to 88;
+  signal note_gen_noteLevel, gu_noteLevel, game_bgm_noteLevel, game_show_ss_noteLevel, note_gen_noteLevel_plus : integer range 0 to 127;
   signal game_show_note_pos, game_show_ss_note_pos : integer range 0 to 5;
   signal looper_noteLevel : Loopers127Array;
   -- uart
@@ -417,7 +417,7 @@ begin
       should_send_to_uart => '1',
       play_key => x"21", --C
       identifier => '0',
-      delay_intvls => 650, --200(required by drop time) + 450(required by song)
+      delay_intvls => 200, --200(required by drop time) + 450(required by song)
       g_CLKS_PER_INTERVAl => CLKS_PER_INTERVAL -- 25000000 / 100 i.e. 10ms/intvl
       )
     port map (
@@ -451,9 +451,7 @@ begin
       i_noteLevel => gu_noteLevel,
       o_TX_DV => game_show_TX_DV,
       o_address => rom_show_address,
-      o_note_pos => game_show_note_pos,
-      stx => stx1,
-      sstx => sstx
+      o_note_pos => game_show_note_pos
       -- wait_times_out => wait_times_out
       );
   game_show_set_strings : game
@@ -461,7 +459,7 @@ begin
       should_send_to_uart => '0',
       play_key => x"21", --C
       identifier => '1',
-      delay_intvls => 160,
+      delay_intvls => 180,
       g_CLKS_PER_INTERVAl => CLKS_PER_INTERVAL -- 4*25000000 / 100 i.e. 10ms/intvl
       )
     port map (
@@ -477,7 +475,7 @@ begin
       o_TX_DV => game_show_ss_TX_DV
       -- wait_times_out => wait_times_out
       );
-
+  note_gen_noteLevel_plus <= note_gen_noteLevel + gu_base_note;
   -- looper_inst0 : looper
   --   generic map (
   --     g_looper_index => 1,
@@ -488,10 +486,10 @@ begin
   --   port map (
   --     i_RX_DV => a_kb_all_TX_DV,
   --     i_clk => clk_100m,
-  --     i_noteGen_RX_DV => noteLevel_TX_DV,
+  --     i_noteGen_RX_DV => note_gen_TX_DV,
   --     i_key => t_key,
   --     i_TX_Done => uart_out_a_TX_Done,
-  --     i_noteLevel => gu_noteLevel,
+  --     i_noteLevel => note_gen_noteLevel_plus,
   --     o_noteLevel => looper_noteLevel(0),
   --     o_TX_DV => looper_TX_DV(0)
   --     -- stx => stx1,
@@ -508,10 +506,10 @@ begin
   --   port map (
   --     i_RX_DV => a_kb_all_TX_DV,
   --     i_clk => clk_100m,
-  --     i_noteGen_RX_DV => noteLevel_TX_DV,
+  --     i_noteGen_RX_DV => note_gen_TX_DV,
   --     i_key => t_key,
   --     i_TX_Done => uart_out_a_TX_Done,
-  --     i_noteLevel => gu_noteLevel,
+  --     i_noteLevel => note_gen_noteLevel_plus,
   --     o_noteLevel => looper_noteLevel(1),
   --     o_TX_DV => looper_TX_DV(1),
   --     stx => stx1,
@@ -528,10 +526,10 @@ begin
   --   port map (
   --     i_RX_DV => a_kb_all_TX_DV,
   --     i_clk => clk_100m,
-  --     i_noteGen_RX_DV => noteLevel_TX_DV,
+  --     i_noteGen_RX_DV => note_gen_TX_DV,
   --     i_key => t_key,
   --     i_TX_Done => uart_out_a_TX_Done,
-  --     i_noteLevel => gu_noteLevel,
+  --     i_noteLevel => note_gen_noteLevel_plus,
   --     o_noteLevel => looper_noteLevel(2),
   --     o_TX_DV => looper_TX_DV(2)
   --     -- stx => stx1,
@@ -561,19 +559,19 @@ begin
     end if;
   end process;
   
-  gu_noteLevel_process: process (clk_100m) is
+  gu_noteLevel_process: process (clk_25m) is
     variable l_note_gen_TX_DV : std_logic := note_gen_TX_DV;
     variable l_game_bgm_TX_DV : std_logic := game_bgm_TX_DV;
     variable l_looper_TX_DV : std_logic_vector(0 to MaxLoopers) := looper_TX_DV;
   begin
-    if rising_edge(clk_100m) then
+    if rising_edge(clk_25m) then
       if l_note_gen_TX_DV /= note_gen_TX_DV and note_gen_TX_DV = '1' then
         gu_noteLevel <= note_gen_noteLevel + gu_base_note;
         gu_vel <= gu_vels(0);
         gu_prog <= gu_progs(0);
         gu_chn <= 0;
       elsif l_game_bgm_TX_DV /= game_bgm_TX_DV and game_bgm_TX_DV = '1' then
-        gu_noteLevel <= game_bgm_noteLevel;
+        gu_noteLevel <= game_bgm_noteLevel + gu_base_note;
         gu_vel <= gu_vels(3);
         gu_prog <= gu_progs(3);
         gu_chn <= 4;
@@ -660,7 +658,7 @@ begin
     generic map (
       up_key => x"1A", --9 on pad
       down_key => x"22", --3 on pad
-      default => 24
+      default => 0
       )
     port map (
       i_RX_DV => a_kb_all_TX_DV,
