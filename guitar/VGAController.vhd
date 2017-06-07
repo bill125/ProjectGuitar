@@ -110,7 +110,7 @@ begin
 	 
 	process (clk_100m, reset)
 		variable i : integer range 0 to 100;
-		variable j : integer range 0 to 63 := 0;
+		variable j : integer range 0 to 127 := 0;
 		variable cnt : integer range 0 to 300000 := 0;
 		variable l_note_clk : std_logic := '0';
 	begin
@@ -127,7 +127,7 @@ begin
 				t_x(j) := 401 + i_note_pos * 30;
 				t_y(j) := 0;
 			elsif l_note_clk = '1' and i_note_clk = '0' then
-				if j = 63 then
+				if j = 62 then
 					j := 0;
 				else
 					j := j + 1;
