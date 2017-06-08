@@ -298,7 +298,7 @@ architecture main_bhv of main is
 
   
   signal t_key : std_logic_vector(7 downto 0);
-  signal clk, clk_25m : std_logic;
+  signal clk, clk_25m, clk_100m1 : std_logic;
   -- data valid clocks
   signal raw_kb_TX_DV, a_kb_TX_DV, a_kb_all_TX_DV : std_logic := '0'; -- keyboard
   signal uart_in_TX_DV : std_logic := '0';
@@ -347,44 +347,46 @@ begin
   -- 9981
   rom_show1_inst : show1
     port map (
-      address => rom_show1_address,
-      clock => clk_100m,
+      address => rom_show_address,
+      clock => clk_25m,
       q => rom_show1_data
       );
   rom_show1_ss_inst : show1
     port map (
-      address => rom_show1_ss_address,
-      clock => clk_100m,
+      address => rom_show_ss_address,
+      clock => clk_25m,
       q => rom_show1_ss_data
       );
 
   rom_bgm1_inst : bgm1
     port map (
-      address => rom_bgm1_address,
-      clock => clk_100m,
+      address => rom_bgm_address,
+      clock => clk_25m,
       q => rom_bgm1_data
       );
 
   -- white album
   rom_show2_inst : show2
     port map (
-      address => rom_show2_address,
-      clock => clk_100m,
+      address => rom_show_address,
+      clock => clk_25m,
       q => rom_show2_data
       );
   rom_show2_ss_inst : show2
     port map (
-      address => rom_show2_ss_address,
-      clock => clk_100m,
+      address => rom_show_ss_address,
+      clock => clk_25m,
       q => rom_show2_ss_data
       );
 
   rom_bgm2_inst : bgm2
     port map (
-      address => rom_bgm2_address,
-      clock => clk_100m,
+      address => rom_bgm_address,
+      clock => clk_25m,
       q => rom_bgm2_data
       );
+
+  clk_100m1 <= clk_100m;
 
   u0 : KeyboardInput 
  	port map (
@@ -402,7 +404,7 @@ begin
  	port map (
       i_key => t_key,
       i_clk => raw_kb_TX_DV,
-      hclk => clk_100m,
+      hclk => clk_100m1,
       o_triggeredString => gu_triggeredString,
       o_clk => a_kb_TX_DV,
       o_all_clk => a_kb_all_TX_DV
@@ -503,7 +505,7 @@ begin
       should_send_to_uart => '0',
       play_key => x"21", --C
       identifier => '1',
-      delay_intvls => 180,
+      delay_intvls => 170,
       g_CLKS_PER_INTERVAl => CLKS_PER_INTERVAL -- 4*25000000 / 100 i.e. 10ms/intvl
       )
     port map (
@@ -583,34 +585,34 @@ begin
 
   gu_strings_process: process (clk_100m) is
     variable stx : integer range 0 to 1 := 0;
-    variable free_mode_triggeredString : integer range 0 to 5 := 0;
+    variable free_mode_triggeredString : integer range 0 to 15 := 0;
     variable l_a_kb_all_TX_DV : std_logic := a_kb_all_TX_DV;
     variable l_game_show_ss_TX_DV : std_logic := game_show_ss_TX_DV;
   begin
     if rising_edge(clk_100m) then
       if free_mode_triggeredString = 0 then
-        rom_show_ss_address <= rom_show1_ss_address;
+        --rom_show_ss_address <= rom_show1_ss_address;
         rom_show_ss_data <= rom_show1_ss_data;
-        rom_bgm_address <= rom_bgm1_address;
+        --rom_bgm_address <= rom_bgm1_address;
         rom_bgm_data <= rom_bgm1_data;
-        rom_show_address <= rom_show1_address;
+        --rom_show_address <= rom_show1_address;
         rom_show_data <= rom_show1_data;
       else
-        rom_show_ss_address <= rom_show2_ss_address;
+        --rom_show_ss_address <= rom_show2_ss_address;
         rom_show_ss_data <= rom_show2_ss_data;
-        rom_bgm_address <= rom_bgm2_address;
+        --rom_bgm_address <= rom_bgm2_address;
         rom_bgm_data <= rom_bgm2_data;
-        rom_show_address <= rom_show2_address;
+        --rom_show_address <= rom_show2_address;
         rom_show_data <= rom_show2_data;
       end if;
       if l_a_kb_all_TX_DV = '0' and a_kb_all_TX_DV = '1' then
         if t_key = x"21" then
+          free_mode_triggeredString := gu_triggeredString;
           stx := stx + 1;
         end if;
       end if;
       case stx is
         when 0 =>
-          free_mode_triggeredString := gu_triggeredString;
           gu_strings <= uart_in_a_strings;
         when 1 =>
           if game_show_ss_TX_DV = '1' and l_game_show_ss_TX_DV = '0' then
@@ -622,42 +624,58 @@ begin
     end if;
   end process;
   
-  gu_noteLevel_process: process (clk_25m) is
+  gu_noteLevel_process: process (clk_100m) is
     variable l_note_gen_TX_DV : std_logic := note_gen_TX_DV;
     variable l_game_bgm_TX_DV : std_logic := game_bgm_TX_DV;
     variable l_looper_TX_DV : std_logic_vector(0 to MaxLoopers) := looper_TX_DV;
+    variable wait_times : integer range 0 to 64;
   begin
-    if rising_edge(clk_25m) then
+    if rising_edge(clk_100m) then
       if l_note_gen_TX_DV /= note_gen_TX_DV and note_gen_TX_DV = '1' then
         gu_noteLevel <= note_gen_noteLevel + gu_base_note;
         gu_vel <= gu_vels(0);
         gu_prog <= gu_progs(0);
         gu_chn <= 0;
+        wait_times := 30;
       elsif l_game_bgm_TX_DV /= game_bgm_TX_DV and game_bgm_TX_DV = '1' then
         gu_noteLevel <= game_bgm_noteLevel + gu_base_note;
         gu_vel <= gu_vels(3);
         gu_prog <= gu_progs(3);
         gu_chn <= 4;
+        wait_times := 30;
       elsif l_looper_TX_DV(0) /= looper_TX_DV(0) and looper_TX_DV(0) = '1' then
         gu_noteLevel <= looper_noteLevel(0);
         gu_vel <= gu_vels(1);
         gu_prog <= gu_progs(1);
         gu_chn <= 1;
-      elsif l_looper_TX_DV(1) /= looper_TX_DV(1) and looper_TX_DV(1) = '1' then
-        gu_noteLevel <= looper_noteLevel(1);
-        gu_vel <= gu_vels(2);
-        gu_prog <= gu_progs(2);
-        gu_chn <= 2;
-      elsif l_looper_TX_DV(2) /= looper_TX_DV(2) and looper_TX_DV(2) = '1' then
-        gu_noteLevel <= looper_noteLevel(2);
-        gu_vel <= gu_vels(3);
-        gu_prog <= gu_progs(3);
-        gu_chn <= 3;
+        wait_times := 30;
+      -- elsif l_looper_TX_DV(1) /= looper_TX_DV(1) and looper_TX_DV(1) = '1' then
+      --   gu_noteLevel <= looper_noteLevel(1);
+      --   gu_vel <= gu_vels(2);
+      --   gu_prog <= gu_progs(2);
+      --   gu_chn <= 2;
+      --   noteLevel_TX_DV <= '1';
+      --   wait_times := 60;
+      -- elsif l_looper_TX_DV(2) /= looper_TX_DV(2) and looper_TX_DV(2) = '1' then
+      --   gu_noteLevel <= looper_noteLevel(2);
+      --   gu_vel <= gu_vels(3);
+      --   gu_prog <= gu_progs(3);
+      --   gu_chn <= 3;
+      --   noteLevel_TX_DV <= '1';
+      --   wait_times := 60;
       end if;
       l_note_gen_TX_DV := note_gen_TX_DV;
       l_game_bgm_TX_DV := game_bgm_TX_DV;
       l_looper_TX_DV := looper_TX_DV;
-      noteLevel_TX_DV <= note_gen_TX_DV or looper_TX_DV(0) or looper_TX_DV(1) or looper_TX_DV(2) or game_bgm_TX_DV;
+      if wait_times > 0 then
+        wait_times := wait_times - 1;
+        if wait_times = 0 then
+          noteLevel_TX_DV <= '0';
+        elsif wait_times = 28 then
+          noteLevel_TX_DV <= '1';
+        end if;
+      end if;
+      --noteLevel_TX_DV <= note_gen_TX_DV or looper_TX_DV(0) or looper_TX_DV(1) or looper_TX_DV(2) or game_bgm_TX_DV;
     end if;
   end process;
   -- debug

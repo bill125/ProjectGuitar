@@ -13,7 +13,7 @@ midifile = "WhiteAlbum.mid"
 a = midi.read_midifile(midifile)
 print(a.resolution)
 TPB = a.resolution # ticks per bit
-BPM = 90
+BPM = 70
 cnt_ticks = 0
 
 # note(7 bit) 22 - 16
@@ -22,7 +22,7 @@ cnt_ticks = 0
 # end(1 bit) 0 - 0
 
 basic_note = [40, 45, 50, 55, 59, 64];
-base = 12
+base = 0
 def gen(a, idx):
     f = open('%s-%d'%("whitealbum", idx), 'wb')
     data = None

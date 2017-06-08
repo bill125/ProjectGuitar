@@ -75,7 +75,7 @@ begin
                       when "01110101" | x"74" | x"6B" | x"6C" | x"69" | x"7D" | x"7A" => o_triggeredString <= 0;
 						when others => 
 							selected_key := '0';
-							o_triggeredString <= 0;
+							--o_triggeredString <= 0;
 					end case;
 				end if;
 			end if;
