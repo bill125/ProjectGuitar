@@ -15,34 +15,18 @@ entity game is
     i_RX_DV, i_clk, i_TX_Done : in std_logic;
     i_key : in std_logic_vector(7 downto 0);
     i_data : in std_logic_vector(DataBits - 1 downto 0);
-    i_noteLevel : in integer range 0 to 88;
+    i_noteLevel : in integer range 0 to 127;
     o_address : out std_logic_vector(AddressBits - 1 downto 0);
-    o_noteLevel : out integer range 0 to 88;
+    o_noteLevel : out integer range 0 to 127;
     o_note_pos : out integer range 0 to 5;
     stx, sstx : out integer range 0 to 3;
     o_TX_DV : out std_logic;
     index1 : out integer range 0 to MaxLength;
     cnt1 : out integer;
     wait_times_out : out integer range 0 to 31;
-    intvls1 : out integer range 0 to MaxIntervals
+    intvls1 : out integer range 0 to RomMaxIntervals
     --cntId1 : out IntArray
 	);
-  function get_note_pos(noteLevel: integer range 0 to 88) return integer is
-  begin
-    if noteLevel >= 64 then
-      return 0;
-    elsif noteLevel >= 59 then
-      return 1;
-    elsif noteLevel >= 55 then
-      return 2;
-    elsif noteLevel >= 50 then
-      return 3;
-    elsif noteLevel >= 45 then
-      return 4;
-    else return 5;
-    end if;
-  end get_note_pos;
-
 end entity game;
 architecture beh of game is
   type t_SM_Main is (s_Idle, s_Record, s_Play, s_Cleanup);
@@ -53,7 +37,7 @@ architecture beh of game is
   signal address : std_logic_vector(AddressBits - 1 downto 0);
   signal noteLevel : integer range 0 to 127;
   signal notePos : integer range 0 to 5;
-  signal cntId : integer range 0 to MaxIntervals;
+  signal cntId : integer range 0 to RomMaxIntervals;
   signal r_SM_Main : t_SM_Main := s_Idle;
   signal ss : ss_Status := ss_Send_Done;
   signal l_i_RX_DV : std_logic := i_RX_DV;
@@ -80,16 +64,16 @@ begin
 end process;
 --data :
 -- note(7bit)
--- interval(10bit)
+-- interval(12bit)
 -- pos(3bit)
 -- end(1bit)
 --address <= conv_std_logic_vector(index, address_bits);
-noteLevel <= to_integer(unsigned(i_data(20 downto 14)));
-cntId <= to_integer(unsigned(i_data(13 downto 4)));
+noteLevel <= to_integer(unsigned(i_data(22 downto 16)));
+cntId <= to_integer(unsigned(i_data(15 downto 4)));
 notePos <= to_integer(unsigned(i_data(3 downto 1)));
 o_address <= address;
   process (i_clk) is
-    variable intvls: integer range -MaxIntervals * 2 to MaxIntervals := 0;
+    variable intvls: integer range -RomMaxIntervals to RomMaxIntervals := 0;
     variable pause_times, wait_times, state_change_wait_times : integer range 0 to MaxWaitTimes := 0;
     variable cnt : integer := 0;
   begin

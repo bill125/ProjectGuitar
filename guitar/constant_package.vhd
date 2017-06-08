@@ -9,8 +9,9 @@ package definitions is
 	type ShiningStripes is array (0 to 5) of integer range 0 to 1023;
 	type BytesBuffer is array (0 to 255) of std_logic_vector(7 downto 0);
 
-    constant MaxLength : integer := 155; --TODO
+    constant MaxLength : integer := 42; --TODO
     constant MaxIntervals : integer := 511;
+    constant RomMaxIntervals : integer := 4095;
     constant MaxLoopers : integer := 3;
     constant AddressBits : integer := 10;
     constant DataBits : integer := 24;

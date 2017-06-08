@@ -120,5 +120,7 @@ set_global_assignment -name VECTOR_WAVEFORM_FILE converter.vwf
 set_global_assignment -name VHDL_FILE UARTOutAdapter.vhd
 set_global_assignment -name SIGNALTAP_FILE stp1.stp
 set_global_assignment -name MISC_FILE "Y:/workspace/course/2.2/shushe/ProjectGuitar/guitar/main.dpf"
-set_global_assignment -name QIP_FILE rom_show.qip
-set_global_assignment -name QIP_FILE rom_bgm.qip
+set_global_assignment -name QIP_FILE play1.qip
+set_global_assignment -name QIP_FILE show1.qip
+set_global_assignment -name QIP_FILE play2.qip
+set_global_assignment -name QIP_FILE show2.qip

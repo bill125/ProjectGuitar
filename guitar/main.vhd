@@ -51,7 +51,7 @@ entity main is
     o_hs,o_vs : out std_logic; 
     o_RED,o_GREEN,o_BLUE : out std_logic_vector(2 downto 0);
     o_cnt : out integer range 0 to 4;
-    noteLevel : out integer range 0 to 88;
+    noteLevel : out integer range 0 to 127;
     triggeredString : out integer range 0 to 15;
     strings : out GuitarStatus;
     notegen_RX_DV : out std_logic;
@@ -95,8 +95,8 @@ architecture main_bhv of main is
     port (
       i_RX_DV, i_clk, i_noteGen_RX_DV, i_TX_Done : in std_logic;
       i_key : in std_logic_vector(7 downto 0);
-      i_noteLevel : in integer range 0 to 88;
-      o_noteLevel : out integer range 0 to 88;
+      i_noteLevel : in integer range 0 to 127;
+      o_noteLevel : out integer range 0 to 127;
       stx, sstx : out integer range 0 to 3;
       --notes1 : out Noise;
       o_TX_DV : out std_logic;
@@ -144,7 +144,7 @@ architecture main_bhv of main is
       i_triggeredString : in integer range 0 to 15;
       i_strings : in GuitarStatus;
       i_RX_DV, i_clk, i_TX_Done : in std_logic;
-      o_noteLevel : out integer range 0 to 88;
+      o_noteLevel : out integer range 0 to 127;
       o_TX_DV : out std_logic;
       stx1 : out integer range 0 to 2
       );
@@ -216,7 +216,7 @@ architecture main_bhv of main is
           i_TX_DV : in std_logic;
           i_Byte_done : in std_logic;
           i_isOn : in integer range 0 to 15; --channel in fact
-          i_noteLevel : in integer range 0 to 88;
+          i_noteLevel : in integer range 0 to 127;
           i_vel  : in integer range 0 to 255;
           i_prog : in integer range 0 to 255;
           o_TX_Byte : out std_logic_vector(7 downto 0);
@@ -249,21 +249,21 @@ architecture main_bhv of main is
     i_RX_DV, i_clk, i_TX_Done : in std_logic;
     i_key : in std_logic_vector(7 downto 0);
     i_data : in std_logic_vector(DataBits - 1 downto 0);
-    i_noteLevel : in integer range 0 to 88;
+    i_noteLevel : in integer range 0 to 127;
     o_address : out std_logic_vector(AddressBits - 1 downto 0);
-    o_noteLevel : out integer range 0 to 88;
+    o_noteLevel : out integer range 0 to 127;
     o_note_pos : out integer range 0 to 5;
     stx, sstx : out integer range 0 to 3;
     o_TX_DV : out std_logic;
     index1 : out integer range 0 to MaxLength;
     cnt1 : out integer;
     wait_times_out : out integer range 0 to 31;
-    intvls1 : out integer range 0 to MaxIntervals
+    intvls1 : out integer range 0 to RomMaxIntervals
     --cntId1 : out IntArray
 	);
   end component game;
     
-    component rom_bgm IS
+    component bgm1 IS
       PORT
         (
           address		: IN STD_LOGIC_VECTOR (9 DOWNTO 0);
@@ -271,7 +271,23 @@ architecture main_bhv of main is
           q		: OUT STD_LOGIC_VECTOR (23 DOWNTO 0)
           );
     END component;
-    component rom_show IS
+    component show1 IS
+      PORT
+        (
+          address		: IN STD_LOGIC_VECTOR (9 DOWNTO 0);
+          clock		: IN STD_LOGIC ;
+          q		: OUT STD_LOGIC_VECTOR (23 DOWNTO 0)
+          );
+    END component;
+    component bgm2 IS
+      PORT
+        (
+          address		: IN STD_LOGIC_VECTOR (9 DOWNTO 0);
+          clock		: IN STD_LOGIC ;
+          q		: OUT STD_LOGIC_VECTOR (23 DOWNTO 0)
+          );
+    END component;
+    component show2 IS
       PORT
         (
           address		: IN STD_LOGIC_VECTOR (9 DOWNTO 0);
@@ -292,7 +308,11 @@ architecture main_bhv of main is
   signal uart_out_TX_Done : std_logic := '0';
     signal uart_out_a_TX_Done : std_logic := '0';
     -- rom
+    signal rom_bgm1_address, rom_show1_address, rom_show1_ss_address : std_logic_vector(AddressBits - 1 downto 0);
+    signal rom_bgm2_address, rom_show2_address, rom_show2_ss_address : std_logic_vector(AddressBits - 1 downto 0);
     signal rom_bgm_address, rom_show_address, rom_show_ss_address : std_logic_vector(AddressBits - 1 downto 0);
+    signal rom_bgm1_data, rom_show1_data, rom_show1_ss_data : std_logic_vector(DataBits - 1 downto 0);
+    signal rom_bgm2_data, rom_show2_data, rom_show2_ss_data : std_logic_vector(DataBits - 1 downto 0);
     signal rom_bgm_data, rom_show_data, rom_show_ss_data : std_logic_vector(DataBits - 1 downto 0);
   -- guitar properties
   signal gu_triggeredString, gu_chn : integer range 0 to 15;
@@ -323,25 +343,49 @@ begin
   -- f_1k: FreqDiv
   --   generic map(1000, 500)
   --   port map(clk_100m, '0', clk_1k);--1m
-  rom_show_inst : rom_show
+
+  -- 9981
+  rom_show1_inst : show1
     port map (
-      address => rom_show_address,
+      address => rom_show1_address,
       clock => clk_100m,
-      q => rom_show_data
+      q => rom_show1_data
       );
-  rom_show_ss_inst : rom_show
+  rom_show1_ss_inst : show1
     port map (
-      address => rom_show_ss_address,
+      address => rom_show1_ss_address,
       clock => clk_100m,
-      q => rom_show_ss_data
+      q => rom_show1_ss_data
       );
 
-  rom_bgm_inst : rom_bgm
+  rom_bgm1_inst : bgm1
     port map (
-      address => rom_bgm_address,
+      address => rom_bgm1_address,
       clock => clk_100m,
-      q => rom_bgm_data
+      q => rom_bgm1_data
       );
+
+  -- white album
+  rom_show2_inst : show2
+    port map (
+      address => rom_show2_address,
+      clock => clk_100m,
+      q => rom_show2_data
+      );
+  rom_show2_ss_inst : show2
+    port map (
+      address => rom_show2_ss_address,
+      clock => clk_100m,
+      q => rom_show2_ss_data
+      );
+
+  rom_bgm2_inst : bgm2
+    port map (
+      address => rom_bgm2_address,
+      clock => clk_100m,
+      q => rom_bgm2_data
+      );
+
   u0 : KeyboardInput 
  	port map (
       datain => i_KB_data,
@@ -476,26 +520,26 @@ begin
       -- wait_times_out => wait_times_out
       );
   note_gen_noteLevel_plus <= note_gen_noteLevel + gu_base_note;
-  -- looper_inst0 : looper
-  --   generic map (
-  --     g_looper_index => 1,
-  --     record_key => x"3A", --M
-  --     play_key => x"1C", --A
-  --     g_CLKS_PER_INTERVAl => 1000000 -- 4*25000000 / 100 i.e. 10ms/intvl
-  --     )
-  --   port map (
-  --     i_RX_DV => a_kb_all_TX_DV,
-  --     i_clk => clk_100m,
-  --     i_noteGen_RX_DV => note_gen_TX_DV,
-  --     i_key => t_key,
-  --     i_TX_Done => uart_out_a_TX_Done,
-  --     i_noteLevel => note_gen_noteLevel_plus,
-  --     o_noteLevel => looper_noteLevel(0),
-  --     o_TX_DV => looper_TX_DV(0)
-  --     -- stx => stx1,
-  --     -- sstx => sstx,
-  --     -- wait_times_out => wait_times_out
-  --     );
+  looper_inst0 : looper
+    generic map (
+      g_looper_index => 1,
+      record_key => x"3A", --M
+      play_key => x"1C", --A
+      g_CLKS_PER_INTERVAl => 1000000 -- 4*25000000 / 100 i.e. 10ms/intvl
+      )
+    port map (
+      i_RX_DV => a_kb_all_TX_DV,
+      i_clk => clk_100m,
+      i_noteGen_RX_DV => note_gen_TX_DV,
+      i_key => t_key,
+      i_TX_Done => uart_out_a_TX_Done,
+      i_noteLevel => note_gen_noteLevel_plus,
+      o_noteLevel => looper_noteLevel(0),
+      o_TX_DV => looper_TX_DV(0)
+      -- stx => stx1,
+      -- sstx => sstx,
+      -- wait_times_out => wait_times_out
+      );
   -- looper_inst1 : looper
   --   generic map (
   --     g_looper_index => 1,
@@ -536,19 +580,38 @@ begin
   --     -- sstx => sstx,
   --     -- wait_times_out => wait_times_out
   --     );
+
   gu_strings_process: process (clk_100m) is
     variable stx : integer range 0 to 1 := 0;
+    variable free_mode_triggeredString : integer range 0 to 5 := 0;
     variable l_a_kb_all_TX_DV : std_logic := a_kb_all_TX_DV;
     variable l_game_show_ss_TX_DV : std_logic := game_show_ss_TX_DV;
   begin
     if rising_edge(clk_100m) then
+      if free_mode_triggeredString = 0 then
+        rom_show_ss_address <= rom_show1_ss_address;
+        rom_show_ss_data <= rom_show1_ss_data;
+        rom_bgm_address <= rom_bgm1_address;
+        rom_bgm_data <= rom_bgm1_data;
+        rom_show_address <= rom_show1_address;
+        rom_show_data <= rom_show1_data;
+      else
+        rom_show_ss_address <= rom_show2_ss_address;
+        rom_show_ss_data <= rom_show2_ss_data;
+        rom_bgm_address <= rom_bgm2_address;
+        rom_bgm_data <= rom_bgm2_data;
+        rom_show_address <= rom_show2_address;
+        rom_show_data <= rom_show2_data;
+      end if;
       if l_a_kb_all_TX_DV = '0' and a_kb_all_TX_DV = '1' then
         if t_key = x"21" then
           stx := stx + 1;
         end if;
       end if;
       case stx is
-        when 0 => gu_strings <= uart_in_a_strings;
+        when 0 =>
+          free_mode_triggeredString := gu_triggeredString;
+          gu_strings <= uart_in_a_strings;
         when 1 =>
           if game_show_ss_TX_DV = '1' and l_game_show_ss_TX_DV = '0' then
             gu_strings(5 - game_show_ss_note_pos) <= conv_std_logic_vector(game_show_ss_noteLevel, 8);
