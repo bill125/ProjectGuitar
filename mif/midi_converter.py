@@ -9,7 +9,7 @@ import struct
 
 
 MaxInterval = 4096
-midifile = sys.argv[1]
+midifile = "WhiteAlbum.mid"
 a = midi.read_midifile(midifile)
 print(a.resolution)
 TPB = a.resolution # ticks per bit
@@ -24,7 +24,7 @@ cnt_ticks = 0
 basic_note = [40, 45, 50, 55, 59, 64];
 base = 12
 def gen(a, idx):
-    f = open('%s-%d'%(sys.argv[2], idx), 'wb')
+    f = open('%s-%d'%("whitealbum", idx), 'wb')
     data = None
     interval = 0
     max_interval = 0
@@ -72,7 +72,8 @@ def gen(a, idx):
             raw_tick = 0
         else:
             raw_tick += a[i].tick
-    if interval > MaxInterval: interval = 4000
+    if interval > MaxInterval:
+        interval = 4000
     
     if data is not None:
         assert(data % 2 == 0)

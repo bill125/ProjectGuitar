@@ -124,3 +124,4 @@ set_global_assignment -name QIP_FILE play1.qip
 set_global_assignment -name QIP_FILE show1.qip
 set_global_assignment -name QIP_FILE play2.qip
 set_global_assignment -name QIP_FILE show2.qip
+set_global_assignment -name MISC_FILE "C:/Users/bill125/Desktop/BigProject/ProjectGuitar/guitar/main.dpf"
