@@ -9,11 +9,11 @@ import struct
 
 
 MaxInterval = 4096
-midifile = "WhiteAlbum.mid"
+midifile = "WA.mid"
 a = midi.read_midifile(midifile)
 print(a.resolution)
 TPB = a.resolution # ticks per bit
-BPM = 70
+BPM = 85
 cnt_ticks = 0
 
 # note(7 bit) 22 - 16
@@ -22,7 +22,7 @@ cnt_ticks = 0
 # end(1 bit) 0 - 0
 
 basic_note = [40, 45, 50, 55, 59, 64];
-base = 0
+base = 5
 def gen(a, idx):
     f = open('%s-%d'%("whitealbum", idx), 'wb')
     data = None
